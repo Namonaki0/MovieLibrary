@@ -9,21 +9,43 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  width: 20%;
   background: #1c1c1c;
-  padding: .5rem;
   font-family: "helvetica", sans-serif;
 }
 
-nav a {
-  margin-left: 10px;
-  text-decoration: none;
-  color: #b4b4b4;
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-nav a:last-child {
-  margin-right: 10px;
+nav ul li {
+  cursor: pointer;
+  border-bottom: 1px solid silver;
+  padding: 12px 5px;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+nav ul li:first-child {
+  border: none;
+}
+
+nav ul li:hover {
+  background: #8b8b8b;
+  color: #1c1c1c;
+  border-bottom: 1px solid #8b8b8b;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #b4b4b4;
+  pointer-events: none;
 }
 /*# sourceMappingURL=index.css.map */
