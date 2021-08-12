@@ -1,0 +1,29 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: #1c1c1c;
+  padding: .5rem;
+  font-family: "helvetica", sans-serif;
+}
+
+nav a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #b4b4b4;
+}
+
+nav a:last-child {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=index.css.map */
