@@ -1,54 +1,83 @@
 $nav-bg: #1c1c1c;
+$text-color: #fff;
 $ff: "helvetica", sans-serif;
 
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  width: 3rem;
+  background: $nav-bg;
+  font-family: $ff;
+  transition: width 100ms linear;
+
+  &:hover {
+    width: 16rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    width: 20%;
-    background: $nav-bg;
-    font-family: $ff;
+    align-items: center;
 
-    ul {
+    li {
         margin: 0;
-        padding: 0;
-        list-style: none;
+      display: flex;
+      cursor: pointer;
+      padding: 12px 0;
+      transition: all 120ms linear;
+      align-items: center;
 
-        li {
-            cursor: pointer;
-            border-bottom: 1px solid silver;
-            padding: 12px 5px;
-            transition: all 120ms linear;
-            background: red;
-    
-            &:first-child {
-                border:none;
-            }
-    
-            &:hover {
-                background: rgb(139, 139, 139);
-                color: #1c1c1c;
-                border-bottom: 1px solid rgb(139, 139, 139);
-            }
+      &:first-child {
+        border: none;
+        background: $nav-bg;
+      }
 
-            a {
-                text-decoration: none;
-                color: rgb(180, 180, 180);
-                pointer-events: none;
-                padding-left: 10px;
-            
-            }
+      &:hover {
+          background: rgba(192, 192, 192, 0.356);
+      }
 
-            .icons {
-                color: red;
-            }
-        }
+      .link-text {
+        text-decoration: none;
+        pointer-events: none;
+        color: $text-color;
+        display: none;
+        // margin: 5px 10px 0 10px;
+        margin: 5px 10px;
+      }
+
+      .icons {
+        font-size: 20px;
+        color: $text-color;
+        // margin: 5px 10px 0 5px;
+        margin: 5px 10px;
+      }
     }
-     
+  }
+
+  &:hover .link-text {
+    display: block;
+    // margin: 5px 10px;
+  }
+
+  &:hover .menu-link {
+    justify-content: flex-start;
+    width: 100%;
+    // margin: 0 10px;
+  }
+
+//   &:hover .icons {
+//     margin: 5px 10px;
+//   }
+
 }
