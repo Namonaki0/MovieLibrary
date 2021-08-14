@@ -1,9 +1,21 @@
-const menu = document.querySelector(".menu-icon");
+document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.querySelector(".menu-icon");
+  const nav = document.querySelector("nav");
 
-// menu.onclick = () => {
-//   const menuLinks = document.querySelectorAll(".menu-link");
-//   const nav = document.querySelector("nav");
+  menu.addEventListener("click", function menuBehavior() {
+    //   const menuLinks = document.querySelectorAll(".menu-link");
+    const linkTexts = document.querySelectorAll(".link-text");
 
-//   console.log("VISIBLE");
+    nav.classList.toggle("menu-active");
 
-// };
+    linkTexts.forEach((linkText) => {
+      document.addEventListener("transitionend", () => {
+        if (nav.classList.contains("menu-active")) {
+          linkText.classList.add("text-showing");
+        } else {
+          linkText.classList.remove("text-showing");
+        }
+      });
+    });
+  });
+});

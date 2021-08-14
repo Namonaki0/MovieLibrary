@@ -10,7 +10,7 @@ function Navbar() {
     <nav>
       <ul>
         <li class="menu-link">
-          <CgMenu class="icons menu-icon" />
+          <CgMenu class="menu-icon icons" />
           <a href="#" class="link-text"></a>
         </li>
         <li class="menu-link">

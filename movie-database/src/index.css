@@ -15,14 +15,14 @@ nav {
           flex-direction: column;
   height: 100vh;
   position: fixed;
-  width: 3rem;
+  width: 3.5rem;
   background: #1c1c1c;
   font-family: "helvetica", sans-serif;
-  -webkit-transition: width 100ms linear;
-  transition: width 100ms linear;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
 }
 
-nav:hover {
+nav.menu-active {
   width: 16rem;
 }
 
@@ -42,13 +42,13 @@ nav ul {
           align-items: center;
 }
 
-nav ul li {
+nav ul .menu-link {
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  padding: 12px 0;
+  width: 100%;
   -webkit-transition: all 120ms linear;
   transition: all 120ms linear;
   -webkit-box-align: center;
@@ -56,37 +56,33 @@ nav ul li {
           align-items: center;
 }
 
-nav ul li:first-child {
+nav ul .menu-link:first-child {
   border: none;
   background: #1c1c1c;
 }
 
-nav ul li:hover {
-  background: rgba(192, 192, 192, 0.356);
+nav ul .menu-link:hover {
+  background: rgba(192, 192, 192, 0.192);
 }
 
-nav ul li .link-text {
+nav ul .menu-link .link-text {
   text-decoration: none;
   pointer-events: none;
   color: #fff;
   display: none;
-  margin: 5px 10px;
 }
 
-nav ul li .icons {
+nav ul .menu-link .link-text.text-showing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul .menu-link .icons {
   font-size: 20px;
   color: #fff;
-  margin: 5px 10px;
-}
-
-nav:hover .link-text {
-  display: block;
-}
-
-nav:hover .menu-link {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 100%;
+  padding: 1.1rem 1rem;
+  z-index: 10;
+  overflow: hidden;
 }
 /*# sourceMappingURL=index.css.map */
