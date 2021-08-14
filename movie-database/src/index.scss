@@ -75,10 +75,15 @@ nav {
 
 
 main {
-  padding-left: 3.5rem;
+  margin: 3.5rem;
+  margin-top: 0;
 
   h1 {
     margin: 0;
-    padding: 1rem;
+    @extend main;
+  }
+
+  .movie-desc {
+    width: 60ch;
   }
 }

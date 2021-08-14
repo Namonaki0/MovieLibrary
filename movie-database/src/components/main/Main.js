@@ -19,6 +19,7 @@ export default function Main() {
   return (
     <main>
       <h1>{movies.title}</h1>
+      <p class="movie-desc">{movies.overview}</p>
     </main>
   );
 }

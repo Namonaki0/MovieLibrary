@@ -87,12 +87,16 @@ nav ul .menu-link .icons {
   overflow: hidden;
 }
 
-main {
-  padding-left: 3.5rem;
+main, main h1 {
+  margin: 3.5rem;
+  margin-top: 0;
 }
 
 main h1 {
   margin: 0;
-  padding: 1rem;
+}
+
+main .movie-desc {
+  width: 60ch;
 }
 /*# sourceMappingURL=index.css.map */
