@@ -9,14 +9,15 @@ body {
 }
 
 nav {
+
   display: flex;
   flex-direction: column;
   height: 100vh;
   position: fixed;
-  width: 3.5rem;
+  width: 3.3rem;
   background: $nav-bg;
   font-family: $ff;
-  transition: all 100ms linear;
+  transition: width 100ms linear;
 
     &.menu-active {
       width: 16rem;
@@ -52,10 +53,11 @@ nav {
         pointer-events: none;
         color: $text-color;
         display: none;
-        // transition: all 50ms linear;
+        transition: display 2s linear 5s;
+        padding-left: .5rem;
 
           &.text-showing {
-            display: flex;
+            display: block;
           }
       }
 
@@ -69,4 +71,14 @@ nav {
     }
   }
 
+}
+
+
+main {
+  padding-left: 3.5rem;
+
+  h1 {
+    margin: 0;
+    padding: 1rem;
+  }
 }

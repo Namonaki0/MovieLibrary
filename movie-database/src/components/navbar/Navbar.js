@@ -5,7 +5,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { MdNewReleases } from "react-icons/md";
 import { HiOutlineLibrary } from "react-icons/hi";
 
-function Navbar() {
+export default function Navbar() {
   return (
     <nav>
       <ul>
@@ -35,5 +35,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;

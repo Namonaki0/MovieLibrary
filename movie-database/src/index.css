@@ -15,11 +15,11 @@ nav {
           flex-direction: column;
   height: 100vh;
   position: fixed;
-  width: 3.5rem;
+  width: 3.3rem;
   background: #1c1c1c;
   font-family: "helvetica", sans-serif;
-  -webkit-transition: all 100ms linear;
-  transition: all 100ms linear;
+  -webkit-transition: width 100ms linear;
+  transition: width 100ms linear;
 }
 
 nav.menu-active {
@@ -70,12 +70,13 @@ nav ul .menu-link .link-text {
   pointer-events: none;
   color: #fff;
   display: none;
+  -webkit-transition: display 2s linear 5s;
+  transition: display 2s linear 5s;
+  padding-left: .5rem;
 }
 
 nav ul .menu-link .link-text.text-showing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
 }
 
 nav ul .menu-link .icons {
@@ -84,5 +85,14 @@ nav ul .menu-link .icons {
   padding: 1.1rem 1rem;
   z-index: 10;
   overflow: hidden;
+}
+
+main {
+  padding-left: 3.5rem;
+}
+
+main h1 {
+  margin: 0;
+  padding: 1rem;
 }
 /*# sourceMappingURL=index.css.map */

@@ -9,13 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.classList.toggle("menu-active");
 
     linkTexts.forEach((linkText) => {
-      document.addEventListener("transitionend", () => {
-        if (nav.classList.contains("menu-active")) {
-          linkText.classList.add("text-showing");
-        } else {
-          linkText.classList.remove("text-showing");
-        }
-      });
+      if (nav.classList.contains("menu-active")) {
+        linkText.classList.add("text-showing");
+      } else {
+        linkText.classList.remove("text-showing");
+      }
+      //   document.addEventListener("transitionend", () => {
+
+      //   });
     });
   });
 });
