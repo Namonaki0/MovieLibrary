@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-export default function Main() {
+export default function Library() {
   useEffect(() => {
     apiFetch();
   }, []);
@@ -18,8 +18,11 @@ export default function Main() {
   };
   return (
     <main>
-      <h1>{movies.title}</h1>
-      <p class="movie-desc">{movies.overview}</p>
+      <div class="movie-template">
+        <img></img>
+        <h1>{movies.title}</h1>
+        <p class="movie-desc">{movies.overview}</p>
+      </div>
     </main>
   );
 }

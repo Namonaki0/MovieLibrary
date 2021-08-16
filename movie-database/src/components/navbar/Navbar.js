@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./menu";
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineHome } from "react-icons/ai";
@@ -9,28 +10,35 @@ export default function Navbar() {
   return (
     <nav>
       <ul>
-        <li class="menu-link">
-          <CgMenu class="menu-icon icons" />
+        <li className="menu-link">
+          <CgMenu className="menu-icon icons" />
           <a href="#" class="link-text"></a>
         </li>
-        <li class="menu-link">
-          <AiOutlineHome class="icons" />
-          <a href="#" class="link-text">
-            Index
-          </a>
-        </li>
-        <li class="menu-link">
-          <MdNewReleases class="icons" />
-          <a href="#" class="link-text">
-            Upcoming
-          </a>
-        </li>
-        <li class="menu-link">
-          <HiOutlineLibrary class="icons" />
-          <a href="#" class="link-text">
-            Library
-          </a>
-        </li>
+        <Link className="menu-link">
+          <li className="menu-link">
+            <AiOutlineHome className="icons" />
+            <a href="#" className="link-text">
+              Home
+            </a>
+          </li>
+        </Link>
+        <Link className="menu-link">
+          <li className="menu-link">
+            <MdNewReleases className="icons" />
+            <a href="#" className="link-text">
+              Upcoming
+            </a>
+          </li>
+        </Link>
+
+        <Link to="/library" className="menu-link">
+          <li className="menu-link">
+            <HiOutlineLibrary className="icons" />
+            <a href="#" className="link-text">
+              Library
+            </a>
+          </li>
+        </Link>
       </ul>
     </nav>
   );
