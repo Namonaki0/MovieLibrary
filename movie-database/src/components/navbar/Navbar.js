@@ -14,7 +14,7 @@ export default function Navbar() {
           <CgMenu className="menu-icon icons" />
           <a href="#" class="link-text"></a>
         </li>
-        <Link className="menu-link">
+        <Link to="/" className="menu-link">
           <li className="menu-link">
             <AiOutlineHome className="icons" />
             <a href="#" className="link-text">
@@ -22,7 +22,7 @@ export default function Navbar() {
             </a>
           </li>
         </Link>
-        <Link className="menu-link">
+        <Link to="/Upcoming" className="menu-link">
           <li className="menu-link">
             <MdNewReleases className="icons" />
             <a href="#" className="link-text">
