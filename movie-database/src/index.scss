@@ -9,15 +9,16 @@ body {
 }
 
 nav {
-
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 95vh;
   position: fixed;
   width: 3.3rem;
   background: $nav-bg;
   font-family: $ff;
   transition: width 100ms linear;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 
     &.menu-active {
       width: 16rem;
@@ -40,7 +41,6 @@ nav {
       align-items: center;
       justify-content: flex-start;
       text-decoration: none;
- 
       
       &:first-child {
         border: none;
@@ -104,6 +104,6 @@ main {
 
 }
 
-// .document-body {
-//   background: red;
-// }
+.document-body {
+  margin: 1rem;
+}

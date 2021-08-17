@@ -13,13 +13,15 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  height: 95vh;
   position: fixed;
   width: 3.3rem;
   background: #1c1c1c;
   font-family: "helvetica", sans-serif;
   -webkit-transition: width 100ms linear;
   transition: width 100ms linear;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 nav.menu-active {
@@ -111,5 +113,9 @@ main .movie-desc, main h1 {
 
 main h1 {
   margin: 0;
+}
+
+.document-body {
+  margin: 1rem;
 }
 /*# sourceMappingURL=index.css.map */

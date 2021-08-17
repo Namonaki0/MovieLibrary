@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("nav");
 
   menu.addEventListener("click", function menuBehavior() {
-    //   const menuLinks = document.querySelectorAll(".menu-link");
     const linkTexts = document.querySelectorAll(".link-text");
 
     nav.classList.toggle("menu-active");
@@ -14,9 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         linkText.classList.remove("text-showing");
       }
-      //   document.addEventListener("transitionend", () => {
-
-      //   });
     });
   });
 });
