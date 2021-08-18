@@ -122,11 +122,13 @@ main h1 {
 }
 
 .document-body {
-  border: 1px solid #1c1c1c21;
+  position: relative;
+  width: 1000px;
   height: 90vh;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
   background: #fff;
+  margin: auto;
 }
 /*# sourceMappingURL=index.css.map */
