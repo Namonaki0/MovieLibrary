@@ -5,20 +5,21 @@ $ff: "helvetica", sans-serif;
 body {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 1rem;
+  background: rgba(124, 124, 124, 0.24);
 }
 
 nav {
   display: flex;
   flex-direction: column;
-  height: 95vh;
+  min-height: 90vh;
   position: fixed;
   width: 3.3rem;
   background: $nav-bg;
   font-family: $ff;
-  transition: width 100ms linear;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  transition: width 100ms linear;
 
     &.menu-active {
       width: 16rem;
@@ -41,14 +42,20 @@ nav {
       align-items: center;
       justify-content: flex-start;
       text-decoration: none;
+
       
       &:first-child {
-        border: none;
+        border-top-left-radius: 5px;
         background: $nav-bg;
+      }
+      
+      &:first-child:hover {
+        border-top-left-radius: 5px;
       }
 
       &:hover {
-          background: rgba(192, 192, 192, 0.192);
+        border: none;
+        background: rgba(192, 192, 192, 0.192);
       }
 
       .link-text {
@@ -88,8 +95,6 @@ main {
     color: white;
     background-color: #8BC6EC;
     background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-
-
   }
 
   .movie-desc {
@@ -105,5 +110,10 @@ main {
 }
 
 .document-body {
-  margin: 1rem;
+  
+  border: 1px solid #1c1c1c21;
+  height: 90vh;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
+  background: #fff;
 }
