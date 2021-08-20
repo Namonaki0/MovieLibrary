@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 export default function Library() {
   useEffect(() => {
     apiFetch();
+    apiFetchImages();
   }, []);
 
   const [movies, setMovies] = useState([]);
@@ -12,19 +13,20 @@ export default function Library() {
 
   const apiFetch = async () => {
     const apiCall = await fetch(
-      `https://api.themoviedb.org/3/search/company?api_key=${api_key}&query=zeitgeist&page=1`
+      `https://api.themoviedb.org/3/search/company?api_key=${api_key}&query=titanic&page=1`
     );
     const movies = await apiCall.json();
+
+    for (let i = 0; i <= movies.results.length; i++) {
+      let movie_id = await movies.results[i].id;
+      await apiFetchImages(movie_id);
+      // console.log();
+    }
 
     setMovies(movies.results);
   };
 
-  movies.map((movie) => {
-    const movie_id = movie.id;
-    console.log(movie_id);
-  });
-
-  const fetch_images = async (movie_id) => {
+  const apiFetchImages = async (movie_id) => {
     const images = await fetch(
       `https://api.themoviedb.org/3/movie/${movie_id}/images?api_key=${api_key}&language=en-US&include_image_language=en,null`
     );
