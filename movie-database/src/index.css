@@ -99,6 +99,13 @@ nav ul .menu-link .icons {
   overflow: hidden;
 }
 
+form {
+  padding: 20px;
+  background: red;
+  margin: auto;
+  text-align: center;
+}
+
 .movie-template {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,7 +143,7 @@ h1 {
 .document-body {
   position: relative;
   width: 1000px;
-  height: 90vh;
+  height: 80vh;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);

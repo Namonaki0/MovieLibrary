@@ -17,11 +17,10 @@ export default function Library() {
     );
     const movies = await apiCall.json();
 
-    for (let i = 0; i <= movies.results.length; i++) {
-      let movie_id = await movies.results[i].id;
-      await apiFetchImages(movie_id);
-      // console.log();
-    }
+    // for (let i = 0; i <= movies.results.length; i++) {
+    //   let movie_id = await movies.results[i].id;
+    //   await apiFetchImages(movie_id);
+    // }
 
     setMovies(movies.results);
   };
