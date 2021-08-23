@@ -9,7 +9,7 @@ export default function Library() {
     e.preventDefault();
 
     const api_key = `fef4f456a619d2054596d72fcd9a7171`;
-    const url = `https://api.themoviedb.org/3/search/company?api_key=${api_key}&query=${query}&page=1`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
       const apiCall = await fetch(url);
@@ -37,15 +37,16 @@ export default function Library() {
         </button>
       </form>
       <div className="movie-template">
-        {movies.map((movie) => {
-          <div>
-            <h1>{movie.name}</h1>
+        {movies.map((movie) => (
+          <div className="movie-container">
+            <h1>{movie.title}</h1>
             <img
+              className="movie-image"
               src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
               alt={movie.title + "poster"}
             />
-          </div>;
-        })}
+          </div>
+        ))}
       </div>
     </>
   );
