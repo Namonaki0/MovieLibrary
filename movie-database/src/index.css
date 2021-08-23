@@ -4,7 +4,24 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 1rem;
+  padding-top: 2rem;
   background: rgba(124, 124, 124, 0.24);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1c1cbd;
+}
+
+::-webkit-scrollbar-button {
+  background: #1c1c1cf3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c1cf3;
 }
 
 nav {
@@ -23,6 +40,7 @@ nav {
   border-bottom-left-radius: 5px;
   -webkit-transition: width 100ms linear;
   transition: width 100ms linear;
+  z-index: 100;
 }
 
 nav.menu-active {
@@ -84,7 +102,7 @@ nav ul .menu-link .link-text {
   display: none;
   -webkit-transition: display 2s linear 5s;
   transition: display 2s linear 5s;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 nav ul .menu-link .link-text.text-showing {
@@ -103,7 +121,9 @@ form {
   padding: 10px;
   margin: auto;
   text-align: center;
-  background: lightgrey;
+  background: #1c1c1cf3;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 form input, form .submit {
@@ -112,7 +132,7 @@ form input, form .submit {
 }
 
 form .submit {
-  background: #1C1C1C;
+  background: #1c1c1c;
   color: whitesmoke;
 }
 
@@ -122,32 +142,45 @@ form .submit {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: calc(80vh + 10px);
   padding-left: 3.5rem;
-  padding-right: .3rem;
+  padding-right: 0.3rem;
   border-radius: 5px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .movie-template .movie-container {
+  position: relative;
   width: 20%;
+  margin: 10px 2px;
+}
+
+.movie-template .movie-container .movie-image {
+  display: block;
+}
+
+.movie-template .movie-container h1 {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  right: 0;
+  left: 0;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  z-index: 10;
+  color: white;
+  background: rgba(0, 0, 0, 0.521);
 }
 
 .movie-desc {
   padding: 5px 10px;
-}
-
-h1 {
-  margin: 0;
-  padding: .5rem;
-  border: 1px solid rgba(192, 192, 192, 0.479);
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
 }
 
 .document-body {
@@ -155,6 +188,7 @@ h1 {
   width: 1000px;
   height: 90vh;
   border-radius: 5px;
+  border-bottom-right-radius: 0;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
   background: #fff;
