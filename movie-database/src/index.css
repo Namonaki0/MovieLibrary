@@ -147,6 +147,7 @@ form .submit:hover {
 }
 
 .movie-template {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,6 +199,7 @@ form .submit:hover {
 .movie-template .movie-container .movie-image {
   display: block;
   border-radius: 2px;
+  pointer-events: none;
 }
 
 .movie-template .movie-container h1 {
@@ -211,6 +213,49 @@ form .submit:hover {
   z-index: 10;
   color: white;
   background: rgba(0, 0, 0, 0.521);
+}
+
+.movie-template .modal-movie-wrapper {
+  position: absolute;
+  height: 400px;
+  aspect-ratio: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 100;
+  background: red;
+  padding: 1rem;
+  outline: 1px solid cyan;
+  display: none;
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-title {
+  background: unset;
+  position: relative;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-image {
+  width: 300px;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 15px;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-overview {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.movie-template .modal-movie-wrapper .modal-visible {
+  display: unset;
 }
 
 .movie-desc {

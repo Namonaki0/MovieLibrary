@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./modal";
 // import { useEffect, useState } from "react";
 
 export default function Library() {
@@ -40,13 +41,22 @@ export default function Library() {
         {movies
           .filter((movie) => movie.poster_path)
           .map((movie) => (
-            <div className="movie-container">
+            <div className="movie-container" key={movie.id}>
               <img
                 className="movie-image"
                 src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
                 alt={movie.title + "poster"}
               />
               <h1>{movie.title}</h1>
+              <div class="modal-movie-wrapper">
+                <h1 className="modal-movie-title">{movie.title}</h1>
+                <img
+                  className="modal-movie-image"
+                  src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                  alt={movie.title + "poster"}
+                />
+                <div className="modal-movie-overview">{movie.overview}</div>
+              </div>
             </div>
           ))}
       </div>
