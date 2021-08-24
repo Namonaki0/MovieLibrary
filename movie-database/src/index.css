@@ -4,7 +4,24 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 1rem;
-  background: rgba(124, 124, 124, 0.24);
+  padding-top: 2rem;
+  background: #8d8d8d;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1c1cbd;
+}
+
+::-webkit-scrollbar-button {
+  background: #1c1c1cf3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c1cf3;
 }
 
 nav {
@@ -15,7 +32,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 90vh;
+  height: 91vh;
   position: fixed;
   width: 3.3rem;
   background: #1c1c1c;
@@ -23,6 +40,7 @@ nav {
   border-bottom-left-radius: 5px;
   -webkit-transition: width 100ms linear;
   transition: width 100ms linear;
+  z-index: 100;
 }
 
 nav.menu-active {
@@ -84,7 +102,7 @@ nav ul .menu-link .link-text {
   display: none;
   -webkit-transition: display 2s linear 5s;
   transition: display 2s linear 5s;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 nav ul .menu-link .link-text.text-showing {
@@ -103,17 +121,29 @@ form {
   padding: 10px;
   margin: auto;
   text-align: center;
-  background: lightgrey;
+  background: #1c1c1cf3;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 form input, form .submit {
-  padding: 5px 10px;
+  padding: 8px 10px;
+  width: 20%;
   border: none;
 }
 
 form .submit {
-  background: #1C1C1C;
+  background: #4e4e4e;
+  width: 10%;
   color: whitesmoke;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  letter-spacing: 1px;
+}
+
+form .submit:hover {
+  background: #3f3f3f;
+  cursor: pointer;
 }
 
 .movie-template {
@@ -122,32 +152,69 @@ form .submit {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: calc(80vh + 10px);
+  height: calc(80vh + 12px);
   padding-left: 3.5rem;
-  padding-right: .3rem;
+  padding-right: 0.3rem;
   border-radius: 5px;
   overflow-y: auto;
   overflow-x: hidden;
+  background: #bdbdbd;
 }
 
 .movie-template .movie-container {
+  position: relative;
   width: 20%;
+  margin: 10px 2px;
+  z-index: 10;
+  -webkit-transition: -webkit-transform 100ms linear;
+  transition: -webkit-transform 100ms linear;
+  transition: transform 100ms linear;
+  transition: transform 100ms linear, -webkit-transform 100ms linear;
+}
+
+.movie-template .movie-container:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.movie-template .movie-container::after {
+  position: absolute;
+  content: "";
+  background-image: linear-gradient(305deg, #465779 40%, #081a40d6 50%);
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  top: -5px;
+  left: -5px;
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.movie-template .movie-container .movie-image {
+  display: block;
+  border-radius: 2px;
+}
+
+.movie-template .movie-container h1 {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  right: 0;
+  left: 0;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  z-index: 10;
+  color: white;
+  background: rgba(0, 0, 0, 0.521);
 }
 
 .movie-desc {
   padding: 5px 10px;
-}
-
-h1 {
-  margin: 0;
-  padding: .5rem;
-  border: 1px solid rgba(192, 192, 192, 0.479);
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1rem;
 }
 
 .document-body {
@@ -155,6 +222,7 @@ h1 {
   width: 1000px;
   height: 90vh;
   border-radius: 5px;
+  border-bottom-right-radius: 0;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
   background: #fff;

@@ -32,21 +32,23 @@ export default function Library() {
           name="query"
           onChange={(e) => setQuery(e.target.value)}
         ></input>
-        <button type="submit" classNAme="submit">
+        <button type="submit" className="submit">
           Search
         </button>
       </form>
       <div className="movie-template">
-        {movies.map((movie) => (
-          <div className="movie-container">
-            <h1>{movie.title}</h1>
-            <img
-              className="movie-image"
-              src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-              alt={movie.title + "poster"}
-            />
-          </div>
-        ))}
+        {movies
+          .filter((movie) => movie.poster_path)
+          .map((movie) => (
+            <div className="movie-container">
+              <img
+                className="movie-image"
+                src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                alt={movie.title + "poster"}
+              />
+              <h1>{movie.title}</h1>
+            </div>
+          ))}
       </div>
     </>
   );
