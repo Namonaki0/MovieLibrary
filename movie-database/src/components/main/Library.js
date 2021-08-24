@@ -32,7 +32,7 @@ export default function Library() {
           name="query"
           onChange={(e) => setQuery(e.target.value)}
         ></input>
-        <button type="submit" classNAme="submit">
+        <button type="submit" className="submit">
           Search
         </button>
       </form>
