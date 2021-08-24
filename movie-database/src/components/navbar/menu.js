@@ -14,16 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
         linkText.classList.remove("text-showing");
       }
     });
-
-    // const menuLinks = document.querySelectorAll(".menu-link");
-
-    // menuLinks.forEach((menuLink) => {
-    //   menuLink.addEventListener("click", () => {
-    //     console.log("clicked");
-    //     if (nav.classList.contains("menu-active")) {
-    //       nav.classList.remove("menu-active");
-    //     }
-    //   });
-    // });
   });
 });
