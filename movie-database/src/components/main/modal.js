@@ -16,7 +16,7 @@ const movieContainers = document.querySelectorAll(".movie-container");
 movieContainers.forEach((movieContainer) => {
   movieContainer.addEventListener("click", (e) => {
     if (e.target.childNodes[2]) {
-      e.target.childNodes[2].className("modal-visible");
+      console.log(e.target.childNodes[2]);
     }
   });
 });
