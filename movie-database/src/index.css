@@ -219,14 +219,21 @@ form .submit:hover {
   position: absolute;
   height: 400px;
   aspect-ratio: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   z-index: 100;
-  background: red;
+  background: cyan;
   padding: 1rem;
   outline: 1px solid cyan;
-  display: none;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-title {
@@ -235,6 +242,7 @@ form .submit:hover {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  color: red;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-image {
@@ -252,6 +260,11 @@ form .submit:hover {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+}
+
+.movie-template .modal-movie-wrapper .modal-key {
+  color: purple;
+  font-size: 5rem;
 }
 
 .movie-template .modal-movie-wrapper .modal-visible {
