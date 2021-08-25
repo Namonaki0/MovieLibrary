@@ -171,7 +171,7 @@ form .submit:hover {
 .movie-template .movie-container {
   position: relative;
   width: 20%;
-  margin: 10px 2px;
+  margin: 15px 2px;
   z-index: 10;
   -webkit-transition: -webkit-transform 100ms linear;
   transition: -webkit-transform 100ms linear;
@@ -255,7 +255,10 @@ form .submit:hover {
 }
 
 .movie-template .modal-movie-wrapper .modal-visible {
-  display: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1000;
 }
 
 .movie-desc {

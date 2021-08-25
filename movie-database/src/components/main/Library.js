@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./modal";
+// import MovieModal from "./MovieModal";
 // import { useEffect, useState } from "react";
 
 export default function Library() {
@@ -57,9 +58,14 @@ export default function Library() {
                 />
                 <div className="modal-movie-overview">{movie.overview}</div>
               </div>
+              ;
             </div>
           ))}
       </div>
     </>
   );
+}
+
+{
+  /* <MovieModal />; */
 }
