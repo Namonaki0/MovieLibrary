@@ -145,7 +145,7 @@ form {
   .movie-container {
     position: relative;
     width: 20%;
-    margin: 10px 2px;
+    margin: 15px 2px;
     z-index: 10;
     transition: transform 100ms linear;
 
@@ -224,7 +224,8 @@ form {
      }
 
      .modal-visible {
-       display: unset;
+       display: flex;
+       z-index: 1000;
      }
 
    }
