@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./modal";
-import MovieModal from "./MovieModal";
+// import MovieModal from "./MovieModal";
 // import { useEffect, useState } from "react";
 
 export default function Library() {
@@ -16,7 +16,7 @@ export default function Library() {
     try {
       const apiCall = await fetch(url);
       const movies = await apiCall.json();
-      console.log(movies.results);
+      // console.log(movies.results);
       setMovies(movies.results);
       // console.log(movies);
     } catch (err) {
@@ -38,29 +38,21 @@ export default function Library() {
           Search
         </button>
       </form>
-      <div className="movie-template">
-        {movies
-          .filter((movie) => movie.poster_path)
-          .map((movie) => (
-            <div
-              className="movie-container"
-              key={movie.id}
-              data-target="movie-container-template"
-            >
-              <img
-                className="movie-image"
-                src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                alt={movie.title + "poster"}
-              />
-              <h1>{movie.title}</h1>
-
-              <MovieModal
-                title={movie.title}
-                overview={movie.overview}
-                key={movie.id}
-              />
-            </div>
-          ))}
+      <div className="outter-wrapper">
+        <div className="movie-template">
+          {movies
+            .filter((movie) => movie.poster_path)
+            .map((movie) => (
+              <div className="movie-container" key={movie.id}>
+                <img
+                  className="movie-image"
+                  src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                  alt={movie.title + "poster"}
+                />
+                <h1>{movie.title}</h1>
+              </div>
+            ))}
+        </div>
       </div>
     </>
   );
@@ -81,3 +73,9 @@ export default function Library() {
   <div className="modal-movie-overview">{movie.overview}</div>
 </div>; */
 }
+
+//  title={movie.title}
+//             overview={movie.overview}
+//             key={movie.id}
+
+// <MovieModal />;
