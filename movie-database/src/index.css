@@ -216,24 +216,19 @@ form .submit:hover {
 }
 
 .movie-template .modal-movie-wrapper {
-  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
   height: 400px;
-  aspect-ratio: 1;
-  top: 0;
-  bottom: 0;
-  left: 0;
+  width: 85%;
+  top: 5px;
+  bottom: 20px;
+  left: 40px;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  margin: 0 auto;
   z-index: 100;
-  background: cyan;
+  background: #1c1c1c9d;
   padding: 1rem;
-  outline: 1px solid cyan;
+  display: none;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-title {

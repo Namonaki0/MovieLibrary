@@ -1,22 +1,21 @@
-// document.addEventListener("DOMContentLoaded", () => {
-
-//   movieContainers.forEach((movieContainer) => {
-//     movieContainer.addEventListener("click", (e) => {
-//       console.log("hello");
-
-//         movieModal.classList.add("modal-visible");
-//       console.log("clicked");
-//     });
-//   });
-// });
-
-const movieModal = document.querySelector(".modal-movie-wrapper");
 const movieContainers = document.querySelectorAll(".movie-container");
+const movieTemplate = document.querySelector(".movie-template");
+
+const modalDiv = document.createElement("div");
+modalDiv.classList.add("modal-movie-wrapper");
 
 movieContainers.forEach((movieContainer) => {
-  movieContainer.addEventListener("click", (e) => {
-    if (e.target.childNodes[2]) {
-      console.log(e.target.childNodes[2]);
-    }
+  const movieContainers = document.querySelectorAll(".movie-container");
+  const movieTemplate = document.querySelector(".movie-template");
+
+  movieContainer.addEventListener("click", () => {
+    movieTemplate.appendChild(modalDiv);
+    modalDiv.style.display = "flex";
   });
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target.style.display === "flex") {
+    modalDiv.style.display = "none";
+  }
 });
