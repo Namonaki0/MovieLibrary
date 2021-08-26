@@ -1,21 +1,18 @@
-const movieContainers = document.querySelectorAll(".movie-container");
-const movieTemplate = document.querySelector(".movie-template");
+// const movieContainers = document.querySelectorAll(".movie-container");
+// const movieTemplate = document.querySelector(".movie-template");
 
-const modalDiv = document.createElement("div");
-modalDiv.classList.add("modal-movie-wrapper");
+// window.addEventListener("", () => {
+//   const modalDiv = document.createElement("div");
+//   movieContainers.forEach((movieContainer) => {
+//     movieContainer.addEventListener("click", (e) => {
+//       modalDiv.classList.add("modal-movie-wrapper");
+//       movieTemplate.appendChild(modalDiv);
+//     });
+//   });
 
-movieContainers.forEach((movieContainer) => {
-  const movieContainers = document.querySelectorAll(".movie-container");
-  const movieTemplate = document.querySelector(".movie-template");
-
-  movieContainer.addEventListener("click", () => {
-    movieTemplate.appendChild(modalDiv);
-    modalDiv.style.display = "flex";
-  });
-});
-
-window.addEventListener("click", (e) => {
-  if (e.target.style.display === "flex") {
-    modalDiv.style.display = "none";
-  }
-});
+//   window.addEventListener("click", (e) => {
+//     if (e.target === modalDiv) {
+//       movieTemplate.removeChild(modalDiv);
+//     }
+//   });
+// });

@@ -228,7 +228,9 @@ form .submit:hover {
   z-index: 100;
   background: #1c1c1c9d;
   padding: 1rem;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-title {

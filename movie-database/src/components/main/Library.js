@@ -1,11 +1,30 @@
-import React, { useState } from "react";
-import "./modal";
-// import MovieModal from "./MovieModal";
-// import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+// import "./modal";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const movieContainers = document.querySelectorAll(".movie-container");
+    const movieTemplate = document.querySelector(".movie-template");
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const modalDiv = document.createElement("div");
+      movieContainers.forEach((movieContainer) => {
+        movieContainer.addEventListener("click", (e) => {
+          modalDiv.classList.add("modal-movie-wrapper");
+          movieTemplate.appendChild(modalDiv);
+        });
+      });
+
+      // window.addEventListener("click", (e) => {
+      //   if (e.target === modalDiv) {
+      //     movieTemplate.removeChild(modalDiv);
+      //   }
+      // });
+    });
+  });
 
   const submitSearch = async (e) => {
     e.preventDefault();
@@ -16,9 +35,7 @@ export default function Library() {
     try {
       const apiCall = await fetch(url);
       const movies = await apiCall.json();
-      // console.log(movies.results);
       setMovies(movies.results);
-      // console.log(movies);
     } catch (err) {
       console.error("nothing found", err);
     }
@@ -57,25 +74,3 @@ export default function Library() {
     </>
   );
 }
-
-{
-  /* <MovieModal />; */
-}
-
-{
-  /* <div class="modal-movie-wrapper">
-  <h1 className="modal-movie-title">{movie.title}</h1>
-  <img
-    className="modal-movie-image"
-    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-    alt={movie.title + "poster"}
-  />
-  <div className="modal-movie-overview">{movie.overview}</div>
-</div>; */
-}
-
-//  title={movie.title}
-//             overview={movie.overview}
-//             key={movie.id}
-
-// <MovieModal />;
