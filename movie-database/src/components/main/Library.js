@@ -1,30 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import "./modal";
+import "./modal";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    const movieContainers = document.querySelectorAll(".movie-container");
-    const movieTemplate = document.querySelector(".movie-template");
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const modalDiv = document.createElement("div");
-      movieContainers.forEach((movieContainer) => {
-        movieContainer.addEventListener("click", (e) => {
-          modalDiv.classList.add("modal-movie-wrapper");
-          movieTemplate.appendChild(modalDiv);
-        });
-      });
-
-      // window.addEventListener("click", (e) => {
-      //   if (e.target === modalDiv) {
-      //     movieTemplate.removeChild(modalDiv);
-      //   }
-      // });
-    });
-  });
 
   const submitSearch = async (e) => {
     e.preventDefault();
@@ -67,9 +46,11 @@ export default function Library() {
                   alt={movie.title + "poster"}
                 />
                 <h1>{movie.title}</h1>
+                <div className="movie-overview">{movie.overview}</div>
               </div>
             ))}
         </div>
+        <div className="modal"></div>
       </div>
     </>
   );

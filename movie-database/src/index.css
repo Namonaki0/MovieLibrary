@@ -173,6 +173,7 @@ form .submit:hover {
   width: 20%;
   margin: 15px 2px;
   z-index: 10;
+  cursor: pointer;
   -webkit-transition: -webkit-transform 100ms linear;
   transition: -webkit-transform 100ms linear;
   transition: transform 100ms linear;
@@ -215,6 +216,10 @@ form .submit:hover {
   background: rgba(0, 0, 0, 0.521);
 }
 
+.movie-template .movie-container .movie-overview {
+  display: none;
+}
+
 .movie-template .modal-movie-wrapper {
   position: -webkit-sticky;
   position: sticky;
@@ -251,12 +256,17 @@ form .submit:hover {
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
+  pointer-events: none;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-overview {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  color: white;
+}
+
+.movie-template .modal-movie-wrapper .fa-times-circle {
+  color: white;
+  cursor: pointer;
+  z-index: 100;
 }
 
 .movie-template .modal-movie-wrapper .modal-key {
