@@ -147,6 +147,7 @@ form {
     width: 20%;
     margin: 15px 2px;
     z-index: 10;
+    cursor: pointer;
     transition: transform 100ms linear;
 
     &:hover {
@@ -183,6 +184,10 @@ form {
       color: white;
       background: rgba(0, 0, 0, 0.521);
     }
+
+    .movie-overview {
+      display: none;
+    }
     
   }
 
@@ -198,7 +203,8 @@ form {
      z-index: 100;
      background: #1c1c1c9d;
      padding: 1rem;
-     display: none;
+     display: flex;
+ 
 
      .modal-movie-title {
        background: unset;
@@ -214,10 +220,18 @@ form {
        object-fit: contain;
        margin-right: 15px;
        order: -1;
+       pointer-events: none;
      }
 
      .modal-movie-overview {
-       order: 2;
+      //  order: 2;
+       color: white;
+     }
+
+     .fa-times-circle {
+       color: white;
+       cursor: pointer;
+       z-index: 100;
      }
 
      .modal-key {

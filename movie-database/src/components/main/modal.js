@@ -1,21 +1,27 @@
 const movieContainers = document.querySelectorAll(".movie-container");
 const movieTemplate = document.querySelector(".movie-template");
-
-const modalDiv = document.createElement("div");
-modalDiv.classList.add("modal-movie-wrapper");
+const modal = document.querySelector(".modal");
 
 movieContainers.forEach((movieContainer) => {
-  const movieContainers = document.querySelectorAll(".movie-container");
-  const movieTemplate = document.querySelector(".movie-template");
+  movieContainer.addEventListener("click", (e) => {
+    let movieImage = e.target.children[0].currentSrc;
+    let movieOverview = e.target.children[2].innerText;
+    const modalDiv = document.createElement("div");
+    modalDiv.classList.add("modal-movie-wrapper");
+    modalDiv.innerHTML = `
+    <i class="fas fa-times-circle"></i>
+    <img class="modal-movie-image" src=${movieImage} />
+    <div class="modal-movie-overview">${movieOverview}</div>
+    
+`;
 
-  movieContainer.addEventListener("click", () => {
-    movieTemplate.appendChild(modalDiv);
-    modalDiv.style.display = "flex";
+    const closeModalIcon = document.querySelector(".fa-times-circle");
+
+    closeModalIcon.addEventListener("click", () => {
+      console.log(closeModalIcon);
+      modalDiv.classList.remove("modal-movie-wrapper");
+    });
+
+    // console.dir();
   });
-});
-
-window.addEventListener("click", (e) => {
-  if (e.target.style.display === "flex") {
-    modalDiv.style.display = "none";
-  }
 });
