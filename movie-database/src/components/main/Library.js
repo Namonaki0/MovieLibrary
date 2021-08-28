@@ -1,4 +1,3 @@
-import "./modal";
 import React, { useState, useEffect } from "react";
 
 export default function Library() {
@@ -8,7 +7,7 @@ export default function Library() {
   useEffect(() => {
     const movieContainers = document.querySelectorAll(".movie-container");
     const movieTemplate = document.querySelector(".movie-template");
-    const modal = document.querySelector(".modal");
+    const modalCloseBtnInnerText = `<i class="fas fa-times-circle"></i>`;
 
     const modalDiv = document.createElement("div");
 
@@ -17,19 +16,31 @@ export default function Library() {
         let movieImage = e.target.children[0].currentSrc;
         let movieTitle = e.target.children[1].innerText;
         let movieOverview = e.target.children[2].innerText;
+        let movieReleaseDate = e.target.children[3].innerText;
+        let movieRating = e.target.children[4].innerText;
 
         modalDiv.style.display = "flex";
         modalDiv.classList.add("modal-movie-wrapper");
         modalDiv.innerHTML = `
-          <i class="fas fa-times-circle"></i>
+          <span>${modalCloseBtnInnerText}</span>
           <img class="modal-movie-image" src=${movieImage} />
-          <div class="modal-movie-info">
+          <div class="modal-movie-main-info">
             <div class="modal-movie-title">${movieTitle}</div>
             <div class="modal-movie-overview">${movieOverview}</div>
+            <div class="modal-movie-secondary-info">
+              <div class="modal-movie-release-date">${movieReleaseDate}</div>
+              <div class="modal-movie-rating">${movieRating}</div>
+            </div>
           </div>
         `;
 
         movieTemplate.appendChild(modalDiv);
+
+        window.addEventListener("click", (e) => {
+          if (e.target.classList.contains("fa-times-circle")) {
+            modalDiv.style.display = "none";
+          }
+        });
       });
     });
 
@@ -82,10 +93,13 @@ export default function Library() {
                 />
                 <h1>{movie.title}</h1>
                 <div className="movie-overview">{movie.overview}</div>
+                <div className="movie-release-date">
+                  Release date: {movie.release_date}
+                </div>
+                <div className="movie-rating">Rating: {movie.vote_average}</div>
               </div>
             ))}
         </div>
-        <div className="modal"></div>
       </div>
     </>
   );

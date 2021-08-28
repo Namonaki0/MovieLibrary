@@ -106,7 +106,6 @@ form {
   background: #1c1c1cf3;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  // border-top: 2px solid rgba(192, 192, 192, 0.171);
 
   input {
     padding: 8px 10px;
@@ -186,17 +185,16 @@ form {
       pointer-events: none;
     }
 
-    .movie-overview {
+    .movie-overview,
+    .movie-release-date,
+    .movie-rating {
       display: none;
     }
+
+
   }
 
   .modal-movie-wrapper {
-    //  display: grid;
-    //  grid-template-areas:
-    //   "image title title"
-    //   "image overview overview"
-    //   "image overview overview";
     position: sticky;
     height: 400px;
     width: 85%;
@@ -208,31 +206,47 @@ form {
     z-index: 1000;
     background: #1c1c1cf1;
     padding: 1rem;
+    border-radius: 5px;
 
-    .modal-movie-info {
+    .modal-movie-main-info {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      padding: 0 1rem;
     }
 
-    //  .modal-movie-title {
-    //    color: white;
-    //  }
+    .modal-movie-secondary-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+     .modal-movie-title {
+       font-size: 1.5rem;
+       margin-bottom: 1.2rem;
+     }
 
     .modal-movie-image {
-      width: 300px;
-      height: 100%;
+      height: auto;
+      padding: .5rem;
       object-fit: contain;
-      margin-right: 15px;
       pointer-events: none;
-      border: 1px solid rgba(192, 192, 192, 0.103);
+      border: 1px solid rgba(192, 192, 192, 0.068);
     }
 
-    //  .modal-movie-overview {
-    //    color: white;
-    //  }
+     .modal-movie-overview {
+       font-size: 1.1rem;
+       line-height: 22px;
+       margin-bottom: 1.1rem;
+     }
+
+     .modal-movie-release-date,
+     .movie-rating {
+       font-size: 1rem;
+       color: rgba(245, 245, 245, 0.842);
+     }
 
     .fa-times-circle {
-      grid-area: close;
+      font-size: 1.2rem;
       color: white;
       cursor: pointer;
       z-index: 100;
@@ -241,10 +255,10 @@ form {
       right: 15px;
     }
 
-    .modal-movie-info,
+    .modal-movie-main-info,
     .modal-movie-title,
     .modal-movie-image,
-    .modal-movie-overview {
+    .modal-movie-overview{
       pointer-events: none;
       color: white;
     }

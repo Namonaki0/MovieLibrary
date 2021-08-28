@@ -213,7 +213,9 @@ form .submit:hover {
   pointer-events: none;
 }
 
-.movie-template .movie-container .movie-overview {
+.movie-template .movie-container .movie-overview,
+.movie-template .movie-container .movie-release-date,
+.movie-template .movie-container .movie-rating {
   display: none;
 }
 
@@ -230,9 +232,10 @@ form .submit:hover {
   z-index: 1000;
   background: #1c1c1cf1;
   padding: 1rem;
+  border-radius: 5px;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-info {
+.movie-template .modal-movie-wrapper .modal-movie-main-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,20 +243,49 @@ form .submit:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 1rem;
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-secondary-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-image {
-  width: 300px;
-  height: 100%;
+  height: auto;
+  padding: .5rem;
   -o-object-fit: contain;
      object-fit: contain;
-  margin-right: 15px;
   pointer-events: none;
-  border: 1px solid rgba(192, 192, 192, 0.103);
+  border: 1px solid rgba(192, 192, 192, 0.068);
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-overview {
+  font-size: 1.1rem;
+  line-height: 22px;
+  margin-bottom: 1.1rem;
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-release-date,
+.movie-template .modal-movie-wrapper .movie-rating {
+  font-size: 1rem;
+  color: rgba(245, 245, 245, 0.842);
 }
 
 .movie-template .modal-movie-wrapper .fa-times-circle {
-  grid-area: close;
+  font-size: 1.2rem;
   color: white;
   cursor: pointer;
   z-index: 100;
@@ -262,7 +294,7 @@ form .submit:hover {
   right: 15px;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-info,
+.movie-template .modal-movie-wrapper .modal-movie-main-info,
 .movie-template .modal-movie-wrapper .modal-movie-title,
 .movie-template .modal-movie-wrapper .modal-movie-image,
 .movie-template .modal-movie-wrapper .modal-movie-overview {
