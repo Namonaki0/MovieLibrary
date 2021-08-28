@@ -174,10 +174,6 @@ form .submit:hover {
   margin: 15px 2px;
   z-index: 10;
   cursor: pointer;
-  -webkit-transition: -webkit-transform 100ms linear;
-  transition: -webkit-transform 100ms linear;
-  transition: transform 100ms linear;
-  transition: transform 100ms linear, -webkit-transform 100ms linear;
 }
 
 .movie-template .movie-container:hover {
@@ -214,6 +210,7 @@ form .submit:hover {
   z-index: 10;
   color: white;
   background: rgba(0, 0, 0, 0.521);
+  pointer-events: none;
 }
 
 .movie-template .movie-container .movie-overview {
@@ -230,21 +227,19 @@ form .submit:hover {
   left: 40px;
   right: 0;
   margin: 0 auto;
-  z-index: 100;
-  background: #1c1c1c9d;
+  z-index: 1000;
+  background: #1c1c1cf1;
   padding: 1rem;
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.movie-template .modal-movie-wrapper .modal-movie-title {
-  background: unset;
-  position: relative;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  color: red;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-image {
@@ -253,32 +248,26 @@ form .submit:hover {
   -o-object-fit: contain;
      object-fit: contain;
   margin-right: 15px;
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
   pointer-events: none;
-}
-
-.movie-template .modal-movie-wrapper .modal-movie-overview {
-  color: white;
+  border: 1px solid rgba(192, 192, 192, 0.103);
 }
 
 .movie-template .modal-movie-wrapper .fa-times-circle {
+  grid-area: close;
   color: white;
   cursor: pointer;
   z-index: 100;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
-.movie-template .modal-movie-wrapper .modal-key {
-  color: purple;
-  font-size: 5rem;
-}
-
-.movie-template .modal-movie-wrapper .modal-visible {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  z-index: 1000;
+.movie-template .modal-movie-wrapper .modal-movie-info,
+.movie-template .modal-movie-wrapper .modal-movie-title,
+.movie-template .modal-movie-wrapper .modal-movie-image,
+.movie-template .modal-movie-wrapper .modal-movie-overview {
+  pointer-events: none;
+  color: white;
 }
 
 .movie-desc {

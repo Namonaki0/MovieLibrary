@@ -1,9 +1,44 @@
-import React, { useState, useEffect } from "react";
 import "./modal";
+import React, { useState, useEffect } from "react";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const movieContainers = document.querySelectorAll(".movie-container");
+    const movieTemplate = document.querySelector(".movie-template");
+    const modal = document.querySelector(".modal");
+
+    const modalDiv = document.createElement("div");
+
+    movieContainers.forEach((movieContainer) => {
+      movieContainer.addEventListener("click", (e) => {
+        let movieImage = e.target.children[0].currentSrc;
+        let movieTitle = e.target.children[1].innerText;
+        let movieOverview = e.target.children[2].innerText;
+
+        modalDiv.style.display = "flex";
+        modalDiv.classList.add("modal-movie-wrapper");
+        modalDiv.innerHTML = `
+          <i class="fas fa-times-circle"></i>
+          <img class="modal-movie-image" src=${movieImage} />
+          <div class="modal-movie-info">
+            <div class="modal-movie-title">${movieTitle}</div>
+            <div class="modal-movie-overview">${movieOverview}</div>
+          </div>
+        `;
+
+        movieTemplate.appendChild(modalDiv);
+      });
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal-movie-wrapper")) {
+        modalDiv.style.display = "none";
+      }
+    });
+  });
 
   const submitSearch = async (e) => {
     e.preventDefault();
