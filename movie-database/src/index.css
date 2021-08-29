@@ -241,6 +241,9 @@ form .submit:hover {
   display: flex;
   margin-top: 1rem;
   padding: 0.5rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-main-info {
@@ -256,11 +259,9 @@ form .submit:hover {
           justify-content: space-between;
   color: rgba(245, 245, 245, 0.808);
   font-size: 1rem;
-}
-
-.movie-template .modal-movie-wrapper .modal-movie-secondary-info * {
   border-bottom: 1px solid rgba(192, 192, 192, 0.562);
-  padding-bottom: 2px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-title {
@@ -268,32 +269,33 @@ form .submit:hover {
   margin-bottom: 1.2rem;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-image {
+.movie-template .modal-movie-wrapper .modal-movie-image-wrapper {
   position: relative;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
-  pointer-events: none;
   display: block;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  border: 1px solid rgba(192, 192, 192, 0.336);
-  z-index: -1;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-image::after {
+.movie-template .modal-movie-wrapper .modal-movie-image-wrapper::after {
+  position: absolute;
   content: "";
-  background: red;
-  height: 100px;
-  width: 100px;
+  bottom: 0;
+  right: 0;
+  border-bottom: 100px solid rgba(192, 192, 192, 0.212);
+  border-left: 100px solid transparent;
+}
+
+.movie-template .modal-movie-wrapper .modal-movie-image-wrapper .modal-movie-image {
   display: block;
-  top: 10px;
+  pointer-events: none;
+  border: 1px solid rgba(192, 192, 192, 0.212);
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-overview {
   font-size: 1.1rem;
   line-height: 22px;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 .movie-template .modal-movie-wrapper .fa-times-circle {

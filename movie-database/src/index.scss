@@ -210,6 +210,7 @@ form {
       display: flex;
       margin-top: 1rem;
       padding: 0.5rem;
+      height: max-content;
     }
 
     .modal-movie-main-info {
@@ -221,11 +222,9 @@ form {
       justify-content: space-between;
       color: rgba(245, 245, 245, 0.808);
       font-size: 1rem;
-
-      * {
-        border-bottom: 1px solid rgba(192, 192, 192, 0.562);
-        padding-bottom: 2px;
-      }
+      border-bottom: 1px solid rgba(192, 192, 192, 0.562);
+      padding-bottom: 5px;
+      text-transform: uppercase;
     }
 
     .modal-movie-title {
@@ -233,31 +232,33 @@ form {
       margin-bottom: 1.2rem;
     }
 
-    .modal-movie-image {
+    .modal-movie-image-wrapper {
       position: relative;
-      height: auto;
-      object-fit: contain;
-      pointer-events: none;
       display: block;
-      align-self: flex-start;
-      border: 1px solid rgba(192, 192, 192, 0.336);
-      z-index: -1;
+      height: max-content;
 
-      &::after {
-        // position: absolute;
-        content: "";
-        background: red;
-        height: 100px;
-        width: 100px;
+       &::after {
+         position: absolute;
+         content: "";
+         bottom: 0;
+         right: 0;
+         border-bottom: 100px solid rgba(192, 192, 192, 0.212);
+         border-left: 100px solid transparent;
+       }
+
+      .modal-movie-image {
         display: block;
-        top: 10px;
+        pointer-events: none;
+        border: 1px solid rgba(192, 192, 192, 0.212);
+        // background: rgba(192, 192, 192, 0.055);
+        
       }
     }
 
     .modal-movie-overview {
       font-size: 1.1rem;
       line-height: 22px;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.5rem;
     }
 
     .fa-times-circle {
@@ -313,22 +314,18 @@ form {
           pointer-events: none;
         }
       }
-      
     }
 
-     .modal-movie-inner-wrapper,
-     .modal-movie-main-info,
-     .modal-movie-title,
-     .modal-movie-image,
-     .modal-movie-overview {
+    .modal-movie-inner-wrapper,
+    .modal-movie-main-info,
+    .modal-movie-title,
+    .modal-movie-image,
+    .modal-movie-overview {
       //  pointer-events: none;
-       color: white;
-     }
-   
+      color: white;
+    }
   }
 }
-
-
 
 .movie-desc {
   padding: 5px 10px;
