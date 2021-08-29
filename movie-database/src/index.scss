@@ -106,7 +106,6 @@ form {
   background: #1c1c1cf3;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  // border-top: 2px solid rgba(192, 192, 192, 0.171);
 
   input {
     padding: 8px 10px;
@@ -186,17 +185,14 @@ form {
       pointer-events: none;
     }
 
-    .movie-overview {
+    .movie-overview,
+    .movie-release-date,
+    .movie-rating {
       display: none;
     }
   }
 
   .modal-movie-wrapper {
-    //  display: grid;
-    //  grid-template-areas:
-    //   "image title title"
-    //   "image overview overview"
-    //   "image overview overview";
     position: sticky;
     height: 400px;
     width: 85%;
@@ -205,34 +201,67 @@ form {
     left: 40px;
     right: 0;
     margin: 0 auto;
-    z-index: 1000;
+    z-index: 100;
     background: #1c1c1cf1;
     padding: 1rem;
+    border-radius: 5px;
 
-    .modal-movie-info {
+    .modal-movie-inner-wrapper {
       display: flex;
-      flex-direction: column;
+      margin-top: 1rem;
+      padding: 0.5rem;
     }
 
-    //  .modal-movie-title {
-    //    color: white;
-    //  }
+    .modal-movie-main-info {
+      padding: 0 1rem;
+    }
+
+    .modal-movie-secondary-info {
+      display: flex;
+      justify-content: space-between;
+      color: rgba(245, 245, 245, 0.808);
+      font-size: 1rem;
+
+      * {
+        border-bottom: 1px solid rgba(192, 192, 192, 0.562);
+        padding-bottom: 2px;
+      }
+    }
+
+    .modal-movie-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
 
     .modal-movie-image {
-      width: 300px;
-      height: 100%;
+      position: relative;
+      height: auto;
       object-fit: contain;
-      margin-right: 15px;
       pointer-events: none;
-      border: 1px solid rgba(192, 192, 192, 0.103);
+      display: block;
+      align-self: flex-start;
+      border: 1px solid rgba(192, 192, 192, 0.336);
+      z-index: -1;
+
+      &::after {
+        // position: absolute;
+        content: "";
+        background: red;
+        height: 100px;
+        width: 100px;
+        display: block;
+        top: 10px;
+      }
     }
 
-    //  .modal-movie-overview {
-    //    color: white;
-    //  }
+    .modal-movie-overview {
+      font-size: 1.1rem;
+      line-height: 22px;
+      margin-bottom: 1.1rem;
+    }
 
     .fa-times-circle {
-      grid-area: close;
+      font-size: 1.2rem;
       color: white;
       cursor: pointer;
       z-index: 100;
@@ -241,15 +270,65 @@ form {
       right: 15px;
     }
 
-    .modal-movie-info,
-    .modal-movie-title,
-    .modal-movie-image,
-    .modal-movie-overview {
-      pointer-events: none;
-      color: white;
+    .modal-user-input {
+      display: flex;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1000;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background: #1c1c1caf;
+      box-shadow: 0 -1px 5px rgba(15, 15, 15, 0.2);
+
+      a {
+        flex-grow: 1;
+        text-align: center;
+        border: 1px solid rgba(192, 192, 192, 0.082);
+        cursor: pointer;
+        z-index: 10000;
+        display: block;
+        pointer-events: unset;
+        transition: all 150ms linear;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.911);
+
+          .fas {
+            color: #1c1c1cc9;
+          }
+        }
+
+        &:first-child {
+          border-right: none;
+        }
+
+        .fas {
+          padding: 1rem;
+          font-size: 1.8rem;
+          color: white;
+          z-index: 1000;
+          cursor: pointer;
+          pointer-events: none;
+        }
+      }
+      
     }
+
+     .modal-movie-inner-wrapper,
+     .modal-movie-main-info,
+     .modal-movie-title,
+     .modal-movie-image,
+     .modal-movie-overview {
+      //  pointer-events: none;
+       color: white;
+     }
+   
   }
 }
+
+
 
 .movie-desc {
   padding: 5px 10px;
