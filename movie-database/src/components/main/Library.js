@@ -23,13 +23,19 @@ export default function Library() {
         modalDiv.classList.add("modal-movie-wrapper");
         modalDiv.innerHTML = `
           <span>${modalCloseBtnInnerText}</span>
-          <img class="modal-movie-image" src=${movieImage} />
-          <div class="modal-movie-main-info">
-            <div class="modal-movie-title">${movieTitle}</div>
-            <div class="modal-movie-overview">${movieOverview}</div>
-            <div class="modal-movie-secondary-info">
-              <div class="modal-movie-release-date">${movieReleaseDate}</div>
-              <div class="modal-movie-rating">${movieRating}</div>
+          <div class="modal-movie-inner-wrapper">
+            <img class="modal-movie-image" src=${movieImage} />
+            <div class="modal-movie-main-info">
+              <div class="modal-movie-title">${movieTitle}</div>
+              <div class="modal-movie-overview">${movieOverview}</div>
+              <div class="modal-movie-secondary-info">
+                <div class="modal-movie-release-date">${movieReleaseDate}</div>
+                <div class="modal-movie-rating">${movieRating}</div>
+              </div>
+              <div class="modal-user-input">
+                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="#"><i class="fas fa-comment"></i></a>
+              </div>
             </div>
           </div>
         `;
