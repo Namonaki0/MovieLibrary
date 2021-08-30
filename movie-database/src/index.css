@@ -8,6 +8,11 @@ body {
   background: #8d8d8d;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -146,6 +151,39 @@ form .submit:hover {
   cursor: pointer;
 }
 
+main .fa-photo-video {
+  color: rgba(12, 106, 247, 0.712);
+  text-align: right;
+}
+
+main h1 {
+  display: -ms-grid;
+  display: grid;
+  height: 90vh;
+  place-content: center;
+  text-transform: uppercase;
+  font-size: 7rem;
+  text-align: center;
+  color: #1c1c1c;
+  line-height: 85px;
+  margin-right: -100px;
+}
+
+main h1 span {
+  display: block;
+  margin-left: -250px;
+}
+
+main h1 span::before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 80%;
+  background: rgba(12, 106, 247, 0.712);
+  margin-left: -5px;
+  margin-bottom: 8px;
+}
+
 .movie-template {
   position: relative;
   display: -webkit-box;
@@ -162,7 +200,6 @@ form .submit:hover {
   height: calc(80vh + 12px);
   padding-left: 3.5rem;
   padding-right: 0.3rem;
-  border-radius: 5px;
   overflow-y: auto;
   overflow-x: hidden;
   background: #bdbdbd;
@@ -367,14 +404,10 @@ form .submit:hover {
   color: white;
 }
 
-.movie-desc {
-  padding: 5px 10px;
-}
-
 .document-body {
   position: relative;
   width: 1000px;
-  height: 90vh;
+  min-height: 91vh;
   border-radius: 5px;
   border-bottom-right-radius: 0;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.137);
