@@ -24,7 +24,9 @@ export default function Library() {
         modalDiv.innerHTML = `
           <span>${modalCloseBtnInnerText}</span>
           <div class="modal-movie-inner-wrapper">
-            <img class="modal-movie-image" src=${movieImage} />
+            <div class="modal-movie-image-wrapper">
+             <img class="modal-movie-image" src=${movieImage} />
+            </div>
             <div class="modal-movie-main-info">
               <div class="modal-movie-title">${movieTitle}</div>
               <div class="modal-movie-overview">${movieOverview}</div>
