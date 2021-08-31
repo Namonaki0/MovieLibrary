@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { api_key } from "../apiKey";
 
 export default function Library() {
   const [query, setQuery] = useState("");
@@ -62,7 +63,6 @@ export default function Library() {
   const submitSearch = async (e) => {
     e.preventDefault();
 
-    const api_key = `fef4f456a619d2054596d72fcd9a7171`;
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
