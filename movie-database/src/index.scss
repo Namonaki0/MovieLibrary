@@ -37,12 +37,10 @@ body {
 nav {
   display: flex;
   flex-direction: column;
-  height: 91vh;
-  position: fixed;
+  min-height: 100%;
+  position: absolute;
   width: 3.3rem;
   background: $nav-bg;
-  // border-top-left-radius: 5px;
-  // border-bottom-left-radius: 5px;
   transition: width 100ms linear;
   z-index: 100;
 
@@ -70,13 +68,8 @@ nav {
 
       &:hover {
         border: none;
-        // border-top-left-radius: 0px;
         background: rgba(192, 192, 192, 0.192);
       }
-
-      // &:first-child:hover {
-      //   border-top-left-radius: 5px;
-      // }
 
       .link-text {
         text-decoration: none;
@@ -98,36 +91,6 @@ nav {
         z-index: 10;
         overflow: hidden;
       }
-    }
-  }
-}
-
-//? MOVIE SEARCH FORM
-form {
-  padding: 10px;
-  margin: auto;
-  text-align: center;
-  background: #1c1c1cf3;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-
-  input {
-    padding: 8px 10px;
-    width: 20%;
-    border: none;
-  }
-
-  .submit {
-    background: #4e4e4e;
-    @extend input;
-    width: 10%;
-    color: whitesmoke;
-    transition: all 150ms linear;
-    letter-spacing: 1px;
-
-    &:hover {
-      background: rgb(63, 63, 63);
-      cursor: pointer;
     }
   }
 }
@@ -167,8 +130,91 @@ main {
   }
 }
 
+//? UPCOMING SECTION
+.upcoming-movies-body {
+  min-height: 100%;
+
+  .upcoming-movie-wrapper {
+    position: relative;
+    
+  }
+
+   .upcoming-movie-container {
+     position: relative;
+     width: 19%;
+     margin: 10px 2px;
+     margin-bottom: 2px;
+     z-index: 10;
+     cursor: pointer;
+     overflow: hidden;
+   }
+
+    h1 {
+      text-align: center;
+      padding: .5rem;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.842);
+      border-radius: none;
+      color: rgb(240, 240, 240);
+    }
+
+    h2 {
+       position: absolute;
+       bottom: 0;
+       margin: 0;
+       right: 0;
+       left: 0;
+       padding: 1rem 0.5rem;
+       font-size: 1rem;
+       z-index: 10;
+       color: white;
+       background: rgba(0, 0, 0, 0.521);
+       pointer-events: none;
+    }
+
+    .upcoming-movie-image {
+      display: block;
+    }
+}
+
+
+
+
+//? MOVIE SEARCH FORM
+form {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+  background: #1c1c1cf3;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  input {
+    padding: 8px 10px;
+    width: 20%;
+    border: none;
+  }
+
+  .submit {
+    background: #4e4e4e;
+    @extend input;
+    width: 10%;
+    color: whitesmoke;
+    transition: all 150ms linear;
+    letter-spacing: 1px;
+
+    &:hover {
+      background: rgb(63, 63, 63);
+      cursor: pointer;
+    }
+  }
+}
+
+
+
 //? MOVIE TEMPLATE
-.movie-template {
+.movie-template,
+.upcoming-movie-wrapper {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -179,7 +225,7 @@ main {
   padding-right: 0.3rem;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #bdbdbd;
+  // background: #bdbdbd;
 
   .movie-container {
     position: relative;

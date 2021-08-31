@@ -10,19 +10,26 @@ export default function Upcoming() {
     try {
       const upcomingApiFetch = await fetch(url);
       const upcomingMovies = await upcomingApiFetch.json();
-      // setUpcomingMovies(upcomingMovies.results);
-      // console.log(upcomingMovies.results);
+      setUpcomingMovies(upcomingMovies.results);
+      // console.error(upcomingMovies.results);
     } catch (err) {
       console.error(err);
     }
   });
 
   return (
-    <div>
+    <div className="upcoming-movies-body">
       <h1>Upcoming Movies</h1>
       <div className="upcoming-movie-wrapper">
         {upcomingMovies.map((upcomingMovie) => (
-          <h2>{upcomingMovie.original_title}</h2>
+          <div className="upcoming-movie-container">
+            <img
+              className="upcoming-movie-image"
+              src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${upcomingMovie.poster_path}`}
+              alt={upcomingMovie.title + "poster"}
+            />
+            <h2>{upcomingMovie.title}</h2>
+          </div>
         ))}
       </div>
     </div>
