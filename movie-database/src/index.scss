@@ -41,7 +41,7 @@ nav {
   position: absolute;
   width: 3.3rem;
   background: $nav-bg;
-  transition: width 100ms linear;
+  transition: all 100ms linear;
   z-index: 100;
 
   &.menu-active {
@@ -56,6 +56,12 @@ nav {
     padding: 0;
     list-style: none;
 
+    .menu-link-path {
+      width: 100%;
+      text-decoration: none;
+    }
+
+    .burger-menu,
     .menu-link {
       margin: 0;
       display: flex;
@@ -66,6 +72,8 @@ nav {
       justify-content: flex-start;
       text-decoration: none;
 
+      
+
       &:hover {
         border: none;
         background: rgba(192, 192, 192, 0.192);
@@ -73,14 +81,16 @@ nav {
 
       .link-text {
         text-decoration: none;
-        pointer-events: none;
         color: $text-color;
         display: none;
-        transition: display 2s linear 5s;
+        transition: all 120ms linear;
         padding-left: 0.5rem;
+        opacity: 0;
      
         &.text-showing {
           display: block;
+          text-align: left;
+          opacity: 1;
         }
       }
 
@@ -90,6 +100,12 @@ nav {
         padding: 1.1rem 1rem;
         z-index: 10;
         overflow: hidden;
+        pointer-events: none;
+      }
+
+      .link-text,
+      .burger-icon {
+        pointer-events: none;
       }
     }
   }
@@ -233,6 +249,7 @@ form {
     margin: 15px 2px;
     z-index: 10;
     cursor: pointer;
+    transition: all 120ms linear;
 
     &:hover {
       transform: scale(1.01);

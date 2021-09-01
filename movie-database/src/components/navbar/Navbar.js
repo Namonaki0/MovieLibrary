@@ -10,11 +10,11 @@ export default function Navbar() {
   return (
     <nav>
       <ul>
-        <li className="menu-link">
-          <CgMenu className="menu-icon icons" />
+        <li className="burger-menu">
+          <CgMenu className="burger-icon icons" />
           <a href="#" class="link-text"></a>
         </li>
-        <Link to="/" className="menu-link">
+        <Link to="/" className="menu-link-path">
           <li className="menu-link">
             <AiOutlineHome className="icons" />
             <a href="#" className="link-text">
@@ -22,7 +22,7 @@ export default function Navbar() {
             </a>
           </li>
         </Link>
-        <Link to="/Upcoming" className="menu-link">
+        <Link to="/Upcoming" className="menu-link-path">
           <li className="menu-link">
             <MdNewReleases className="icons" />
             <a href="#" className="link-text">
@@ -31,7 +31,7 @@ export default function Navbar() {
           </li>
         </Link>
 
-        <Link to="/library" className="menu-link">
+        <Link to="/library" className="menu-link-path">
           <li className="menu-link">
             <HiOutlineLibrary className="icons" />
             <a href="#" className="link-text">

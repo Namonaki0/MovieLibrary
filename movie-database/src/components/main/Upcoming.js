@@ -11,7 +11,6 @@ export default function Upcoming() {
       const upcomingApiFetch = await fetch(url);
       const upcomingMovies = await upcomingApiFetch.json();
       setUpcomingMovies(upcomingMovies.results);
-      // console.error(upcomingMovies.results);
     } catch (err) {
       console.error(err);
     }
