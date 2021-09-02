@@ -5,6 +5,7 @@ export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
+  //? MODAL CREATION
   useEffect(() => {
     const movieContainers = document.querySelectorAll(".movie-container");
     const movieTemplate = document.querySelector(".movie-template");
@@ -59,7 +60,9 @@ export default function Library() {
       }
     });
   });
+  //? END OF MODAL CREATION
 
+  //? MOVIE TITLE SEARCH - API FETCH
   const submitSearch = async (e) => {
     e.preventDefault();
 
@@ -74,6 +77,7 @@ export default function Library() {
     }
   };
 
+  //? MOVIE TITLE SEARCH RENDER
   return (
     <>
       <form onSubmit={submitSearch} className="form">

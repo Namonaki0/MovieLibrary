@@ -9,16 +9,27 @@ document.addEventListener("DOMContentLoaded", () => {
   menu.addEventListener("click", () => {
     nav.classList.toggle("menu-active");
 
-    nav.addEventListener("transitionend", () => {
+    nav.addEventListener("transitionend", (e) => {
+      //? NEEDS ATTENTION
+      const parentNode = e.target.parentNode.offsetParent;
+      ////////////////?
       linkTexts.forEach((linkText) => {
         if (nav.classList.contains("menu-active")) {
           linkText.classList.add("text-showing");
+        } else if (parentNode.classList.contains("menu-active")) {
+          linkText.classList.remove("text-showing");
+          nav.classList.remove("menu-active");
+          console.log("yeah");
         } else {
           linkText.classList.remove("text-showing");
           nav.classList.remove("menu-active");
         }
       });
     });
+  });
+
+  menu.addEventListener("click", (e) => {
+    console.dir(e.target.parentNode.offsetParent);
   });
 
   menuLinks.forEach((menuLink) => {
@@ -32,6 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.addEventListener("click", (e) => {
-  console.log(e.target);
-});
+// window.addEventListener("click", (e) => {
+//   console.log(e.target);
+// });

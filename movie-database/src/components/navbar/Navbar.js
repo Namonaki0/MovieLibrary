@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./menu";
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineHome } from "react-icons/ai";
-import { MdNewReleases } from "react-icons/md";
-import { HiOutlineLibrary } from "react-icons/hi";
+import { MdNewReleases, MdFavoriteBorder } from "react-icons/md";
+import { HiOutlineLibrary, HiOutlineCog } from "react-icons/hi";
 
 export default function Navbar() {
   return (
@@ -36,6 +36,24 @@ export default function Navbar() {
             <HiOutlineLibrary className="icons" />
             <a href="#" className="link-text">
               Library
+            </a>
+          </li>
+        </Link>
+
+        <Link to="/Favorites" className="menu-link-path">
+          <li className="menu-link">
+            <MdFavoriteBorder className="icons" />
+            <a href="#" className="link-text">
+              Favorites
+            </a>
+          </li>
+        </Link>
+
+        <Link to="/Settings" className="menu-link-path">
+          <li className="menu-link">
+            <HiOutlineCog className="icons" />
+            <a href="#" className="link-text">
+              Settings
             </a>
           </li>
         </Link>
