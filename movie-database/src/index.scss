@@ -32,7 +32,6 @@ body {
   background: #1c1c1cf3;
 }
 
-
 //? MENU
 nav {
   display: flex;
@@ -46,19 +45,28 @@ nav {
 
   &.menu-active {
     width: 16rem;
+
+    .menu-link-path {
+      width: 16rem;
+    }
+
   }
 
   ul {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
+    height: 100%;
 
     .menu-link-path {
-      width: 100%;
       text-decoration: none;
+    }
+
+    .menu-link-path:last-child {
+      margin-top: auto;
     }
 
     .burger-menu,
@@ -72,8 +80,6 @@ nav {
       justify-content: flex-start;
       text-decoration: none;
 
-      
-
       &:hover {
         border: none;
         background: rgba(192, 192, 192, 0.192);
@@ -83,10 +89,10 @@ nav {
         text-decoration: none;
         color: $text-color;
         display: none;
-        transition: all 120ms linear;
+        transition: all 150ms linear;
         padding-left: 0.5rem;
         opacity: 0;
-     
+
         &.text-showing {
           display: block;
           text-align: left;
@@ -97,7 +103,7 @@ nav {
       .icons {
         font-size: 20px;
         color: $text-color;
-        padding: 1.1rem 1rem;
+        padding: 1rem;
         z-index: 10;
         overflow: hidden;
         pointer-events: none;
@@ -152,49 +158,45 @@ main {
 
   .upcoming-movie-wrapper {
     position: relative;
-    
   }
 
-   .upcoming-movie-container {
-     position: relative;
-     width: 19%;
-     margin: 10px 2px;
-     margin-bottom: 2px;
-     z-index: 10;
-     cursor: pointer;
-     overflow: hidden;
-   }
+  .upcoming-movie-container {
+    position: relative;
+    width: 19%;
+    margin: 10px 2px;
+    margin-bottom: 2px;
+    z-index: 10;
+    cursor: pointer;
+    overflow: hidden;
+  }
 
-    h1 {
-      text-align: center;
-      padding: .5rem;
-      overflow: hidden;
-      background: rgba(0, 0, 0, 0.842);
-      border-radius: none;
-      color: rgb(240, 240, 240);
-    }
+  h1 {
+    text-align: center;
+    padding: 0.5rem;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.842);
+    border-radius: none;
+    color: rgb(240, 240, 240);
+  }
 
-    h2 {
-       position: absolute;
-       bottom: 0;
-       margin: 0;
-       right: 0;
-       left: 0;
-       padding: 1rem 0.5rem;
-       font-size: 1rem;
-       z-index: 10;
-       color: white;
-       background: rgba(0, 0, 0, 0.521);
-       pointer-events: none;
-    }
+  h2 {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    right: 0;
+    left: 0;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    z-index: 10;
+    color: white;
+    background: rgba(0, 0, 0, 0.521);
+    pointer-events: none;
+  }
 
-    .upcoming-movie-image {
-      display: block;
-    }
+  .upcoming-movie-image {
+    display: block;
+  }
 }
-
-
-
 
 //? MOVIE SEARCH FORM
 form {
@@ -209,6 +211,7 @@ form {
     padding: 8px 10px;
     width: 20%;
     border: none;
+    border-bottom: 1px solid $nav-bg;
   }
 
   .submit {
@@ -225,8 +228,6 @@ form {
     }
   }
 }
-
-
 
 //? MOVIE TEMPLATE
 .movie-template,
