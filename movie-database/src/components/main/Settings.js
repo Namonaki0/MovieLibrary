@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function Settings() {
-  return <h1>Settings</h1>;
+  return (
+    <div className="settings-wrapper">
+      <h1>Settings</h1>
+    </div>
+  );
 }
