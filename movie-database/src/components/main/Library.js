@@ -37,7 +37,7 @@ export default function Library() {
                 <div class="modal-movie-rating">${movieRating}</div>
               </div>
               <div class="modal-user-input">
-                <a href="#"><i class="fas fa-heart"></i></a>
+                <a href="#" class="favourite-icon"><i class="fas fa-heart"></i></a>
                 <a href="#"><i class="fas fa-comment"></i></a>
               </div>
             </div>
@@ -46,7 +46,14 @@ export default function Library() {
 
         movieTemplate.appendChild(modalDiv);
 
+        const favouriteMovies = [];
+
         window.addEventListener("click", (e) => {
+          // if (e.target.classList.contains("favourite-icon")) {
+          //   let favouriteMovie = { title: movieTitle, overview: movieOverview };
+          //   favouriteMovies.push(favouriteMovie);
+          // }
+          console.dir(e.target);
           if (e.target.classList.contains("fa-times-circle")) {
             modalDiv.style.display = "none";
           }
