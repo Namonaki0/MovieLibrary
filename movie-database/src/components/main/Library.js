@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Favorites from "./Favorites";
 import { api_key } from "../apiKey";
 
 export default function Library() {
@@ -46,16 +47,15 @@ export default function Library() {
 
         movieTemplate.appendChild(modalDiv);
 
-        const favouriteMovies = [];
-
         window.addEventListener("click", (e) => {
-          // if (e.target.classList.contains("favourite-icon")) {
-          //   let favouriteMovie = { title: movieTitle, overview: movieOverview };
-          //   favouriteMovies.push(favouriteMovie);
-          // }
-          console.dir(e.target);
           if (e.target.classList.contains("fa-times-circle")) {
             modalDiv.style.display = "none";
+          }
+        });
+
+        window.addEventListener("click", (e) => {
+          if (e.target.classList.contains("favourite-icon")) {
+            // console.log(e.target);
           }
         });
       });
@@ -116,6 +116,8 @@ export default function Library() {
                   Release date: {movie.release_date}
                 </div>
                 <div className="movie-rating">Rating: {movie.vote_average}</div>
+
+                {/* <Favorites title={movie.title} /> */}
               </div>
             ))}
         </div>
@@ -123,3 +125,10 @@ export default function Library() {
     </>
   );
 }
+
+// const favouriteMovies = [movieTitle];
+// const newFavouriteMovies = [...favouriteMovies];
+
+// newFavouriteMovies.push(movieTitle);
+
+// console.log(...newFavouriteMovies);

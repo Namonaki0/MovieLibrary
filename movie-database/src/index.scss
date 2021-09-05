@@ -124,6 +124,19 @@ main {
   .fa-photo-video {
     color: rgba(12, 106, 247, 0.712);
     text-align: right;
+    animation: icon-effect 250ms ease;
+
+    @keyframes icon-effect {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   }
 
   h1 {
@@ -136,6 +149,19 @@ main {
     color: #1c1c1c;
     line-height: 85px;
     margin-right: -100px;
+    animation: title-effect 180ms ease;
+
+    @keyframes title-effect {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
     span {
       display: block;
@@ -171,6 +197,19 @@ main {
     cursor: pointer;
     overflow: hidden;
     outline: 1px solid rgba(192, 192, 192, 0.356);
+    animation: movie-container-effect 120ms linear;
+
+    @keyframes movie-container-effect {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 
   h1 {
@@ -266,6 +305,19 @@ form {
     cursor: pointer;
     transition: all 120ms linear;
     outline: 1px solid rgba(192, 192, 192, 0.356);
+    animation: movie-container-effect 120ms linear;
+
+    @keyframes movie-container-effect {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .movie-image {
       display: block;
@@ -298,7 +350,6 @@ form {
   //? MODAL
   .modal-movie-wrapper {
     position: sticky;
-
     height: 400px;
     width: 85%;
     top: 5px;
@@ -310,6 +361,18 @@ form {
     background: #1c1c1cf1;
     padding: 1rem;
     border-radius: 5px;
+    animation: modal-effect 120ms linear;
+
+    @keyframes modal-effect {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
 
     .modal-movie-inner-wrapper {
       display: flex;
