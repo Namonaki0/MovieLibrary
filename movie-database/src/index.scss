@@ -326,7 +326,6 @@ form {
 
     h1 {
       position: absolute;
-
       font-weight: 300;
       bottom: 0;
       margin: 0;
@@ -502,7 +501,23 @@ form {
   margin: auto;
 }
 
-//?SETTINGS
+//? FAVORITES
+
+.favorites-wrapper {
+  border-top-right-radius: 5px;
+
+  h1 {
+   color: $text-color;
+   background: #3A3738;
+   font-weight: 300;
+   padding: 0.5rem 1rem 0.5rem 3.8rem;
+   border-top-right-radius: 5px;
+   text-align: right;
+   letter-spacing: 1px;
+  }
+}
+
+//? SETTINGS
 
 .settings-wrapper {
   h1 {
@@ -519,5 +534,56 @@ form {
     border-top-right-radius: 5px;
     text-align: right;
     letter-spacing: 1px;
+  }
+
+  h2 {
+    text-transform: uppercase;
+  }
+
+  .settings-options {
+    display: flex;
+    height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5rem;
+
+    .color-scheme-wrapper {
+      display: block;
+
+      .color-settings-icon {
+        font-size: 1.3rem;
+        transition: all 180ms ease;
+        float: right;
+        margin-right: 0.5rem;
+
+        &:hover {
+          color: gold;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .section {
+      border-bottom: 1px solid silver;
+      margin-bottom: 0.5rem;
+      margin-right: 2rem;
+      padding: 1rem 0.5rem;
+    }
+
+    .language-wrapper {
+      display: block;
+    }
+
+    .languages {
+      text-align: right;
+
+      a {
+        text-decoration: none;
+        color: $nav-bg;
+        font-size: 1.1rem;
+        margin-right: 0.8rem;
+        font-weight: bold;
+      }
+    }
   }
 }

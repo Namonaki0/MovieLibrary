@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Route } from "react";
 import Favorites from "./Favorites";
 import { api_key } from "../apiKey";
 
@@ -21,6 +21,11 @@ export default function Library() {
         let movieOverview = e.target.children[2].innerText;
         let movieReleaseDate = e.target.children[3].innerText;
         let movieRating = e.target.children[4].innerText;
+
+        const favMovies = [];
+        const newMovies = [...favMovies];
+        newMovies.push(movieTitle, ...newMovies);
+        console.log(newMovies);
 
         modalDiv.style.display = "flex";
         modalDiv.classList.add("modal-movie-wrapper");
@@ -55,7 +60,6 @@ export default function Library() {
 
         window.addEventListener("click", (e) => {
           if (e.target.classList.contains("favourite-icon")) {
-            // console.log(e.target);
           }
         });
       });
@@ -116,8 +120,6 @@ export default function Library() {
                   Release date: {movie.release_date}
                 </div>
                 <div className="movie-rating">Rating: {movie.vote_average}</div>
-
-                {/* <Favorites title={movie.title} /> */}
               </div>
             ))}
         </div>
