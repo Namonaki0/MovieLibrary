@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Route } from "react";
+import React, { Component, useState, useEffect, Route } from "react";
 import Favorites from "./Favorites";
 import { api_key } from "../apiKey";
 
@@ -21,11 +21,6 @@ export default function Library() {
         let movieOverview = e.target.children[2].innerText;
         let movieReleaseDate = e.target.children[3].innerText;
         let movieRating = e.target.children[4].innerText;
-
-        const favMovies = [];
-        const newMovies = [...favMovies];
-        newMovies.push(movieTitle, ...newMovies);
-        console.log(newMovies);
 
         modalDiv.style.display = "flex";
         modalDiv.classList.add("modal-movie-wrapper");
@@ -52,24 +47,32 @@ export default function Library() {
 
         movieTemplate.appendChild(modalDiv);
 
+        //? CLOSE MODAL - CLOSE ICON
         window.addEventListener("click", (e) => {
+          const favMovies = [];
+          const newFavMovies = [...favMovies];
+
           if (e.target.classList.contains("fa-times-circle")) {
             modalDiv.style.display = "none";
           }
-        });
-
-        window.addEventListener("click", (e) => {
           if (e.target.classList.contains("favourite-icon")) {
+            const movieInfo = e.target.offsetParent.offsetParent.innerText;
+            newFavMovies.push(movieInfo);
+            console.log(newFavMovies);
+            // console.log(e.target.offsetParent.offsetParent.innerText);
           }
         });
+        //? /////////////////////
       });
     });
 
+    //? CLOSE MODAL - OVERLAY
     window.addEventListener("click", (e) => {
       if (e.target.classList.contains("modal-movie-wrapper")) {
         modalDiv.style.display = "none";
       }
     });
+    //? /////////////////////
   });
   //? END OF MODAL CREATION
 
@@ -127,10 +130,3 @@ export default function Library() {
     </>
   );
 }
-
-// const favouriteMovies = [movieTitle];
-// const newFavouriteMovies = [...favouriteMovies];
-
-// newFavouriteMovies.push(movieTitle);
-
-// console.log(...newFavouriteMovies);
