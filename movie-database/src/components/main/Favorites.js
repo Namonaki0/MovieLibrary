@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 
-export default function Favorites({ title }) {
-  useEffect(() => <h1>{title}</h1>);
+export default function Favorites(props) {
   return (
     <div className="favorites-wrapper">
-      <h1 className="">Favorites {title}</h1>
+      <h1>Favorites</h1>
     </div>
   );
 }
