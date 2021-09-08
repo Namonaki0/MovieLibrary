@@ -1,10 +1,12 @@
-import React, { Component, useState, useEffect, Route } from "react";
+import React, { Component, useState, useEffect, Route, Link } from "react";
+import Modal from "react-modal";
 import Favorites from "./Favorites";
 import { api_key } from "../apiKey";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
 
   //? MODAL CREATION
   useEffect(() => {
@@ -49,6 +51,14 @@ export default function Library() {
 
         //? CLOSE MODAL - CLOSE ICON
         window.addEventListener("click", (e) => {
+          // const children = e.target.children;
+
+          // children.forEach((child) => {
+          //   console.log(child.innerHTML);
+          // });
+
+          console.log(e.target);
+
           const favMovies = [];
           const newFavMovies = [...favMovies];
 
@@ -91,6 +101,24 @@ export default function Library() {
     }
   };
 
+  const styles = {
+    overlay: {
+      backgroundColor: "orange",
+    },
+    content: {
+      color: "red",
+      top: "50%",
+      left: "50%",
+      bottom: "auto",
+      right: "auto",
+      backgroundColor: "black",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+
+  Modal.setAppElement("#root");
+
   //? MOVIE TITLE SEARCH RENDER
   return (
     <>
@@ -111,7 +139,11 @@ export default function Library() {
           {movies
             .filter((movie) => movie.poster_path)
             .map((movie) => (
-              <div className="movie-container" key={movie.id}>
+              <div
+                className="movie-container"
+                key={movie.id}
+                onClick={() => setOpenModal(true)}
+              >
                 <img
                   className="movie-image"
                   src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}

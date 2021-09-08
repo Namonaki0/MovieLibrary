@@ -47,6 +47,13 @@ nav {
   z-index: 100;
 }
 
+nav.nav-light-mode {
+  background: #f7f7f7;
+  color: #1c1c1c;
+  -webkit-box-shadow: 1px 0 1px rgba(56, 20, 20, 0.05);
+          box-shadow: 1px 0 1px rgba(56, 20, 20, 0.05);
+}
+
 nav.menu-active {
   width: 16rem;
 }
@@ -114,11 +121,21 @@ nav ul .menu-link .link-text {
   opacity: 0;
 }
 
+nav ul .burger-menu .link-text.text-light-mode,
+nav ul .menu-link .link-text.text-light-mode {
+  color: #1c1c1c;
+}
+
 nav ul .burger-menu .link-text.text-showing,
 nav ul .menu-link .link-text.text-showing {
   display: block;
   text-align: left;
   opacity: 1;
+}
+
+nav ul .burger-menu .burger-menu.text-light-mode,
+nav ul .menu-link .burger-menu.text-light-mode {
+  color: #1c1c1c;
 }
 
 nav ul .burger-menu .icons,
@@ -129,6 +146,11 @@ nav ul .menu-link .icons {
   z-index: 10;
   overflow: hidden;
   pointer-events: none;
+}
+
+nav ul .burger-menu .icons.text-light-mode,
+nav ul .menu-link .icons.text-light-mode {
+  color: #1c1c1c;
 }
 
 nav ul .burger-menu .link-text,
@@ -716,5 +738,9 @@ form .submit:hover {
   font-size: 1.1rem;
   margin-right: 0.8rem;
   font-weight: bold;
+}
+
+.new-modal {
+  background-color: red;
 }
 /*# sourceMappingURL=index.css.map */

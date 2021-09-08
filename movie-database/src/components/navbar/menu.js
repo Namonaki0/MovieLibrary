@@ -1,12 +1,13 @@
 import { link } from "fs";
+import { FaDribbbleSquare } from "react-icons/fa";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const menu = document.querySelector(".burger-menu");
+  const burgerMenu = document.querySelector(".burger-menu");
   const nav = document.querySelector("nav");
   const linkTexts = document.querySelectorAll(".link-text");
   const menuLinks = document.querySelectorAll(".menu-link");
 
-  menu.addEventListener("click", () => {
+  burgerMenu.addEventListener("click", () => {
     nav.classList.toggle("menu-active");
 
     nav.addEventListener("transitionend", (e) => {
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  menu.addEventListener("click", (e) => {
+  burgerMenu.addEventListener("click", (e) => {
     console.dir(e.target.parentNode.offsetParent);
   });
 
@@ -41,8 +42,31 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-});
 
-// window.addEventListener("click", (e) => {
-//   console.log(e.target);
-// });
+  //? LOCAL STORAGE
+  const localStorageState = localStorage.getItem("light-mode") || [];
+
+  console.log(localStorageState);
+
+  //? LIGHT MODE SETTINGS
+  const lightModeIcon = document.querySelector(".color-settings-icon");
+
+  lightModeIcon.addEventListener("click", () => {
+    const menuIcons = document.querySelectorAll(".menu-link svg");
+    const burgerMenuIcon = document.querySelector(".burger-menu svg");
+
+    nav.classList.toggle("nav-light-mode");
+
+    burgerMenuIcon.classList.toggle("text-light-mode");
+
+    linkTexts.forEach((linkText) => {
+      linkText.classList.toggle("text-light-mode");
+    });
+    menuLinks.forEach((menuLink) => {
+      menuLink.classList.toggle("text-light-mode");
+    });
+    menuIcons.forEach((menuIcon) => {
+      menuIcon.classList.toggle("text-light-mode");
+    });
+  });
+});

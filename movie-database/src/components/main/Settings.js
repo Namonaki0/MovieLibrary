@@ -10,7 +10,7 @@ export default function Settings() {
         <div className="color-scheme-wrapper section">
           <h2>color scheme</h2>
           <FaRegSun className="color-settings-icon" />
-          <FaRegMoon className="color-settings-icon" />
+          {/* <FaRegMoon className="color-settings-icon" /> */}
         </div>
         <div className="language-wrapper section">
           <h2>language</h2>

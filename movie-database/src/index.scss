@@ -5,6 +5,7 @@ $text-color: #fff;
 $ff: "helvetica", sans-serif;
 $ff-secondary: "Roboto Condensed", sans-serif;
 
+
 body {
   font-family: $ff-secondary;
   box-sizing: border-box;
@@ -46,6 +47,16 @@ nav {
   transition: all 100ms linear;
   z-index: 100;
 
+  &.nav-light-mode {
+    $nav-light-mode: #f7f7f7;
+    $text-light-mode: #1c1c1c;
+
+    background: $nav-light-mode;
+    color: $text-light-mode;
+    box-shadow: 1px 0 1px rgba(56, 20, 20, 0.05);
+  }
+
+
   &.menu-active {
     width: 16rem;
 
@@ -82,9 +93,13 @@ nav {
       justify-content: flex-start;
       text-decoration: none;
 
+     
+
       &:hover {
         border: none;
         background: rgba(192, 192, 192, 0.192);
+
+        
       }
 
       .link-text {
@@ -95,10 +110,22 @@ nav {
         padding-left: 0.5rem;
         opacity: 0;
 
+        &.text-light-mode {
+          color: $nav-bg;
+        }
+
         &.text-showing {
           display: block;
           text-align: left;
           opacity: 1;
+        }
+      }
+
+      .burger-menu {
+        &.text-light-mode {
+          $text-light-mode: #1c1c1c;
+
+          color: $text-light-mode;
         }
       }
 
@@ -109,11 +136,19 @@ nav {
         z-index: 10;
         overflow: hidden;
         pointer-events: none;
+
+         &.text-light-mode {
+            $text-light-mode: #1c1c1c;
+
+            color: $text-light-mode;
+         }
       }
 
       .link-text,
       .burger-icon {
         pointer-events: none;
+
+        
       }
     }
   }
@@ -588,3 +623,6 @@ form {
   }
 }
 
+.new-modal {
+  background-color: red;
+}
