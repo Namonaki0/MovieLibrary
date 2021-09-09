@@ -30,6 +30,11 @@ body {
   background: #1c1c1cf3;
 }
 
+.light-mode {
+  background: #f7f7f7;
+  color: #1c1c1c;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,11 +52,9 @@ nav {
   z-index: 100;
 }
 
-nav.nav-light-mode {
+nav .light-mode {
   background: #f7f7f7;
   color: #1c1c1c;
-  -webkit-box-shadow: 1px 0 1px rgba(56, 20, 20, 0.05);
-          box-shadow: 1px 0 1px rgba(56, 20, 20, 0.05);
 }
 
 nav.menu-active {
@@ -121,8 +124,8 @@ nav ul .menu-link .link-text {
   opacity: 0;
 }
 
-nav ul .burger-menu .link-text.text-light-mode,
-nav ul .menu-link .link-text.text-light-mode {
+nav ul .burger-menu .link-text.light-mode,
+nav ul .menu-link .link-text.light-mode {
   color: #1c1c1c;
 }
 
@@ -133,8 +136,8 @@ nav ul .menu-link .link-text.text-showing {
   opacity: 1;
 }
 
-nav ul .burger-menu .burger-menu.text-light-mode,
-nav ul .menu-link .burger-menu.text-light-mode {
+nav ul .burger-menu .burger-menu.light-mode,
+nav ul .menu-link .burger-menu.light-mode {
   color: #1c1c1c;
 }
 
@@ -148,8 +151,8 @@ nav ul .menu-link .icons {
   pointer-events: none;
 }
 
-nav ul .burger-menu .icons.text-light-mode,
-nav ul .menu-link .icons.text-light-mode {
+nav ul .burger-menu .icons.light-mode,
+nav ul .menu-link .icons.light-mode {
   color: #1c1c1c;
 }
 
@@ -664,6 +667,15 @@ form .submit:hover {
   letter-spacing: 1px;
 }
 
+.settings-wrapper {
+  overflow-y: hidden;
+}
+
+.settings-wrapper.light-mode {
+  background: #f7f7f7;
+  color: #1c1c1c;
+}
+
 .settings-wrapper h1 {
   background: url("https://images.pexels.com/photos/1772/technology-music-sound-audio.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-color: #565664;
@@ -683,13 +695,15 @@ form .submit:hover {
 
 .settings-wrapper h2 {
   text-transform: uppercase;
+  -webkit-animation: settings-effect 180ms linear;
+          animation: settings-effect 180ms linear;
 }
 
 .settings-wrapper .settings-options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 80vh;
+  height: 81.5vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -697,11 +711,12 @@ form .submit:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 5rem;
+  padding-left: 5rem;
 }
 
 .settings-wrapper .settings-options .color-scheme-wrapper {
   display: block;
+  height: auto;
 }
 
 .settings-wrapper .settings-options .color-scheme-wrapper .color-settings-icon {
@@ -710,6 +725,8 @@ form .submit:hover {
   transition: all 180ms ease;
   float: right;
   margin-right: 0.5rem;
+  -webkit-animation: settings-effect 350ms linear;
+          animation: settings-effect 350ms linear;
 }
 
 .settings-wrapper .settings-options .color-scheme-wrapper .color-settings-icon:hover {
@@ -730,14 +747,41 @@ form .submit:hover {
 
 .settings-wrapper .settings-options .languages {
   text-align: right;
+  -webkit-animation: settings-effect 350ms linear;
+          animation: settings-effect 350ms linear;
 }
 
 .settings-wrapper .settings-options .languages a {
   text-decoration: none;
-  color: #1c1c1c;
   font-size: 1.1rem;
   margin-right: 0.8rem;
   font-weight: bold;
+}
+
+@-webkit-keyframes settings-effect {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes settings-effect {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translateX(-5%);
+            transform: translateX(-5%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
 }
 
 .new-modal {

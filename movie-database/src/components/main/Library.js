@@ -2,11 +2,12 @@ import React, { Component, useState, useEffect, Route, Link } from "react";
 import Modal from "react-modal";
 import Favorites from "./Favorites";
 import { api_key } from "../apiKey";
+import MovieTemplate from "./MovieTemplate";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
 
   //? MODAL CREATION
   useEffect(() => {
@@ -51,25 +52,8 @@ export default function Library() {
 
         //? CLOSE MODAL - CLOSE ICON
         window.addEventListener("click", (e) => {
-          // const children = e.target.children;
-
-          // children.forEach((child) => {
-          //   console.log(child.innerHTML);
-          // });
-
-          console.log(e.target);
-
-          const favMovies = [];
-          const newFavMovies = [...favMovies];
-
           if (e.target.classList.contains("fa-times-circle")) {
             modalDiv.style.display = "none";
-          }
-          if (e.target.classList.contains("favourite-icon")) {
-            const movieInfo = e.target.offsetParent.offsetParent.innerText;
-            newFavMovies.push(movieInfo);
-            console.log(newFavMovies);
-            // console.log(e.target.offsetParent.offsetParent.innerText);
           }
         });
         //? /////////////////////
@@ -117,7 +101,7 @@ export default function Library() {
     },
   };
 
-  Modal.setAppElement("#root");
+  // Modal.setAppElement("#root");
 
   //? MOVIE TITLE SEARCH RENDER
   return (
@@ -128,7 +112,6 @@ export default function Library() {
           placeholder="search movie..."
           value={query}
           name="query"
-          onChange={(e) => setQuery(e.target.value)}
         ></input>
         <button type="submit" className="submit">
           Search
@@ -139,23 +122,15 @@ export default function Library() {
           {movies
             .filter((movie) => movie.poster_path)
             .map((movie) => (
-              <div
-                className="movie-container"
-                key={movie.id}
-                onClick={() => setOpenModal(true)}
-              >
-                <img
-                  className="movie-image"
-                  src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                  alt={movie.title + "poster"}
-                />
-                <h1>{movie.title}</h1>
-                <div className="movie-overview">{movie.overview}</div>
-                <div className="movie-release-date">
-                  Release date: {movie.release_date}
-                </div>
-                <div className="movie-rating">Rating: {movie.vote_average}</div>
-              </div>
+              <MovieTemplate
+                movie={movie}
+                src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                title={movie.title}
+                overview={movie.overview}
+                vote_average={movie.vote_average}
+                release_date={movie.release_date}
+                id={movie.id}
+              />
             ))}
         </div>
       </div>
