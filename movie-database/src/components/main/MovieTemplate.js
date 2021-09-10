@@ -1,7 +1,6 @@
 import React from "react";
 
 const MovieTemplate = ({
-  movie,
   src,
   title,
   overview,
@@ -9,7 +8,6 @@ const MovieTemplate = ({
   vote_average,
   id,
 }) => {
-  console.log(movie);
   return (
     <div className="movie-container" key={id}>
       <img className="movie-image" src={src} alt={title + "poster"} />
