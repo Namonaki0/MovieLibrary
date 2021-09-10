@@ -1,6 +1,6 @@
-import React, { Component, useState, useEffect, Route, Link } from "react";
-import Modal from "react-modal";
-import Favorites from "./Favorites";
+import React, { useState, useEffect } from "react";
+import ModalTemplate from "./Modal";
+// import Favorites from "./Favorites";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
 
@@ -85,33 +85,17 @@ export default function Library() {
     }
   };
 
-  const styles = {
-    overlay: {
-      backgroundColor: "orange",
-    },
-    content: {
-      color: "red",
-      top: "50%",
-      left: "50%",
-      bottom: "auto",
-      right: "auto",
-      backgroundColor: "black",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
-
-  // Modal.setAppElement("#root");
-
   //? MOVIE TITLE SEARCH RENDER
   return (
     <>
+      <ModalTemplate />
       <form onSubmit={submitSearch} className="form">
         <input
           type="text"
           placeholder="search movie..."
           value={query}
           name="query"
+          onChange={(e) => setQuery(e.target.value)}
         ></input>
         <button type="submit" className="submit">
           Search
