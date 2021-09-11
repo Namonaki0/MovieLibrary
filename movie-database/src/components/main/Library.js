@@ -1,73 +1,14 @@
 import React, { useState, useEffect } from "react";
-import ModalTemplate from "./Modal";
-// import Favorites from "./Favorites";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
+import ModalTemplate from "./ModalTemplate";
+import Modal from "react-modal";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  // const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
-  //? MODAL CREATION
-  useEffect(() => {
-    const movieContainers = document.querySelectorAll(".movie-container");
-    const movieTemplate = document.querySelector(".movie-template");
-    const modalCloseBtnInnerText = `<i class="fas fa-times-circle"></i>`;
-
-    const modalDiv = document.createElement("div");
-
-    movieContainers.forEach((movieContainer) => {
-      movieContainer.addEventListener("click", (e) => {
-        let movieImage = e.target.children[0].currentSrc;
-        let movieTitle = e.target.children[1].innerText;
-        let movieOverview = e.target.children[2].innerText;
-        let movieReleaseDate = e.target.children[3].innerText;
-        let movieRating = e.target.children[4].innerText;
-
-        modalDiv.style.display = "flex";
-        modalDiv.classList.add("modal-movie-wrapper");
-        modalDiv.innerHTML = `
-          <span>${modalCloseBtnInnerText}</span>
-          <div class="modal-movie-inner-wrapper">
-            <div class="modal-movie-image-wrapper">
-             <img class="modal-movie-image" src=${movieImage} />
-            </div>
-            <div class="modal-movie-main-info">
-              <div class="modal-movie-title">${movieTitle}</div>
-              <div class="modal-movie-overview">${movieOverview}</div>
-              <div class="modal-movie-secondary-info">
-                <div class="modal-movie-release-date">${movieReleaseDate}</div>
-                <div class="modal-movie-rating">${movieRating}</div>
-              </div>
-              <div class="modal-user-input">
-                <a href="#" class="favourite-icon"><i class="fas fa-heart"></i></a>
-                <a href="#"><i class="fas fa-comment"></i></a>
-              </div>
-            </div>
-          </div>
-        `;
-
-        movieTemplate.appendChild(modalDiv);
-
-        //? CLOSE MODAL - CLOSE ICON
-        window.addEventListener("click", (e) => {
-          if (e.target.classList.contains("fa-times-circle")) {
-            modalDiv.style.display = "none";
-          }
-        });
-        //? /////////////////////
-      });
-    });
-
-    //? CLOSE MODAL - OVERLAY
-    window.addEventListener("click", (e) => {
-      if (e.target.classList.contains("modal-movie-wrapper")) {
-        modalDiv.style.display = "none";
-      }
-    });
-    //? /////////////////////
-  });
   //? END OF MODAL CREATION
 
   //? MOVIE TITLE SEARCH - API FETCH
@@ -85,37 +26,49 @@ export default function Library() {
     }
   };
 
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
+  };
+
   //? MOVIE TITLE SEARCH RENDER
   return (
     <>
-      <ModalTemplate />
-      <form onSubmit={submitSearch} className="form">
-        <input
-          type="text"
-          placeholder="search movie..."
-          value={query}
-          name="query"
-          onChange={(e) => setQuery(e.target.value)}
-        ></input>
-        <button type="submit" className="submit">
-          Search
-        </button>
-      </form>
-      <div className="outter-wrapper">
-        <div className="movie-template">
-          {movies
-            .filter((movie) => movie.poster_path)
-            .map((movie) => (
-              <MovieTemplate
-                movie={movie}
-                src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                title={movie.title}
-                overview={movie.overview}
-                vote_average={movie.vote_average}
-                release_date={movie.release_date}
-                id={movie.id}
-              />
-            ))}
+      <div>
+        <form onSubmit={submitSearch} className="form">
+          <input
+            type="text"
+            placeholder="search movie..."
+            value={query}
+            name="query"
+            onChange={(e) => setQuery(e.target.value)}
+          ></input>
+          <button type="submit" className="submit">
+            Search
+          </button>
+        </form>
+
+        <div className="outter-wrapper">
+          <div className="movie-template" styles={customStyles}>
+            {movies
+              .filter((movie) => movie.poster_path)
+              .map(
+                (movie) =>
+                  movie && (
+                    <MovieTemplate
+                      movie={movies}
+                      src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                    />
+                  )
+              )}
+          </div>
+          <ModalTemplate movie={movies} />
         </div>
       </div>
     </>
