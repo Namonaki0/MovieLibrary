@@ -1,14 +1,94 @@
 import React, { useState, useEffect } from "react";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
-import ModalTemplate from "./ModalTemplate";
-import Modal from "react-modal";
+// import ModalTemplate from "./ModalTemplate";
+// import Modal from "react-modal";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
 
+  //? MODAL CREATION
+  useEffect(() => {
+    const movieContainers = document.querySelectorAll(".movie-container");
+    const movieTemplate = document.querySelector(".movie-template");
+    const modalCloseBtnInnerText = `<i class="fas fa-times-circle"></i>`;
+
+    const modalDiv = document.createElement("div");
+
+    movieContainers.forEach((movieContainer) => {
+      movieContainer.addEventListener("click", (e) => {
+        let movieImage = e.target.children[0].currentSrc;
+        let movieTitle = e.target.children[1].innerText;
+        let movieOverview = e.target.children[2].innerText;
+        let movieReleaseDate = e.target.children[3].innerText;
+        let movieRating = e.target.children[4].innerText;
+
+        modalDiv.style.display = "flex";
+        modalDiv.classList.add("modal-movie-wrapper");
+        modalDiv.innerHTML = `
+            <span>${modalCloseBtnInnerText}</span>
+            <div class="modal-movie-inner-wrapper">
+              <div class="modal-movie-image-wrapper">
+               <img class="modal-movie-image" src=${movieImage} />
+              </div>
+              <div class="modal-movie-main-info">
+                <div class="modal-movie-title">${movieTitle}</div>
+                <div class="modal-movie-overview">${movieOverview}</div>
+                <div class="modal-movie-secondary-info">
+                  <div class="modal-movie-release-date">${movieReleaseDate}</div>
+                  <div class="modal-movie-rating">${movieRating}</div>
+                </div>
+                <div class="modal-user-input">
+                  <a href="#" class="favourite-icon"><i class="fas fa-heart"></i></a>
+                  <a href="#"><i class="fas fa-comment"></i></a>
+                </div>
+              </div>
+            </div>
+          `;
+
+        movieTemplate.appendChild(modalDiv);
+
+        window.addEventListener("click", (e) => {
+          if (e.target.classList.contains("fa-times-circle")) {
+            modalDiv.style.display = "none";
+          }
+
+          //* needs attention ///////////////
+
+          if (e.target.classList.contains("favourite-icon")) {
+            const offsetParent_base =
+              e.target.offsetParent.offsetParent.childNodes[3];
+            const modal_img_src =
+              offsetParent_base.childNodes[1].childNodes[1].currentSrc;
+            const modal_title =
+              offsetParent_base.childNodes[3].childNodes[1].innerHTML;
+            const modal_overview =
+              offsetParent_base.childNodes[3].childNodes[3].innerHTML;
+
+            const favTemplate = {
+              img: modal_img_src,
+              title: modal_title,
+              body: modal_overview,
+            };
+
+            fetch("http://localhost:3000/favorites", {
+              method: "POST",
+              body: JSON.stringify(favTemplate),
+              header: { "Content-Type": "application/json" },
+            });
+          }
+          //* needs attention ///////////////
+        });
+      });
+    });
+    window.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal-movie-wrapper")) {
+        modalDiv.style.display = "none";
+      }
+    });
+  });
   //? END OF MODAL CREATION
 
   //? MOVIE TITLE SEARCH - API FETCH
@@ -26,16 +106,16 @@ export default function Library() {
     }
   };
 
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
+  // const customStyles = {
+  //   content: {
+  //     top: "50%",
+  //     left: "50%",
+  //     right: "auto",
+  //     bottom: "auto",
+  //     marginRight: "-50%",
+  //     transform: "translate(-50%, -50%)",
+  //   },
+  // };
 
   //? MOVIE TITLE SEARCH RENDER
   return (
@@ -55,7 +135,7 @@ export default function Library() {
         </form>
 
         <div className="outter-wrapper">
-          <div className="movie-template" styles={customStyles}>
+          <div className="movie-template">
             {movies
               .filter((movie) => movie.poster_path)
               .map(
@@ -64,11 +144,14 @@ export default function Library() {
                     <MovieTemplate
                       movie={movies}
                       src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                      title={movie.title}
+                      overview={movie.overview}
+                      release_date={movie.release_date}
+                      vote_average={movie.vote_average}
                     />
                   )
               )}
           </div>
-          <ModalTemplate movie={movies} />
         </div>
       </div>
     </>
