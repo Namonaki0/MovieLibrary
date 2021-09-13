@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
-// import ModalTemplate from "./ModalTemplate";
-// import Modal from "react-modal";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  // const [openModal, setOpenModal] = useState(false);
 
-  //? MODAL CREATION
+  //? MODAL CREATION ---------------
   useEffect(() => {
     const movieContainers = document.querySelectorAll(".movie-container");
     const movieTemplate = document.querySelector(".movie-template");
@@ -40,58 +37,30 @@ export default function Library() {
                   <div class="modal-movie-release-date">${movieReleaseDate}</div>
                   <div class="modal-movie-rating">${movieRating}</div>
                 </div>
-                <div class="modal-user-input">
-                  <a href="#" class="favourite-icon"><i class="fas fa-heart"></i></a>
-                  <a href="#"><i class="fas fa-comment"></i></a>
-                </div>
               </div>
             </div>
           `;
 
         movieTemplate.appendChild(modalDiv);
 
+        //? CLOSE MODAL WITH X MARK //
         window.addEventListener("click", (e) => {
           if (e.target.classList.contains("fa-times-circle")) {
             modalDiv.style.display = "none";
           }
-
-          //* needs attention ///////////////
-
-          if (e.target.classList.contains("favourite-icon")) {
-            const offsetParent_base =
-              e.target.offsetParent.offsetParent.childNodes[3];
-            const modal_img_src =
-              offsetParent_base.childNodes[1].childNodes[1].currentSrc;
-            const modal_title =
-              offsetParent_base.childNodes[3].childNodes[1].innerHTML;
-            const modal_overview =
-              offsetParent_base.childNodes[3].childNodes[3].innerHTML;
-
-            const favTemplate = {
-              img: modal_img_src,
-              title: modal_title,
-              body: modal_overview,
-            };
-
-            fetch("http://localhost:3000/favorites", {
-              method: "POST",
-              body: JSON.stringify(favTemplate),
-              header: { "Content-Type": "application/json" },
-            });
-          }
-          //* needs attention ///////////////
         });
       });
     });
+    //? CLOSE MODAL BY CHOOSING ANOTHER MOVIE //
     window.addEventListener("click", (e) => {
       if (e.target.classList.contains("modal-movie-wrapper")) {
         modalDiv.style.display = "none";
       }
     });
   });
-  //? END OF MODAL CREATION
+  //? END OF MODAL CREATION ---------------
 
-  //? MOVIE TITLE SEARCH - API FETCH
+  //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
     e.preventDefault();
 
@@ -106,18 +75,7 @@ export default function Library() {
     }
   };
 
-  // const customStyles = {
-  //   content: {
-  //     top: "50%",
-  //     left: "50%",
-  //     right: "auto",
-  //     bottom: "auto",
-  //     marginRight: "-50%",
-  //     transform: "translate(-50%, -50%)",
-  //   },
-  // };
-
-  //? MOVIE TITLE SEARCH RENDER
+  //? MOVIE TITLE SEARCH RENDER //
   return (
     <>
       <div>

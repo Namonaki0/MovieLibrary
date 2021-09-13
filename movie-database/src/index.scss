@@ -99,13 +99,9 @@ nav {
       justify-content: flex-start;
       text-decoration: none;
 
-     
-
       &:hover {
         border: none;
         background: rgba(192, 192, 192, 0.192);
-
-        
       }
 
       .link-text {
@@ -153,8 +149,6 @@ nav {
       .link-text,
       .burger-icon {
         pointer-events: none;
-
-        
       }
     }
   }
@@ -318,9 +312,6 @@ form {
 }
 
 //? MOVIE TEMPLATE
-
-
-
 .movie-template,
 .upcoming-movie-wrapper {
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -342,7 +333,7 @@ form {
   .movie-container {
     position: relative;
     overflow-x: hidden;
-    // width: 19%;
+    width: 19%;
     margin: 2px;
     margin-top: 8px;
     z-index: 10;
@@ -419,13 +410,13 @@ form {
 
     .modal-movie-inner-wrapper {
       display: flex;
-      margin-top: 1rem;
       padding: 0.5rem;
-      height: max-content;
+      align-items: center;
     }
 
     .modal-movie-main-info {
       padding: 0 1rem;
+      margin-left: .5rem;
     }
 
     .modal-movie-secondary-info {
@@ -435,6 +426,7 @@ form {
       font-size: 1rem;
       border-bottom: 1px solid rgba(192, 192, 192, 0.562);
       padding-bottom: 5px;
+      padding-top: 2rem;
       text-transform: uppercase;
     }
 
@@ -480,49 +472,49 @@ form {
       right: 15px;
     }
 
-    .modal-user-input {
-      display: flex;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      background: #1c1c1caf;
-      box-shadow: 0 -1px 5px rgba(15, 15, 15, 0.2);
+    // .modal-user-input {
+    //   display: flex;
+    //   position: absolute;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   border-bottom-left-radius: 5px;
+    //   border-bottom-right-radius: 5px;
+    //   background: #1c1c1caf;
+    //   box-shadow: 0 -1px 5px rgba(15, 15, 15, 0.2);
 
-      a {
-        flex-grow: 1;
-        text-align: center;
-        border: 1px solid rgba(192, 192, 192, 0.082);
-        cursor: pointer;
-        z-index: 10000;
-        display: block;
-        pointer-events: unset;
-        transition: all 150ms linear;
+    //   a {
+    //     flex-grow: 1;
+    //     text-align: center;
+    //     border: 1px solid rgba(192, 192, 192, 0.082);
+    //     cursor: pointer;
+    //     z-index: 10000;
+    //     display: block;
+    //     pointer-events: unset;
+    //     transition: all 150ms linear;
 
-        &:hover {
-          background: rgba(255, 255, 255, 0.911);
+    //     &:hover {
+    //       background: rgba(255, 255, 255, 0.911);
 
-          .fas {
-            color: #1c1c1cc9;
-          }
-        }
+    //       .fas {
+    //         color: #1c1c1cc9;
+    //       }
+    //     }
 
-        &:first-child {
-          border-right: none;
-        }
+    //     &:first-child {
+    //       border-right: none;
+    //     }
 
-        .fas {
-          padding: 1rem;
-          font-size: 1.8rem;
-          color: $text-color;
-          z-index: 1000;
-          cursor: pointer;
-          pointer-events: none;
-        }
-      }
-    }
+    //     .fas {
+    //       padding: 1rem;
+    //       font-size: 1.8rem;
+    //       color: $text-color;
+    //       z-index: 1000;
+    //       cursor: pointer;
+    //       pointer-events: none;
+    //     }
+    //   }
+    // }
 
     .modal-movie-inner-wrapper,
     .modal-movie-main-info,
@@ -565,8 +557,6 @@ form {
 
 .settings-wrapper {
   overflow-y: hidden;
-  // background-color: rgb(34, 34, 34);
-  // color: $text-color;
 
   &.light-mode {
     $nav-light-mode: #f7f7f7;
@@ -663,13 +653,3 @@ form {
    }
 }
 
-.new-modal {
-  // position: fixed;
-  // background-color: red;
-  z-index: 1000000;
-  top: -50%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  // transform: translate(-50%, -50%);
-}
