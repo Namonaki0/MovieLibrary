@@ -12,9 +12,38 @@
     },
     {
       "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
     }
   ],
   "comments": [
-    {}
+    {
+      "id": 1,
+      "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "user": "John Doe"
+    },
+    {
+      "id": 2,
+      "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "user": "Jane Doe"
+    },
+    {
+      "id": 3,
+      "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "user": "Mr. Doe"
+    }
   ]
 }
