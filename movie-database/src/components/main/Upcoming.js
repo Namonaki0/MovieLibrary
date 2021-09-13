@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { api_key } from "../apiKey";
+import { IoAddCircleOutline } from "react-icons/io5";
+import { VscComment } from "react-icons/vsc";
 
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -18,10 +20,18 @@ export default function Upcoming() {
 
   return (
     <div className="upcoming-movies-body">
-      <h1>Upcoming Movies</h1>
+      <h1>Upcoming</h1>
       <div className="upcoming-movie-wrapper">
         {upcomingMovies.map((upcomingMovie) => (
           <div className="upcoming-movie-container">
+            <span className="sidebar-icons-wrapper">
+              <a>
+                <IoAddCircleOutline className="sidebar-icons" />
+              </a>
+              <a>
+                <VscComment className="sidebar-icons" />
+              </a>
+            </span>
             <img
               className="upcoming-movie-image"
               src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${upcomingMovie.poster_path}`}

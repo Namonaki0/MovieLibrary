@@ -269,8 +269,16 @@ main h1 span::before {
   cursor: pointer;
   overflow: hidden;
   outline: 1px solid rgba(192, 192, 192, 0.356);
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
   -webkit-animation: movie-container-effect 120ms linear;
           animation: movie-container-effect 120ms linear;
+}
+
+.upcoming-movies-body .upcoming-movie-container:hover .sidebar-icons-wrapper {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 @-webkit-keyframes movie-container-effect {
@@ -323,6 +331,39 @@ main h1 span::before {
   background: rgba(0, 0, 0, 0.658);
   pointer-events: none;
   font-weight: 500;
+}
+
+.upcoming-movies-body .sidebar-icons-wrapper {
+  opacity: 0;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.034)), to(rgba(0, 0, 0, 0.651)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.034), rgba(0, 0, 0, 0.651));
+  width: 12%;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.3rem;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+.upcoming-movies-body .sidebar-icons-wrapper.active {
+  display: block;
+}
+
+.upcoming-movies-body .sidebar-icons-wrapper .sidebar-icons {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1.3rem;
+  color: rgba(245, 245, 245, 0.89);
+  pointer-events: none;
+}
+
+.upcoming-movies-body .sidebar-icons-wrapper a:hover .sidebar-icons {
+  color: whitesmoke;
 }
 
 .upcoming-movies-body .upcoming-movie-image {
@@ -504,7 +545,7 @@ form .submit:hover {
 .movie-template .modal-movie-wrapper .modal-movie-main-info,
 .upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-main-info {
   padding: 0 1rem;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-secondary-info,
@@ -598,13 +639,15 @@ form .submit:hover {
   margin: auto;
 }
 
-.favorites-wrapper {
+.watchlist-wrapper,
+.comments-wrapper {
   border-top-right-radius: 5px;
 }
 
-.favorites-wrapper h1 {
+.watchlist-wrapper h1,
+.comments-wrapper h1 {
   color: #fff;
-  background: #3A3738;
+  background: #3a3738;
   font-weight: 300;
   padding: 0.5rem 1rem 0.5rem 3.8rem;
   border-top-right-radius: 5px;
