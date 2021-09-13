@@ -5,6 +5,8 @@ import { CgMenu } from "react-icons/cg";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdNewReleases, MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineLibrary, HiOutlineCog } from "react-icons/hi";
+import { RiTv2Line } from "react-icons/ri";
+import { GoCommentDiscussion } from "react-icons/go";
 
 export default function Navbar() {
   return (
@@ -40,11 +42,20 @@ export default function Navbar() {
           </li>
         </Link>
 
-        <Link to="/Favorites" className="menu-link-path">
+        <Link to="/Comments" className="menu-link-path">
           <li className="menu-link">
-            <MdFavoriteBorder className="icons" />
+            <GoCommentDiscussion className="icons" />
             <a href="#" className="link-text">
-              Favorites
+              Comments
+            </a>
+          </li>
+        </Link>
+
+        <Link to="/Watchlist" className="menu-link-path">
+          <li className="menu-link">
+            <RiTv2Line className="icons" />
+            <a href="#" className="link-text">
+              Watchlist
             </a>
           </li>
         </Link>
