@@ -221,14 +221,27 @@ main {
   position: relative;
 
    .comment-window-wrapper {
-      display: grid;
-     position: absolute;
-     background-color: rgba(0, 0, 0, 0.596);
-     top: 20px;
-     bottom: 10px;
-     left: 10px;
-     right: 10px;
-     z-index: 1000;
+    display: grid;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.596);
+    top: 20px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    z-index: 1000;
+    animation: comment-window-effect 120ms linear;
+
+    @keyframes comment-window-effect {
+      0% {
+        opacity: 0.2;
+        transform: translateY(-2%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
 
      form {
       display: flex;
@@ -757,3 +770,6 @@ form {
 
 
 
+.comment-window-movie-title {
+  color: red;
+}
