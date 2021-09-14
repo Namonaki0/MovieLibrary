@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { api_key } from "../apiKey";
+import CommentWindow from "./CommentWindow";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
 
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
+  const [commentWindow, setCommentWindow] = useState(false);
+  // const [movieTitle, setMovieTitle] = useState();
+
+  const commentWindowState = () => {
+    commentWindow(false);
+    // setCommentWindow();
+  };
 
   useEffect(async () => {
     const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1`;
@@ -18,6 +26,8 @@ export default function Upcoming() {
     }
   });
 
+  // const onClickMovieTitle = e.target.parentElement.childNodes[2].innerHTML;
+
   return (
     <div className="upcoming-movies-body">
       <h1>Upcoming</h1>
@@ -28,7 +38,7 @@ export default function Upcoming() {
               <a>
                 <IoAddCircleOutline className="sidebar-icons" />
               </a>
-              <a>
+              <a onClick={() => setCommentWindow(!commentWindow)}>
                 <VscComment className="sidebar-icons" />
               </a>
             </span>
@@ -41,6 +51,7 @@ export default function Upcoming() {
           </div>
         ))}
       </div>
+      <CommentWindow data={commentWindow} />
     </div>
   );
 }

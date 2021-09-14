@@ -5,7 +5,7 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 1rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   background: #8d8d8d;
 }
 
@@ -253,18 +253,131 @@ main h1 span::before {
 }
 
 .upcoming-movies-body {
-  min-height: 100%;
+  min-height: 75%;
+  position: relative;
+}
+
+.upcoming-movies-body .comment-window-wrapper {
+  display: -ms-grid;
+  display: grid;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.596);
+  top: 20px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.upcoming-movies-body .comment-window-wrapper form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(221, 221, 221, 0.842);
+  background-color: #282828;
+  height: 80%;
+  width: 80%;
+  color: white;
+}
+
+.upcoming-movies-body .comment-window-wrapper form label,
+.upcoming-movies-body .comment-window-wrapper form input,
+.upcoming-movies-body .comment-window-wrapper form .submit,
+.upcoming-movies-body .comment-window-wrapper form button {
+  width: 80%;
+  padding: 1rem .5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upcoming-movies-body .comment-window-wrapper form .comment-window-close-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 10%;
+  right: 10%;
+  cursor: pointer;
+}
+
+.upcoming-movies-body .comment-window-wrapper form label {
+  text-align: left;
+  padding-left: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+.upcoming-movies-body .comment-window-wrapper form input,
+.upcoming-movies-body .comment-window-wrapper form .submit {
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.062);
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+  color: white;
+}
+
+.upcoming-movies-body .comment-window-wrapper form input:focus, .upcoming-movies-body .comment-window-wrapper form .submit:focus {
+  border-bottom: 1px solid silver;
+  outline: none;
+}
+
+.upcoming-movies-body .comment-window-wrapper form button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.26);
+  letter-spacing: 2px;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+.upcoming-movies-body .comment-window-wrapper form button:hover {
+  background-color: rgba(255, 255, 255, 0.877);
+  color: #282828;
 }
 
 .upcoming-movies-body .upcoming-movie-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 2px 0.3rem 2px 3.5rem;
+  height: calc(80vh + 12px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-color: #222222;
+  background-size: 100%;
+  background-position: center;
+  background-blend-mode: multiply;
 }
 
 .upcoming-movies-body .upcoming-movie-container {
   position: relative;
   width: 19%;
-  margin: 10px 2px;
-  margin-bottom: 2px;
+  margin: 5px 2px;
   z-index: 10;
   cursor: pointer;
   overflow: hidden;
@@ -400,13 +513,16 @@ form .submit:hover {
   cursor: pointer;
 }
 
-.movie-template,
-.upcoming-movie-wrapper {
+.outter-wrapper {
+  padding: 2px 0 5px;
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-color: #222222;
   background-size: 100%;
   background-position: center;
   background-blend-mode: multiply;
+}
+
+.movie-template {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -426,8 +542,7 @@ form .submit:hover {
   overflow-x: hidden;
 }
 
-.movie-template .movie-container,
-.upcoming-movie-wrapper .movie-container {
+.movie-template .movie-container {
   position: relative;
   overflow-x: hidden;
   width: 19%;
@@ -455,14 +570,12 @@ form .submit:hover {
   }
 }
 
-.movie-template .movie-container .movie-image,
-.upcoming-movie-wrapper .movie-container .movie-image {
+.movie-template .movie-container .movie-image {
   display: block;
   pointer-events: none;
 }
 
-.movie-template .movie-container h1,
-.upcoming-movie-wrapper .movie-container h1 {
+.movie-template .movie-container h1 {
   position: absolute;
   font-weight: 300;
   bottom: 0;
@@ -479,15 +592,11 @@ form .submit:hover {
 
 .movie-template .movie-container .movie-overview,
 .movie-template .movie-container .movie-release-date,
-.movie-template .movie-container .movie-rating,
-.upcoming-movie-wrapper .movie-container .movie-overview,
-.upcoming-movie-wrapper .movie-container .movie-release-date,
-.upcoming-movie-wrapper .movie-container .movie-rating {
+.movie-template .movie-container .movie-rating {
   display: none;
 }
 
-.movie-template .modal-movie-wrapper,
-.upcoming-movie-wrapper .modal-movie-wrapper {
+.movie-template .modal-movie-wrapper {
   position: -webkit-sticky;
   position: sticky;
   height: 400px;
@@ -531,8 +640,7 @@ form .submit:hover {
   }
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-inner-wrapper,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-inner-wrapper {
+.movie-template .modal-movie-wrapper .modal-movie-inner-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -542,14 +650,12 @@ form .submit:hover {
           align-items: center;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-main-info,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-main-info {
+.movie-template .modal-movie-wrapper .modal-movie-main-info {
   padding: 0 1rem;
   margin-left: 0.5rem;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-secondary-info,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-secondary-info {
+.movie-template .modal-movie-wrapper .modal-movie-secondary-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -564,14 +670,12 @@ form .submit:hover {
   text-transform: uppercase;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-title,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-title {
+.movie-template .modal-movie-wrapper .modal-movie-title {
   font-size: 1.5rem;
   margin-bottom: 1.2rem;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-image-wrapper,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-image-wrapper {
+.movie-template .modal-movie-wrapper .modal-movie-image-wrapper {
   position: relative;
   display: block;
   height: -webkit-max-content;
@@ -579,8 +683,7 @@ form .submit:hover {
   height: max-content;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-image-wrapper::after,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-image-wrapper::after {
+.movie-template .modal-movie-wrapper .modal-movie-image-wrapper::after {
   position: absolute;
   content: "";
   bottom: 0;
@@ -589,22 +692,19 @@ form .submit:hover {
   border-left: 100px solid transparent;
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-image-wrapper .modal-movie-image,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-image-wrapper .modal-movie-image {
+.movie-template .modal-movie-wrapper .modal-movie-image-wrapper .modal-movie-image {
   display: block;
   pointer-events: none;
   border: 1px solid rgba(192, 192, 192, 0.212);
 }
 
-.movie-template .modal-movie-wrapper .modal-movie-overview,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-overview {
+.movie-template .modal-movie-wrapper .modal-movie-overview {
   font-size: 1.1rem;
   line-height: 22px;
   margin-bottom: 1.5rem;
 }
 
-.movie-template .modal-movie-wrapper .fa-times-circle,
-.upcoming-movie-wrapper .modal-movie-wrapper .fa-times-circle {
+.movie-template .modal-movie-wrapper .fa-times-circle {
   font-size: 1.2rem;
   color: #fff;
   cursor: pointer;
@@ -618,12 +718,7 @@ form .submit:hover {
 .movie-template .modal-movie-wrapper .modal-movie-main-info,
 .movie-template .modal-movie-wrapper .modal-movie-title,
 .movie-template .modal-movie-wrapper .modal-movie-image,
-.movie-template .modal-movie-wrapper .modal-movie-overview,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-inner-wrapper,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-main-info,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-title,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-image,
-.upcoming-movie-wrapper .modal-movie-wrapper .modal-movie-overview {
+.movie-template .modal-movie-wrapper .modal-movie-overview {
   color: #fff;
 }
 
