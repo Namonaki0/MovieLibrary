@@ -10,7 +10,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 1rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   background: rgb(141, 141, 141);
 }
 
@@ -215,18 +215,116 @@ main {
 }
 
 //? UPCOMING SECTION
+
 .upcoming-movies-body {
-  min-height: 100%;
+  min-height: 75%;
+  position: relative;
+
+   .comment-window-wrapper {
+      display: grid;
+     position: absolute;
+     background-color: rgba(0, 0, 0, 0.596);
+     top: 20px;
+     bottom: 10px;
+     left: 10px;
+     right: 10px;
+     z-index: 1000;
+
+     form {
+      display: flex;
+       flex-direction: column;
+       justify-content: center;
+       background-color: rgba(221, 221, 221, 0.842);
+       background-color: #282828;
+       height: 80%;
+       width: 80%;
+       color: white;
+
+       label,
+       input,
+       button {
+         width: 80%;
+         padding: 1rem .5rem;
+         margin-left: auto;
+         margin-right: auto;
+          
+       }
+
+       .comment-window-close-icon {
+         position: absolute;
+         font-size: 1.5rem;
+         top: 10%;
+         right: 10%;
+         cursor: pointer;
+       }
+
+        label {
+         text-align: left ;
+         padding-left: 0;
+         font-size: 1.5rem;
+         text-transform: uppercase;
+         font-weight: 600;
+         letter-spacing: 1px;
+        }
+
+       input {
+         font-family: inherit;
+         font-size: 1.2rem;
+         margin-bottom: 1rem;
+         background-color: rgba(255, 255, 255, 0.062);
+         transition: all 120ms linear;
+         color: white;
+
+         &:focus {
+           border-bottom: 1px solid silver;
+           outline: none;
+         }
+       }
+
+       button {
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.26);
+        letter-spacing: 2px;
+        transition: all 120ms linear;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.877);
+          color: #282828;
+        }
+       }
+     }
+   }
+ 
 
   .upcoming-movie-wrapper {
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2px 0.3rem 2px 3.5rem;
+    height: calc(80vh + 12px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-color: rgb(34, 34, 34);
+    background-size: 100%;
+    background-position: center;
+    background-blend-mode: multiply;
+
+    
   }
 
   .upcoming-movie-container {
     position: relative;
     width: 19%;
-    margin: 10px 2px;
-    margin-bottom: 2px;
+    margin: 5px 2px;
     z-index: 10;
     cursor: pointer;
     overflow: hidden;
@@ -358,14 +456,17 @@ form {
   }
 }
 
-//? MOVIE TEMPLATE
-.movie-template,
-.upcoming-movie-wrapper {
+.outter-wrapper {
+  padding: 2px 0 5px;
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-color: rgb(34, 34, 34);
   background-size: 100%;
   background-position: center;
   background-blend-mode: multiply;
+}
+
+//? MOVIE TEMPLATE
+.movie-template {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -519,50 +620,6 @@ form {
       right: 15px;
     }
 
-    // .modal-user-input {
-    //   display: flex;
-    //   position: absolute;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   border-bottom-left-radius: 5px;
-    //   border-bottom-right-radius: 5px;
-    //   background: #1c1c1caf;
-    //   box-shadow: 0 -1px 5px rgba(15, 15, 15, 0.2);
-
-    //   a {
-    //     flex-grow: 1;
-    //     text-align: center;
-    //     border: 1px solid rgba(192, 192, 192, 0.082);
-    //     cursor: pointer;
-    //     z-index: 10000;
-    //     display: block;
-    //     pointer-events: unset;
-    //     transition: all 150ms linear;
-
-    //     &:hover {
-    //       background: rgba(255, 255, 255, 0.911);
-
-    //       .fas {
-    //         color: #1c1c1cc9;
-    //       }
-    //     }
-
-    //     &:first-child {
-    //       border-right: none;
-    //     }
-
-    //     .fas {
-    //       padding: 1rem;
-    //       font-size: 1.8rem;
-    //       color: $text-color;
-    //       z-index: 1000;
-    //       cursor: pointer;
-    //       pointer-events: none;
-    //     }
-    //   }
-    // }
-
     .modal-movie-inner-wrapper,
     .modal-movie-main-info,
     .modal-movie-title,
@@ -697,3 +754,6 @@ form {
     }
   }
 }
+
+
+
