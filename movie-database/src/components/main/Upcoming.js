@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { api_key } from "../apiKey";
-import CommentWindow from "./CommentWindow";
+// import CommentWindow from "./CommentWindow";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
-  const [commentWindow, setCommentWindow] = useState(false);
+  const [commentWindow, setCommentWindow] = useState(null);
+  const [movieTitle, setMovieTitle] = useState("");
   // const [movieTitle, setMovieTitle] = useState();
-
-  const commentWindowState = () => {
-    commentWindow(false);
-    // setCommentWindow();
-  };
 
   useEffect(async () => {
     const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1`;
@@ -26,7 +23,9 @@ export default function Upcoming() {
     }
   });
 
-  // const onClickMovieTitle = e.target.parentElement.childNodes[2].innerHTML;
+  const onClickMovieTitle = (e) => {
+    const movieTitle = e.target.parentElement.childNodes[2].innerHTML;
+  };
 
   return (
     <div className="upcoming-movies-body">
@@ -38,7 +37,7 @@ export default function Upcoming() {
               <a>
                 <IoAddCircleOutline className="sidebar-icons" />
               </a>
-              <a onClick={() => setCommentWindow(!commentWindow)}>
+              <a onClick={() => setCommentWindow("grid")}>
                 <VscComment className="sidebar-icons" />
               </a>
             </span>
@@ -51,7 +50,30 @@ export default function Upcoming() {
           </div>
         ))}
       </div>
-      <CommentWindow data={commentWindow} />
+      <div
+        className="comment-window-wrapper"
+        style={{
+          display: commentWindow ? "grid" : "none",
+        }}
+      >
+        <form>
+          <AiOutlineCloseCircle
+            className="comment-window-close-icon"
+            onClick={() => setCommentWindow(!commentWindow)}
+          />
+
+          {/* <p className="comment-window-movie-title">{movieTitle}</p> */}
+          <label for="comment">comment</label>
+          <input
+            type="text"
+            name="comment"
+            id="comment"
+            placeholder="enter comment..."
+            autoComplete="off"
+          />
+          <button type="submit">submit</button>
+        </form>
+      </div>
     </div>
   );
 }

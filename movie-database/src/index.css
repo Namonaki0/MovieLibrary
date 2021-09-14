@@ -267,6 +267,34 @@ main h1 span::before {
   left: 10px;
   right: 10px;
   z-index: 1000;
+  -webkit-animation: comment-window-effect 120ms linear;
+          animation: comment-window-effect 120ms linear;
+}
+
+@-webkit-keyframes comment-window-effect {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes comment-window-effect {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
 }
 
 .upcoming-movies-body .comment-window-wrapper form {
@@ -865,5 +893,9 @@ form .submit:hover {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
+}
+
+.comment-window-movie-title {
+  color: red;
 }
 /*# sourceMappingURL=index.css.map */
