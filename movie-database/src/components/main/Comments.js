@@ -13,18 +13,19 @@ const Comments = () => {
     } catch (err) {
       console.error("nothing found", err);
     }
-  }, []);
+  }, [userInfo]);
 
   return (
-    <div className="comments-wrapper">
+    <div className="comments-outter-wrapper">
       <h1>Comments</h1>
-
-      {userInfo.map((comment) => (
-        <div className="comment">
-          <h2>{comment.user}</h2>
-          <p>{comment.comment}</p>
-        </div>
-      ))}
+      <div className="comments-inner-wrapper">
+        {userInfo.map((comment) => (
+          <div className="comment">
+            <h2>{comment.user}</h2>
+            <p>{comment.comment}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

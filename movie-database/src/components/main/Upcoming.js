@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { api_key } from "../apiKey";
-// import CommentWindow from "./CommentWindow";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
 import { AiOutlineCloseCircle } from "react-icons/ai";
@@ -9,7 +8,7 @@ export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [commentWindow, setCommentWindow] = useState(null);
   const [movieTitle, setMovieTitle] = useState("");
-  // const [movieTitle, setMovieTitle] = useState();
+  const [comments, setComments] = useState("");
 
   useEffect(async () => {
     const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1`;
@@ -21,10 +20,28 @@ export default function Upcoming() {
     } catch (err) {
       console.error(err);
     }
-  });
+  }, []);
 
   const onClickMovieTitle = (e) => {
     const movieTitle = e.target.parentElement.childNodes[2].innerHTML;
+  };
+
+  const formSubmit = async (e) => {
+    e.preventDefault();
+
+    const comment = document.querySelector(".form .commentInput");
+
+    const commentBody = {
+      comment: comment.value,
+    };
+
+    const commentFetch = await fetch("http://localhost:3000/comments", {
+      method: "POST",
+      body: JSON.stringify(commentBody),
+      headers: { "Content-type": "application/json" },
+    });
+
+    comment.value = "";
   };
 
   return (
@@ -56,7 +73,7 @@ export default function Upcoming() {
           display: commentWindow ? "grid" : "none",
         }}
       >
-        <form>
+        <form onSubmit={formSubmit} className="form">
           <AiOutlineCloseCircle
             className="comment-window-close-icon"
             onClick={() => setCommentWindow(!commentWindow)}
@@ -67,9 +84,10 @@ export default function Upcoming() {
           <input
             type="text"
             name="comment"
-            id="comment"
+            className="commentInput"
             placeholder="enter comment..."
             autoComplete="off"
+            onChange={(e) => setComments(e.target.value)}
           />
           <button type="submit">submit</button>
         </form>

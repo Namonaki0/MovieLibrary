@@ -320,7 +320,7 @@ main h1 span::before {
 .upcoming-movies-body .comment-window-wrapper form .submit,
 .upcoming-movies-body .comment-window-wrapper form button {
   width: 80%;
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -895,14 +895,29 @@ form .submit:hover {
   }
 }
 
-.comments-wrapper .comment {
+.comments-outter-wrapper h1 {
+  color: #fff;
+  background: #3a3738;
+  font-weight: 300;
+  padding: 0.5rem 1rem 0.5rem 3.8rem;
+  border-top-right-radius: 5px;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper {
+  height: 81.5vh;
+  overflow-y: auto;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment {
   border-top: 2px solid rgba(192, 192, 192, 0.178);
   border-bottom: 0.5px solid rgba(192, 192, 192, 0.507);
   padding: 1rem 2rem 1rem 5rem;
 }
 
-.comments-wrapper .comment h2 {
+.comments-outter-wrapper .comments-inner-wrapper .comment h2 {
   border-bottom: 1px solid rgba(192, 192, 192, 0.089);
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 /*# sourceMappingURL=index.css.map */
