@@ -895,7 +895,14 @@ form .submit:hover {
   }
 }
 
-.comment-window-movie-title {
-  color: red;
+.comments-wrapper .comment {
+  border-top: 2px solid rgba(192, 192, 192, 0.178);
+  border-bottom: 0.5px solid rgba(192, 192, 192, 0.507);
+  padding: 1rem 2rem 1rem 5rem;
+}
+
+.comments-wrapper .comment h2 {
+  border-bottom: 1px solid rgba(192, 192, 192, 0.089);
+  margin-bottom: .5rem;
 }
 /*# sourceMappingURL=index.css.map */

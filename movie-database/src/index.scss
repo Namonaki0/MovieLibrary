@@ -768,8 +768,19 @@ form {
   }
 }
 
+//? COMMENTS
 
+.comments-wrapper {
+  
 
-.comment-window-movie-title {
-  color: red;
+  .comment {
+    border-top: 2px solid rgba(192, 192, 192, 0.178);
+    border-bottom: .5px solid rgba(192, 192, 192, 0.507);
+    padding: 1rem 2rem 1rem 5rem;
+
+    h2 {
+      border-bottom: 1px solid rgba(192, 192, 192, 0.089);
+      margin-bottom: .5rem;
+    }
+  }
 }
