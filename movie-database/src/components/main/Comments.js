@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
 
+  console.log(userInfo);
+
   useEffect(async () => {
     const uri = "http://localhost:3000/comments";
 
@@ -13,7 +15,7 @@ const Comments = () => {
     } catch (err) {
       console.error("nothing found", err);
     }
-  }, [userInfo]);
+  }, []);
 
   return (
     <div className="comments-outter-wrapper">
@@ -21,8 +23,11 @@ const Comments = () => {
       <div className="comments-inner-wrapper">
         {userInfo.map((comment) => (
           <div className="comment">
-            <h2>{comment.user}</h2>
+            <h2>{comment.title}</h2>
             <p>{comment.comment}</p>
+            <span>
+              <strong>- {comment.user}</strong>
+            </span>
           </div>
         ))}
       </div>
