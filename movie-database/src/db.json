@@ -46,91 +46,16 @@
       "user": "Mr. Doe"
     },
     {
-      "comment": "koment",
+      "title": "Escape Room: Tournament of Champions",
+      "user": "Mike",
+      "comment": "Loved it",
       "id": 4
     },
     {
-      "comment": "",
+      "title": "The Boss Baby: Family Business",
+      "user": "Rosa",
+      "comment": "Very funny movie!",
       "id": 5
-    },
-    {
-      "comment": "aaaaa",
-      "id": 6
-    },
-    {
-      "comment": "",
-      "id": 7
-    },
-    {
-      "comment": "another",
-      "id": 8
-    },
-    {
-      "comment": "[object Object]",
-      "id": 9
-    },
-    {
-      "comment": "aaaaa",
-      "id": 10
-    },
-    {
-      "comment": "",
-      "id": 11
-    },
-    {
-      "comment": "aaaaa",
-      "id": 12
-    },
-    {
-      "comment": "",
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "comment": null,
-      "id": 15
-    },
-    {
-      "comment": "rrrrrrrrrr",
-      "id": 16
-    },
-    {
-      "comment": "aaaa",
-      "id": 17
-    },
-    {
-      "comment": "hhhhhhhhhhhhh",
-      "id": 18
-    },
-    {
-      "comment": "hhhhhhhhhhhhh",
-      "id": 19
-    },
-    {
-      "comment": "fffffffff",
-      "id": 20
-    },
-    {
-      "comment": "ffffffffff",
-      "id": 21
-    },
-    {
-      "comment": "new comment",
-      "id": 22
-    },
-    {
-      "comment": "another comment",
-      "id": 23
-    },
-    {
-      "comment": "this movie is great",
-      "id": 24
-    },
-    {
-      "comment": "didnt lke this one",
-      "id": 25
     }
   ]
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext, useContext } from "react";
 import { api_key } from "../apiKey";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
@@ -7,7 +7,8 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [commentWindow, setCommentWindow] = useState(null);
-  const [movieTitle, setMovieTitle] = useState("");
+  const [movieTitle, setMovieTitle] = useState("title");
+  const [user, setUsername] = useState("");
   const [comments, setComments] = useState("");
 
   useEffect(async () => {
@@ -22,16 +23,17 @@ export default function Upcoming() {
     }
   }, []);
 
-  const onClickMovieTitle = (e) => {
-    const movieTitle = e.target.parentElement.childNodes[2].innerHTML;
-  };
-
+  //? JSON-SERVER COMMENTS INPUT ------------
   const formSubmit = async (e) => {
     e.preventDefault();
 
+    const movieTitle = document.querySelector(".comment-window-movie-title");
+    const name = document.querySelector(".form .nameInput");
     const comment = document.querySelector(".form .commentInput");
 
     const commentBody = {
+      title: movieTitle.innerHTML,
+      user: name.value,
       comment: comment.value,
     };
 
@@ -41,8 +43,10 @@ export default function Upcoming() {
       headers: { "Content-type": "application/json" },
     });
 
+    name.value = "";
     comment.value = "";
   };
+  //? END OF JSON-SERVER COMMENTS INPUT -----------
 
   return (
     <div className="upcoming-movies-body">
@@ -54,7 +58,14 @@ export default function Upcoming() {
               <a>
                 <IoAddCircleOutline className="sidebar-icons" />
               </a>
-              <a onClick={() => setCommentWindow("grid")}>
+              <a
+                onClick={(e) => {
+                  setCommentWindow("grid");
+                  setMovieTitle(
+                    e.target.offsetParent.offsetParent.children[2].innerHTML
+                  );
+                }}
+              >
                 <VscComment className="sidebar-icons" />
               </a>
             </span>
@@ -79,13 +90,21 @@ export default function Upcoming() {
             onClick={() => setCommentWindow(!commentWindow)}
           />
 
-          {/* <p className="comment-window-movie-title">{movieTitle}</p> */}
+          <span className="comment-window-movie-title">{movieTitle}</span>
           <label for="comment">comment</label>
           <input
             type="text"
             name="comment"
+            className="nameInput"
+            placeholder="name..."
+            autoComplete="off"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="text"
+            name="comment"
             className="commentInput"
-            placeholder="enter comment..."
+            placeholder="comment..."
             autoComplete="off"
             onChange={(e) => setComments(e.target.value)}
           />
