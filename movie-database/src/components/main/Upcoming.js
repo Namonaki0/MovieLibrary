@@ -27,6 +27,19 @@ export default function Upcoming() {
   const formSubmit = async (e) => {
     e.preventDefault();
 
+    //? DATE
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    let time = date.getTime();
+    //? TIME
+    let hours = date.getHours();
+    let mins = date.getMinutes();
+
+    let dateOfComment = `${day}/${month}/${year}`;
+    let timeOfComment = `${hours}:${mins}`;
+
     const movieTitle = document.querySelector(".comment-window-movie-title");
     const name = document.querySelector(".form .nameInput");
     const comment = document.querySelector(".form .commentInput");
@@ -35,6 +48,8 @@ export default function Upcoming() {
       title: movieTitle.innerHTML,
       user: name.value,
       comment: comment.value,
+      date: dateOfComment,
+      time: timeOfComment,
     };
 
     const commentFetch = await fetch("http://localhost:3000/comments", {

@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
+import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
 
 const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
-
-  console.log(userInfo);
 
   useEffect(async () => {
     const uri = "http://localhost:3000/comments";
@@ -20,14 +19,25 @@ const Comments = () => {
   return (
     <div className="comments-outter-wrapper">
       <h1>Comments</h1>
+
       <div className="comments-inner-wrapper">
         {userInfo.map((comment) => (
           <div className="comment">
-            <h2>{comment.title}</h2>
-            <p>{comment.comment}</p>
-            <span>
-              <strong>- {comment.user}</strong>
-            </span>
+            <h2>
+              {comment.title}{" "}
+              <div className="date-time-wrapper">
+                <span className="date-span">
+                  <AiOutlineCalendar />
+                  {comment.date}
+                </span>
+                <span className="time-span">
+                  <AiOutlineClockCircle />
+                  {comment.time}
+                </span>
+              </div>
+            </h2>
+            <cite>"{comment.comment}"</cite>
+            <span>- {comment.user}</span>
           </div>
         ))}
       </div>

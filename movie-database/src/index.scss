@@ -767,7 +767,7 @@ form {
 //? COMMENTS
 
 .comments-outter-wrapper {
-
+  
 
   h1 {
     color: $text-color;
@@ -790,8 +790,53 @@ form {
       padding: 1rem 2rem 1rem 5rem;
 
       h2 {
-        border-bottom: 1px solid rgba(192, 192, 192, 0.089);
-        margin-bottom: 0.5rem;
+        display: flex;
+        flex: 1;
+        align-self: center;
+        border-bottom: 1px solid rgba(192, 192, 192, 0.205);
+        // margin-bottom: 0.5rem;
+      }
+
+      .date-time-wrapper {
+       
+       display: flex;
+        margin-left: auto;
+        text-align: right;
+        font-size: 1rem;
+
+        span {
+           flex-direction: row;
+           align-items: center;
+        }
+
+        .date-span, 
+        .time-span {
+          display: flex;
+          margin-left: .5rem;
+         
+        }
+
+        svg {
+           align-self: center;
+          margin-right: .1rem;
+        }
+      }
+
+      // p {
+      //   display: block;
+      //   margin: .5rem 0 1rem;
+      // }
+
+      cite {
+        display: block;
+        font-size: 1.1rem;
+        margin: .6rem 0 1rem;
+      }
+
+      span {
+        font-size: 1.1rem;
+        // font-style: italic;
+        font-weight: bold;
       }
     }
   }

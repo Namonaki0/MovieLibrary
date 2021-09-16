@@ -31,31 +31,28 @@
   ],
   "comments": [
     {
-      "id": 1,
-      "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      "user": "John Doe"
-    },
-    {
-      "id": 2,
-      "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      "user": "Jane Doe"
-    },
-    {
-      "id": 3,
-      "comment": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      "user": "Mr. Doe"
-    },
-    {
-      "title": "Escape Room: Tournament of Champions",
-      "user": "Mike",
-      "comment": "Loved it",
-      "id": 4
+      "title": "Don't Breathe 2",
+      "user": "sddsadsa",
+      "comment": "saddsadsa",
+      "date": "16/8/2021",
+      "time": "22:52",
+      "id": 1
     },
     {
       "title": "The Boss Baby: Family Business",
-      "user": "Rosa",
-      "comment": "Very funny movie!",
-      "id": 5
+      "user": "ML",
+      "comment": "GREAT",
+      "date": "16/8/2021",
+      "time": "22:56",
+      "id": 2
+    },
+    {
+      "title": "Jungle Cruise",
+      "user": "Andy",
+      "comment": "Highly recommend it",
+      "date": "16/8/2021",
+      "time": "23:7",
+      "id": 3
     }
   ]
 }
