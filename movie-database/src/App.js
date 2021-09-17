@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/Upcoming" component={Upcoming} />
+          <Route path="/upcoming" component={Upcoming} />
           <Route path="/library" component={Library} />
           <Route path="/comments" component={Comments} />
           <Route path="/watchlist" component={Watchlist} />

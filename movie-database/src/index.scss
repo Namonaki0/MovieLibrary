@@ -780,10 +780,12 @@ form {
   }
 
   .comments-inner-wrapper {
-     height: 81.5vh;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 81.5vh;
     overflow-y: auto;
-    
-
+    scroll-padding-bottom: auto;
+  
     .comment {
       border-top: 2px solid rgba(192, 192, 192, 0.178);
       border-bottom: 0.5px solid rgba(192, 192, 192, 0.507);
@@ -804,19 +806,18 @@ form {
         text-align: right;
         font-size: 1rem;
 
-        span {
-           flex-direction: row;
-           align-items: center;
-        }
+  
 
         .date-span, 
         .time-span {
           display: flex;
+          align-items: center;
           margin-left: .5rem;
          
         }
 
         svg {
+          font-size: 1rem;
            align-self: center;
           margin-right: .1rem;
         }

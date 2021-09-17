@@ -906,8 +906,16 @@ form .submit:hover {
 }
 
 .comments-outter-wrapper .comments-inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   height: 81.5vh;
   overflow-y: auto;
+  scroll-padding-bottom: auto;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment {
@@ -937,25 +945,19 @@ form .submit:hover {
   font-size: 1rem;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment .date-time-wrapper span {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .comments-outter-wrapper .comments-inner-wrapper .comment .date-time-wrapper .date-span,
 .comments-outter-wrapper .comments-inner-wrapper .comment .date-time-wrapper .time-span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: .5rem;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment .date-time-wrapper svg {
+  font-size: 1rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
