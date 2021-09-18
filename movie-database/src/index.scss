@@ -767,8 +767,6 @@ form {
 //? COMMENTS
 
 .comments-outter-wrapper {
-  
-
   h1 {
     color: $text-color;
     background: #3a3738;
@@ -780,64 +778,100 @@ form {
   }
 
   .comments-inner-wrapper {
-    display: flex;
-    flex-direction: column-reverse;
+    // display: flex;
+    // flex-direction: column-reverse;
     height: 81.5vh;
     overflow-y: auto;
     scroll-padding-bottom: auto;
-  
+
     .comment {
+      position: relative;
       border-top: 2px solid rgba(192, 192, 192, 0.178);
       border-bottom: 0.5px solid rgba(192, 192, 192, 0.507);
-      padding: 1rem 2rem 1rem 5rem;
+      padding: 1rem 2rem 1.5rem 5rem;
 
       h2 {
         display: flex;
         flex: 1;
         align-self: center;
         border-bottom: 1px solid rgba(192, 192, 192, 0.205);
-        // margin-bottom: 0.5rem;
       }
 
       .date-time-wrapper {
-       
-       display: flex;
+        display: flex;
         margin-left: auto;
         text-align: right;
         font-size: 1rem;
 
-  
-
-        .date-span, 
+        .date-span,
         .time-span {
           display: flex;
           align-items: center;
-          margin-left: .5rem;
-         
+          margin-left: 0.5rem;
+          color: #303030;
         }
 
         svg {
           font-size: 1rem;
-           align-self: center;
-          margin-right: .1rem;
+          align-self: center;
+          margin-right: 0.1rem;
         }
       }
 
-      // p {
-      //   display: block;
-      //   margin: .5rem 0 1rem;
-      // }
-
       cite {
         display: block;
-        font-size: 1.1rem;
-        margin: .6rem 0 1rem;
+        font-size: 1.15rem;
+        margin: 0.6rem 0 1rem .2rem;
       }
 
-      span {
-        font-size: 1.1rem;
-        // font-style: italic;
-        font-weight: bold;
+      .comment-bottom-section {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+
+
+        span {
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
+
+        svg {
+          font-size: 1.3rem;
+          margin-right: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color:rgb(63, 63, 63);
+          }
+        }
+  
+        .like-icon {
+
+          margin-left: auto;
+        }
+  
+        button {
+          display: flex;
+          align-items: center;
+          margin-left: 5px;
+          padding: .5rem 1rem;
+          background: #3a3a3a;
+          border: none;
+          color: whitesmoke;
+          cursor: pointer;
+          transition: all 120ms linear;
+  
+          &:hover {
+            background: rgb(145, 0, 0);
+          }
+  
+          svg {
+            font-size: inherit;
+            margin-right: 5px;
+            pointer-events: none;
+          }
+      }
+
       }
     }
   }

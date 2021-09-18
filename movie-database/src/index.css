@@ -906,22 +906,16 @@ form .submit:hover {
 }
 
 .comments-outter-wrapper .comments-inner-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
   height: 81.5vh;
   overflow-y: auto;
   scroll-padding-bottom: auto;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment {
+  position: relative;
   border-top: 2px solid rgba(192, 192, 192, 0.178);
   border-bottom: 0.5px solid rgba(192, 192, 192, 0.507);
-  padding: 1rem 2rem 1rem 5rem;
+  padding: 1rem 2rem 1.5rem 5rem;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment h2 {
@@ -953,7 +947,8 @@ form .submit:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
+  color: #303030;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment .date-time-wrapper svg {
@@ -961,17 +956,67 @@ form .submit:hover {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-right: .1rem;
+  margin-right: 0.1rem;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment cite {
   display: block;
-  font-size: 1.1rem;
-  margin: .6rem 0 1rem;
+  font-size: 1.15rem;
+  margin: 0.6rem 0 1rem .2rem;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment span {
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section span {
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section svg {
+  font-size: 1.3rem;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section svg:hover {
+  color: #3f3f3f;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .like-icon {
+  margin-left: auto;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 5px;
+  padding: .5rem 1rem;
+  background: #3a3a3a;
+  border: none;
+  color: whitesmoke;
+  cursor: pointer;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section button:hover {
+  background: #910000;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section button svg {
+  font-size: inherit;
+  margin-right: 5px;
+  pointer-events: none;
 }
 /*# sourceMappingURL=index.css.map */
