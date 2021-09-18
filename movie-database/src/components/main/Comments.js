@@ -1,19 +1,38 @@
 import { useState, useEffect } from "react";
-import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
+import {
+  AiOutlineClockCircle,
+  AiOutlineCalendar,
+  AiOutlineDelete,
+} from "react-icons/ai";
+import { BiLike, BiDislike } from "react-icons/bi";
+import firebase from "../utils/firebase";
 
 const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
 
   useEffect(async () => {
-    const uri = "http://localhost:3000/comments";
-
-    try {
-      const res = await fetch(uri);
-      const userInfo = await res.json();
+    const commentRef = firebase.database().ref("Comments");
+    commentRef.on("value", (comment) => {
+      const allComments = comment.val();
+      const userInfo = [];
+      for (let comment in allComments) {
+        userInfo.push(allComments[comment]);
+      }
       setUserInfo(userInfo);
-    } catch (err) {
-      console.error("nothing found", err);
-    }
+      console.log(userInfo);
+    });
+
+    //? JSON-SERVER ----------------
+    // const uri =
+    //   "https://moviedatabase-74d8e-default-rtdb.europe-west1.firebasedatabase.app/";
+    // try {
+    //   const res = await fetch(uri);
+    //   const userInfo = await res.json();
+    //   setUserInfo(userInfo);
+    // } catch (err) {
+    //   console.error("nothing found", err);
+    // }
+    //? END OF JSON-SERVER --------------
   }, []);
 
   return (
@@ -37,7 +56,15 @@ const Comments = () => {
               </div>
             </h2>
             <cite>"{comment.comment}"</cite>
-            <span>- {comment.user}</span>
+            <div className="comment-bottom-section">
+              <span>- {comment.user}</span>
+              <BiLike className="like-icon" />
+              <BiDislike className="deslike-icon" />
+              <button>
+                <AiOutlineDelete />
+                delete{" "}
+              </button>
+            </div>
           </div>
         ))}
       </div>

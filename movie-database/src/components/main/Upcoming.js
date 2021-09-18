@@ -3,6 +3,7 @@ import { api_key } from "../apiKey";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import firebase from "../utils/firebase";
 
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -44,6 +45,25 @@ export default function Upcoming() {
     const name = document.querySelector(".form .nameInput");
     const comment = document.querySelector(".form .commentInput");
 
+    //? JSON-SERVER ----------------
+    // database.ref("comments/" + comment).set({
+    //   title: movieTitle.innerHTML,
+    //   user: name.value,
+    //   comment: comment.value,
+    //   date: dateOfComment,
+    //   time: timeOfComment,
+    // });
+
+    // const commentFetch = await fetch("http://localhost:3000/comments", {
+    //   method: "POST",
+    //   body: JSON.stringify(commentBody),
+    //   headers: { "Content-type": "application/json" },
+    // });
+    //? END OF JSON-SERVER --------------
+
+    //? FIREBASE REALTIME DB ------------
+    const commentRef = firebase.database().ref("Comments");
+
     const commentBody = {
       title: movieTitle.innerHTML,
       user: name.value,
@@ -52,11 +72,8 @@ export default function Upcoming() {
       time: timeOfComment,
     };
 
-    const commentFetch = await fetch("http://localhost:3000/comments", {
-      method: "POST",
-      body: JSON.stringify(commentBody),
-      headers: { "Content-type": "application/json" },
-    });
+    commentRef.push(commentBody);
+    //? END OF FIREBASE REALTIME DB ---------------
 
     name.value = "";
     comment.value = "";
