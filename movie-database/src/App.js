@@ -8,23 +8,6 @@ import Comments from "./components/main/Comments";
 import Watchlist from "./components/main/Watchlist";
 import Settings from "./components/main/Settings";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
-// import { firebase_key, app_id } from "./components/apiKey";
-
-// import { initializeApp } from "firebase/app";
-
-// const firebaseConfig = {
-//   apiKey: `${firebase_key}`,
-//   authDomain: "moviedatabase-74d8e.firebaseapp.com",
-//   databaseURL:
-//     "https://moviedatabase-74d8e-default-rtdb.europe-west1.firebasedatabase.app",
-//   projectId: "moviedatabase-74d8e",
-//   storageBucket: "moviedatabase-74d8e.appspot.com",
-//   messagingSenderId: "207653651942",
-//   appId: `${app_id}`,
-// };
-
-// let database = initializeApp(firebaseConfig);
 
 function App() {
   return (

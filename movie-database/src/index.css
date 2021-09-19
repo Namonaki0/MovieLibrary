@@ -271,6 +271,11 @@ main h1 span::before {
           animation: comment-window-effect 120ms linear;
 }
 
+.upcoming-movies-body .comment-window-wrapper .comment-window-movie-title {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
 @-webkit-keyframes comment-window-effect {
   0% {
     opacity: 0.2;
@@ -407,7 +412,6 @@ main h1 span::before {
   width: 19%;
   margin: 5px 2px;
   z-index: 10;
-  cursor: pointer;
   overflow: hidden;
   outline: 1px solid rgba(192, 192, 192, 0.356);
   -webkit-transition: all 120ms linear;
@@ -420,6 +424,7 @@ main h1 span::before {
   opacity: 1;
   -webkit-transform: translateX(0);
           transform: translateX(0);
+  cursor: pointer;
 }
 
 @-webkit-keyframes movie-container-effect {
@@ -788,8 +793,7 @@ form .submit:hover {
 }
 
 .settings-wrapper h1 {
-  background: url("https://images.pexels.com/photos/1772/technology-music-sound-audio.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-  background-color: #565664;
+  background-color: #3A3738;
   background-blend-mode: multiply;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -959,10 +963,10 @@ form .submit:hover {
   margin-right: 0.1rem;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment cite {
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-paragraph {
   display: block;
-  font-size: 1.15rem;
-  margin: 0.6rem 0 1rem .2rem;
+  font-size: 1.25rem;
+  margin: 1rem 0 .6rem .2rem;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section {
@@ -993,7 +997,7 @@ form .submit:hover {
   margin-left: auto;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section button {
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .delete-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1010,11 +1014,11 @@ form .submit:hover {
   transition: all 120ms linear;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section button:hover {
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .delete-btn:hover {
   background: #910000;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section button svg {
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .delete-btn svg {
   font-size: inherit;
   margin-right: 5px;
   pointer-events: none;

@@ -16,10 +16,11 @@ const Comments = () => {
       const allComments = comment.val();
       const userInfo = [];
       for (let comment in allComments) {
-        userInfo.push(allComments[comment]);
+        userInfo.push({ comment, ...allComments[comment] });
+        // console.log(userInfo);
       }
       setUserInfo(userInfo);
-      console.log(userInfo);
+      // console.log(allComments);
     });
 
     //? JSON-SERVER ----------------
@@ -35,38 +36,50 @@ const Comments = () => {
     //? END OF JSON-SERVER --------------
   }, []);
 
+  const deleteComment = (e) => {
+    const commentRef = firebase
+      .database()
+      .ref("Comments")
+      .child(e.target.value);
+    commentRef.remove();
+  };
+
   return (
     <div className="comments-outter-wrapper">
       <h1>Comments</h1>
 
       <div className="comments-inner-wrapper">
-        {userInfo.map((comment) => (
-          <div className="comment">
-            <h2>
-              {comment.title}{" "}
-              <div className="date-time-wrapper">
-                <span className="date-span">
-                  <AiOutlineCalendar />
-                  {comment.date}
-                </span>
-                <span className="time-span">
-                  <AiOutlineClockCircle />
-                  {comment.time}
-                </span>
+        {userInfo &&
+          userInfo.map((comment, index) => (
+            <div className="comment" key={index}>
+              <h2>
+                {comment.title}{" "}
+                <div className="date-time-wrapper">
+                  <span className="date-span">
+                    <AiOutlineCalendar />
+                    {comment.date}
+                  </span>
+                  <span className="time-span">
+                    <AiOutlineClockCircle />
+                    {comment.time}
+                  </span>
+                </div>
+              </h2>
+              <p className="comment-paragraph">"{comment.comment}"</p>
+              <div className="comment-bottom-section">
+                <span>- {comment.user}</span>
+                <BiLike className="like-icon" />
+                <BiDislike className="deslike-icon" />
+                <button
+                  className="delete-btn"
+                  onClick={(e) => deleteComment(e)}
+                >
+                  <AiOutlineDelete />
+                  delete{" "}
+                </button>
               </div>
-            </h2>
-            <cite>"{comment.comment}"</cite>
-            <div className="comment-bottom-section">
-              <span>- {comment.user}</span>
-              <BiLike className="like-icon" />
-              <BiDislike className="deslike-icon" />
-              <button>
-                <AiOutlineDelete />
-                delete{" "}
-              </button>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

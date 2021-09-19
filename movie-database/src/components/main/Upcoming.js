@@ -24,7 +24,7 @@ export default function Upcoming() {
     }
   }, []);
 
-  //? JSON-SERVER COMMENTS INPUT ------------
+  //? COMMENTS INPUT ------------
   const formSubmit = async (e) => {
     e.preventDefault();
 

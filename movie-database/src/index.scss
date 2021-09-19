@@ -231,6 +231,11 @@ main {
     z-index: 1000;
     animation: comment-window-effect 120ms linear;
 
+    .comment-window-movie-title {
+      font-size: 2rem;
+      margin-bottom: .5rem;
+    }
+
     @keyframes comment-window-effect {
       0% {
         opacity: 0.2;
@@ -241,6 +246,8 @@ main {
         opacity: 1;
         transform: translateY(0%);
       }
+
+      
     }
 
     form {
@@ -335,7 +342,6 @@ main {
     width: 19%;
     margin: 5px 2px;
     z-index: 10;
-    cursor: pointer;
     overflow: hidden;
     outline: 1px solid rgba(192, 192, 192, 0.356);
     transition: all 120ms linear;
@@ -347,6 +353,7 @@ main {
       .sidebar-icons-wrapper {
         opacity: 1;
         transform: translateX(0);
+        cursor: pointer;
       }
     }
 
@@ -681,8 +688,8 @@ form {
   }
 
   h1 {
-    background: url("https://images.pexels.com/photos/1772/technology-music-sound-audio.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-    background-color: rgb(86, 86, 100);
+    // background: url("https://images.pexels.com/photos/1772/technology-music-sound-audio.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+    background-color: #3A3738;
     background-blend-mode: multiply;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -778,8 +785,6 @@ form {
   }
 
   .comments-inner-wrapper {
-    // display: flex;
-    // flex-direction: column-reverse;
     height: 81.5vh;
     overflow-y: auto;
     scroll-padding-bottom: auto;
@@ -818,15 +823,14 @@ form {
         }
       }
 
-      cite {
+      .comment-paragraph {
         display: block;
-        font-size: 1.15rem;
-        margin: 0.6rem 0 1rem .2rem;
+        font-size: 1.25rem;
+        margin: 1rem 0 .6rem .2rem;
       }
 
       .comment-bottom-section {
         display: flex;
-        // justify-content: space-between;
         align-items: center;
 
 
@@ -850,7 +854,7 @@ form {
           margin-left: auto;
         }
   
-        button {
+        .delete-btn {
           display: flex;
           align-items: center;
           margin-left: 5px;
