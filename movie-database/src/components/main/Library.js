@@ -78,11 +78,11 @@ export default function Library() {
   //? MOVIE TITLE SEARCH RENDER //
   return (
     <>
-      <div>
+      <div className="library-outter-wrapper">
         <form onSubmit={submitSearch} className="form">
           <input
             type="text"
-            placeholder="search movie..."
+            placeholder="movie..."
             value={query}
             name="query"
             onChange={(e) => setQuery(e.target.value)}
@@ -93,23 +93,29 @@ export default function Library() {
         </form>
 
         <div className="outter-wrapper">
-          <div className="movie-template">
-            {movies
-              .filter((movie) => movie.poster_path)
-              .map(
-                (movie) =>
-                  movie && (
-                    <MovieTemplate
-                      movie={movies}
-                      src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                      title={movie.title}
-                      overview={movie.overview}
-                      release_date={movie.release_date}
-                      vote_average={movie.vote_average}
-                    />
-                  )
-              )}
-          </div>
+          {movies.length > 0 ? (
+            <div className="movie-template">
+              {movies
+                .filter((movie) => movie.poster_path)
+                .map(
+                  (movie) =>
+                    movie && (
+                      <MovieTemplate
+                        movie={movies}
+                        src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
+                        title={movie.title}
+                        overview={movie.overview}
+                        release_date={movie.release_date}
+                        vote_average={movie.vote_average}
+                      />
+                    )
+                )}
+            </div>
+          ) : (
+            <div class="no-movies-message">
+              <p>movie search...</p>
+            </div>
+          )}
         </div>
       </div>
     </>

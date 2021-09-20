@@ -4,6 +4,7 @@ $nav-bg: #1c1c1c;
 $text-color: #fff;
 $ff: "helvetica", sans-serif;
 $ff-secondary: "Roboto Condensed", sans-serif;
+$view-height: 90vh;
 
 body {
   font-family: $ff-secondary;
@@ -217,8 +218,8 @@ main {
 //? UPCOMING SECTION
 
 .upcoming-movies-body {
-  min-height: 75%;
   position: relative;
+  height: 90vh;
 
   .comment-window-wrapper {
     display: grid;
@@ -233,7 +234,6 @@ main {
 
     .comment-window-movie-title {
       font-size: 2rem;
-      margin-bottom: .5rem;
     }
 
     @keyframes comment-window-effect {
@@ -326,8 +326,9 @@ main {
     position: relative;
     align-items: center;
     justify-content: space-evenly;
-    padding: 2px 0.3rem 2px 3.5rem;
-    height: calc(80vh + 12px);
+    padding: 2px 0.3rem 1px 3.5rem;
+    height: 81vh;
+    // height: calc(80vh + 12px);
     overflow-y: auto;
     overflow-x: hidden;
     background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -335,6 +336,7 @@ main {
     background-size: 100%;
     background-position: center;
     background-blend-mode: multiply;
+    
   }
 
   .upcoming-movie-container {
@@ -348,7 +350,6 @@ main {
     animation: movie-container-effect 120ms linear;
 
     &:hover {
-      // animation: sidebar-icons-effect 120ms linear;
 
       .sidebar-icons-wrapper {
         opacity: 1;
@@ -377,7 +378,6 @@ main {
     background: rgba(0, 0, 0, 0.842);
     border-radius: none;
     color: rgb(240, 240, 240);
-
     font-weight: 300;
     border-top-right-radius: 5px;
   }
@@ -441,6 +441,11 @@ main {
   }
 }
 
+.library-outter-wrapper {
+  overflow-y: hidden;
+  height: 91vh;
+}
+
 //? MOVIE SEARCH FORM
 form {
   padding: 10px;
@@ -473,12 +478,40 @@ form {
 }
 
 .outter-wrapper {
-  padding: 2px 0 5px;
+  // height: 80vh;
+  padding: 2px 0 10px;
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-color: rgb(34, 34, 34);
   background-size: 100%;
   background-position: center;
   background-blend-mode: multiply;
+  overflow-y: hidden;
+
+  .no-movies-message {
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 81vh;
+
+    p {
+      color: $text-color;
+      font-size: 3rem;
+      text-align: center;
+      animation: movie-library-message 180ms linear;
+    }
+
+    @keyframes movie-library-message {
+      0%{
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
 }
 
 //? MOVIE TEMPLATE
