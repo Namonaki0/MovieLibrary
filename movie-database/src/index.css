@@ -253,8 +253,8 @@ main h1 span::before {
 }
 
 .upcoming-movies-body {
-  min-height: 75%;
   position: relative;
+  height: 90vh;
 }
 
 .upcoming-movies-body .comment-window-wrapper {
@@ -273,7 +273,6 @@ main h1 span::before {
 
 .upcoming-movies-body .comment-window-wrapper .comment-window-movie-title {
   font-size: 2rem;
-  margin-bottom: .5rem;
 }
 
 @-webkit-keyframes comment-window-effect {
@@ -396,8 +395,8 @@ main h1 span::before {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  padding: 2px 0.3rem 2px 3.5rem;
-  height: calc(80vh + 12px);
+  padding: 2px 0.3rem 1px 3.5rem;
+  height: 81vh;
   overflow-y: auto;
   overflow-x: hidden;
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -516,6 +515,11 @@ main h1 span::before {
   display: block;
 }
 
+.library-outter-wrapper {
+  overflow-y: hidden;
+  height: 91vh;
+}
+
 form {
   padding: 10px;
   margin: auto;
@@ -547,12 +551,60 @@ form .submit:hover {
 }
 
 .outter-wrapper {
-  padding: 2px 0 5px;
+  padding: 2px 0 10px;
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-color: #222222;
   background-size: 100%;
   background-position: center;
   background-blend-mode: multiply;
+  overflow-y: hidden;
+}
+
+.outter-wrapper .no-movies-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 81vh;
+}
+
+.outter-wrapper .no-movies-message p {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  -webkit-animation: movie-library-message 180ms linear;
+          animation: movie-library-message 180ms linear;
+}
+
+@-webkit-keyframes movie-library-message {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes movie-library-message {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 .movie-template {
