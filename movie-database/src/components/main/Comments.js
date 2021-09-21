@@ -17,23 +17,9 @@ const Comments = () => {
       const userInfo = [];
       for (let comment in allComments) {
         userInfo.push({ comment, ...allComments[comment] });
-        // console.log(userInfo);
       }
       setUserInfo(userInfo);
-      // console.log(allComments);
     });
-
-    //? JSON-SERVER ----------------
-    // const uri =
-    //   "https://moviedatabase-74d8e-default-rtdb.europe-west1.firebasedatabase.app/";
-    // try {
-    //   const res = await fetch(uri);
-    //   const userInfo = await res.json();
-    //   setUserInfo(userInfo);
-    // } catch (err) {
-    //   console.error("nothing found", err);
-    // }
-    //? END OF JSON-SERVER --------------
   }, []);
 
   const deleteComment = (e) => {
