@@ -97,19 +97,7 @@ export default function Library() {
             <div className="movie-template">
               {movies
                 .filter((movie) => movie.poster_path)
-                .map(
-                  (movie) =>
-                    movie && (
-                      <MovieTemplate
-                        movie={movies}
-                        src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-                        title={movie.title}
-                        overview={movie.overview}
-                        release_date={movie.release_date}
-                        vote_average={movie.vote_average}
-                      />
-                    )
-                )}
+                .map((movie) => movie && <MovieTemplate movie={movie} />)}
             </div>
           ) : (
             <div class="no-movies-message">
