@@ -427,6 +427,10 @@ main {
       pointer-events: none;
     }
 
+    .add-movie {
+      pointer-events: initial;
+    }
+
     a {
       &:hover {
         .sidebar-icons {
