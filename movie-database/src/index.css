@@ -507,6 +507,10 @@ main h1 span::before {
   pointer-events: none;
 }
 
+.upcoming-movies-body .sidebar-icons-wrapper .add-movie {
+  pointer-events: initial;
+}
+
 .upcoming-movies-body .sidebar-icons-wrapper a:hover .sidebar-icons {
   color: whitesmoke;
 }

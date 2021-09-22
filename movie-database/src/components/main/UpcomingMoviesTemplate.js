@@ -1,16 +1,22 @@
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
 
-const UpcomingMoviesTemplate = ({
+export const UpcomingMoviesTemplate = ({
   upcomingMovie,
   movieTitleTarget,
   setCommentWindow,
 }) => {
+  const { addMovieToWatchlist } = useContext(GlobalContext);
   return (
     <div className="upcoming-movie-container">
       <span className="sidebar-icons-wrapper">
         <a>
-          <IoAddCircleOutline className="sidebar-icons" />
+          <IoAddCircleOutline
+            className="sidebar-icons add-movie"
+            onClick={() => addMovieToWatchlist(upcomingMovie)}
+          />
         </a>
         <a
           onClick={(e) => {
