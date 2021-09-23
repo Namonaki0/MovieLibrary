@@ -64,7 +64,9 @@ export default function Upcoming() {
 
   //? GRABS MOVIE TITLE ON CLICK FROM OFFSET-PARENT
   const movieTitleTarget = (e) => {
-    setMovieTitle(e.target.offsetParent.offsetParent.children[2].innerHTML);
+    setMovieTitle(
+      e.target.parentElement.offsetParent.offsetParent.children[2].innerHTML
+    );
   };
 
   return (

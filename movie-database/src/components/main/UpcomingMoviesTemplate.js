@@ -8,13 +8,28 @@ export const UpcomingMoviesTemplate = ({
   movieTitleTarget,
   setCommentWindow,
 }) => {
-  const { addMovieToWatchlist } = useContext(GlobalContext);
+  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
+
+  let movieInWatchlist = watchlist.find(
+    (movie) => movie.id === upcomingMovie.id
+  );
+
+  const iconDisabled = {
+    pointerEvents: "none",
+    cursor: "none",
+    color: "darkGrey",
+    transition: "all 300ms ease",
+  };
+
+  const watchlistMovieBtnDisabled = movieInWatchlist ? iconDisabled : "";
+
   return (
     <div className="upcoming-movie-container">
       <span className="sidebar-icons-wrapper">
         <a>
           <IoAddCircleOutline
             className="sidebar-icons add-movie"
+            style={watchlistMovieBtnDisabled}
             onClick={() => addMovieToWatchlist(upcomingMovie)}
           />
         </a>
@@ -24,7 +39,10 @@ export const UpcomingMoviesTemplate = ({
             movieTitleTarget(e);
           }}
         >
-          <VscComment className="sidebar-icons" />
+          <VscComment
+            className="sidebar-icons"
+            onClick={(e) => console.dir(e.target)}
+          />
         </a>
       </span>
       <img

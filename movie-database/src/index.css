@@ -423,7 +423,6 @@ main h1 span::before {
   opacity: 1;
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  cursor: pointer;
 }
 
 @-webkit-keyframes movie-container-effect {
@@ -495,6 +494,10 @@ main h1 span::before {
   transition: all 120ms linear;
 }
 
+.upcoming-movies-body .sidebar-icons-wrapper* {
+  cursor: pointer;
+}
+
 .upcoming-movies-body .sidebar-icons-wrapper.active {
   display: block;
 }
@@ -504,11 +507,8 @@ main h1 span::before {
   margin-top: 0.2rem;
   font-size: 1.3rem;
   color: rgba(245, 245, 245, 0.89);
-  pointer-events: none;
-}
-
-.upcoming-movies-body .sidebar-icons-wrapper .add-movie {
   pointer-events: initial;
+  cursor: pointer;
 }
 
 .upcoming-movies-body .sidebar-icons-wrapper a:hover .sidebar-icons {
