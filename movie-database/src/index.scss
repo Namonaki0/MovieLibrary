@@ -354,7 +354,7 @@ main {
       .sidebar-icons-wrapper {
         opacity: 1;
         transform: translateX(0);
-        cursor: pointer;
+        // cursor: pointer;
       }
     }
 
@@ -415,6 +415,10 @@ main {
     padding: 0.3rem;
     transition: all 120ms linear;
 
+    &* {
+      cursor: pointer;
+    }
+
     &.active {
       display: block;
     }
@@ -424,12 +428,13 @@ main {
       margin-top: 0.2rem;
       font-size: 1.3rem;
       color: rgba(245, 245, 245, 0.89);
-      pointer-events: none;
+      pointer-events: initial;
+      cursor: pointer;
     }
 
-    .add-movie {
-      pointer-events: initial;
-    }
+    // .add-movie {
+    //   pointer-events: initial;
+    // }
 
     a {
       &:hover {
