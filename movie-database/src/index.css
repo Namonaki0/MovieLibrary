@@ -823,12 +823,10 @@ form .submit:hover {
   margin: auto;
 }
 
-.watchlist-wrapper,
 .comments-wrapper {
   border-top-right-radius: 5px;
 }
 
-.watchlist-wrapper h1,
 .comments-wrapper h1 {
   color: #fff;
   background: #3a3738;
@@ -1078,5 +1076,36 @@ form .submit:hover {
   font-size: inherit;
   margin-right: 5px;
   pointer-events: none;
+}
+
+.watchlist-outter-wrapper {
+  border-top-right-radius: 5px;
+}
+
+.watchlist-outter-wrapper h1 {
+  color: #fff;
+  background: #3a3738;
+  font-weight: 300;
+  padding: 0.5rem 1rem 0.5rem 3.8rem;
+  border-top-right-radius: 5px;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+.watchlist-outter-wrapper .watchlist-inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-color: #222222;
+  background-size: 100%;
+  background-position: center;
+  background-blend-mode: multiply;
+  padding-left: 3.5rem;
+  height: 81vh;
+  overflow-y: auto;
+  color: white;
 }
 /*# sourceMappingURL=index.css.map */
