@@ -328,7 +328,6 @@ main {
     justify-content: space-evenly;
     padding: 2px 0.3rem 1px 3.5rem;
     height: 81vh;
-    // height: calc(80vh + 12px);
     overflow-y: auto;
     overflow-x: hidden;
     background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -354,7 +353,6 @@ main {
       .sidebar-icons-wrapper {
         opacity: 1;
         transform: translateX(0);
-        // cursor: pointer;
       }
     }
 
@@ -701,7 +699,6 @@ form {
 
 //? FAVORITES
 
-.watchlist-wrapper,
 .comments-wrapper {
   border-top-right-radius: 5px;
 
@@ -730,7 +727,6 @@ form {
   }
 
   h1 {
-    // background: url("https://images.pexels.com/photos/1772/technology-music-sound-audio.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
     background-color: #3A3738;
     background-blend-mode: multiply;
     background-size: 100%;
@@ -792,7 +788,6 @@ form {
 
       a {
         text-decoration: none;
-        // color: $text-color;
         font-size: 1.1rem;
         margin-right: 0.8rem;
         font-weight: bold;
@@ -921,4 +916,38 @@ form {
       }
     }
   }
+}
+
+
+//? WATCHLIST
+
+.watchlist-outter-wrapper{
+  border-top-right-radius: 5px;
+ 
+
+   h1 {
+     color: $text-color;
+     background: #3a3738;
+     font-weight: 300;
+     padding: 0.5rem 1rem 0.5rem 3.8rem;
+     border-top-right-radius: 5px;
+     text-align: right;
+     letter-spacing: 1px;
+   }
+
+  .watchlist-inner-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+        background-color: rgb(34, 34, 34);
+        background-size: 100%;
+        background-position: center;
+        background-blend-mode: multiply;
+    padding-left: 3.5rem;
+     height: 81vh;
+     overflow-y: auto;
+     color: white;
+  } 
+
+  
 }
