@@ -23,11 +23,11 @@ body {
 }
 
 ::-webkit-scrollbar-button {
-  background: #1c1c1cf3;
+  background: #2c2c2cf3;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1c1c1cf3;
+  background: #3b3b3bf3;
 }
 
 .light-mode {
@@ -847,7 +847,7 @@ form .submit:hover {
 }
 
 .settings-wrapper h1 {
-  background-color: #3A3738;
+  background-color: #3a3738;
   background-blend-mode: multiply;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -1020,7 +1020,7 @@ form .submit:hover {
 .comments-outter-wrapper .comments-inner-wrapper .comment .comment-paragraph {
   display: block;
   font-size: 1.25rem;
-  margin: 1rem 0 .6rem .2rem;
+  margin: 1rem 0 0.6rem 0.2rem;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section {
@@ -1059,7 +1059,7 @@ form .submit:hover {
       -ms-flex-align: center;
           align-items: center;
   margin-left: 5px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   background: #3a3a3a;
   border: none;
   color: whitesmoke;
@@ -1104,8 +1104,122 @@ form .submit:hover {
   background-position: center;
   background-blend-mode: multiply;
   padding-left: 3.5rem;
-  height: 81vh;
+  padding-top: 0.15rem;
+  height: 81.5vh;
   overflow-y: auto;
   color: white;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper {
+  position: relative;
+  margin: 0 0.5px;
+  overflow: hidden;
+  -webkit-animation: watchlist-movie-effect 120ms linear;
+          animation: watchlist-movie-effect 120ms linear;
+}
+
+@-webkit-keyframes watchlist-movie-effect {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes watchlist-movie-effect {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper:hover .watchlist-info-slider {
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  top: 5px;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper:hover .watchlist-info-slider p,
+.watchlist-outter-wrapper .watchlist-movie-wrapper:hover .watchlist-info-slider button {
+  opacity: 1;
+  display: unset;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper:hover .watchlist-info-slider button {
+  margin-top: auto;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  margin: 0;
+  top: 75%;
+  bottom: 0;
+  right: -2px;
+  left: 0;
+  padding: 1rem 0.5rem;
+  z-index: 10;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.521);
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider h2 {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider p {
+  text-align: left;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider p,
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider button {
+  opacity: 0;
+  display: none;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider button {
+  margin: 0 auto;
+  margin-top: auto;
+  font-family: inherit;
+  border: none;
+  color: white;
+  padding: .5rem 1rem;
+  background: rgba(0, 0, 0, 0.685);
+  outline: 0.5px solid rgba(192, 192, 192, 0.171);
+  cursor: pointer;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider button:hover {
+  outline: 0.5px solid rgba(192, 192, 192, 0.363);
 }
 /*# sourceMappingURL=index.css.map */
