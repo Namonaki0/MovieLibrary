@@ -506,7 +506,7 @@ form {
     @keyframes movie-library-message {
       0% {
         opacity: 0;
-        transform: translateX(20px);
+        transform: translateX(-20px);
       }
       100% {
         opacity: 1;
@@ -540,6 +540,53 @@ form {
     transition: all 120ms linear;
     outline: 1px solid rgba(192, 192, 192, 0.356);
     animation: movie-container-effect 120ms linear;
+
+    &:hover {
+      transition: all 120ms linear;
+      .sidebar-icons-wrapper {
+        opacity: 1;
+        display: block;
+        transform: translateX(0);
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.034),
+          rgba(0, 0, 0, 0.651)
+        );
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.3rem;
+        transition: all 120ms linear;
+
+        &* {
+          cursor: pointer;
+        }
+
+        .sidebar-icons {
+          display: block;
+          margin-top: 0.2rem;
+          font-size: 1.3rem;
+          color: rgba(245, 245, 245, 0.89);
+          pointer-events: initial;
+          cursor: pointer;
+        }
+
+        a {
+          &:hover {
+            .sidebar-icons {
+              color: rgb(245, 245, 245);
+            }
+          }
+        }
+      }
+    }
+
+    .sidebar-icons-wrapper {
+      display: none;
+      opacity: 0;
+      transform: translateX(10px);
+    }
 
     @keyframes movie-container-effect {
       0% {
@@ -694,8 +741,24 @@ form {
 
 //? FAVORITES
 
-.comments-wrapper {
+.comments-outter-wrapper {
   border-top-right-radius: 5px;
+
+  .comment {
+    animation: comments-effect 120ms linear;
+
+    @keyframes comments-effect {
+      0% {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
 
   h1 {
     color: $text-color;
@@ -946,7 +1009,6 @@ form {
     overflow: hidden;
     animation: watchlist-movie-effect 120ms linear;
 
-
     @keyframes watchlist-movie-effect {
       0% {
         opacity: 0;
@@ -958,31 +1020,26 @@ form {
         transform: translateY(0);
       }
     }
-    
+
     &:hover {
-
       .watchlist-info-slider {
+        transition: all 150ms linear;
+        flex-direction: column;
+        align-items: flex-start;
 
-      transition: all 150ms linear;
-      flex-direction: column;
-      align-items: flex-start;
+        top: 5px;
 
+        p,
+        button {
+          opacity: 1;
+          display: unset;
+        }
 
-      top: 5px;
-
-      p,
-      button {
-        opacity: 1;
-        display: unset;
-      }
-
-      button {
-        margin-top: auto;
+        button {
+          margin-top: auto;
+        }
       }
     }
-
-    }
-    
 
     .watchlist-info-slider {
       display: flex;
@@ -1000,8 +1057,6 @@ form {
       background: rgba(0, 0, 0, 0.521);
       transition: all 150ms linear;
 
-     
-
       h2 {
         font-weight: 300;
         font-size: 1rem;
@@ -1011,7 +1066,6 @@ form {
         text-align: left;
         font-size: 0.8rem;
         margin-top: 5px;
-        
       }
 
       p,
@@ -1026,14 +1080,14 @@ form {
         font-family: inherit;
         border: none;
         color: white;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         background: rgba(0, 0, 0, 0.685);
-        outline: .5px solid rgba(192, 192, 192, 0.171);
+        outline: 0.5px solid rgba(192, 192, 192, 0.171);
         cursor: pointer;
         transition: all 120ms linear;
 
         &:hover {
-          outline: .5px solid rgba(192, 192, 192, 0.363);
+          outline: 0.5px solid rgba(192, 192, 192, 0.363);
         }
       }
     }

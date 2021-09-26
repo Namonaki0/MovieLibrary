@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
+import CommentModal from "./CommentModal";
+import firebase from "../utils/firebase";
 
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+  const [movieTitle, setMovieTitle] = useState("title");
+  const [commentWindow, setCommentWindow] = useState(null);
+  const [comments, setComments] = useState("");
+  const [user, setUsername] = useState("");
 
   //? MODAL CREATION ---------------
   useEffect(() => {
@@ -16,11 +22,12 @@ export default function Library() {
 
     movieContainers.forEach((movieContainer) => {
       movieContainer.addEventListener("click", (e) => {
-        let movieImage = e.target.children[0].currentSrc;
-        let movieTitle = e.target.children[1].innerText;
-        let movieOverview = e.target.children[2].innerText;
-        let movieReleaseDate = e.target.children[3].innerText;
-        let movieRating = e.target.children[4].innerText;
+        console.log(e.target.children);
+        let movieImage = e.target.children[1].currentSrc;
+        let movieTitle = e.target.children[2].innerText;
+        let movieOverview = e.target.children[3].innerText;
+        let movieReleaseDate = e.target.children[4].innerText;
+        let movieRating = e.target.children[5].innerText;
 
         modalDiv.style.display = "flex";
         modalDiv.classList.add("modal-movie-wrapper");
@@ -75,6 +82,52 @@ export default function Library() {
     }
   };
 
+  //? COMMENTS INPUT ------------
+  const formSubmit = async (e) => {
+    e.preventDefault();
+
+    //? DATE
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    let time = date.getTime();
+    //? TIME
+    let hours = date.getHours();
+    let mins = date.getMinutes();
+
+    let dateOfComment = `${day}/${month}/${year}`;
+    let timeOfComment = `${hours}:${mins}`;
+
+    const movieTitle = document.querySelector(".comment-window-movie-title");
+    const name = document.querySelector(".form .nameInput");
+    const comment = document.querySelector(".form .commentInput");
+
+    //? FIREBASE REALTIME DB ------------
+    const commentRef = firebase.database().ref("Comments");
+
+    const commentBody = {
+      title: movieTitle.innerHTML,
+      user: name.value,
+      comment: comment.value,
+      date: dateOfComment,
+      time: timeOfComment,
+    };
+
+    commentRef.push(commentBody);
+    //? END OF FIREBASE REALTIME DB ---------------
+
+    name.value = "";
+    comment.value = "";
+  };
+
+  //? GRABS MOVIE TITLE ON CLICK FROM OFFSET-PARENT
+  const movieTitleTarget = (e) => {
+    setMovieTitle(
+      e.target.parentElement.offsetParent.offsetParent.children[2].innerHTML
+    );
+  };
+
   //? MOVIE TITLE SEARCH RENDER //
   return (
     <>
@@ -106,6 +159,14 @@ export default function Library() {
           )}
         </div>
       </div>
+      <CommentModal
+        setComments={(e) => setComments(e)}
+        setUsername={(e) => setUsername(e)}
+        commentWindow={commentWindow}
+        setCommentWindow={setCommentWindow}
+        movieTitle={movieTitle}
+        formSubmit={formSubmit}
+      />
     </>
   );
 }
