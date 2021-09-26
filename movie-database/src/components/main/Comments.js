@@ -56,13 +56,13 @@ const Comments = () => {
                 <span>- {comment.user}</span>
                 <BiLike className="like-icon" />
                 <BiDislike className="deslike-icon" />
-                <button
+                {/* <button
                   className="delete-btn"
                   onClick={(e) => deleteComment(e)}
                 >
                   <AiOutlineDelete />
                   delete{" "}
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
