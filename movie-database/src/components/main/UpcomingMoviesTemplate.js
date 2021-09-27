@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
+import { AiOutlineEye } from "react-icons/ai";
 
 export const UpcomingMoviesTemplate = ({
   upcomingMovie,
@@ -33,15 +34,16 @@ export const UpcomingMoviesTemplate = ({
             onClick={() => addMovieToWatchlist(upcomingMovie)}
           />
         </a>
-        <a
-          onClick={(e) => {
-            setCommentWindow("grid");
-            movieTitleTarget(e);
-          }}
-        >
+        <a>
+          <AiOutlineEye className="sidebar-icons" />
+        </a>
+        <a>
           <VscComment
             className="sidebar-icons"
-            onClick={(e) => console.dir(e.target)}
+            onClick={(e) => {
+              setCommentWindow("grid");
+              movieTitleTarget(e);
+            }}
           />
         </a>
       </span>

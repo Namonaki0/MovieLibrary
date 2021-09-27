@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Route } from "react-router-dom";
 import "./menu";
 import { CgMenu } from "react-icons/cg";
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineEye } from "react-icons/ai";
 import { MdNewReleases, MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineLibrary, HiOutlineCog } from "react-icons/hi";
 import { RiTv2Line } from "react-icons/ri";
@@ -56,6 +56,15 @@ export default function Navbar() {
             <RiTv2Line className="icons" />
             <a href="#" className="link-text">
               Watchlist
+            </a>
+          </li>
+        </Link>
+
+        <Link to="/Watched" className="menu-link-path">
+          <li className="menu-link">
+            <AiOutlineEye className="icons" />
+            <a href="#" className="link-text">
+              Watched
             </a>
           </li>
         </Link>

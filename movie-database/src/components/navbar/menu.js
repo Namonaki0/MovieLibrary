@@ -30,10 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // burgerMenu.addEventListener("click", (e) => {
-  //   console.dir(e.target.parentNode.offsetParent);
-  // });
-
   menuLinks.forEach((menuLink) => {
     menuLink.addEventListener("click", () => {
       nav.classList.remove("menu-active");
@@ -43,31 +39,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-
-  //? LIGHT MODE SETTINGS
-  // lightModeIcon.addEventListener("click", () => {
-  //   const menuIcons = document.querySelectorAll(".menu-link svg");
-  //   const burgerMenuIcon = document.querySelector(".burger-menu svg");
-
-  //   nav.classList.toggle("light-mode");
-
-  //   burgerMenuIcon.classList.toggle("light-mode");
-  //   settingsWrapper.classList.toggle("light-mode");
-
-  //   linkTexts.forEach((linkText) => {
-  //     linkText.classList.toggle("light-mode");
-  //     if (linkText.classList.contains("light-mode")) {
-  //       linkText.addEventListener("hover", () => {
-  //         linkText.style.backgroundColor = "red";
-  //         console.log(linkText);
-  //       });
-  //     }
-  //   });
-  //   menuLinks.forEach((menuLink) => {
-  //     menuLink.classList.toggle("light-mode");
-  //   });
-  //   menuIcons.forEach((menuIcon) => {
-  //     menuIcon.classList.toggle("light-mode");
-  //   });
-  // });
 });

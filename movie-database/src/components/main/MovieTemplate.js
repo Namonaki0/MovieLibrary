@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
-import { VscComment } from "react-icons/vsc";
+import { AiOutlineEye } from "react-icons/ai";
 
-const MovieTemplate = ({ movie, movieTitleTarget, setCommentWindow }) => {
+const MovieTemplate = ({ movie }) => {
   const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
-  let movieInWatchlist = watchlist.find((movie) => movie.id === movie.id);
+  let movieInWatchlist = watchlist.find(
+    (libraryMovie) => libraryMovie.id === movie.id
+  );
 
   const iconDisabled = {
     pointerEvents: "none",
@@ -24,19 +26,14 @@ const MovieTemplate = ({ movie, movieTitleTarget, setCommentWindow }) => {
           <IoAddCircleOutline
             className="sidebar-icons add-movie"
             style={watchlistMovieBtnDisabled}
-            onClick={() => addMovieToWatchlist(movie)}
+            onClick={(e) => {
+              addMovieToWatchlist(movie);
+              console.log(e.target);
+            }}
           />
         </a>
-        <a
-          onClick={(e) => {
-            setCommentWindow("grid");
-            movieTitleTarget(e);
-          }}
-        >
-          <VscComment
-            className="sidebar-icons"
-            // onClick={(e) => console.dir(e.target)}
-          />
+        <a>
+          <AiOutlineEye className="sidebar-icons" />
         </a>
       </span>
       <img
