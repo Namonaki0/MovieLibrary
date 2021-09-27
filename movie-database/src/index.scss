@@ -508,6 +508,7 @@ form {
         opacity: 0;
         transform: translateX(-20px);
       }
+
       100% {
         opacity: 1;
         transform: translateX(0);
@@ -537,27 +538,40 @@ form {
     margin-top: 8px;
     z-index: 10;
     cursor: pointer;
-    transition: all 120ms linear;
     outline: 1px solid rgba(192, 192, 192, 0.356);
     animation: movie-container-effect 120ms linear;
+    transition: all 120ms linear;
+
+    .sidebar-icons-wrapper {
+      position: absolute;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.034),
+        rgba(0, 0, 0, 0.651)
+      );
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.3rem;
+      transform: translateX(30px);
+      opacity: 0;
+      transition: all 120ms linear;
+
+      .sidebar-icons {
+        display: block;
+        margin-top: 0.2rem;
+        font-size: 1.3rem;
+        color: rgba(245, 245, 245, 0.89);
+        pointer-events: initial;
+        cursor: pointer;
+      }
+    }
 
     &:hover {
-      transition: all 120ms linear;
       .sidebar-icons-wrapper {
         opacity: 1;
-        display: block;
         transform: translateX(0);
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.034),
-          rgba(0, 0, 0, 0.651)
-        );
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        padding: 0.3rem;
-        transition: all 120ms linear;
 
         &* {
           cursor: pointer;
@@ -580,12 +594,6 @@ form {
           }
         }
       }
-    }
-
-    .sidebar-icons-wrapper {
-      display: none;
-      opacity: 0;
-      transform: translateX(10px);
     }
 
     @keyframes movie-container-effect {
@@ -648,6 +656,7 @@ form {
         opacity: 0;
         transform: translateY(-10px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0px);
@@ -1008,6 +1017,7 @@ form {
     margin: 0 0.5px;
     overflow: hidden;
     animation: watchlist-movie-effect 120ms linear;
+    height: 278px;
 
     @keyframes watchlist-movie-effect {
       0% {
@@ -1026,7 +1036,6 @@ form {
         transition: all 150ms linear;
         flex-direction: column;
         align-items: flex-start;
-
         top: 5px;
 
         p,
@@ -1047,7 +1056,6 @@ form {
       position: absolute;
       margin: 0;
       top: 75%;
-
       bottom: 0;
       right: -2px;
       left: 0;
