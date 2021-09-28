@@ -9,7 +9,8 @@ export const UpcomingMoviesTemplate = ({
   movieTitleTarget,
   setCommentWindow,
 }) => {
-  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
+  const { addMovieToWatchlist, watchlist, addMovieToWatched } =
+    useContext(GlobalContext);
 
   let movieInWatchlist = watchlist.find(
     (movie) => movie.id === upcomingMovie.id
@@ -35,7 +36,10 @@ export const UpcomingMoviesTemplate = ({
           />
         </a>
         <a>
-          <AiOutlineEye className="sidebar-icons" />
+          <AiOutlineEye
+            className="sidebar-icons"
+            onClick={() => addMovieToWatched(upcomingMovie)}
+          />
         </a>
         <a>
           <VscComment

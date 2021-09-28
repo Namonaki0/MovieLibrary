@@ -1243,7 +1243,7 @@ form .submit:hover {
   display: unset;
 }
 
-.watchlist-outter-wrapper .watchlist-movie-wrapper:hover .watchlist-info-slider button {
+.watchlist-outter-wrapper .watchlist-movie-wrapper:hover .watchlist-info-slider .btn-wrapper {
   margin-top: auto;
 }
 
@@ -1285,9 +1285,24 @@ form .submit:hover {
   display: none;
 }
 
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider .btn-wrapper {
+  text-align: center;
+}
+
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider .add-to-watched-btn:hover {
+  outline: .5px solid #5295f9b7;
+  color: #98c1ff;
+}
+
 .watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin: 0 auto;
-  margin-top: auto;
+  margin-top: 10px;
   font-family: inherit;
   border: none;
   color: white;
@@ -1299,7 +1314,66 @@ form .submit:hover {
   transition: all 120ms linear;
 }
 
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider button > svg {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 2px;
+}
+
 .watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider button:hover {
   outline: 0.5px solid rgba(192, 192, 192, 0.363);
+}
+
+.watched-outter-wrapper h1 {
+  text-align: right;
+  padding: 0.5rem 1rem 0.5rem 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.842);
+  border-radius: none;
+  color: #f0f0f0;
+  font-weight: 300;
+  border-top-right-radius: 5px;
+}
+
+.watched-outter-wrapper .watched-inner-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-color: #222222;
+  background-size: 100%;
+  background-position: center;
+  background-blend-mode: multiply;
+  padding-left: 3.5rem;
+  padding-top: 0.15rem;
+  height: 81.5vh;
+  overflow-y: auto;
+  color: white;
+}
+
+.watched-outter-wrapper .watched-inner-wrapper .watched-movie-wrapper {
+  position: relative;
+  margin: 0 0.5px;
+  overflow: hidden;
+  -webkit-animation: watchlist-movie-effect 120ms linear;
+          animation: watchlist-movie-effect 120ms linear;
+  height: 278px;
+}
+
+.watched-outter-wrapper .watched-inner-wrapper .watched-movie-wrapper h2 {
+  position: absolute;
+  font-weight: 300;
+  bottom: 0;
+  margin: 0;
+  right: -2px;
+  left: 0;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  z-index: 10;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.521);
+  pointer-events: none;
 }
 /*# sourceMappingURL=index.css.map */
