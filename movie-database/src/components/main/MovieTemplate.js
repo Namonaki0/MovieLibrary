@@ -4,7 +4,8 @@ import { IoAddCircleOutline } from "react-icons/io5";
 import { AiOutlineEye } from "react-icons/ai";
 
 const MovieTemplate = ({ movie }) => {
-  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
+  const { addMovieToWatchlist, watchlist, addMovieToWatched } =
+    useContext(GlobalContext);
 
   let movieInWatchlist = watchlist.find(
     (libraryMovie) => libraryMovie.id === movie.id
@@ -33,7 +34,10 @@ const MovieTemplate = ({ movie }) => {
           />
         </a>
         <a>
-          <AiOutlineEye className="sidebar-icons" />
+          <AiOutlineEye
+            className="sidebar-icons"
+            onClick={() => addMovieToWatched(movie)}
+          />
         </a>
       </span>
       <img
