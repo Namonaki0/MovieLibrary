@@ -3,6 +3,22 @@ import { GlobalContext } from "../../context/GlobalState";
 
 export default function Watched() {
   const { watched } = useContext(GlobalContext);
+
+  // let movieInWatchedList = watched.find(
+  //   (watchedMovie) => watchedMovie.id === movie.id
+  // );
+
+  // const watchedMovieEffect = {
+  //   pointerEvents: "none",
+  //   cursor: "none",
+  //   color: "darkGrey",
+  //   transition: "all 300ms ease",
+  // };
+
+  // const watchedMovieHighlightEffect = movieInWatchedList
+  //   ? watchedMovieEffect
+  //   : "";
+
   return (
     <div className="watched-outter-wrapper">
       <h1>Watched</h1>

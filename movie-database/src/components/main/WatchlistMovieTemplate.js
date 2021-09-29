@@ -9,15 +9,19 @@ const WatchlistMovieTemplate = ({ listedMovie }) => {
   return (
     <div className="watchlist-movie-wrapper">
       <div className="watchlist-info-slider">
-        <h2 className="watchlist-movie">{listedMovie.title}</h2>
-        <p>RATING: {listedMovie.vote_average}</p>
+        <div className="watchlist-main-info-slider">
+          <h2 className="watchlist-movie">{listedMovie.title}</h2>
+          <p className="watchlist-movie-rating">
+            RATING: {listedMovie.vote_average}
+          </p>
+        </div>
         <div className="btn-wrapper">
           <button
             className="add-to-watched-btn"
             onClick={() => addMovieToWatched(listedMovie)}
           >
             <AiOutlineCheck />
-            watched
+            <p>watched</p>
           </button>
           <button
             className="remove-from-watchlist-btn"
