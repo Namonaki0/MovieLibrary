@@ -1,14 +1,19 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { AiOutlineEye } from "react-icons/ai";
 
 const MovieTemplate = ({ movie }) => {
-  const { addMovieToWatchlist, watchlist, addMovieToWatched } =
+  // const [watchedEffect, setWatchedEffect] = useState("");
+  const { addMovieToWatchlist, watchlist, addMovieToWatched, watched } =
     useContext(GlobalContext);
 
   let movieInWatchlist = watchlist.find(
     (libraryMovie) => libraryMovie.id === movie.id
+  );
+
+  let movieInWatchedList = watched.find(
+    (watchedMovie) => watchedMovie.id === movie.id
   );
 
   const iconDisabled = {
@@ -18,7 +23,19 @@ const MovieTemplate = ({ movie }) => {
     transition: "all 300ms ease",
   };
 
+  const watchedMovieEffect = {
+    cursor: "initial",
+    color: "darkGrey",
+    transition: "all 300ms ease",
+  };
+
   const watchlistMovieBtnDisabled = movieInWatchlist ? iconDisabled : "";
+
+  const watchedMovieHighlightEffect = movieInWatchedList
+    ? watchedMovieEffect
+    : "";
+
+  // setWatchedEffect(watchedMovieHighlightEffect);
 
   return (
     <div className="movie-container" key={movie.id}>
@@ -37,6 +54,7 @@ const MovieTemplate = ({ movie }) => {
           <AiOutlineEye
             className="sidebar-icons"
             onClick={() => addMovieToWatched(movie)}
+            style={watchedMovieHighlightEffect}
           />
         </a>
       </span>

@@ -1244,13 +1244,16 @@ form .submit:hover {
 }
 
 .watchlist-outter-wrapper .watchlist-movie-wrapper:hover .watchlist-info-slider .btn-wrapper {
-  margin-top: auto;
+  text-align: center;
 }
 
 .watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1285,8 +1288,8 @@ form .submit:hover {
   display: none;
 }
 
-.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider .btn-wrapper {
-  text-align: center;
+.watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider .add-to-watched-btn {
+  margin-top: auto;
 }
 
 .watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider .add-to-watched-btn:hover {
@@ -1295,12 +1298,6 @@ form .submit:hover {
 }
 
 .watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
   margin: 0 auto;
   margin-top: 10px;
   font-family: inherit;
@@ -1315,8 +1312,6 @@ form .submit:hover {
 }
 
 .watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider button > svg {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   margin-right: 2px;
 }
 

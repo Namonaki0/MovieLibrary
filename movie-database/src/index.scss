@@ -1038,20 +1038,25 @@ form {
         align-items: flex-start;
         top: 5px;
 
+       
+
         p,
         button {
           opacity: 1;
           display: unset;
         }
 
-        .btn-wrapper {
-         margin-top: auto;
-        }
+           .btn-wrapper {
+             text-align: center;
+            
+           }
+       
       }
     }
 
     .watchlist-info-slider {
       display: flex;
+      justify-content:space-between;
       align-items: center;
       position: absolute;
       margin: 0;
@@ -1074,6 +1079,7 @@ form {
         text-align: left;
         font-size: 0.8rem;
         margin-top: 5px;
+        
       }
 
       p,
@@ -1082,11 +1088,11 @@ form {
         display: none;
       }
 
-      .btn-wrapper {
-        text-align: center;
-      }
+
 
       .add-to-watched-btn {
+        margin-top: auto;
+
         &:hover {
 
           outline: .5px solid #5295f9b7;
@@ -1095,8 +1101,8 @@ form {
       }
 
       button {
-        display: flex;
-        align-items: baseline;
+        // display: flex;
+        // align-items: flex-end;
         margin: 0 auto;
         margin-top: 10px;
         font-family: inherit;
@@ -1108,14 +1114,14 @@ form {
         cursor: pointer;
         transition: all 120ms linear;
 
-     
       
        & > svg {
-         align-self: flex-end;
+        //  align-self: center;
          margin-right: 2px;
        }
 
         &:hover {
+ 
           outline: 0.5px solid rgba(192, 192, 192, 0.363);
         }
       }
