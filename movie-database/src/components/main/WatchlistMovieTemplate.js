@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 
@@ -20,14 +20,12 @@ const WatchlistMovieTemplate = ({ listedMovie }) => {
             className="add-to-watched-btn"
             onClick={() => addMovieToWatched(listedMovie)}
           >
-            <AiOutlineCheck />
-            <p>watched</p>
+            watched
           </button>
           <button
             className="remove-from-watchlist-btn"
             onClick={() => removeMovieFromWatchlist(listedMovie.id)}
           >
-            <AiOutlineClose />
             remove from watchlist
           </button>
         </div>

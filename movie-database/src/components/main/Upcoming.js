@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { api_key } from "../apiKey";
 import UpcomingMoviesTemplate from "./UpcomingMoviesTemplate";
 import CommentModal from "./CommentModal";
@@ -7,7 +7,7 @@ import firebase from "../utils/firebase";
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [commentWindow, setCommentWindow] = useState(null);
-  const [movieTitle, setMovieTitle] = useState("title");
+  const [movieTitle, setMovieTitle] = useState("");
   const [user, setUsername] = useState("");
   const [comments, setComments] = useState("");
 

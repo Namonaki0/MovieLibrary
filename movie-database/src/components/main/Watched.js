@@ -34,6 +34,9 @@ export default function Watched() {
               />
             </div>
           ))}
+          <span className="watched-clear-span">
+            <button>clear all</button>
+          </span>
         </div>
       ) : (
         <h2>There are currently no movies in your watched list</h2>

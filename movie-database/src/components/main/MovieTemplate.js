@@ -1,19 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
-import { AiOutlineEye } from "react-icons/ai";
+import { VscComment } from "react-icons/vsc";
 
-const MovieTemplate = ({ movie }) => {
-  // const [watchedEffect, setWatchedEffect] = useState("");
-  const { addMovieToWatchlist, watchlist, addMovieToWatched, watched } =
-    useContext(GlobalContext);
+const MovieTemplate = ({ movie, movieTitleTarget, setCommentWindow }) => {
+  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
   let movieInWatchlist = watchlist.find(
     (libraryMovie) => libraryMovie.id === movie.id
-  );
-
-  let movieInWatchedList = watched.find(
-    (watchedMovie) => watchedMovie.id === movie.id
   );
 
   const iconDisabled = {
@@ -23,19 +17,7 @@ const MovieTemplate = ({ movie }) => {
     transition: "all 300ms ease",
   };
 
-  const watchedMovieEffect = {
-    cursor: "initial",
-    color: "darkGrey",
-    transition: "all 300ms ease",
-  };
-
   const watchlistMovieBtnDisabled = movieInWatchlist ? iconDisabled : "";
-
-  const watchedMovieHighlightEffect = movieInWatchedList
-    ? watchedMovieEffect
-    : "";
-
-  // setWatchedEffect(watchedMovieHighlightEffect);
 
   return (
     <div className="movie-container" key={movie.id}>
@@ -44,17 +26,18 @@ const MovieTemplate = ({ movie }) => {
           <IoAddCircleOutline
             className="sidebar-icons add-movie"
             style={watchlistMovieBtnDisabled}
-            onClick={(e) => {
+            onClick={() => {
               addMovieToWatchlist(movie);
-              console.log(e.target);
             }}
           />
         </a>
         <a>
-          <AiOutlineEye
+          <VscComment
             className="sidebar-icons"
-            onClick={() => addMovieToWatched(movie)}
-            style={watchedMovieHighlightEffect}
+            onClick={(e) => {
+              setCommentWindow("grid");
+              movieTitleTarget(e);
+            }}
           />
         </a>
       </span>
