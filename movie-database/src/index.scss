@@ -1101,8 +1101,6 @@ form {
       }
 
       button {
-        // display: flex;
-        // align-items: flex-end;
         margin: 0 auto;
         margin-top: 10px;
         font-family: inherit;
@@ -1133,7 +1131,7 @@ form {
 //? WATCHED 
 
 .watched-outter-wrapper {
-  
+  position: relative;
 
     h1 {
       text-align: right;
@@ -1147,6 +1145,7 @@ form {
     }
 
     .watched-inner-wrapper {
+      position: relative;
       display: flex;
       flex-wrap: wrap;
       background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -1164,6 +1163,7 @@ form {
         position: relative;
         margin: 0 0.5px;
         overflow: hidden;
+        outline: 1px solid rgba(192, 192, 192, 0.123);
         animation: watchlist-movie-effect 120ms linear;
         height: 278px;
 
@@ -1181,6 +1181,32 @@ form {
           background: rgba(0, 0, 0, 0.521);
           pointer-events: none;
         }
+      }
+    }
+
+    .watched-clear-span {
+      position: absolute;
+      width: 100%;
+       background: rgba(192, 192, 192, 0.26);
+       background: linear-gradient(to right, rgba(0, 0, 0, 0.507), rgba(192, 192, 192, 0.281) );
+      bottom: 0;
+      right: 0;
+      text-align: right;
+
+      button {
+        font-family: inherit;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        background: rgba(0, 0, 0, 0.178);
+        transition: all 150ms linear;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.034);
+        }
+        // outline: 0.5px solid rgba(192, 192, 192, 0.171);
       }
     }
 }

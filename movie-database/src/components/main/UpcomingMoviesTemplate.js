@@ -2,15 +2,13 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
-import { AiOutlineEye } from "react-icons/ai";
 
 export const UpcomingMoviesTemplate = ({
   upcomingMovie,
   movieTitleTarget,
   setCommentWindow,
 }) => {
-  const { addMovieToWatchlist, watchlist, addMovieToWatched } =
-    useContext(GlobalContext);
+  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
   let movieInWatchlist = watchlist.find(
     (movie) => movie.id === upcomingMovie.id
@@ -35,12 +33,7 @@ export const UpcomingMoviesTemplate = ({
             onClick={() => addMovieToWatchlist(upcomingMovie)}
           />
         </a>
-        <a>
-          <AiOutlineEye
-            className="sidebar-icons"
-            onClick={() => addMovieToWatched(upcomingMovie)}
-          />
-        </a>
+
         <a>
           <VscComment
             className="sidebar-icons"

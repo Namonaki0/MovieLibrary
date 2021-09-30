@@ -1319,6 +1319,10 @@ form .submit:hover {
   outline: 0.5px solid rgba(192, 192, 192, 0.363);
 }
 
+.watched-outter-wrapper {
+  position: relative;
+}
+
 .watched-outter-wrapper h1 {
   text-align: right;
   padding: 0.5rem 1rem 0.5rem 0;
@@ -1331,6 +1335,7 @@ form .submit:hover {
 }
 
 .watched-outter-wrapper .watched-inner-wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1352,6 +1357,7 @@ form .submit:hover {
   position: relative;
   margin: 0 0.5px;
   overflow: hidden;
+  outline: 1px solid rgba(192, 192, 192, 0.123);
   -webkit-animation: watchlist-movie-effect 120ms linear;
           animation: watchlist-movie-effect 120ms linear;
   height: 278px;
@@ -1370,5 +1376,32 @@ form .submit:hover {
   color: #fff;
   background: rgba(0, 0, 0, 0.521);
   pointer-events: none;
+}
+
+.watched-outter-wrapper .watched-clear-span {
+  position: absolute;
+  width: 100%;
+  background: rgba(192, 192, 192, 0.26);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.507)), to(rgba(192, 192, 192, 0.281)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.507), rgba(192, 192, 192, 0.281));
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
+
+.watched-outter-wrapper .watched-clear-span button {
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.178);
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+}
+
+.watched-outter-wrapper .watched-clear-span button:hover {
+  background: rgba(0, 0, 0, 0.034);
 }
 /*# sourceMappingURL=index.css.map */
