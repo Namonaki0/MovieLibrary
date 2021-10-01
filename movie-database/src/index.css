@@ -260,12 +260,12 @@ main h1 span::before {
 .upcoming-movies-body .comment-window-wrapper {
   display: -ms-grid;
   display: grid;
-  position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.596);
-  top: 20px;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
   z-index: 1000;
   -webkit-animation: comment-window-effect 120ms linear;
           animation: comment-window-effect 120ms linear;
@@ -629,6 +629,116 @@ form .submit:hover {
   padding-right: 0.3rem;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.movie-template .comment-window-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.596);
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  z-index: 1000;
+  -webkit-animation: comment-window-effect 120ms linear;
+          animation: comment-window-effect 120ms linear;
+}
+
+.movie-template .comment-window-wrapper .comment-window-movie-title {
+  font-size: 2rem;
+}
+
+@keyframes comment-window-effect {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+.movie-template .comment-window-wrapper form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(221, 221, 221, 0.842);
+  background-color: #282828;
+  height: 80%;
+  width: 80%;
+  color: white;
+}
+
+.movie-template .comment-window-wrapper form label,
+.movie-template .comment-window-wrapper form input,
+.movie-template .comment-window-wrapper form .submit,
+.movie-template .comment-window-wrapper form button {
+  width: 80%;
+  padding: 1rem 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movie-template .comment-window-wrapper form .comment-window-close-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 10%;
+  right: 10%;
+  cursor: pointer;
+}
+
+.movie-template .comment-window-wrapper form label {
+  text-align: left;
+  padding-left: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+
+.movie-template .comment-window-wrapper form input,
+.movie-template .comment-window-wrapper form .submit {
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.062);
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+  color: white;
+}
+
+.movie-template .comment-window-wrapper form input:focus, .movie-template .comment-window-wrapper form .submit:focus {
+  border-bottom: 1px solid silver;
+  outline: none;
+}
+
+.movie-template .comment-window-wrapper form button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.26);
+  letter-spacing: 2px;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+.movie-template .comment-window-wrapper form button:hover {
+  background-color: rgba(255, 255, 255, 0.877);
+  color: #282828;
 }
 
 .movie-template .movie-container {
@@ -1184,7 +1294,7 @@ form .submit:hover {
   background-blend-mode: multiply;
   padding-left: 3.5rem;
   padding-top: 0.15rem;
-  height: 81.5vh;
+  height: 81.1vh;
   overflow-y: auto;
   color: white;
 }
@@ -1321,6 +1431,7 @@ form .submit:hover {
 
 .watched-outter-wrapper {
   position: relative;
+  background-color: black;
 }
 
 .watched-outter-wrapper h1 {
@@ -1348,9 +1459,9 @@ form .submit:hover {
   background-blend-mode: multiply;
   padding-left: 3.5rem;
   padding-top: 0.15rem;
-  height: 81.5vh;
+  height: calc(81.4vh - 2.3rem);
   overflow-y: auto;
-  color: white;
+  color: #fff;
 }
 
 .watched-outter-wrapper .watched-inner-wrapper .watched-movie-wrapper {
@@ -1379,13 +1490,12 @@ form .submit:hover {
 }
 
 .watched-outter-wrapper .watched-clear-span {
-  position: absolute;
-  width: 100%;
+  display: block;
   background: rgba(192, 192, 192, 0.26);
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.507)), to(rgba(192, 192, 192, 0.281)));
   background: linear-gradient(to right, rgba(0, 0, 0, 0.507), rgba(192, 192, 192, 0.281));
   bottom: 0;
-  right: 0;
+  left: 0;
   text-align: right;
 }
 

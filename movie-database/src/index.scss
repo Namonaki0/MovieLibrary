@@ -223,12 +223,12 @@ main {
 
   .comment-window-wrapper {
     display: grid;
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.596);
-    top: 20px;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
     z-index: 1000;
     animation: comment-window-effect 120ms linear;
 
@@ -481,7 +481,6 @@ form {
 }
 
 .outter-wrapper {
-  // height: 80vh;
   padding: 2px 0 10px;
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-color: rgb(34, 34, 34);
@@ -489,6 +488,8 @@ form {
   background-position: center;
   background-blend-mode: multiply;
   overflow-y: hidden;
+
+   
 
   .no-movies-message {
     display: flex;
@@ -530,6 +531,102 @@ form {
   overflow-y: auto;
   overflow-x: hidden;
 
+  .comment-window-wrapper {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.596);
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    z-index: 1000;
+    animation: comment-window-effect 120ms linear;
+
+    .comment-window-movie-title {
+      font-size: 2rem;
+    }
+
+    @keyframes comment-window-effect {
+      0% {
+        opacity: 0.2;
+        transform: translateY(-2%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: rgba(221, 221, 221, 0.842);
+      background-color: #282828;
+      height: 80%;
+      width: 80%;
+      color: white;
+
+      label,
+      input,
+      button {
+        width: 80%;
+        padding: 1rem 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .comment-window-close-icon {
+        position: absolute;
+        font-size: 1.5rem;
+        top: 10%;
+        right: 10%;
+        cursor: pointer;
+      }
+
+      label {
+        text-align: left;
+        padding-left: 0;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      input {
+        font-family: inherit;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        background-color: rgba(255, 255, 255, 0.062);
+        transition: all 120ms linear;
+        color: white;
+
+        &:focus {
+          border-bottom: 1px solid silver;
+          outline: none;
+        }
+      }
+
+      button {
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.26);
+        letter-spacing: 2px;
+        transition: all 120ms linear;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.877);
+          color: #282828;
+        }
+      }
+    }
+  }
+
   .movie-container {
     position: relative;
     overflow-x: hidden;
@@ -541,6 +638,8 @@ form {
     outline: 1px solid rgba(192, 192, 192, 0.356);
     animation: movie-container-effect 120ms linear;
     transition: all 120ms linear;
+
+    
 
     .sidebar-icons-wrapper {
       position: absolute;
@@ -1007,7 +1106,7 @@ form {
     background-blend-mode: multiply;
     padding-left: 3.5rem;
     padding-top: 0.15rem;
-    height: 81.5vh;
+    height: 81.1vh;
     overflow-y: auto;
     color: white;
   }
@@ -1132,6 +1231,7 @@ form {
 
 .watched-outter-wrapper {
   position: relative;
+  background-color: black;
 
     h1 {
       text-align: right;
@@ -1155,9 +1255,10 @@ form {
       background-blend-mode: multiply;
       padding-left: 3.5rem;
       padding-top: 0.15rem;
-      height: 81.5vh;
+      height: calc(81.4vh - 2.3rem);
       overflow-y: auto;
-      color: white;
+      color: $text-color;
+
 
       .watched-movie-wrapper {
         position: relative;
@@ -1184,29 +1285,29 @@ form {
       }
     }
 
-    .watched-clear-span {
-      position: absolute;
-      width: 100%;
+     .watched-clear-span {
+       display: block;
        background: rgba(192, 192, 192, 0.26);
-       background: linear-gradient(to right, rgba(0, 0, 0, 0.507), rgba(192, 192, 192, 0.281) );
-      bottom: 0;
-      right: 0;
-      text-align: right;
+       background: linear-gradient(to right, rgba(0, 0, 0, 0.507), rgba(192, 192, 192, 0.281));
+       bottom: 0;
+       left: 0;
+       text-align: right;
 
-      button {
-        font-family: inherit;
-        font-size: 1rem;
-        border: none;
-        cursor: pointer;
-        color: white;
-        padding: 0.5rem 1.5rem;
-        background: rgba(0, 0, 0, 0.178);
-        transition: all 150ms linear;
+       button {
+         font-family: inherit;
+         font-size: 1rem;
+         border: none;
+         cursor: pointer;
+         color: white;
+         padding: 0.5rem 1.5rem;
+         background: rgba(0, 0, 0, 0.178);
+         transition: all 150ms linear;
 
-        &:hover {
-          background: rgba(0, 0, 0, 0.034);
-        }
-        // outline: 0.5px solid rgba(192, 192, 192, 0.171);
-      }
-    }
+         &:hover {
+           background: rgba(0, 0, 0, 0.034);
+         }
+
+       }
+     }
+    
 }
