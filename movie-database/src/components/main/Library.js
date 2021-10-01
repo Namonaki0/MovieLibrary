@@ -105,6 +105,14 @@ export default function Library() {
                       />
                     )
                 )}
+              <CommentModal
+                setComments={(e) => setComments(e)}
+                setUsername={(e) => setUsername(e)}
+                commentWindow={commentWindow}
+                setCommentWindow={setCommentWindow}
+                movieTitle={movieTitle}
+                formSubmit={formSubmit}
+              />
             </div>
           ) : (
             <div class="no-movies-message">
@@ -112,14 +120,6 @@ export default function Library() {
             </div>
           )}
         </div>
-        <CommentModal
-          setComments={(e) => setComments(e)}
-          setUsername={(e) => setUsername(e)}
-          commentWindow={commentWindow}
-          setCommentWindow={setCommentWindow}
-          movieTitle={movieTitle}
-          formSubmit={formSubmit}
-        />
       </div>
     </>
   );
