@@ -20,6 +20,7 @@ export default (state, action) => {
         ),
         watched: [action.payload, ...state.watched],
       };
+
     default:
       return state;
   }
