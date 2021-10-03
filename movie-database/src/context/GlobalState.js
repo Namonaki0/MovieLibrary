@@ -3,7 +3,7 @@ import AppReducer from "./AppReducer";
 
 //? INITIAL STATE
 const initialState = {
-  watchlist: localStorage.getItem("watched")
+  watchlist: localStorage.getItem("watchlist")
     ? JSON.parse(localStorage.getItem("watchlist"))
     : [],
   watched: localStorage.getItem("watched")

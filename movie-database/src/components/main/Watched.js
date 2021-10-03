@@ -1,8 +1,14 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
+import ClearWatchedModal from "./ClearWatchedModal";
 
 export default function Watched() {
   const { watched } = useContext(GlobalContext);
+
+  const clearWatchedLocalStorage = () => {
+    localStorage.removeItem("watched");
+    window.location.reload();
+  };
 
   return (
     <div className="watched-outter-wrapper">
@@ -21,11 +27,15 @@ export default function Watched() {
           ))}
         </div>
       ) : (
-        <h2>There are currently no movies in your watched list</h2>
+        <h2 className="no-movies-in-watched">
+          There are currently no movies in your watched list
+        </h2>
       )}
+
       <span className="watched-clear-span">
-        <button>clear all</button>
+        <button onClick={clearWatchedLocalStorage}>clear all</button>
       </span>
+      <ClearWatchedModal />
     </div>
   );
 }
