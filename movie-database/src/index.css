@@ -1362,7 +1362,7 @@ form .submit:hover {
 }
 
 .watchlist-outter-wrapper .watchlist-movie-wrapper .watchlist-info-slider .add-to-watched-btn:hover {
-  outline: .5px solid #5295f9b7;
+  outline: 0.5px solid #5295f9b7;
   color: #98c1ff;
 }
 
@@ -1391,6 +1391,13 @@ form .submit:hover {
 .watched-outter-wrapper {
   position: relative;
   border-top-right-radius: 5px;
+}
+
+.watched-outter-wrapper .no-movies-in-watched {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  height: 75.4vh;
 }
 
 .watched-outter-wrapper h1 {
@@ -1472,5 +1479,60 @@ form .submit:hover {
 
 .watched-outter-wrapper .watched-clear-span button:hover {
   background: #00000009;
+}
+
+.watched-outter-wrapper .clear-watched-modal-wrapper {
+  display: -ms-grid;
+  display: grid;
+  position: fixed;
+  place-content: center;
+  background-color: #00000098;
+  text-align: center;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  z-index: 1000;
+}
+
+.watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner {
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  left: 15%;
+  right: 15%;
+  background-color: #282828;
+  padding: 5rem;
+  border-radius: 5px;
+  color: white;
+}
+
+.watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner h3 {
+  font-weight: 100;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner .watched-modal-btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+}
+
+.watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner button {
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  background: #0000002d;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
 }
 /*# sourceMappingURL=index.css.map */

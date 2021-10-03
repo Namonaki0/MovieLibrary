@@ -3,7 +3,7 @@
 //? VARIABLES
 $nav-bg: #1c1c1c;
 $text-color: #fff;
-$accent-color: #5295F9;
+$accent-color: #5295f9;
 $ff-main: "Roboto Condensed", sans-serif;
 $view-height: 90vh;
 $transition-timing: 120ms;
@@ -485,8 +485,6 @@ form {
   background-blend-mode: multiply;
   overflow-y: hidden;
 
-   
-
   .no-movies-message {
     display: flex;
     align-items: center;
@@ -637,11 +635,7 @@ form {
 
     .sidebar-icons-wrapper {
       position: absolute;
-      background: linear-gradient(
-        to top,
-        #00000009,
-        #000000a6
-      );
+      background: linear-gradient(to top, #00000009, #000000a6);
       top: 0;
       right: 0;
       bottom: 0;
@@ -1136,17 +1130,15 @@ form {
           display: unset;
         }
 
-           .btn-wrapper {
-             text-align: center;
-            
-           }
-       
+        .btn-wrapper {
+          text-align: center;
+        }
       }
     }
 
     .watchlist-info-slider {
       display: flex;
-      justify-content:space-between;
+      justify-content: space-between;
       align-items: center;
       position: absolute;
       margin: 0;
@@ -1169,7 +1161,6 @@ form {
         text-align: left;
         font-size: 0.8rem;
         margin-top: 5px;
-        
       }
 
       p,
@@ -1178,14 +1169,11 @@ form {
         display: none;
       }
 
-
-
       .add-to-watched-btn {
         margin-top: auto;
 
         &:hover {
-
-          outline: .5px solid #5295f9b7;
+          outline: 0.5px solid #5295f9b7;
           color: #98c1ff;
         }
       }
@@ -1202,9 +1190,9 @@ form {
         cursor: pointer;
         transition: $main-transition-effect;
 
-       & > svg {
-         margin-right: 2px;
-       }
+        & > svg {
+          margin-right: 2px;
+        }
 
         &:hover {
           outline: 0.5px solid rgba(192, 192, 192, 0.363);
@@ -1214,88 +1202,143 @@ form {
   }
 }
 
-
-//? WATCHED 
+//? WATCHED
 
 .watched-outter-wrapper {
   position: relative;
   border-top-right-radius: 5px;
 
-    h1 {
-      text-align: right;
-      padding: 0.5rem 1rem 0.5rem 0;
-      overflow: hidden;
-      background: #000000d7;
-      border-radius: none;
-      color: #f0f0f0;
-      font-weight: 300;
-      border-top-right-radius: 5px;
-    }
+  .no-movies-in-watched {
+    display: grid;
+    place-content: center;
+    height: 75.4vh;
+  }
 
-    .watched-inner-wrapper {
+  h1 {
+    text-align: right;
+    padding: 0.5rem 1rem 0.5rem 0;
+    overflow: hidden;
+    background: #000000d7;
+    border-radius: none;
+    color: #f0f0f0;
+    font-weight: 300;
+    border-top-right-radius: 5px;
+  }
+
+  .watched-inner-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-color: #222222;
+    background-size: 100%;
+    background-position: center;
+    background-blend-mode: multiply;
+    padding-left: 3.5rem;
+    padding-top: 0.15rem;
+    height: calc(81.4vh - 2.3rem);
+    overflow-y: auto;
+    color: $text-color;
+
+    .watched-movie-wrapper {
       position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-      background-color: #222222;
-      background-size: 100%;
-      background-position: center;
-      background-blend-mode: multiply;
-      padding-left: 3.5rem;
-      padding-top: 0.15rem;
-      height: calc(81.4vh - 2.3rem);
-      overflow-y: auto;
-      color: $text-color;
+      margin: 0 0.5px;
+      overflow: hidden;
+      outline: 1px solid #c0c0c01f;
+      animation: watchlist-movie-effect 120ms linear;
+      height: 278px;
 
-
-      .watched-movie-wrapper {
-        position: relative;
-        margin: 0 0.5px;
-        overflow: hidden;
-        outline: 1px solid #c0c0c01f;
-        animation: watchlist-movie-effect 120ms linear;
-        height: 278px;
-
-        h2 {
-          position: absolute;
-          font-weight: 300;
-          bottom: 0;
-          margin: 0;
-          right: -2px;
-          left: 0;
-          padding: 1rem 0.5rem;
-          font-size: 1rem;
-          z-index: 10;
-          color: $text-color;
-          background: #00000085;
-          pointer-events: none;
-        }
+      h2 {
+        position: absolute;
+        font-weight: 300;
+        bottom: 0;
+        margin: 0;
+        right: -2px;
+        left: 0;
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
+        z-index: 10;
+        color: $text-color;
+        background: #00000085;
+        pointer-events: none;
       }
     }
+  }
 
-     .watched-clear-span {
-       display: block;
-       background-color: black;
-       background: linear-gradient(to right, rgb(24, 24, 24), rgba(24, 24, 24, 0.863));
-       bottom: 0;
-       left: 0;
-       text-align: right;
+  .watched-clear-span {
+    display: block;
+    background-color: black;
+    background: linear-gradient(
+      to right,
+      rgb(24, 24, 24),
+      rgba(24, 24, 24, 0.863)
+    );
+    bottom: 0;
+    left: 0;
+    text-align: right;
 
-       button {
-         font-family: inherit;
-         font-size: 1rem;
-         border: none;
-         cursor: pointer;
-         color: $text-color;
-         padding: 0.5rem 1.5rem;
-         background: #0000002d;
-         transition: all 150ms linear;
+    button {
+      font-family: inherit;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      color: $text-color;
+      padding: 0.5rem 1.5rem;
+      background: #0000002d;
+      transition: all 150ms linear;
 
-         &:hover {
-           background: #00000009;
-         }
+      &:hover {
+        background: #00000009;
+      }
+    }
+  }
 
-       }
-     }
-    
+  .clear-watched-modal-wrapper {
+    display: grid;
+    position: fixed;
+    place-content: center;
+    background-color: #00000098;
+    text-align: center;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    z-index: 1000;
+
+    .clear-watched-modal-inner {
+      position: absolute;
+      top: 15%;
+      bottom: 15%;
+      left: 15%;
+      right: 15%;
+      background-color: #282828;
+      padding: 5rem;
+      border-radius: 5px;
+      color: white;
+
+      h3 {
+        font-weight: 100;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .watched-modal-btn-wrapper {
+        display: flex;
+        flex-grow: 1;
+        width: 100%;
+      }
+
+      button {
+        font-family: inherit;
+        text-transform: uppercase;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        color: $text-color;
+        padding: 0.5rem 1.5rem;
+        background: #0000002d;
+        transition: all 150ms linear;
+      }
+    }
+  }
 }
