@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import ClearWatchedModal from "./ClearWatchedModal";
 
 export default function Watched() {
+  const [clearModal, setClearModal] = useState(null);
   const { watched } = useContext(GlobalContext);
 
   const clearWatchedLocalStorage = () => {
@@ -33,9 +34,13 @@ export default function Watched() {
       )}
 
       <span className="watched-clear-span">
-        <button onClick={clearWatchedLocalStorage}>clear all</button>
+        <button onClick={() => setClearModal(!clearModal)}>clear all</button>
       </span>
-      <ClearWatchedModal />
+      <ClearWatchedModal
+        clearModal={clearModal}
+        setClearModal={setClearModal}
+        clearWatchedLocalStorage={clearWatchedLocalStorage}
+      />
     </div>
   );
 }

@@ -1240,6 +1240,13 @@ form .submit:hover {
   letter-spacing: 1px;
 }
 
+.watchlist-outter-wrapper .no-movies-in-watchlist {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  height: 75.4vh;
+}
+
 .watchlist-outter-wrapper .watchlist-inner-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1482,10 +1489,8 @@ form .submit:hover {
 }
 
 .watched-outter-wrapper .clear-watched-modal-wrapper {
-  display: -ms-grid;
-  display: grid;
+  display: none;
   position: fixed;
-  place-content: center;
   background-color: #00000098;
   text-align: center;
   top: 5px;
@@ -1493,9 +1498,45 @@ form .submit:hover {
   left: 5px;
   right: 5px;
   z-index: 1000;
+  -webkit-animation: clear-watched-modal-effect 120ms linear;
+          animation: clear-watched-modal-effect 120ms linear;
+}
+
+@-webkit-keyframes clear-watched-modal-effect {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes clear-watched-modal-effect {
+  0% {
+    opacity: 0.2;
+    -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
 }
 
 .watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-content: center;
   position: absolute;
   top: 15%;
   bottom: 15%;
@@ -1510,29 +1551,41 @@ form .submit:hover {
 .watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner h3 {
   font-weight: 100;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner .watched-modal-btn-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner .watched-modal-btn-wrapper button {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  width: 100%;
-}
-
-.watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner button {
   font-family: inherit;
   text-transform: uppercase;
   font-size: 1rem;
   border: none;
   cursor: pointer;
   color: #fff;
-  padding: 0.5rem 1.5rem;
+  padding: 0.8rem 1.5rem;
+  margin: 0 10px;
   background: #0000002d;
   -webkit-transition: all 150ms linear;
   transition: all 150ms linear;
+}
+
+.watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner .watched-modal-btn-wrapper button:hover {
+  background: whitesmoke;
+  color: #1c1c1c;
+}
+
+.watched-outter-wrapper .clear-watched-modal-wrapper .clear-watched-modal-inner .watched-modal-btn-wrapper .clear-yes-btn:hover {
+  color: #fff;
+  background: #af1313;
 }
 /*# sourceMappingURL=index.css.map */
