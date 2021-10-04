@@ -1083,6 +1083,14 @@ form {
     letter-spacing: 1px;
   }
 
+  .no-movies-in-watchlist {
+
+    display: grid;
+    place-content: center;
+    height: 75.4vh;
+
+  }
+
   .watchlist-inner-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -1135,6 +1143,8 @@ form {
         }
       }
     }
+
+    
 
     .watchlist-info-slider {
       display: flex;
@@ -1293,10 +1303,10 @@ form {
     }
   }
 
+  //? CLEAR WATCHED MODAL
   .clear-watched-modal-wrapper {
-    display: grid;
+    display: none;
     position: fixed;
-    place-content: center;
     background-color: #00000098;
     text-align: center;
     top: 5px;
@@ -1304,8 +1314,24 @@ form {
     left: 5px;
     right: 5px;
     z-index: 1000;
+    animation: clear-watched-modal-effect 120ms linear;
+    
+    @keyframes clear-watched-modal-effect {
+      0% {
+        opacity: 0.2;
+        transform: translateY(-2%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+    }
 
     .clear-watched-modal-inner {
+      display: flex;
+      flex-direction: column;
+      place-content: center;
       position: absolute;
       top: 15%;
       bottom: 15%;
@@ -1316,28 +1342,44 @@ form {
       border-radius: 5px;
       color: white;
 
+
+
       h3 {
         font-weight: 100;
         font-size: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
       }
 
       .watched-modal-btn-wrapper {
         display: flex;
-        flex-grow: 1;
         width: 100%;
-      }
+        margin-bottom: 3rem;
 
-      button {
-        font-family: inherit;
-        text-transform: uppercase;
-        font-size: 1rem;
-        border: none;
-        cursor: pointer;
-        color: $text-color;
-        padding: 0.5rem 1.5rem;
-        background: #0000002d;
-        transition: all 150ms linear;
+        button {
+          flex-grow: 1;
+          font-family: inherit;
+          text-transform: uppercase;
+          font-size: 1rem;
+          border: none;
+          cursor: pointer;
+          color: $text-color;
+          padding: 0.8rem 1.5rem;
+          margin: 0 10px;
+          background: #0000002d;
+          transition: all 150ms linear;
+
+          &:hover {
+            background: whitesmoke;
+            color: $nav-bg;
+          }
+        }
+
+        .clear-yes-btn {
+          &:hover {
+            color: $text-color;
+            background: rgb(175, 19, 19);
+          }
+        }
       }
     }
   }

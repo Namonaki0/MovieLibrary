@@ -15,7 +15,9 @@ export default function Watchlist() {
           ))}
         </div>
       ) : (
-        <h2>There are currently no movies in your watchlist</h2>
+        <h2 className="no-movies-in-watchlist">
+          There are currently no movies in your watchlist
+        </h2>
       )}
     </div>
   );
