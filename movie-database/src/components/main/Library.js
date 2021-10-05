@@ -11,6 +11,7 @@ export default function Library() {
   const [comments, setComments] = useState("");
   const [movieTitle, setMovieTitle] = useState("");
   const [commentWindow, setCommentWindow] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -23,7 +24,8 @@ export default function Library() {
       const movies = await apiCall.json();
       setMovies(movies.results);
     } catch (err) {
-      console.error("nothing found", err);
+      setErrorMessage(err);
+      console.log(setErrorMessage);
     }
   };
 
@@ -84,14 +86,14 @@ export default function Library() {
             value={query}
             name="query"
             onChange={(e) => setQuery(e.target.value)}
-          ></input>
+          />
           <button type="submit" className="submit">
             Search
           </button>
         </form>
 
         <div className="outter-wrapper">
-          {movies.length > 0 ? (
+          {movies && movies.length > 0 ? (
             <div className="movie-template">
               {movies
                 .filter((movie) => movie.poster_path)
@@ -116,7 +118,7 @@ export default function Library() {
             </div>
           ) : (
             <div class="no-movies-message">
-              <p>movie search...</p>
+              <p>search for movie...</p>
             </div>
           )}
         </div>

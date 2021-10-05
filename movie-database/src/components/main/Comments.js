@@ -6,9 +6,11 @@ import {
 } from "react-icons/ai";
 import { BiLike, BiDislike } from "react-icons/bi";
 import firebase from "../utils/firebase";
+import ScrollToTop from "./ScrollToTop";
 
 const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
+  const [windowScroll, setWindowScroll] = useState(null);
 
   useEffect(async () => {
     const commentRef = firebase.database().ref("Comments");
@@ -22,6 +24,14 @@ const Comments = () => {
     });
   }, []);
 
+  useEffect(() => {
+    setWindowScroll(window.scrollTo(100, 100));
+  }, []);
+
+  // useEffect(() => {
+  //   setWindowScroll(window.scrollTo(0, 0));
+  // });
+
   const deleteComment = (e) => {
     const commentRef = firebase
       .database()
@@ -33,8 +43,8 @@ const Comments = () => {
   return (
     <div className="comments-outter-wrapper">
       <h1>Comments</h1>
-
-      <div className="comments-inner-wrapper">
+      <ScrollToTop />
+      <div className="comments-inner-wrapper" onChange={(e) => console.log(e)}>
         {userInfo &&
           userInfo.map((comment, index) => (
             <div className="comment" key={index}>
