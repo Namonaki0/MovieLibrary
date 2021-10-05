@@ -975,9 +975,10 @@ form {
   }
 
   .comments-inner-wrapper {
+     display: flex;
+     flex-direction: column-reverse;
     height: 81.5vh;
     overflow-y: auto;
-    scroll-padding-bottom: auto;
 
     .comment {
       position: relative;
