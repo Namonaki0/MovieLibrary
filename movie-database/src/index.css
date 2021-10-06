@@ -624,7 +624,7 @@ form .submit:hover {
 
 .movie-template .comment-window-wrapper {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.596);
+  background-color: #00000098;
   top: 5px;
   bottom: 5px;
   left: 5px;
@@ -1230,6 +1230,42 @@ form .submit:hover {
 
 .comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .like-icon {
   margin-left: auto;
+}
+
+.comment-message-overlay {
+  display: none;
+  position: fixed;
+  background-color: #393939b4;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  z-index: 1000;
+  -webkit-animation: comment-window-effect 120ms linear;
+          animation: comment-window-effect 120ms linear;
+}
+
+.comment-message-overlay .comment-message-outside-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #282828;
+  margin: auto;
+  width: 82%;
+  height: 85%;
+  border-radius: 5px;
+  font-size: 2rem;
+  color: white;
 }
 
 .watchlist-outter-wrapper {
