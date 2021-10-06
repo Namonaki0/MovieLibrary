@@ -44,7 +44,7 @@ const Comments = () => {
     <div className="comments-outter-wrapper">
       <h1>Comments</h1>
       <ScrollToTop />
-      <div className="comments-inner-wrapper" onChange={(e) => console.log(e)}>
+      <div className="comments-inner-wrapper">
         {userInfo &&
           userInfo.map((comment, index) => (
             <div className="comment" key={index}>

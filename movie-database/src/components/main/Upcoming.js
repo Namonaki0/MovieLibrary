@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { api_key } from "../apiKey";
 import UpcomingMoviesTemplate from "./UpcomingMoviesTemplate";
 import CommentModal from "./CommentModal";
+import CommentMessageModal from "./CommentMessageModal";
 import firebase from "../utils/firebase";
 
 export default function Upcoming() {
@@ -10,6 +11,7 @@ export default function Upcoming() {
   const [movieTitle, setMovieTitle] = useState("");
   const [user, setUsername] = useState("");
   const [comments, setComments] = useState("");
+  const [commentMessage, setCommentMessage] = useState("");
 
   useEffect(async () => {
     const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1&include_adult=false`;
@@ -92,6 +94,10 @@ export default function Upcoming() {
         movieTitle={movieTitle}
         formSubmit={formSubmit}
       />
+      {/* <CommentMessageModal
+        commentMessage={commentMessage}
+        setCommentMessage={setCommentMessage}
+      /> */}
     </div>
   );
 }
