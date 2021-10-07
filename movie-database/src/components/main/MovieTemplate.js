@@ -3,7 +3,18 @@ import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
 
-const MovieTemplate = ({ movie, movieTitleTarget, setCommentWindow }) => {
+const MovieTemplate = ({
+  movie,
+  movieTitleTarget,
+  setCommentWindow,
+  movieImage,
+  modalMovieTitle,
+  movieOverview,
+  movieReleaseDate,
+  movieRating,
+  movieModalInfo,
+  setMovieModalInfo,
+}) => {
   const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
   let movieInWatchlist = watchlist.find(
@@ -20,7 +31,11 @@ const MovieTemplate = ({ movie, movieTitleTarget, setCommentWindow }) => {
   const watchlistMovieBtnDisabled = movieInWatchlist ? iconDisabled : "";
 
   return (
-    <div className="movie-container" key={movie.id}>
+    <div
+      className="movie-container"
+      key={movie.id}
+      onClick={() => setMovieModalInfo(!movieModalInfo)}
+    >
       <span className="sidebar-icons-wrapper">
         <a>
           <IoAddCircleOutline
