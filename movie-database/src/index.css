@@ -1630,4 +1630,63 @@ form .submit:hover {
   color: #fff;
   background: #af1313;
 }
+
+.movie-modal-overlay {
+  display: none;
+  position: fixed;
+  background-color: #3939391e;
+  z-index: 200000;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  -webkit-animation: comment-window-effect 120ms linear;
+          animation: comment-window-effect 120ms linear;
+}
+
+.movie-modal-overlay .movie-modal-wrapper {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #282828;
+  top: 10%;
+  bottom: 55px;
+  left: 15%;
+  right: 15%;
+  bottom: 10%;
+  padding: 2rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: white;
+  z-index: 100000;
+}
+
+.movie-modal-overlay .movie-modal-wrapper .movie-modal-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.movie-modal-overlay .movie-modal-wrapper .movie-modal-info img {
+  margin-right: 15px;
+}
+
+.movie-modal-overlay .movie-modal-wrapper .movie-modal-info .movie-modal-secondary-info h2 {
+  margin-bottom: 10px;
+}
+
+.movie-modal-overlay .movie-modal-wrapper .movie-modal-info .movie-modal-secondary-info p {
+  font-size: 1.2rem;
+}
 /*# sourceMappingURL=index.css.map */

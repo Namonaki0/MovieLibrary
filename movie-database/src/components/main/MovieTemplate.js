@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
@@ -7,11 +7,6 @@ const MovieTemplate = ({
   movie,
   movieTitleTarget,
   setCommentWindow,
-  movieImage,
-  modalMovieTitle,
-  movieOverview,
-  movieReleaseDate,
-  movieRating,
   movieModalInfo,
   setMovieModalInfo,
 }) => {
