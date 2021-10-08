@@ -1043,27 +1043,7 @@ form {
           margin-left: auto;
         }
 
-        // .delete-btn {
-        //   display: flex;
-        //   align-items: center;
-        //   margin-left: 5px;
-        //   padding: 0.5rem 1rem;
-        //   background: #3a3a3a;
-        //   border: none;
-        //   color: whitesmoke;
-        //   cursor: pointer;
-        //   transition: $main-transition-effect;
 
-        //   &:hover {
-        //     background: rgb(145, 0, 0);
-        //   }
-
-        //   svg {
-        //     font-size: inherit;
-        //     margin-right: 5px;
-        //     pointer-events: none;
-        //   }
-        // }
       }
     }
   }
@@ -1413,5 +1393,59 @@ form {
         }
       }
     }
+  }
+}
+
+
+
+
+.movie-modal-overlay {
+  display: none;
+  position: fixed;
+  background-color: #3939391e;
+  z-index: 200000;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  animation: comment-window-effect 120ms linear;
+
+  .movie-modal-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #282828;
+    top: 10%;
+    bottom: 55px;
+    left: 15%;
+    right: 15%;
+    bottom: 10%;
+    padding: 2rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 100000;
+
+    .movie-modal-info {
+      display: flex;
+      align-items: center;
+      // background-color: red;
+      img {
+        margin-right: 15px;
+      }
+
+      .movie-modal-secondary-info {
+
+        h2 {
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+
+    }
+
   }
 }

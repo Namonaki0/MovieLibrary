@@ -12,8 +12,8 @@ export default function Library() {
   const [comments, setComments] = useState("");
   const [movieTitle, setMovieTitle] = useState("");
   const [commentWindow, setCommentWindow] = useState(null);
-  const [errorMessage, setErrorMessage] = useState("");
   const [movieModalInfo, setMovieModalInfo] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -77,16 +77,6 @@ export default function Library() {
     );
   };
 
-  //? MOVIE MODAL INFO
-  // const movieModalInfo = async (e) => {
-  // const movieImage = await e.target.children[1].currentSrc;
-  const modalMovieTitle = (e) => e.target.children[2].innerText;
-  // const movieOverview = await e.target.children[3].innerText;
-  // const movieReleaseDate = await e.target.children[4].innerText;
-  // const movieRating = await e.target.children[5].innerText;
-  // setModalMovieTitleInfo(modalMovieTitle);
-  // };
-
   //? MOVIE TITLE SEARCH RENDER //
   return (
     <>
@@ -112,16 +102,22 @@ export default function Library() {
                 .map(
                   (movie) =>
                     movie && (
-                      <MovieTemplate
-                        movie={movie}
-                        movieTitleTarget={(e) => movieTitleTarget(e)}
-                        setCommentWindow={setCommentWindow}
-                        // movieImage={(e) => movieImage}
-                        modalMovieTitle={modalMovieTitle}
-                        // movieOverview={(e) => movieOverview}
-                        // movieReleaseDate={(e) => movieReleaseDate}
-                        // movieRating={(e) => movieRating}
-                      />
+                      <>
+                        <MovieTemplate
+                          movie={movie}
+                          movieTitleTarget={(e) => movieTitleTarget(e)}
+                          setCommentWindow={setCommentWindow}
+                          movieModalInfo={movieModalInfo}
+                          setMovieModalInfo={setMovieModalInfo}
+                          // setModalMovieTitle={setModalMovieTitle}
+                        />
+                        <MovieModal
+                          movie={movie}
+                          movieModalInfo={movieModalInfo}
+                          setMovieModalInfo={setMovieModalInfo}
+                          movieModal={movieModalInfo}
+                        />
+                      </>
                     )
                 )}
               <CommentModal
@@ -129,7 +125,7 @@ export default function Library() {
                 setUsername={(e) => setUsername(e)}
                 commentWindow={commentWindow}
                 setCommentWindow={setCommentWindow}
-                movieTitle={movieTitle}
+                // modalMovieTitle={(e) => movieTitleTarget(e)}
                 formSubmit={formSubmit}
               />
             </div>
@@ -139,12 +135,6 @@ export default function Library() {
             </div>
           )}
         </div>
-        <MovieModal
-          movieModalInfo={movieModalInfo}
-          modalMovieTitle={modalMovieTitle}
-          movieModal={movieModalInfo}
-          setMovieModalInfo={setMovieModalInfo}
-        />
       </div>
     </>
   );
