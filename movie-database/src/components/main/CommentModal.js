@@ -8,6 +8,7 @@ const CommentModal = ({
   movieTitle,
   setCommentWindow,
   formSubmit,
+  movieTitleTarget,
 }) => {
   return (
     <div

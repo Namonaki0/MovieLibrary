@@ -26,11 +26,7 @@ const MovieTemplate = ({
   const watchlistMovieBtnDisabled = movieInWatchlist ? iconDisabled : "";
 
   return (
-    <div
-      className="movie-container"
-      key={movie.id}
-      onClick={() => setMovieModalInfo(!movieModalInfo)}
-    >
+    <div className="movie-container" key={movie.id}>
       <span className="sidebar-icons-wrapper">
         <a>
           <IoAddCircleOutline
@@ -55,6 +51,7 @@ const MovieTemplate = ({
         className="movie-image"
         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
         alt={movie.title + "poster"}
+        onClick={() => setMovieModalInfo(!movieModalInfo)}
       />
       <h1>{movie.title}</h1>
       <div className="movie-overview">{movie.overview}</div>
