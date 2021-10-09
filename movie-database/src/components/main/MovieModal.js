@@ -1,12 +1,22 @@
 import React from "react";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
-export default function MovieModal({ movieModalInfo, movie }) {
+export default function MovieModal({
+  movieModalInfo,
+  movie,
+  commentWindow,
+  setCommentWindow,
+}) {
   return (
     <div
       style={{ display: movieModalInfo ? "block" : "none" }}
       className="movie-modal-overlay"
     >
       <div className="movie-modal-wrapper">
+        <AiOutlineCloseCircle
+          className="comment-window-close-icon"
+          onClick={() => setCommentWindow(!commentWindow)}
+        />
         <div className="movie-modal-info">
           <img
             className="movie-image"
