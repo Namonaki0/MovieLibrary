@@ -1,5 +1,4 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
-// import CommentMessageModal from "./CommentMessageModal";
 
 const CommentModal = ({
   setComments,
@@ -8,7 +7,6 @@ const CommentModal = ({
   movieTitle,
   setCommentWindow,
   formSubmit,
-  movieTitleTarget,
 }) => {
   return (
     <div

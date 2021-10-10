@@ -9,6 +9,7 @@ const MovieTemplate = ({
   setCommentWindow,
   movieModalInfo,
   setMovieModalInfo,
+  modalTitleTarget,
 }) => {
   const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
