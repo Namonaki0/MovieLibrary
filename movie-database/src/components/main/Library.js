@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
 import CommentModal from "./CommentModal";
@@ -14,7 +14,6 @@ export default function Library() {
   const [commentWindow, setCommentWindow] = useState(null);
   const [movieModalInfo, setMovieModalInfo] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
-  const [modalTitle, setModalTitle] = useState("");
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -78,10 +77,6 @@ export default function Library() {
     );
   };
 
-  let modalTitleTarget = (e) => {
-    setMovieTitle(e.target.offsetParent.children[2].innerHTML);
-  };
-
   //? MOVIE TITLE SEARCH RENDER //
   return (
     <>
@@ -110,19 +105,15 @@ export default function Library() {
                       <>
                         <MovieTemplate
                           movie={movie}
-                          modalTitle={modalTitle}
                           movieTitleTarget={(e) => movieTitleTarget(e)}
                           setCommentWindow={setCommentWindow}
                           movieModalInfo={movieModalInfo}
                           setMovieModalInfo={setMovieModalInfo}
-                          modalTitleTarget={(e) => modalTitleTarget(e)}
                         />
                         <MovieModal
                           movie={movie}
-                          modalTitleTarget={(e) => modalTitleTarget(e)}
                           movieModalInfo={movieModalInfo}
                           setMovieModalInfo={setMovieModalInfo}
-                          modalTitle={modalTitle}
                           setCommentWindow={setCommentWindow}
                         />
                       </>
@@ -134,9 +125,7 @@ export default function Library() {
                 setUsername={(e) => setUsername(e)}
                 commentWindow={commentWindow}
                 setCommentWindow={setCommentWindow}
-                movieTitleTarget={(e) => movieTitleTarget(e)}
                 movieTitle={movieTitle}
-                // modalMovieTitle={(e) => movieTitleTarget(e)}
                 formSubmit={formSubmit}
               />
             </div>

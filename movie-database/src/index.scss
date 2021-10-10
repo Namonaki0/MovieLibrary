@@ -40,13 +40,6 @@ body {
   background: #3b3b3bf3;
 }
 
-// .light-mode {
-//   $nav-light-mode: #f7f7f7;
-//   $text-light-mode: #1c1c1c;
-//   background: $nav-light-mode;
-//   color: $text-light-mode;
-// }
-
 //? MENU
 nav {
   display: flex;
@@ -57,13 +50,6 @@ nav {
   background: $nav-bg;
   transition: $main-transition-effect;
   z-index: 100;
-
-  // .light-mode {
-  //   $nav-light-mode: #f7f7f7;
-  //   $text-light-mode: #1c1c1c;
-  //   background: $nav-light-mode;
-  //   color: $text-light-mode;
-  // }
 
   &.menu-active {
     --open-menu: 16rem;
@@ -643,7 +629,6 @@ form {
       transform: translateX(30px);
       opacity: 0;
       transition: $main-transition-effect;
-  
 
       .sidebar-icons {
         display: block;
@@ -873,13 +858,6 @@ form {
 .settings-wrapper {
   overflow-y: hidden;
 
-  // &.light-mode {
-  //   $nav-light-mode: #f7f7f7;
-  //   $text-light-mode: #1c1c1c;
-  //   background: $nav-light-mode;
-  //   color: $text-light-mode;
-  // }
-
   h1 {
     background-color: #3a3738;
     background-blend-mode: multiply;
@@ -976,8 +954,8 @@ form {
   }
 
   .comments-inner-wrapper {
-     display: flex;
-     flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column-reverse;
     height: 81.5vh;
     overflow-y: auto;
 
@@ -1043,8 +1021,6 @@ form {
         .like-icon {
           margin-left: auto;
         }
-
-
       }
     }
   }
@@ -1053,32 +1029,29 @@ form {
 //? COMMENT SENT MESSAGE MODAL
 .comment-message-overlay {
   display: none;
-      // display: grid;
-      position: fixed;
-      // background-color: #00000098;
-      background-color: #393939b4;
-      top: 5px;
-      bottom: 5px;
-      left: 5px;
-      right: 5px;
-      z-index: 1000;
-      animation: comment-window-effect 120ms linear;
+  position: fixed;
+  background-color: #393939b4;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  z-index: 1000;
+  animation: comment-window-effect 120ms linear;
 
-      .comment-message-outside-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #282828;
-        margin: auto;
-        width: 82%;
-        height: 85%;
-        border-radius: 5px;
-        font-size: 2rem;
-        color: white;
-      }
+  .comment-message-outside-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+    margin: auto;
+    width: 82%;
+    height: 85%;
+    border-radius: 5px;
+    font-size: 2rem;
+    color: white;
+  }
 }
-
 
 //? WATCHLIST
 
@@ -1096,11 +1069,9 @@ form {
   }
 
   .no-movies-in-watchlist {
-
     display: grid;
     place-content: center;
     height: 75.4vh;
-
   }
 
   .watchlist-inner-wrapper {
@@ -1155,8 +1126,6 @@ form {
         }
       }
     }
-
-    
 
     .watchlist-info-slider {
       display: flex;
@@ -1327,7 +1296,7 @@ form {
     right: 5px;
     z-index: 1000;
     animation: clear-watched-modal-effect 120ms linear;
-    
+
     @keyframes clear-watched-modal-effect {
       0% {
         opacity: 0.2;
@@ -1353,8 +1322,6 @@ form {
       padding: 5rem;
       border-radius: 5px;
       color: white;
-
-
 
       h3 {
         font-weight: 100;
@@ -1397,9 +1364,6 @@ form {
   }
 }
 
-
-
-
 .movie-modal-overlay {
   display: none;
   position: fixed;
@@ -1437,7 +1401,6 @@ form {
       }
 
       .movie-modal-secondary-info {
-
         h2 {
           margin-bottom: 10px;
         }
@@ -1445,8 +1408,6 @@ form {
           font-size: 1.2rem;
         }
       }
-
     }
-
   }
 }
