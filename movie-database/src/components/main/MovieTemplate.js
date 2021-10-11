@@ -9,7 +9,7 @@ const MovieTemplate = ({
   setCommentWindow,
   movieModalInfo,
   setMovieModalInfo,
-  modalTitleTarget,
+  modalImageTarget,
 }) => {
   const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
@@ -52,7 +52,11 @@ const MovieTemplate = ({
         className="movie-image"
         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
         alt={movie.title + "poster"}
-        onClick={() => setMovieModalInfo(!movieModalInfo)}
+        onClick={(e) => {
+          setMovieModalInfo(!movieModalInfo);
+          modalImageTarget(e);
+          console.log(e.target.offsetParent.childNodes);
+        }}
       />
       <h1>{movie.title}</h1>
       <div className="movie-overview">{movie.overview}</div>
