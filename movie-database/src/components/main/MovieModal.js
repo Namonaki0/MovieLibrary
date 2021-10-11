@@ -3,9 +3,10 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export default function MovieModal({
   movieModalInfo,
-  movie,
-  commentWindow,
-  setCommentWindow,
+  setMovieModalInfo,
+  modalImage,
+  modalTitle,
+  modalOverview,
 }) {
   return (
     <div
@@ -14,18 +15,18 @@ export default function MovieModal({
     >
       <div className="movie-modal-wrapper">
         <AiOutlineCloseCircle
-          className="comment-window-close-icon"
-          onClick={() => setCommentWindow(!commentWindow)}
+          className="modal-close-icon"
+          onClick={() => setMovieModalInfo(!movieModalInfo)}
         />
         <div className="movie-modal-info">
           <img
             className="movie-image"
-            src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
-            alt={movie.title + "poster"}
+            src={modalImage}
+            alt={modalImage + "poster"}
           />
           <div className="movie-modal-secondary-info">
-            <h2>{movie.title}</h2>
-            <p>{movie.overview}</p>
+            <h2>{modalTitle}</h2>
+            <p>{modalOverview}</p>
           </div>
         </div>
       </div>

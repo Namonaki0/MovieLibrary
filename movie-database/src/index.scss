@@ -683,7 +683,7 @@ form {
 
     .movie-image {
       display: block;
-      pointer-events: none;
+      // pointer-events: none;
     }
 
     h1 {
@@ -1391,6 +1391,21 @@ form {
     font-size: 1.5rem;
     color: white;
     z-index: 100000;
+
+    .modal-close-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 2rem;
+      transition: $main-transition-effect;
+   
+      color: rgba(255, 255, 255, 0.904);
+
+      &:hover {
+        cursor: pointer;
+           color: $text-color;
+      }
+    }
 
     .movie-modal-info {
       display: flex;

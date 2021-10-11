@@ -14,6 +14,9 @@ export default function Library() {
   const [commentWindow, setCommentWindow] = useState(null);
   const [movieModalInfo, setMovieModalInfo] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+  const [modalTitle, setModalTitle] = useState("");
+  const [modalImage, setModalImage] = useState("");
+  const [modalOverview, setModalOverview] = useState("");
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -77,6 +80,15 @@ export default function Library() {
     );
   };
 
+  //? MOVIE INFO MODAL - TITLE, IMAGE, DESCRIPTION
+  let modalImageTarget = (e) => {
+    setModalImage(e.target.offsetParent.childNodes[1].currentSrc);
+    setModalTitle(e.target.offsetParent.childNodes[2].innerHTML);
+    setModalOverview(e.target.offsetParent.childNodes[3].innerHTML);
+  };
+
+  //? //////////////////////////////////////////////
+
   //? MOVIE TITLE SEARCH RENDER //
   return (
     <>
@@ -109,12 +121,16 @@ export default function Library() {
                           setCommentWindow={setCommentWindow}
                           movieModalInfo={movieModalInfo}
                           setMovieModalInfo={setMovieModalInfo}
+                          modalImageTarget={modalImageTarget}
                         />
                         <MovieModal
                           movie={movie}
                           movieModalInfo={movieModalInfo}
                           setMovieModalInfo={setMovieModalInfo}
                           setCommentWindow={setCommentWindow}
+                          modalImage={modalImage}
+                          modalTitle={modalTitle}
+                          modalOverview={modalOverview}
                         />
                       </>
                     )

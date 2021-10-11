@@ -810,7 +810,6 @@ form .submit:hover {
 
 .movie-template .movie-container .movie-image {
   display: block;
-  pointer-events: none;
 }
 
 .movie-template .movie-container h1 {
@@ -1667,6 +1666,21 @@ form .submit:hover {
   font-size: 1.5rem;
   color: white;
   z-index: 100000;
+}
+
+.movie-modal-overlay .movie-modal-wrapper .modal-close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+  color: rgba(255, 255, 255, 0.904);
+}
+
+.movie-modal-overlay .movie-modal-wrapper .modal-close-icon:hover {
+  cursor: pointer;
+  color: #fff;
 }
 
 .movie-modal-overlay .movie-modal-wrapper .movie-modal-info {
