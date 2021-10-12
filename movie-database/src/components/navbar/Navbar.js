@@ -7,6 +7,7 @@ import { MdNewReleases, MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineLibrary, HiOutlineCog } from "react-icons/hi";
 import { RiTv2Line } from "react-icons/ri";
 import { GoCommentDiscussion } from "react-icons/go";
+import SeparateAction from "../utils/SeparateAction";
 
 export default function Navbar() {
   return (
@@ -43,8 +44,9 @@ export default function Navbar() {
         </Link>
 
         <Link to="/Comments" className="menu-link-path">
-          <li className="menu-link">
+          <li className="menu-link comment-link">
             <GoCommentDiscussion className="icons" />
+            <SeparateAction />
             <a href="#" className="link-text">
               Comments
             </a>

@@ -36,10 +36,6 @@ export const GlobalProvider = (props) => {
     dispatch({ type: "ADD_MOVIE_TO_WATCHED", payload: movie });
   };
 
-  // const existingMovies = (movie) => {
-  //   dispatch({ type: "EXISTING_MOVIES", payload: movie });
-  // };
-
   return (
     <GlobalContext.Provider
       value={{

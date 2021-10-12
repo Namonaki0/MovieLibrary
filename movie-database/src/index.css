@@ -128,11 +128,6 @@ nav ul .menu-link .link-text.text-showing {
   opacity: 1;
 }
 
-nav ul .burger-menu .burger-menu.light-mode,
-nav ul .menu-link .burger-menu.light-mode {
-  color: #1c1c1c;
-}
-
 nav ul .burger-menu .icons,
 nav ul .menu-link .icons {
   font-size: 20px;
@@ -143,16 +138,28 @@ nav ul .menu-link .icons {
   pointer-events: none;
 }
 
-nav ul .burger-menu .icons.light-mode,
-nav ul .menu-link .icons.light-mode {
-  color: #1c1c1c;
-}
-
 nav ul .burger-menu .link-text,
 nav ul .burger-menu .burger-icon,
 nav ul .menu-link .link-text,
 nav ul .menu-link .burger-icon {
   pointer-events: none;
+}
+
+nav ul .comment-link {
+  position: relative;
+}
+
+nav ul .comment-link .comment-number-span {
+  left: -5px;
+  bottom: 1px;
+  border-radius: 20px;
+  position: absolute;
+  background-color: #5295f9;
+  -webkit-box-shadow: 2px 1px 0.5px #2c2c2c;
+          box-shadow: 2px 1px 0.5px #2c2c2c;
+  width: 40px;
+  aspect-ratio: 2.5;
+  z-index: 1000;
 }
 
 main .fa-photo-video {

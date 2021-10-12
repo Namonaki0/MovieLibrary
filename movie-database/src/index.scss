@@ -113,12 +113,12 @@ nav {
         }
       }
 
-      .burger-menu {
-        &.light-mode {
-          $text-light-mode: #1c1c1c;
-          color: $text-light-mode;
-        }
-      }
+      // .burger-menu {
+      //   &.light-mode {
+      //     $text-light-mode: #1c1c1c;
+      //     color: $text-light-mode;
+      //   }
+      // }
 
       .icons {
         font-size: 20px;
@@ -127,16 +127,28 @@ nav {
         z-index: 10;
         overflow: hidden;
         pointer-events: none;
-
-        &.light-mode {
-          $text-light-mode: #1c1c1c;
-          color: $text-light-mode;
-        }
       }
 
       .link-text,
       .burger-icon {
         pointer-events: none;
+      }
+    }
+
+    .comment-link {
+      position: relative;
+
+      .comment-number-span {
+        left: -5px;
+        bottom: 1px;
+        border-radius: 20px;
+        position: absolute;
+        background-color: $accent-color;
+        box-shadow: 2px 1px 0.5px rgb(44, 44, 44);
+        //  border: 1px solid red;
+        width: 40px;
+        aspect-ratio: 2.5;
+        z-index: 1000;
       }
     }
   }
@@ -1398,12 +1410,12 @@ form {
       right: 10px;
       font-size: 2rem;
       transition: $main-transition-effect;
-   
+
       color: rgba(255, 255, 255, 0.904);
 
       &:hover {
         cursor: pointer;
-           color: $text-color;
+        color: $text-color;
       }
     }
 
