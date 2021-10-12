@@ -7,9 +7,11 @@ import {
 import { BiLike, BiDislike } from "react-icons/bi";
 import firebase from "../utils/firebase";
 import ScrollToTop from "./ScrollToTop";
+import SeparateAction from "../utils/SeparateAction";
 
-const Comments = () => {
+export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
+  const [commentNumber, setCommentNumber] = useState("");
   const [windowScroll, setWindowScroll] = useState(null);
 
   useEffect(async () => {
@@ -25,12 +27,15 @@ const Comments = () => {
   }, []);
 
   useEffect(() => {
-    setWindowScroll(window.scrollTo(100, 100));
-  }, []);
+    setCommentNumber(userInfo.length);
+    <SeparateAction
+      commentNumber={commentNumber}
+      setCommentNumber={userInfo.length}
+    />;
 
-  // useEffect(() => {
-  //   setWindowScroll(window.scrollTo(0, 0));
-  // });
+    console.log(commentNumber);
+  });
+  // console.log(commentNumber);
 
   const deleteComment = (e) => {
     const commentRef = firebase
