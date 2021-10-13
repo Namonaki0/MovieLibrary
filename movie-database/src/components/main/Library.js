@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { GlobalContext } from "../../context/GlobalState";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
 import CommentModal from "./CommentModal";
@@ -17,6 +18,8 @@ export default function Library() {
   const [modalTitle, setModalTitle] = useState("");
   const [modalImage, setModalImage] = useState("");
   const [modalOverview, setModalOverview] = useState("");
+
+  const { commentCounter } = useContext(GlobalContext);
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -67,6 +70,7 @@ export default function Library() {
     };
 
     commentRef.push(commentBody);
+    commentCounter.push(commentBody);
     //? END OF FIREBASE REALTIME DB ---------------
 
     name.value = "";

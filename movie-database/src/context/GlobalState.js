@@ -9,6 +9,9 @@ const initialState = {
   watched: localStorage.getItem("watched")
     ? JSON.parse(localStorage.getItem("watched"))
     : [],
+  commentCounter: localStorage.getItem("commentCounter")
+    ? JSON.parse(localStorage.getItem("commentCounter"))
+    : [],
 };
 
 //? CREATE CONTEXT
