@@ -145,23 +145,6 @@ nav ul .menu-link .burger-icon {
   pointer-events: none;
 }
 
-nav ul .comment-link {
-  position: relative;
-}
-
-nav ul .comment-link .comment-number-span {
-  left: -5px;
-  bottom: 1px;
-  border-radius: 20px;
-  position: absolute;
-  background-color: #5295f9;
-  -webkit-box-shadow: 2px 1px 0.5px #2c2c2c;
-          box-shadow: 2px 1px 0.5px #2c2c2c;
-  width: 40px;
-  aspect-ratio: 2.5;
-  z-index: 1000;
-}
-
 main .fa-photo-video {
   color: #0c6af7b6;
   text-align: right;
@@ -1142,6 +1125,26 @@ form .submit:hover {
   border-top-right-radius: 5px;
   text-align: right;
   letter-spacing: 1px;
+}
+
+.comments-outter-wrapper .comment-number-span {
+  display: block;
+  text-align: center;
+  background-color: red;
+  text-align: center;
+  color: purple;
+  color: #fff;
+  left: -1px;
+  bottom: 1px;
+  border: 1px solid rgba(192, 192, 192, 0.466);
+  border-radius: 20px;
+  background-color: #5295f9d3;
+  -webkit-box-shadow: 2px 1px 0.5px #2c2c2c;
+          box-shadow: 2px 1px 0.5px #2c2c2c;
+  width: 35px;
+  aspect-ratio: 2.5;
+  z-index: 10000;
+  margin: auto;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper {

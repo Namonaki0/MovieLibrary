@@ -1,18 +1,10 @@
-import { useState, useEffect } from "react";
-import {
-  AiOutlineClockCircle,
-  AiOutlineCalendar,
-  AiOutlineDelete,
-} from "react-icons/ai";
+import { useState, useEffect, React } from "react";
+import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
 import { BiLike, BiDislike } from "react-icons/bi";
 import firebase from "../utils/firebase";
-import ScrollToTop from "./ScrollToTop";
-import SeparateAction from "../utils/SeparateAction";
 
 export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
-  const [commentNumber, setCommentNumber] = useState("");
-  const [windowScroll, setWindowScroll] = useState(null);
 
   useEffect(async () => {
     const commentRef = firebase.database().ref("Comments");
@@ -26,17 +18,6 @@ export const Comments = () => {
     });
   }, []);
 
-  useEffect(() => {
-    setCommentNumber(userInfo.length);
-    <SeparateAction
-      commentNumber={commentNumber}
-      setCommentNumber={userInfo.length}
-    />;
-
-    console.log(commentNumber);
-  });
-  // console.log(commentNumber);
-
   const deleteComment = (e) => {
     const commentRef = firebase
       .database()
@@ -47,8 +28,8 @@ export const Comments = () => {
 
   return (
     <div className="comments-outter-wrapper">
-      <h1>Comments</h1>
-      <ScrollToTop />
+      <h1>{userInfo.length} comments</h1>
+      {/* <span className="comment-number-span">{userInfo.length}</span> */}
       <div className="comments-inner-wrapper">
         {userInfo &&
           userInfo.map((comment, index) => (
@@ -71,13 +52,6 @@ export const Comments = () => {
                 <span>- {comment.user}</span>
                 <BiLike className="like-icon" />
                 <BiDislike className="deslike-icon" />
-                {/* <button
-                  className="delete-btn"
-                  onClick={(e) => deleteComment(e)}
-                >
-                  <AiOutlineDelete />
-                  delete{" "}
-                </button> */}
               </div>
             </div>
           ))}

@@ -55,7 +55,6 @@ const MovieTemplate = ({
         onClick={(e) => {
           setMovieModalInfo(!movieModalInfo);
           modalImageTarget(e);
-          console.log(e.target.offsetParent.childNodes);
         }}
       />
       <h1>{movie.title}</h1>

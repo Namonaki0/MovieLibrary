@@ -135,22 +135,8 @@ nav {
       }
     }
 
-    .comment-link {
-      position: relative;
 
-      .comment-number-span {
-        left: -5px;
-        bottom: 1px;
-        border-radius: 20px;
-        position: absolute;
-        background-color: $accent-color;
-        box-shadow: 2px 1px 0.5px rgb(44, 44, 44);
-        //  border: 1px solid red;
-        width: 40px;
-        aspect-ratio: 2.5;
-        z-index: 1000;
-      }
-    }
+     
   }
 }
 
@@ -964,6 +950,29 @@ form {
     text-align: right;
     letter-spacing: 1px;
   }
+
+   .comment-number-span {
+     display: block;
+    //  width: 100%;
+     text-align: center;
+     background-color: red;
+     text-align: center;
+     color: purple;
+     color: $text-color;
+     left: -1px;
+     bottom: 1px;
+     border: 1px solid rgba(192, 192, 192, 0.466);
+     border-radius: 20px;
+     // position: absolute;
+     background-color: #5295f9d3;
+     box-shadow: 2px 1px 0.5px rgb(44, 44, 44);
+     //  border: 1px solid red;
+     width: 35px;
+     aspect-ratio: 2.5;
+     z-index: 10000;
+     margin: auto;
+     // }
+   }
 
   .comments-inner-wrapper {
     display: flex;
