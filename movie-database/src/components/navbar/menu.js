@@ -40,3 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// commentLink.setAttribute("span", ".comment-number-span");
+// console.log();
+
+// const commentNumFunc = async () => {
+let commentLink = document.querySelector(".comment-link");
+const commentNumSpan = document.createElement("span");
+const commentNum = document.querySelectorAll(".comment");
+commentNumSpan.innerHTML = commentNum.length;
+commentNumSpan.classList.add("comment-number-span");
+// commentLink.appendChild(commentNumSpan);
+// commentLink += commentNumSpan;
+
+console.log(commentNum.length);
+console.log(commentLink);
+// };
+
+// document.addEventListener("DOMContentLoaded", commentNumFunc);
