@@ -1117,17 +1117,11 @@ form .submit:hover {
   }
 }
 
-.comments-outter-wrapper h1 {
-  color: #fff;
-  background: #3a3738;
-  font-weight: 300;
-  padding: 0.5rem 1rem 0.5rem 3.8rem;
-  border-top-right-radius: 5px;
-  text-align: right;
-  letter-spacing: 1px;
+.comment-link {
+  position: relative;
 }
 
-.comments-outter-wrapper .comment-number-span {
+.comment-link .comment-number-span {
   display: block;
   text-align: center;
   background-color: red;
@@ -1138,6 +1132,7 @@ form .submit:hover {
   bottom: 1px;
   border: 1px solid rgba(192, 192, 192, 0.466);
   border-radius: 20px;
+  position: absolute;
   background-color: #5295f9d3;
   -webkit-box-shadow: 2px 1px 0.5px #2c2c2c;
           box-shadow: 2px 1px 0.5px #2c2c2c;
@@ -1145,6 +1140,16 @@ form .submit:hover {
   aspect-ratio: 2.5;
   z-index: 10000;
   margin: auto;
+}
+
+.comments-outter-wrapper h1 {
+  color: #fff;
+  background: #3a3738;
+  font-weight: 300;
+  padding: 0.5rem 1rem 0.5rem 3.8rem;
+  border-top-right-radius: 5px;
+  text-align: right;
+  letter-spacing: 1px;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper {
