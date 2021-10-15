@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.querySelector(".burger-menu");
   const nav = document.querySelector("nav");
+  const burgerMenu = document.querySelector(".burger-menu");
   const linkTexts = document.querySelectorAll(".link-text");
   const menuLinks = document.querySelectorAll(".menu-link");
   const lightModeIcon = document.querySelector(".color-settings-icon");
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
           } else if (parentNode.classList.contains("menu-active")) {
             linkText.classList.remove("text-showing");
             nav.classList.remove("menu-active");
-            console.log("yeah");
           } else {
             linkText.classList.remove("text-showing");
             nav.classList.remove("menu-active");
@@ -41,20 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// const nav = document.querySelector("nav");
+// document.addEventListener("DOMContentLoaded", commentNumFunc);
+
+// window.addEventListener("load", () => {
+// const nav = document.querySelector("nav");
+// // const commentNumFunc = async () => {
+let commentLink = document.querySelector(".comment-link");
+const commentNum = document.querySelectorAll(".comment");
+const commentNumSpan = document.createElement("span");
+if (commentLink) {
+  commentNumSpan.innerHTML = commentNum.length;
+  commentNumSpan.classList.add("comment-number-span");
+  commentLink.appendChild(commentNumSpan);
+  console.log("yes");
+}
+
+console.log(commentLink, commentNumSpan, commentNum.length);
+// commentLink += commentNumSpan;
+// console.log(commentNum.length);
+// console.log(commentLink);
+// };
+// });
 // commentLink.setAttribute("span", ".comment-number-span");
 // console.log();
-
-// const commentNumFunc = async () => {
-let commentLink = document.querySelector(".comment-link");
-const commentNumSpan = document.createElement("span");
-const commentNum = document.querySelectorAll(".comment");
-commentNumSpan.innerHTML = commentNum.length;
-commentNumSpan.classList.add("comment-number-span");
-// commentLink.appendChild(commentNumSpan);
-// commentLink += commentNumSpan;
-
-console.log(commentNum.length);
-console.log(commentLink);
-// };
-
-// document.addEventListener("DOMContentLoaded", commentNumFunc);
