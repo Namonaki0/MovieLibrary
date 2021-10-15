@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Route } from "react-router-dom";
 import "./menu";
 import { CgMenu } from "react-icons/cg";
@@ -12,9 +12,14 @@ import { GlobalContext } from "../../context/GlobalState";
 // import { SeparateAction, CommentCount } from "../main/SeparateAction";
 
 export default function Navbar() {
-  // const commentValue = useContext(CommentCount);
-  // const { commentCounter } = useContext(GlobalContext);
-  // const [commentNumber, setCommentNumber] = useState("");
+  const [commentNumber, setCommentNumber] = useState("");
+  useEffect(() => {
+    // let commentLink = document.querySelector(".comment-link");
+    const commentNum = document.querySelectorAll(".comment");
+    setCommentNumber(commentNum.length);
+    console.log(commentNumber);
+  });
+
   return (
     <nav>
       <ul>
@@ -49,15 +54,13 @@ export default function Navbar() {
         </Link>
 
         <Link to="/Comments" className="menu-link-path">
-          {/* <CommentCount> */}
           <li className="menu-link comment-link">
+            <span className="comment-number-span">{commentNumber}</span>
             <GoCommentDiscussion className="icons" />
-
             <a href="#" className="link-text">
               Comments
             </a>
           </li>
-          {/* </CommentCount> */}
         </Link>
 
         <Link to="/Watchlist" className="menu-link-path">
