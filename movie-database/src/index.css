@@ -312,7 +312,7 @@ main h1 span::before {
 
 .upcoming-movies-body .comment-window-wrapper form .comment-window-close-icon {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 2rem;
   top: 10%;
   right: 10%;
   cursor: pointer;
@@ -671,7 +671,7 @@ form .submit:hover {
 
 .movie-template .comment-window-wrapper form .comment-window-close-icon {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 2rem;
   top: 10%;
   right: 10%;
   cursor: pointer;
@@ -1123,13 +1123,11 @@ form .submit:hover {
 
 .comment-link .comment-number-span {
   display: block;
+  font-size: 0.9rem;
   text-align: center;
-  background-color: red;
-  text-align: center;
-  color: purple;
   color: #fff;
   left: -1px;
-  bottom: 1px;
+  bottom: -1px;
   border: 1px solid rgba(192, 192, 192, 0.466);
   border-radius: 20px;
   position: absolute;
@@ -1137,9 +1135,22 @@ form .submit:hover {
   -webkit-box-shadow: 2px 1px 0.5px #2c2c2c;
           box-shadow: 2px 1px 0.5px #2c2c2c;
   width: 35px;
-  aspect-ratio: 2.5;
-  z-index: 10000;
+  aspect-ratio: 3;
+  z-index: 1000;
   margin: auto;
+}
+
+.comment-link .open-menu-comment-number-span {
+  display: none;
+  width: 35px;
+  border-radius: 20px;
+  aspect-ratio: 3;
+  background-color: #5295f9d3;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #fff;
+  margin-left: 1rem;
+  margin-bottom: -1px;
 }
 
 .comments-outter-wrapper h1 {

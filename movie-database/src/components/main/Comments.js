@@ -15,6 +15,7 @@ export const Comments = () => {
         userInfo.push({ comment, ...allComments[comment] });
       }
       setUserInfo(userInfo);
+      localStorage.setItem("comments", JSON.stringify(userInfo));
     });
   }, []);
 
@@ -28,8 +29,7 @@ export const Comments = () => {
 
   return (
     <div className="comments-outter-wrapper">
-      <h1>{userInfo.length} comments</h1>
-      {/* <span className="comment-number-span">{userInfo.length}</span> */}
+      <h1>Comments</h1>
       <div className="comments-inner-wrapper">
         {userInfo &&
           userInfo.map((comment, index) => (

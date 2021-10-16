@@ -51,7 +51,7 @@ export default function Library() {
     let hours = date.getHours();
     let mins = date.getMinutes();
 
-    let dateOfComment = `${day}/${month}/${year}`;
+    let dateOfComment = `${day}/${month + 1}/${year}`;
     let timeOfComment = `${hours}:${mins}`;
 
     const movieTitle = document.querySelector(".comment-window-movie-title");
@@ -70,7 +70,7 @@ export default function Library() {
     };
 
     commentRef.push(commentBody);
-    commentCounter.push(commentBody);
+
     //? END OF FIREBASE REALTIME DB ---------------
 
     name.value = "";

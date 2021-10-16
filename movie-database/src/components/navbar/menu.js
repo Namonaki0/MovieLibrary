@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuLinks = document.querySelectorAll(".menu-link");
   const lightModeIcon = document.querySelector(".color-settings-icon");
   const settingsWrapper = document.querySelector(".settings-wrapper");
+  const commentNumSpan = document.querySelector(".comment-number-span");
+  const openMenuCommentNumSpan = document.querySelector(
+    ".open-menu-comment-number-span"
+  );
+
+  console.log(commentNumSpan);
 
   if (burgerMenu) {
     burgerMenu.addEventListener("click", () => {
@@ -17,10 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
         linkTexts.forEach((linkText) => {
           if (nav.classList.contains("menu-active")) {
             linkText.classList.add("text-showing");
+            commentNumSpan.style.display = "none";
+            openMenuCommentNumSpan.style.display = "block";
           } else if (parentNode.classList.contains("menu-active")) {
             linkText.classList.remove("text-showing");
             nav.classList.remove("menu-active");
           } else {
+            openMenuCommentNumSpan.style.display = "none";
+            commentNumSpan.style.display = "";
             linkText.classList.remove("text-showing");
             nav.classList.remove("menu-active");
           }
@@ -39,28 +49,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-// const nav = document.querySelector("nav");
-// document.addEventListener("DOMContentLoaded", commentNumFunc);
-
-// window.addEventListener("load", () => {
-// const nav = document.querySelector("nav");
-// // const commentNumFunc = async () => {
-let commentLink = document.querySelector(".comment-link");
-const commentNum = document.querySelectorAll(".comment");
-const commentNumSpan = document.createElement("span");
-if (commentLink) {
-  commentNumSpan.innerHTML = commentNum.length;
-  commentNumSpan.classList.add("comment-number-span");
-  commentLink.appendChild(commentNumSpan);
-  console.log("yes");
-}
-
-console.log(commentLink, commentNumSpan, commentNum.length);
-// commentLink += commentNumSpan;
-// console.log(commentNum.length);
-// console.log(commentLink);
-// };
-// });
-// commentLink.setAttribute("span", ".comment-number-span");
-// console.log();
