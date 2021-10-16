@@ -39,7 +39,7 @@ export default function Upcoming() {
     let hours = date.getHours();
     let mins = date.getMinutes();
 
-    let dateOfComment = `${day}/${month}/${year}`;
+    let dateOfComment = `${day}/${month + 1}/${year}`;
     let timeOfComment = `${hours}:${mins}`;
 
     const movieTitle = document.querySelector(".comment-window-movie-title");

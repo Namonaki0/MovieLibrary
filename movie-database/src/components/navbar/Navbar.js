@@ -7,17 +7,12 @@ import { MdNewReleases, MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineLibrary, HiOutlineCog } from "react-icons/hi";
 import { RiTv2Line } from "react-icons/ri";
 import { GoCommentDiscussion } from "react-icons/go";
-// import SeparateAction from "../main/SeparateAction";
-import { GlobalContext } from "../../context/GlobalState";
-// import { SeparateAction, CommentCount } from "../main/SeparateAction";
 
 export default function Navbar() {
-  const [commentNumber, setCommentNumber] = useState("");
-  useEffect(() => {
-    // let commentLink = document.querySelector(".comment-link");
-    const commentNum = document.querySelectorAll(".comment");
-    setCommentNumber(commentNum.length);
-    console.log(commentNumber);
+  let [commentNumber, setCommentNumber] = useState("");
+  useEffect(async () => {
+    const storedComments = JSON.parse(localStorage.comments);
+    setCommentNumber(storedComments.length);
   });
 
   return (
@@ -55,11 +50,18 @@ export default function Navbar() {
 
         <Link to="/Comments" className="menu-link-path">
           <li className="menu-link comment-link">
-            <span className="comment-number-span">{commentNumber}</span>
+            {commentNumber > 0 ? (
+              <span className="comment-number-span">{commentNumber}</span>
+            ) : (
+              ""
+            )}
             <GoCommentDiscussion className="icons" />
             <a href="#" className="link-text">
               Comments
             </a>
+            <span className="open-menu-comment-number-span">
+              {commentNumber}
+            </span>
           </li>
         </Link>
 

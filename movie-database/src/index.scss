@@ -134,9 +134,6 @@ nav {
         pointer-events: none;
       }
     }
-
-
-     
   }
 }
 
@@ -254,7 +251,7 @@ main {
 
       .comment-window-close-icon {
         position: absolute;
-        font-size: 1.5rem;
+        font-size: 2rem;
         top: 10%;
         right: 10%;
         cursor: pointer;
@@ -556,7 +553,7 @@ form {
 
       .comment-window-close-icon {
         position: absolute;
-        font-size: 1.5rem;
+        font-size: 2rem;
         top: 10%;
         right: 10%;
         cursor: pointer;
@@ -945,25 +942,33 @@ form {
 
   .comment-number-span {
     display: block;
-    //  width: 100%;
+    font-size: 0.9rem;
     text-align: center;
-    background-color: red;
-    text-align: center;
-    color: purple;
     color: $text-color;
     left: -1px;
-    bottom: 1px;
+    bottom: -1px;
     border: 1px solid rgba(192, 192, 192, 0.466);
     border-radius: 20px;
     position: absolute;
     background-color: #5295f9d3;
     box-shadow: 2px 1px 0.5px rgb(44, 44, 44);
-    //  border: 1px solid red;
     width: 35px;
-    aspect-ratio: 2.5;
-    z-index: 10000;
+    aspect-ratio: 3;
+    z-index: 1000;
     margin: auto;
-    // }
+  }
+
+  .open-menu-comment-number-span {
+    display: none;
+    width: 35px;
+    border-radius: 20px;
+    aspect-ratio: 3;
+    background-color: #5295f9d3;
+    font-size: 0.9rem;
+    text-align: center;
+    color: $text-color;
+    margin-left: 1rem;
+    margin-bottom: -1px;
   }
 }
 
@@ -978,23 +983,17 @@ form {
     letter-spacing: 1px;
   }
 
-   
-
   .comments-inner-wrapper {
     display: flex;
     flex-direction: column-reverse;
     height: 81.5vh;
     overflow-y: auto;
 
-    
-
     .comment {
       position: relative;
       border-top: 2px solid #c0c0c02d;
       border-bottom: 0.5px solid #c0c0c081;
       padding: 1rem 2rem 1.5rem 5rem;
-
-      
 
       h2 {
         display: flex;
