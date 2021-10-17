@@ -145,6 +145,48 @@ nav ul .menu-link .burger-icon {
   pointer-events: none;
 }
 
+main {
+  position: relative;
+}
+
+main .login-settings {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 15px;
+  right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .login-settings:hover {
+  cursor: pointer;
+  color: #2070e9;
+}
+
+main .login-settings:hover .user-auth {
+  cursor: pointer;
+  outline: 3px solid #2070e9;
+}
+
+main .login-settings span {
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+main .login-settings .user-auth {
+  font-size: 1.8rem;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+  outline: 0 solid black;
+  border-radius: 50%;
+}
+
+main .login-settings .user-auth:hover {
+  color: #2070e9;
+  outline: 3px solid #2070e9;
+}
+
 main .fa-photo-video {
   color: #0c6af7b6;
   text-align: right;
@@ -1142,13 +1184,13 @@ form .submit:hover {
 
 .comment-link .open-menu-comment-number-span {
   display: none;
+  color: #fff;
+  background-color: #5295f9d3;
   width: 35px;
   border-radius: 20px;
   aspect-ratio: 3;
-  background-color: #5295f9d3;
   font-size: 0.9rem;
   text-align: center;
-  color: #fff;
   margin-left: 1rem;
   margin-bottom: -1px;
 }

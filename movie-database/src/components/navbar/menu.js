@@ -9,8 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const openMenuCommentNumSpan = document.querySelector(
     ".open-menu-comment-number-span"
   );
+  const storedComments = JSON.parse(localStorage.comments);
 
-  console.log(commentNumSpan);
+  if (storedComments.length < 1) {
+    commentNumSpan.style.display = "none";
+    openMenuCommentNumSpan.style.display = "none";
+  }
 
   if (burgerMenu) {
     burgerMenu.addEventListener("click", () => {
@@ -23,16 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
         linkTexts.forEach((linkText) => {
           if (nav.classList.contains("menu-active")) {
             linkText.classList.add("text-showing");
-            commentNumSpan.style.display = "none";
             openMenuCommentNumSpan.style.display = "block";
+            commentNumSpan.style.display = "none";
           } else if (parentNode.classList.contains("menu-active")) {
             linkText.classList.remove("text-showing");
             nav.classList.remove("menu-active");
           } else {
             openMenuCommentNumSpan.style.display = "none";
-            commentNumSpan.style.display = "";
             linkText.classList.remove("text-showing");
             nav.classList.remove("menu-active");
+            commentNumSpan.style.display = "";
           }
         });
       });

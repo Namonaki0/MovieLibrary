@@ -50,11 +50,9 @@ export default function Navbar() {
 
         <Link to="/Comments" className="menu-link-path">
           <li className="menu-link comment-link">
-            {commentNumber > 0 ? (
-              <span className="comment-number-span">{commentNumber}</span>
-            ) : (
-              ""
-            )}
+            {/* {commentNumber > 0 ? ( */}
+            <span className="comment-number-span">{commentNumber}</span>
+
             <GoCommentDiscussion className="icons" />
             <a href="#" className="link-text">
               Comments

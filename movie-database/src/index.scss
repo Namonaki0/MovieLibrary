@@ -113,13 +113,6 @@ nav {
         }
       }
 
-      // .burger-menu {
-      //   &.light-mode {
-      //     $text-light-mode: #1c1c1c;
-      //     color: $text-light-mode;
-      //   }
-      // }
-
       .icons {
         font-size: 20px;
         color: $text-color;
@@ -139,6 +132,44 @@ nav {
 
 //? HOME
 main {
+  position: relative;
+
+  .login-settings {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 15px;
+    right: 15px;
+    display: flex;
+
+    &:hover {
+      cursor: pointer;
+      color: #2070e9;
+
+      .user-auth {
+        cursor: pointer;
+
+        outline: 3px solid #2070e9;
+      }
+    }
+
+    span {
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    .user-auth {
+      font-size: 1.8rem;
+      transition: $main-transition-effect;
+      outline: 0 solid black;
+      border-radius: 50%;
+
+      &:hover {
+        color: #2070e9;
+        outline: 3px solid #2070e9;
+      }
+    }
+  }
+
   .fa-photo-video {
     color: #0c6af7b6;
     text-align: right;
@@ -960,13 +991,13 @@ form {
 
   .open-menu-comment-number-span {
     display: none;
+    color: $text-color;
+    background-color: #5295f9d3;
     width: 35px;
     border-radius: 20px;
     aspect-ratio: 3;
-    background-color: #5295f9d3;
     font-size: 0.9rem;
     text-align: center;
-    color: $text-color;
     margin-left: 1rem;
     margin-bottom: -1px;
   }
