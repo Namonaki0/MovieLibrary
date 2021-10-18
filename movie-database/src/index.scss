@@ -136,37 +136,33 @@ main {
 
   .login-settings {
     position: absolute;
+    color: $text-color;
     font-size: 1.5rem;
     top: 15px;
     right: 15px;
     display: flex;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    background-color: $accent-color;
+    transition: $main-transition-effect;
 
     &:hover {
       cursor: pointer;
-      color: #2070e9;
+      background-color: $text-color;
+      color: $accent-color;
 
       .user-auth {
         cursor: pointer;
-
-        outline: 3px solid #2070e9;
       }
     }
 
     span {
-      margin-right: 8px;
-      font-weight: bold;
+      margin-right: 5px;
     }
 
     .user-auth {
-      font-size: 1.8rem;
-      transition: $main-transition-effect;
-      outline: 0 solid black;
-      border-radius: 50%;
-
-      &:hover {
-        color: #2070e9;
-        outline: 3px solid #2070e9;
-      }
+      font-size: 1.6rem;
     }
   }
 

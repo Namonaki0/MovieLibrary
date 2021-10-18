@@ -151,40 +151,38 @@ main {
 
 main .login-settings {
   position: absolute;
+  color: #fff;
   font-size: 1.5rem;
   top: 15px;
   right: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  background-color: #5295f9;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
 }
 
 main .login-settings:hover {
   cursor: pointer;
-  color: #2070e9;
+  background-color: #fff;
+  color: #5295f9;
 }
 
 main .login-settings:hover .user-auth {
   cursor: pointer;
-  outline: 3px solid #2070e9;
 }
 
 main .login-settings span {
-  margin-right: 8px;
-  font-weight: bold;
+  margin-right: 5px;
 }
 
 main .login-settings .user-auth {
-  font-size: 1.8rem;
-  -webkit-transition: all 120ms linear;
-  transition: all 120ms linear;
-  outline: 0 solid black;
-  border-radius: 50%;
-}
-
-main .login-settings .user-auth:hover {
-  color: #2070e9;
-  outline: 3px solid #2070e9;
+  font-size: 1.6rem;
 }
 
 main .fa-photo-video {
