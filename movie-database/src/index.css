@@ -149,15 +149,33 @@ main {
   position: relative;
 }
 
-main .login-settings {
+main .login-settings-wrapper {
   position: absolute;
-  color: #fff;
-  font-size: 1.5rem;
-  top: 15px;
-  right: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+  top: 15px;
+  right: 0px;
+  padding-right: 15px;
+}
+
+main .login-settings-wrapper .login-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 1.5rem;
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   padding: 0.5rem 0.8rem;
@@ -167,21 +185,21 @@ main .login-settings {
   transition: all 120ms linear;
 }
 
-main .login-settings:hover {
+main .login-settings-wrapper .login-settings:hover {
   cursor: pointer;
   background-color: #fff;
   color: #5295f9;
 }
 
-main .login-settings:hover .user-auth {
+main .login-settings-wrapper .login-settings:hover .user-auth {
   cursor: pointer;
 }
 
-main .login-settings span {
+main .login-settings-wrapper .login-settings span {
   margin-right: 5px;
 }
 
-main .login-settings .user-auth {
+main .login-settings-wrapper .login-settings .user-auth {
   font-size: 1.6rem;
 }
 
