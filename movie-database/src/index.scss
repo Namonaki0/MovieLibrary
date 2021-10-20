@@ -87,6 +87,7 @@ nav {
       align-items: center;
       justify-content: flex-start;
       text-decoration: none;
+      color:#000000de;
 
       &:hover {
         border: none;
@@ -1069,24 +1070,38 @@ form {
         display: flex;
         align-items: center;
 
+         justify-content: space-between;
+
         span {
           font-size: 1.1rem;
           font-weight: bold;
         }
 
-        svg {
-          font-size: 1.3rem;
-          margin-right: 5px;
-          cursor: pointer;
-
-          &:hover {
-            color: rgb(63, 63, 63);
+        .reaction-pannel {
+          display: flex;
+          
+          .reaction-btn-wrapper {
+            display: flex;
+             margin-right: 8px;
+  
+            svg {
+              font-size: 1.3rem;
+               margin-right: 2px;
+              cursor: pointer;
+              color: #00000098;
+    
+              &:hover {
+                color: rgb(63, 63, 63);
+              }
+            }
+    
+            .like-icon {
+              margin-left: auto;
+            }
           }
         }
 
-        .like-icon {
-          margin-left: auto;
-        }
+
       }
     }
   }

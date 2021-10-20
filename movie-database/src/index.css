@@ -96,6 +96,7 @@ nav ul .menu-link {
       -ms-flex-pack: start;
           justify-content: flex-start;
   text-decoration: none;
+  color: #000000de;
 }
 
 nav ul .burger-menu:hover,
@@ -1294,6 +1295,9 @@ form .submit:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section span {
@@ -1301,17 +1305,31 @@ form .submit:hover {
   font-weight: bold;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section svg {
-  font-size: 1.3rem;
-  margin-right: 5px;
-  cursor: pointer;
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .reaction-pannel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section svg:hover {
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .reaction-pannel .reaction-btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 8px;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .reaction-pannel .reaction-btn-wrapper svg {
+  font-size: 1.3rem;
+  margin-right: 2px;
+  cursor: pointer;
+  color: #00000098;
+}
+
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .reaction-pannel .reaction-btn-wrapper svg:hover {
   color: #3f3f3f;
 }
 
-.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .like-icon {
+.comments-outter-wrapper .comments-inner-wrapper .comment .comment-bottom-section .reaction-pannel .reaction-btn-wrapper .like-icon {
   margin-left: auto;
 }
 

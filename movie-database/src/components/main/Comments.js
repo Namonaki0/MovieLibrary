@@ -1,7 +1,9 @@
 import { useState, useEffect, React } from "react";
 import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
 import { BiLike, BiDislike } from "react-icons/bi";
+import { IoMdThumbsUp } from "react-icons/io";
 import firebase from "../utils/firebase";
+import { CommentsHandler } from "./CommentsHandler";
 
 export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
@@ -19,13 +21,13 @@ export const Comments = () => {
     });
   }, []);
 
-  const deleteComment = (e) => {
-    const commentRef = firebase
-      .database()
-      .ref("Comments")
-      .child(e.target.value);
-    commentRef.remove();
-  };
+  // const deleteComment = (e) => {
+  //   const commentRef = firebase
+  //     .database()
+  //     .ref("Comments")
+  //     .child(e.target.value);
+  //   commentRef.remove();
+  // };
 
   return (
     <div className="comments-outter-wrapper">
@@ -50,8 +52,22 @@ export const Comments = () => {
               <p className="comment-paragraph">"{comment.comment}"</p>
               <div className="comment-bottom-section">
                 <span>- {comment.user}</span>
-                <BiLike className="like-icon" />
-                <BiDislike className="deslike-icon" />
+                <div className="reaction-pannel">
+                  <div className="reaction-btn-wrapper">
+                    <BiLike
+                      className="like-icon"
+                      onClick={(e) => CommentsHandler(e)}
+                    />
+                    <span className="reaction-number">0</span>
+                  </div>
+                  <div className="reaction-btn-wrapper">
+                    <BiDislike
+                      className="deslike-icon"
+                      onClick={() => console.log("disliked")}
+                    />
+                    <span className="reaction-number">0</span>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
