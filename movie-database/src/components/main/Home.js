@@ -27,7 +27,7 @@ export default function Home() {
             <span>logout</span>
             <AiOutlineUser className="user-auth" />
           </div>
-          <span className="logged-message">logged as {userName}</span>
+          <span className="logged-message">welcome {userName}</span>
         </div>
         <h1>
           <i class="fas fa-photo-video"></i>
