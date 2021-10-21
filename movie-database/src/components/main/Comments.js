@@ -3,10 +3,11 @@ import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
 import { BiLike, BiDislike } from "react-icons/bi";
 import { IoMdThumbsUp } from "react-icons/io";
 import firebase from "../utils/firebase";
-import { CommentsHandler } from "./CommentsHandler";
+import { CommentsHandler, likeHandler } from "./CommentsHandler";
 
 export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
+  const [likeCounter, setLikeCounter] = useState(0);
 
   useEffect(async () => {
     const commentRef = firebase.database().ref("Comments");
@@ -28,6 +29,28 @@ export const Comments = () => {
   //     .child(e.target.value);
   //   commentRef.remove();
   // };
+
+  useEffect(() => {
+    const likeBtns = document.querySelectorAll(".like-icon");
+    const likeNum = document.querySelectorAll(".like-reaction-number");
+    likeBtns.forEach((comment, i) => {
+      comment.setAttribute("id", `${i++}`);
+      // console.log(comment);
+    });
+    likeNum.forEach((like, i) => {
+      like.setAttribute("id", `${i++}`);
+      // console.log(like);
+    });
+    // console.log(likeNum);
+  });
+
+  const commentTarget = (e) => {
+    const likeNum = document.querySelectorAll(".like-reaction-number");
+
+    likeNum.forEach((like) => {
+      console.log(like);
+    });
+  };
 
   return (
     <div className="comments-outter-wrapper">
@@ -56,16 +79,16 @@ export const Comments = () => {
                   <div className="reaction-btn-wrapper">
                     <BiLike
                       className="like-icon"
-                      onClick={(e) => CommentsHandler(e)}
+                      onClick={(e) => commentTarget(e)}
                     />
-                    <span className="reaction-number">0</span>
+                    <span className="like-reaction-number">0</span>
                   </div>
                   <div className="reaction-btn-wrapper">
                     <BiDislike
                       className="deslike-icon"
                       onClick={() => console.log("disliked")}
                     />
-                    <span className="reaction-number">0</span>
+                    <span className="dislike-reaction-number">0</span>
                   </div>
                 </div>
               </div>
