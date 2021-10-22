@@ -7,6 +7,7 @@ export default function MovieModal({
   modalImage,
   modalTitle,
   modalOverview,
+  modalReleaseDate,
 }) {
   return (
     <div
@@ -27,6 +28,7 @@ export default function MovieModal({
           <div className="movie-modal-secondary-info">
             <h2>{modalTitle}</h2>
             <p>{modalOverview}</p>
+            <span>{modalReleaseDate}</span>
           </div>
         </div>
       </div>

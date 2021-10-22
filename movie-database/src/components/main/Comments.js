@@ -59,8 +59,8 @@ export const Comments = () => {
         {userInfo &&
           userInfo.map((comment, index) => (
             <div className="comment" key={index}>
-              <h2>
-                {comment.title}{" "}
+              <div className="comment-top">
+                <h2>{comment.title} </h2>
                 <div className="date-time-wrapper">
                   <span className="date-span">
                     <AiOutlineCalendar />
@@ -71,11 +71,12 @@ export const Comments = () => {
                     {comment.time}
                   </span>
                 </div>
-              </h2>
+              </div>
+
               <p className="comment-paragraph">"{comment.comment}"</p>
               <div className="comment-bottom-section">
                 <span>- {comment.user}</span>
-                <div className="reaction-pannel">
+                {/* <div className="reaction-pannel">
                   <div className="reaction-btn-wrapper">
                     <BiLike
                       className="like-icon"
@@ -90,7 +91,7 @@ export const Comments = () => {
                     />
                     <span className="dislike-reaction-number">0</span>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

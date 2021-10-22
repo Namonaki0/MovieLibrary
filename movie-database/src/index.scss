@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;500;700&display=swap");
 
 //? VARIABLES
 $nav-bg: #1c1c1c;
@@ -87,7 +87,7 @@ nav {
       align-items: center;
       justify-content: flex-start;
       text-decoration: none;
-      color:#000000de;
+      color: #000000de;
 
       &:hover {
         border: none;
@@ -1027,81 +1027,95 @@ form {
     overflow-y: auto;
 
     .comment {
+      display: flex;
+      flex-direction: column;
       position: relative;
       border-top: 2px solid #c0c0c02d;
       border-bottom: 0.5px solid #c0c0c081;
       padding: 1rem 2rem 1.5rem 5rem;
 
-      h2 {
+      .comment-top {
         display: flex;
-        flex: 1;
-        align-self: center;
-        border-bottom: 1px solid #c0c0c034;
-      }
 
-      .date-time-wrapper {
-        display: flex;
-        margin-left: auto;
-        text-align: right;
-        font-size: 1rem;
-
-        .date-span,
-        .time-span {
-          display: flex;
-          align-items: center;
-          margin-left: 0.5rem;
-          color: #303030;
+        h2 {
+          align-self: center;
+          padding: 0.3rem 0.6rem;
+          border-bottom: 1px solid #c0c0c034;
+          background: #353535;
+          clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
+          color: $text-color;
+          width: 100%;
+          border-radius: 2px;
+          flex: 2;
+          letter-spacing: 1px;
         }
 
-        svg {
-          font-size: 1rem;
-          align-self: center;
-          margin-right: 0.1rem;
+        .date-time-wrapper {
+          display: flex;
+          flex-direction: column;
+          font-size: 1.05rem;
+          flex: 1;
+          align-items: flex-end;
+
+          .date-span,
+          .time-span {
+            display: flex;
+            align-items: center;
+            color: #303030;
+          }
+
+          .date-span {
+            margin-bottom: 2px;
+          }
+
+          svg {
+            align-self: center;
+            margin-right: 5px;
+          }
         }
       }
 
       .comment-paragraph {
         display: block;
         font-size: 1.25rem;
-        margin: 1rem 0 0.6rem 0.2rem;
+        margin: 1.2rem 0 0.6rem 0.2rem;
       }
 
       .comment-bottom-section {
         display: flex;
         align-items: center;
 
-         justify-content: space-between;
+        justify-content: space-between;
 
         span {
           font-size: 1.1rem;
           font-weight: bold;
+          margin-left: 10px;
         }
 
         .reaction-pannel {
           display: flex;
-          
+
           .reaction-btn-wrapper {
             display: flex;
-             margin-right: 8px;
-  
+            margin-right: 8px;
+
             svg {
               font-size: 1.3rem;
-               margin-right: 2px;
+              margin-right: 2px;
               cursor: pointer;
               color: #00000098;
-    
+
               &:hover {
                 color: rgb(63, 63, 63);
               }
             }
-    
+
             .like-icon {
               margin-left: auto;
             }
           }
         }
-
-
       }
     }
   }
@@ -1497,10 +1511,20 @@ form {
       }
 
       .movie-modal-secondary-info {
+        padding: 1rem 0.5rem;
         h2 {
           margin-bottom: 10px;
         }
         p {
+          font-size: 1.2rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid rgba(192, 192, 192, 0.171);
+        }
+        span {
+          display: block;
+          margin-top: 1rem;
+          text-align: right;
+          text-transform: lowercase;
           font-size: 1.2rem;
         }
       }

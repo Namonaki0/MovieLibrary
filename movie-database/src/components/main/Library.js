@@ -18,6 +18,7 @@ export default function Library() {
   const [modalTitle, setModalTitle] = useState("");
   const [modalImage, setModalImage] = useState("");
   const [modalOverview, setModalOverview] = useState("");
+  const [modalReleaseDate, setModalReleaseDate] = useState("");
 
   const { commentCounter } = useContext(GlobalContext);
 
@@ -89,6 +90,8 @@ export default function Library() {
     setModalImage(e.target.offsetParent.childNodes[1].currentSrc);
     setModalTitle(e.target.offsetParent.childNodes[2].innerHTML);
     setModalOverview(e.target.offsetParent.childNodes[3].innerHTML);
+    setModalReleaseDate(e.target.offsetParent.childNodes[4].innerHTML);
+    console.dir(e.target.offsetParent);
   };
 
   //? //////////////////////////////////////////////
@@ -135,6 +138,7 @@ export default function Library() {
                           modalImage={modalImage}
                           modalTitle={modalTitle}
                           modalOverview={modalOverview}
+                          modalReleaseDate={modalReleaseDate}
                         />
                       </>
                     )
