@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
+import ReactTooltip from "react-tooltip";
 
 export const UpcomingMoviesTemplate = ({
   upcomingMovie,
@@ -31,7 +32,9 @@ export const UpcomingMoviesTemplate = ({
             className="sidebar-icons add-movie"
             style={watchlistMovieBtnDisabled}
             onClick={() => addMovieToWatchlist(upcomingMovie)}
+            data-tip="add to watchlist"
           />
+          <ReactTooltip offset={{ bottom: 30, left: 70 }} effect="float" />
         </a>
 
         <a>
@@ -41,7 +44,9 @@ export const UpcomingMoviesTemplate = ({
               setCommentWindow("grid");
               movieTitleTarget(e);
             }}
+            data-tip="comment"
           />
+          <ReactTooltip offset={{ bottom: 30, left: 70 }} />
         </a>
       </span>
       <img
