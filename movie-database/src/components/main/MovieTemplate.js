@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
+import ReactTooltip from "react-tooltip";
 
 const MovieTemplate = ({
   movie,
@@ -36,7 +37,9 @@ const MovieTemplate = ({
             onClick={() => {
               addMovieToWatchlist(movie);
             }}
+            data-tip="add to watchlist"
           />
+          <ReactTooltip offset={{ bottom: 30, left: 70 }} />
         </a>
         <a>
           <VscComment
@@ -45,7 +48,9 @@ const MovieTemplate = ({
               setCommentWindow("grid");
               movieTitleTarget(e);
             }}
+            data-tip="comment"
           />
+          <ReactTooltip offset={{ bottom: 30, left: 70 }} />
         </a>
       </span>
       <img

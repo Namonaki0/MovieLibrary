@@ -783,7 +783,7 @@ form .submit:hover {
 
 .movie-template .movie-container {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 19%;
   margin: 2px;
   margin-top: 8px;
