@@ -58,6 +58,7 @@ export default function Upcoming() {
     };
 
     commentRef.push(commentBody);
+    localStorage.setItem("comments", JSON.stringify(commentBody));
     //? END OF FIREBASE REALTIME DB ---------------
 
     name.value = "";
