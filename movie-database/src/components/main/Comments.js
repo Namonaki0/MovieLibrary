@@ -1,13 +1,14 @@
 import { useState, useEffect, React } from "react";
 import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
-import { BiLike, BiDislike } from "react-icons/bi";
-import { IoMdThumbsUp } from "react-icons/io";
 import firebase from "../utils/firebase";
-import { CommentsHandler, likeHandler } from "./CommentsHandler";
+import { useLocation } from "react-router";
+// import { BiLike, BiDislike } from "react-icons/bi";
+// import { IoMdThumbsUp } from "react-icons/io";
+// import { CommentsHandler, likeHandler } from "./CommentsHandler";
 
 export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
-  const [likeCounter, setLikeCounter] = useState(0);
+  // const [likeCounter, setLikeCounter] = useState(0);
 
   useEffect(async () => {
     const commentRef = firebase.database().ref("Comments");
@@ -30,30 +31,9 @@ export const Comments = () => {
   //   commentRef.remove();
   // };
 
-  useEffect(() => {
-    const likeBtns = document.querySelectorAll(".like-icon");
-    const likeNum = document.querySelectorAll(".like-reaction-number");
-    likeBtns.forEach((comment, i) => {
-      comment.setAttribute("id", `${i++}`);
-      // console.log(comment);
-    });
-    likeNum.forEach((like, i) => {
-      like.setAttribute("id", `${i++}`);
-      // console.log(like);
-    });
-    // console.log(likeNum);
-  });
-
-  const commentTarget = (e) => {
-    const likeNum = document.querySelectorAll(".like-reaction-number");
-
-    likeNum.forEach((like) => {
-      console.log(like);
-    });
-  };
-
+  const location = useLocation();
   return (
-    <div className="comments-outter-wrapper">
+    <div className="comments-outter-wrapper" key={location.key}>
       <h1>Comments</h1>
       <div className="comments-inner-wrapper">
         {userInfo &&
@@ -76,6 +56,7 @@ export const Comments = () => {
               <p className="comment-paragraph">"{comment.comment}"</p>
               <div className="comment-bottom-section">
                 <span>- {comment.user}</span>
+                {/* REACTIONS - LIKE & DISLIKE */}
                 {/* <div className="reaction-pannel">
                   <div className="reaction-btn-wrapper">
                     <BiLike
