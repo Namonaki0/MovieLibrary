@@ -12,6 +12,7 @@ export default function Upcoming() {
   const [user, setUsername] = useState("");
   const [comments, setComments] = useState("");
   const [commentMessage, setCommentMessage] = useState("");
+  const [commentWindowRemoval, setCommentWindowRemoval] = useState("block");
 
   useEffect(async () => {
     const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1&include_adult=false`;
@@ -63,6 +64,13 @@ export default function Upcoming() {
 
     name.value = "";
     comment.value = "";
+
+    setCommentWindowRemoval(
+      setTimeout(() => {
+        setCommentWindowRemoval("none");
+      }),
+      2000
+    );
   };
 
   //? GRABS MOVIE TITLE ON CLICK FROM OFFSET-PARENT
@@ -94,11 +102,11 @@ export default function Upcoming() {
         setCommentWindow={setCommentWindow}
         movieTitle={movieTitle}
         formSubmit={formSubmit}
-      />
-      {/* <CommentMessageModal
         commentMessage={commentMessage}
         setCommentMessage={setCommentMessage}
-      /> */}
+        commentWindowRemoval={commentWindowRemoval}
+        setCommentWindowRemoval={setCommentWindowRemoval}
+      />
     </div>
   );
 }
