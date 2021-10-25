@@ -11,7 +11,6 @@ import Watched from "./components/main/Watched";
 import Settings from "./components/main/Settings";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { GlobalProvider } from "./context/GlobalState";
-import ScrollToTop from "./components/main/ScrollToTop";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
       <Router>
         <div className="document-body">
           <Navbar />
-          <ScrollToTop />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/upcoming" component={Upcoming} />

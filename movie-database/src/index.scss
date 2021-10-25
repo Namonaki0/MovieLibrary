@@ -252,6 +252,8 @@ main {
     z-index: 1000;
     animation: comment-window-effect 120ms linear;
 
+    
+
     .comment-window-movie-title {
       font-size: 2rem;
     }
@@ -276,6 +278,22 @@ main {
       height: 80%;
       width: 80%;
       color: white;
+
+      .comment-message {
+        animation: comment-window-message 120ms linear;
+      }
+
+      @keyframes comment-window-message {
+        0% {
+          opacity: 0;
+          transform: translateX(10%);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
 
       label,
       input,

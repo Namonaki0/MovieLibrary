@@ -359,6 +359,37 @@ main h1 span::before {
   color: white;
 }
 
+.upcoming-movies-body .comment-window-wrapper form .comment-message {
+  -webkit-animation: comment-window-message 120ms linear;
+          animation: comment-window-message 120ms linear;
+}
+
+@-webkit-keyframes comment-window-message {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes comment-window-message {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
 .upcoming-movies-body .comment-window-wrapper form label,
 .upcoming-movies-body .comment-window-wrapper form input,
 .upcoming-movies-body .comment-window-wrapper form .submit,
