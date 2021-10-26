@@ -12,6 +12,7 @@ export default function Upcoming() {
   const [user, setUsername] = useState("");
   const [comments, setComments] = useState("");
   const [commentMessage, setCommentMessage] = useState("");
+  const [commentMessageDisplay, setCommentMessageDisplay] = useState(null);
   const [commentWindowRemoval, setCommentWindowRemoval] = useState("block");
 
   useEffect(async () => {
@@ -106,6 +107,8 @@ export default function Upcoming() {
         setCommentMessage={setCommentMessage}
         commentWindowRemoval={commentWindowRemoval}
         setCommentWindowRemoval={setCommentWindowRemoval}
+        commentMessageDisplay={commentMessageDisplay}
+        setCommentMessageDisplay={setCommentMessageDisplay}
       />
     </div>
   );

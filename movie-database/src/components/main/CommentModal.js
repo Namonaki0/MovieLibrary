@@ -11,6 +11,8 @@ const CommentModal = ({
   setCommentMessage,
   commentWindowRemoval,
   setCommentWindowRemoval,
+  commentMessageDisplay,
+  setCommentMessageDisplay,
 }) => {
   return (
     <div
@@ -28,7 +30,14 @@ const CommentModal = ({
           }}
         />
 
-        <span className="comment-message">{commentMessage}</span>
+        <span
+          className="comment-message"
+          style={{
+            display: commentMessageDisplay ? "grid" : "none",
+          }}
+        >
+          {commentMessage}
+        </span>
 
         <span className="comment-window-movie-title">{movieTitle}</span>
         <label for="comment">comment</label>
@@ -54,7 +63,11 @@ const CommentModal = ({
           type="submit"
           onClick={() => {
             setCommentMessage("Thank you, comment posted!");
-            // commentWindowRemoval;
+            setCommentMessageDisplay(!commentMessageDisplay);
+            setTimeout(() => {
+              setCommentWindow(!commentWindow);
+              setCommentMessageDisplay(null);
+            }, 2000);
           }}
         >
           submit
