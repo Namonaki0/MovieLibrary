@@ -271,6 +271,8 @@ main {
     }
 
     form {
+      position: relative;
+      overflow-x: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -280,6 +282,15 @@ main {
       color: white;
 
       .comment-message {
+        position: absolute;
+        background: #282828;
+        font-size: 3rem;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: inherit;
+        place-content: center;
         animation: comment-window-message 120ms linear;
       }
 
@@ -307,8 +318,8 @@ main {
       .comment-window-close-icon {
         position: absolute;
         font-size: 2rem;
-        top: 10%;
-        right: 10%;
+        top: 3%;
+        right: 2%;
         cursor: pointer;
       }
 
