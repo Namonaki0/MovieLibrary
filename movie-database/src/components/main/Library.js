@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
-import { GlobalContext } from "../../context/GlobalState";
+import React, { useState } from "react";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
 import CommentModal from "./CommentModal";
 import MovieModal from "./MovieModal";
-import firebase from "../utils/firebase";
+import commentsHandler from "../utils/commentsBodyHandler";
 
 export default function Library() {
   const [query, setQuery] = useState("");
@@ -13,14 +12,14 @@ export default function Library() {
   const [comments, setComments] = useState("");
   const [movieTitle, setMovieTitle] = useState("");
   const [commentWindow, setCommentWindow] = useState(null);
+  const [commentMessage, setCommentMessage] = useState("");
+  const [commentMessageDisplay, setCommentMessageDisplay] = useState(null);
   const [movieModalInfo, setMovieModalInfo] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [modalTitle, setModalTitle] = useState("");
   const [modalImage, setModalImage] = useState("");
   const [modalOverview, setModalOverview] = useState("");
   const [modalReleaseDate, setModalReleaseDate] = useState("");
-
-  const { commentCounter } = useContext(GlobalContext);
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -42,40 +41,9 @@ export default function Library() {
   const formSubmit = async (e) => {
     e.preventDefault();
 
-    //? DATE
-    let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth();
-    let year = date.getFullYear();
-    let time = date.getTime();
-    //? TIME
-    let hours = date.getHours();
-    let mins = date.getMinutes();
-
-    let dateOfComment = `${day}/${month + 1}/${year}`;
-    let timeOfComment = `${hours}:${mins}`;
-
-    const movieTitle = document.querySelector(".comment-window-movie-title");
-    const name = document.querySelector(".form .nameInput");
-    const comment = document.querySelector(".form .commentInput");
-
+    //? COMMENTS DATE AND TIME ON SUBMIT ---------------
     //? FIREBASE REALTIME DB ------------
-    const commentRef = firebase.database().ref("Comments");
-
-    const commentBody = {
-      title: movieTitle.innerHTML,
-      user: name.value,
-      comment: comment.value,
-      date: dateOfComment,
-      time: timeOfComment,
-    };
-
-    commentRef.push(commentBody);
-
-    //? END OF FIREBASE REALTIME DB ---------------
-
-    name.value = "";
-    comment.value = "";
+    commentsHandler();
   };
 
   //? GRABS MOVIE TITLE ON CLICK FROM OFFSET-PARENT
@@ -149,6 +117,10 @@ export default function Library() {
                 setUsername={(e) => setUsername(e)}
                 commentWindow={commentWindow}
                 setCommentWindow={setCommentWindow}
+                commentMessage={commentMessage}
+                setCommentMessage={setCommentMessage}
+                commentMessageDisplay={commentMessageDisplay}
+                setCommentMessageDisplay={setCommentMessageDisplay}
                 movieTitle={movieTitle}
                 formSubmit={formSubmit}
               />

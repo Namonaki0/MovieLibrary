@@ -715,6 +715,7 @@ form .submit:hover {
 
 .movie-template .comment-window-wrapper {
   position: fixed;
+  overflow-x: hidden;
   background-color: #00000098;
   top: 5px;
   bottom: 5px;
@@ -746,6 +747,7 @@ form .submit:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -758,6 +760,34 @@ form .submit:hover {
   height: 80%;
   width: 80%;
   color: white;
+  overflow-x: hidden;
+}
+
+.movie-template .comment-window-wrapper form .comment-message {
+  position: absolute;
+  background: #282828;
+  font-size: 3rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: inherit;
+  place-content: center;
+  -webkit-animation: comment-window-message 120ms linear;
+          animation: comment-window-message 120ms linear;
+}
+
+@keyframes comment-window-message {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
 }
 
 .movie-template .comment-window-wrapper form label,
@@ -773,8 +803,8 @@ form .submit:hover {
 .movie-template .comment-window-wrapper form .comment-window-close-icon {
   position: absolute;
   font-size: 2rem;
-  top: 10%;
-  right: 10%;
+  top: 3%;
+  right: 2%;
   cursor: pointer;
 }
 

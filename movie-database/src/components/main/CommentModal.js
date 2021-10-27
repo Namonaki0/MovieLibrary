@@ -9,8 +9,6 @@ const CommentModal = ({
   formSubmit,
   commentMessage,
   setCommentMessage,
-  commentWindowRemoval,
-  setCommentWindowRemoval,
   commentMessageDisplay,
   setCommentMessageDisplay,
 }) => {

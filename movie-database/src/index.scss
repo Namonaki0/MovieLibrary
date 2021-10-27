@@ -252,8 +252,6 @@ main {
     z-index: 1000;
     animation: comment-window-effect 120ms linear;
 
-    
-
     .comment-window-movie-title {
       font-size: 2rem;
     }
@@ -471,7 +469,6 @@ main {
       color: #f5f5f5e3;
       pointer-events: initial;
       cursor: pointer;
-
     }
 
     a {
@@ -575,6 +572,7 @@ form {
 
   .comment-window-wrapper {
     position: fixed;
+    overflow-x: hidden;
     background-color: #00000098;
     top: 5px;
     bottom: 5px;
@@ -601,6 +599,7 @@ form {
 
     form {
       display: flex;
+      position: relative;
       flex-direction: column;
       justify-content: center;
       background-color: rgba(221, 221, 221, 0.842);
@@ -608,6 +607,32 @@ form {
       height: 80%;
       width: 80%;
       color: white;
+      overflow-x: hidden;
+
+      .comment-message {
+        position: absolute;
+        background: #282828;
+        font-size: 3rem;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: inherit;
+        place-content: center;
+        animation: comment-window-message 120ms linear;
+      }
+
+      @keyframes comment-window-message {
+        0% {
+          opacity: 0;
+          transform: translateX(10%);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
 
       label,
       input,
@@ -621,8 +646,8 @@ form {
       .comment-window-close-icon {
         position: absolute;
         font-size: 2rem;
-        top: 10%;
-        right: 10%;
+        top: 3%;
+        right: 2%;
         cursor: pointer;
       }
 
@@ -745,7 +770,6 @@ form {
 
     .movie-image {
       display: block;
-      // pointer-events: none;
     }
 
     h1 {
@@ -1179,7 +1203,6 @@ form {
 }
 
 //? WATCHLIST
-
 .watchlist-outter-wrapper {
   border-top-right-radius: 5px;
 
@@ -1319,7 +1342,6 @@ form {
 }
 
 //? WATCHED
-
 .watched-outter-wrapper {
   position: relative;
   border-top-right-radius: 5px;
@@ -1535,7 +1557,6 @@ form {
     .movie-modal-info {
       display: flex;
       align-items: center;
-      // background-color: red;
       img {
         margin-right: 15px;
       }

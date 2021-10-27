@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const linkTexts = document.querySelectorAll(".link-text");
   const menuLinks = document.querySelectorAll(".menu-link");
   const lightModeIcon = document.querySelector(".color-settings-icon");
-  const settingsWrapper = document.querySelector(".settings-wrapper");
   const commentNumSpan = document.querySelector(".comment-number-span");
   const openMenuCommentNumSpan = document.querySelector(
     ".open-menu-comment-number-span"
