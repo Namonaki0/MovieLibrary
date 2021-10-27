@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { api_key } from "../apiKey";
 import UpcomingMoviesTemplate from "./UpcomingMoviesTemplate";
 import CommentModal from "./CommentModal";
-import CommentMessageModal from "./CommentMessageModal";
-import firebase from "../utils/firebase";
+import commentsHandler from "../utils/commentsBodyHandler";
 
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -13,7 +12,6 @@ export default function Upcoming() {
   const [comments, setComments] = useState("");
   const [commentMessage, setCommentMessage] = useState("");
   const [commentMessageDisplay, setCommentMessageDisplay] = useState(null);
-  const [commentWindowRemoval, setCommentWindowRemoval] = useState("block");
 
   useEffect(async () => {
     const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1&include_adult=false`;
@@ -31,47 +29,9 @@ export default function Upcoming() {
   const formSubmit = async (e) => {
     e.preventDefault();
 
-    //? DATE
-    let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth();
-    let year = date.getFullYear();
-    let time = date.getTime();
-    //? TIME
-    let hours = date.getHours();
-    let mins = date.getMinutes();
-
-    let dateOfComment = `${day}/${month + 1}/${year}`;
-    let timeOfComment = `${hours}:${mins}`;
-
-    const movieTitle = document.querySelector(".comment-window-movie-title");
-    const name = document.querySelector(".form .nameInput");
-    const comment = document.querySelector(".form .commentInput");
-
+    //? COMMENTS DATE AND TIME ON SUBMIT ---------------
     //? FIREBASE REALTIME DB ------------
-    const commentRef = firebase.database().ref("Comments");
-
-    const commentBody = {
-      title: movieTitle.innerHTML,
-      user: name.value,
-      comment: comment.value,
-      date: dateOfComment,
-      time: timeOfComment,
-    };
-
-    commentRef.push(commentBody);
-    localStorage.setItem("comments", JSON.stringify(commentBody));
-    //? END OF FIREBASE REALTIME DB ---------------
-
-    name.value = "";
-    comment.value = "";
-
-    setCommentWindowRemoval(
-      setTimeout(() => {
-        setCommentWindowRemoval("none");
-      }),
-      2000
-    );
+    commentsHandler();
   };
 
   //? GRABS MOVIE TITLE ON CLICK FROM OFFSET-PARENT
@@ -105,8 +65,6 @@ export default function Upcoming() {
         formSubmit={formSubmit}
         commentMessage={commentMessage}
         setCommentMessage={setCommentMessage}
-        commentWindowRemoval={commentWindowRemoval}
-        setCommentWindowRemoval={setCommentWindowRemoval}
         commentMessageDisplay={commentMessageDisplay}
         setCommentMessageDisplay={setCommentMessageDisplay}
       />

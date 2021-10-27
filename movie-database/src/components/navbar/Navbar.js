@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./menu";
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineHome, AiOutlineEye } from "react-icons/ai";
@@ -50,7 +50,6 @@ export default function Navbar() {
 
         <Link to="/Comments" className="menu-link-path">
           <li className="menu-link comment-link">
-            {/* {commentNumber > 0 ? ( */}
             <span className="comment-number-span">{commentNumber}</span>
 
             <GoCommentDiscussion className="icons" />
