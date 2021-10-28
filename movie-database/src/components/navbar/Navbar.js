@@ -7,12 +7,19 @@ import { MdNewReleases, MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineLibrary, HiOutlineCog } from "react-icons/hi";
 import { RiTv2Line } from "react-icons/ri";
 import { GoCommentDiscussion } from "react-icons/go";
+import firebase from "firebase";
 
 export default function Navbar() {
-  let [commentNumber, setCommentNumber] = useState("");
+  let [commentNumber, setCommentNumber] = useState();
+
   useEffect(async () => {
-    const storedComments = JSON.parse(localStorage.comments);
-    setCommentNumber(storedComments.length);
+    const commentRef = firebase.database().ref("Comments");
+
+    commentRef.on("value", (comment) => {
+      const allComments = comment.val();
+      let commentsLength = Object.keys(allComments).length;
+      setCommentNumber(commentsLength);
+    });
   });
 
   return (
