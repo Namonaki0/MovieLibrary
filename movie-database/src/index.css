@@ -148,6 +148,7 @@ nav ul .menu-link .burger-icon {
 
 main {
   position: relative;
+  overflow: hidden;
 }
 
 main .login-settings-wrapper {
@@ -1220,6 +1221,13 @@ form .submit:hover {
   font-size: 1.1rem;
   margin-right: 0.8rem;
   font-weight: bold;
+  color: #1c1c1c;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
+.settings-wrapper .settings-options .languages a:hover {
+  color: #5295f9;
 }
 
 @-webkit-keyframes settings-effect {

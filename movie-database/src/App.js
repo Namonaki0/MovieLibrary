@@ -7,9 +7,17 @@ import Library from "./components/main/Library";
 import Comments from "./components/main/Comments";
 import Watchlist from "./components/main/Watchlist";
 import Watched from "./components/main/Watched";
-import Settings from "./components/main/Settings";
+import Settings from "./components/settings/Settings";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { GlobalProvider } from "./context/GlobalState";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+
+counterpart.registerTranslations("en", {
+  title: "Title",
+});
+
+counterpart.setLocale("en");
 
 function App() {
   return (
@@ -24,7 +32,7 @@ function App() {
             <Route path="/comments" component={Comments} />
             <Route path="/watchlist" component={Watchlist} />
             <Route path="/watched" component={Watched} />
-            <Route path="/settings" component={Settings} />
+            <Route path="/settings/" component={Settings} />
           </Switch>
         </div>
       </Router>

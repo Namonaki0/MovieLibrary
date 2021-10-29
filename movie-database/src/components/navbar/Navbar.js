@@ -8,6 +8,17 @@ import { HiOutlineLibrary, HiOutlineCog } from "react-icons/hi";
 import { RiTv2Line } from "react-icons/ri";
 import { GoCommentDiscussion } from "react-icons/go";
 import firebase from "firebase";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from "../../languages/en";
+import jp from "../../languages/jp";
+
+counterpart.registerTranslations("en", {
+  title: "Title",
+});
+
+counterpart.setLocale("en", en);
+counterpart.setLocale("jp", jp);
 
 export default function Navbar() {
   let [commentNumber, setCommentNumber] = useState();
