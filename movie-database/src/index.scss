@@ -134,6 +134,7 @@ nav {
 //? HOME
 main {
   position: relative;
+  overflow: hidden;
 
   .login-settings-wrapper {
     position: absolute;
@@ -1009,6 +1010,12 @@ form {
         font-size: 1.1rem;
         margin-right: 0.8rem;
         font-weight: bold;
+        color: #1c1c1c;
+        transition: $main-transition-effect;
+
+        &:hover {
+          color: $accent-color;
+        }
       }
     }
   }
