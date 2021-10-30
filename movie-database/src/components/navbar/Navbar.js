@@ -13,12 +13,27 @@ import Translate from "react-translate-component";
 import en from "../../languages/en";
 import jp from "../../languages/jp";
 
-counterpart.registerTranslations("en", {
-  title: "Title",
-});
+// counterpart.registerTranslations("jp", {
+//   home: "ホーム",
+//   upcoming: "新着",
+//   library: "ライブラリー",
+//   comments: "コメント",
+//   watchlist: "ウォッチリスト",
+//   watched: "見た映画",
+//   settings: "設定",
+// });
 
-counterpart.setLocale("en", en);
-counterpart.setLocale("jp", jp);
+// state = {
+//   lang: "en",
+// };
+
+// onLangChange = (e) => {
+//   this.setState({ lang: e.target.value });
+// };
+// counterpart.registerTranslations("en", jp);
+
+// counterpart.setLocale("en", en);
+// counterpart.setLocale("jp", en);
 
 export default function Navbar() {
   let [commentNumber, setCommentNumber] = useState();
@@ -44,7 +59,8 @@ export default function Navbar() {
           <li className="menu-link">
             <AiOutlineHome className="icons" />
             <a href="#" className="link-text">
-              Home
+              <Translate content="home" />
+              {/* Home */}
             </a>
           </li>
         </Link>
@@ -52,7 +68,8 @@ export default function Navbar() {
           <li className="menu-link">
             <MdNewReleases className="icons" />
             <a href="#" className="link-text">
-              Upcoming
+              <Translate content="upcoming" />
+              {/* Upcoming */}
             </a>
           </li>
         </Link>
@@ -61,7 +78,8 @@ export default function Navbar() {
           <li className="menu-link">
             <HiOutlineLibrary className="icons" />
             <a href="#" className="link-text">
-              Library
+              <Translate content="library" />
+              {/* Library */}
             </a>
           </li>
         </Link>
@@ -72,7 +90,8 @@ export default function Navbar() {
 
             <GoCommentDiscussion className="icons" />
             <a href="#" className="link-text">
-              Comments
+              <Translate content="comments" />
+              {/* Comments */}
             </a>
             <span className="open-menu-comment-number-span">
               {commentNumber}
@@ -84,7 +103,8 @@ export default function Navbar() {
           <li className="menu-link">
             <RiTv2Line className="icons" />
             <a href="#" className="link-text">
-              Watchlist
+              <Translate content="watchlist" />
+              {/* Watchlist */}
             </a>
           </li>
         </Link>
@@ -93,7 +113,8 @@ export default function Navbar() {
           <li className="menu-link">
             <AiOutlineEye className="icons" />
             <a href="#" className="link-text">
-              Watched
+              <Translate content="watched" />
+              {/* Watched */}
             </a>
           </li>
         </Link>
@@ -102,7 +123,8 @@ export default function Navbar() {
           <li className="menu-link">
             <HiOutlineCog className="icons" />
             <a href="#" className="link-text">
-              Settings
+              <Translate content="settings" />
+              {/* Settings */}
             </a>
           </li>
         </Link>
