@@ -8,58 +8,39 @@ import en from "../../languages/en";
 import es from "../../languages/es";
 import jp from "../../languages/jp";
 
-console.log(jp);
-
 export default function Settings() {
   const [languageValue, setLanguageValue] = useState(null);
 
-  counterpart.registerTranslations("jp", { languageValue });
+  const handleChange = (e) => {
+    counterpart.setLocale(e.target.attributes.value.nodeValue);
+  };
+  counterpart.registerTranslations("en", en);
+  counterpart.registerTranslations("es", es);
+  counterpart.registerTranslations("jp", jp);
 
-  counterpart.setLocale("en", en);
-  counterpart.setLocale("es", es);
-  counterpart.setLocale("jp", jp);
-
-  console.log(languageValue);
   return (
     <div className="settings-wrapper">
       <Translate content="settings" component="h1" />
       {/* <h1>Settings</h1> */}
       <div className="settings-options">
         <div className="color-scheme-wrapper section">
-          <h2>color scheme</h2>
+          <Translate content="color" component="h2" />
+          {/* <h2>color scheme</h2> */}
           {/* <FaRegSun className="color-settings-icon" /> */}
           {/* <FaRegMoon className="color-settings-icon" /> */}
           <ImContrast className="color-settings-icon" />
         </div>
         <div className="language-wrapper section">
-          <h2>language</h2>
+          <Translate content="language" component="h2" />
+          {/* <h2>language</h2> */}
           <div className="languages">
-            <a
-              href="#"
-              value="en"
-              onClick={(e) => {
-                setLanguageValue(e.target.attributes.value.nodeValue);
-                console.log(jp.comments);
-              }}
-            >
+            <a href="#" value="en" onClick={(e) => handleChange(e)}>
               English
             </a>
-            <a
-              href="#"
-              value="es"
-              onClick={(e) => {
-                setLanguageValue(e.target.attributes.value.nodeValue);
-              }}
-            >
+            <a href="#" value="es" onClick={(e) => handleChange(e)}>
               Español
             </a>
-            <a
-              href="#"
-              value="jp"
-              onClick={(e) => {
-                setLanguageValue(e.target.attributes.value.nodeValue);
-              }}
-            >
+            <a href="#" value="jp" onClick={(e) => handleChange(e)}>
               ‎日本語
             </a>
           </div>

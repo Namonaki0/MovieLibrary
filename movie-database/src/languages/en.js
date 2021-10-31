@@ -1,0 +1,17 @@
+export default {
+  home: "home",
+  upcoming: "upcoming",
+  library: "library",
+  comments: "comments",
+  watchlist: "watchlist",
+  movie: "movie",
+  watched: "watched",
+  settings: "settings",
+  color: "color",
+  language: "language",
+  english: "english",
+  spanish: "spanish",
+  japanese: "japanese",
+  search: "search",
+  searchMovie: "search movie",
+};

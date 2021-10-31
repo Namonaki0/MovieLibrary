@@ -4,6 +4,11 @@ import MovieTemplate from "./MovieTemplate";
 import CommentModal from "./CommentModal";
 import MovieModal from "./MovieModal";
 import commentsHandler from "../utils/commentsBodyHandler";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from "../../languages/en";
+import es from "../../languages/es";
+import jp from "../../languages/jp";
 
 export default function Library() {
   const [query, setQuery] = useState("");
@@ -20,6 +25,10 @@ export default function Library() {
   const [modalImage, setModalImage] = useState("");
   const [modalOverview, setModalOverview] = useState("");
   const [modalReleaseDate, setModalReleaseDate] = useState("");
+
+  counterpart.registerTranslations("jp", jp);
+
+  counterpart.setLocale("jp", jp);
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -77,7 +86,8 @@ export default function Library() {
             onChange={(e) => setQuery(e.target.value)}
           />
           <button type="submit" className="submit">
-            Search
+            <Translate content="search" />
+            {/* Search */}
           </button>
         </form>
 
@@ -127,7 +137,8 @@ export default function Library() {
             </div>
           ) : (
             <div class="no-movies-message">
-              <p>search for movie...</p>
+              <Translate content="searchMovie" component="p" />
+              {/* <p>search for movie...</p> */}
             </div>
           )}
         </div>

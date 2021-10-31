@@ -11,29 +11,8 @@ import firebase from "firebase";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
 import en from "../../languages/en";
+import es from "../../languages/es";
 import jp from "../../languages/jp";
-
-// counterpart.registerTranslations("jp", {
-//   home: "ホーム",
-//   upcoming: "新着",
-//   library: "ライブラリー",
-//   comments: "コメント",
-//   watchlist: "ウォッチリスト",
-//   watched: "見た映画",
-//   settings: "設定",
-// });
-
-// state = {
-//   lang: "en",
-// };
-
-// onLangChange = (e) => {
-//   this.setState({ lang: e.target.value });
-// };
-// counterpart.registerTranslations("en", jp);
-
-// counterpart.setLocale("en", en);
-// counterpart.setLocale("jp", en);
 
 export default function Navbar() {
   let [commentNumber, setCommentNumber] = useState();

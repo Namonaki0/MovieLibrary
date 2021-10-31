@@ -1,6 +1,11 @@
 import { useState, useEffect, React } from "react";
 import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
 import firebase from "../utils/firebase";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from "../../languages/en";
+import es from "../../languages/es";
+import jp from "../../languages/jp";
 
 export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
@@ -20,7 +25,8 @@ export const Comments = () => {
 
   return (
     <div className="comments-outter-wrapper">
-      <h1>Comments</h1>
+      <Translate content="comments" component="h1" />
+      {/* <h1>Comments</h1> */}
       <div className="comments-inner-wrapper">
         {userInfo &&
           userInfo.map((comment, index) => (
