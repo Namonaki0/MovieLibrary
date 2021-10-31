@@ -3,6 +3,11 @@ import { api_key } from "../apiKey";
 import UpcomingMoviesTemplate from "./UpcomingMoviesTemplate";
 import CommentModal from "./CommentModal";
 import commentsHandler from "../utils/commentsBodyHandler";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from "../../languages/en";
+import es from "../../languages/es";
+import jp from "../../languages/jp";
 
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -43,7 +48,8 @@ export default function Upcoming() {
 
   return (
     <div className="upcoming-movies-body">
-      <h1>Upcoming</h1>
+      <Translate content="upcoming" component="h1" />
+      {/* <h1>Upcoming</h1> */}
       <div className="upcoming-movie-wrapper">
         {upcomingMovies.map(
           (upcomingMovie) =>

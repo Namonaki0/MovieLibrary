@@ -1,6 +1,11 @@
 import React, { useContext, useState } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import ClearWatchedModal from "./ClearWatchedModal";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from "../../languages/en";
+import es from "../../languages/es";
+import jp from "../../languages/jp";
 
 export default function Watched() {
   const [clearModal, setClearModal] = useState(null);
@@ -13,7 +18,8 @@ export default function Watched() {
 
   return (
     <div className="watched-outter-wrapper">
-      <h1>Watched</h1>
+      <Translate content="watched" component="h1" />
+      {/* <h1>Watched</h1> */}
       {watched.length > 0 ? (
         <div className="watched-inner-wrapper">
           {watched.map((movie) => (

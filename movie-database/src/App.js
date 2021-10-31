@@ -10,14 +10,6 @@ import Watched from "./components/main/Watched";
 import Settings from "./components/settings/Settings";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { GlobalProvider } from "./context/GlobalState";
-// import counterpart from "counterpart";
-// import Translate from "react-translate-component";
-
-// counterpart.registerTranslations("en", {
-//   title: "Title",
-// });
-
-// counterpart.setLocale("en");
 
 function App() {
   return (

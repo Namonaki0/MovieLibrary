@@ -1,0 +1,18 @@
+export default {
+  home: "inicio",
+  upcoming: "en breve",
+  library: "biblioteca",
+  comments: "comentarios",
+  watchlist: "lista de películas",
+  movie: "película",
+  watched: "película vista",
+  settings: "ajustes",
+  color: "color",
+  language: "idioma",
+  english: "inglés",
+  spanish: "español",
+  japanese: "japonés",
+  search: "buscar",
+  searchMovie: "buscar pelicula",
+  erasedMovies: "Todas las películas se borrarán de la lista de vistas",
+};
