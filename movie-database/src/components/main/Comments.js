@@ -25,7 +25,11 @@ export const Comments = () => {
 
   return (
     <div className="comments-outter-wrapper">
-      <Translate content="comments" component="h1" />
+      <Translate
+        content="comments"
+        component="h1"
+        onClick={(e) => console.log(e.target)}
+      />
       {/* <h1>Comments</h1> */}
       <div className="comments-inner-wrapper">
         {userInfo &&

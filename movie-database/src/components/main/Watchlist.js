@@ -7,9 +7,10 @@ import en from "../../languages/en";
 import es from "../../languages/es";
 import jp from "../../languages/jp";
 
-counterpart.registerTranslations("jp", jp);
-
-counterpart.setLocale("jp", jp);
+//? LANGUAGE HANDLER ------------------
+counterpart.registerTranslations("en", en);
+counterpart.setLocale("en", en);
+//? LANGUAGE HANDLER ------------------
 
 export default function Watchlist() {
   const { watchlist } = useContext(GlobalContext);

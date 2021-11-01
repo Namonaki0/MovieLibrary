@@ -35,12 +35,16 @@ export default function Watched() {
         </div>
       ) : (
         <h2 className="no-movies-in-watched">
-          There are currently no movies in your watched list
+          <Translate content="noMoviesinWatchedList" />
+          {/* There are currently no movies in your watched list */}
         </h2>
       )}
 
       <span className="watched-clear-span">
-        <button onClick={() => setClearModal(!clearModal)}>clear all</button>
+        <button onClick={() => setClearModal(!clearModal)}>
+          <Translate content="clearAll" />
+          {/* clear all */}
+        </button>
       </span>
       <ClearWatchedModal
         clearModal={clearModal}

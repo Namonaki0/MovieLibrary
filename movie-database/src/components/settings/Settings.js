@@ -9,14 +9,16 @@ import es from "../../languages/es";
 import jp from "../../languages/jp";
 
 export default function Settings() {
-  const [languageValue, setLanguageValue] = useState(null);
+  // const [languageValue, setLanguageValue] = useState(null);
 
+  //? LANGUAGE HANDLER ------------------
   const handleChange = (e) => {
     counterpart.setLocale(e.target.attributes.value.nodeValue);
   };
   counterpart.registerTranslations("en", en);
   counterpart.registerTranslations("es", es);
   counterpart.registerTranslations("jp", jp);
+  //? LANGUAGE HANDLER ------------------
 
   return (
     <div className="settings-wrapper">

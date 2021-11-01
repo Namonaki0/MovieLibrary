@@ -10,6 +10,11 @@ import en from "../../languages/en";
 import es from "../../languages/es";
 import jp from "../../languages/jp";
 
+//? LANGUAGE HANDLER ------------------
+counterpart.registerTranslations("en", en);
+counterpart.setLocale("en", en);
+//? LANGUAGE HANDLER ------------------
+
 export default function Library() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
@@ -25,10 +30,6 @@ export default function Library() {
   const [modalImage, setModalImage] = useState("");
   const [modalOverview, setModalOverview] = useState("");
   const [modalReleaseDate, setModalReleaseDate] = useState("");
-
-  counterpart.registerTranslations("jp", jp);
-
-  counterpart.setLocale("jp", jp);
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -78,11 +79,12 @@ export default function Library() {
     <>
       <div className="library-outter-wrapper">
         <form onSubmit={submitSearch} className="form">
+          <Translate content="movie" component="placeholder" />
           <input
             type="text"
-            placeholder="movie..."
             value={query}
             name="query"
+            placeholder="movie..."
             onChange={(e) => setQuery(e.target.value)}
           />
           <button type="submit" className="submit">

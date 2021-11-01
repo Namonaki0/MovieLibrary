@@ -1,4 +1,9 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from "../../languages/en";
+import es from "../../languages/es";
+import jp from "../../languages/jp";
 
 const CommentModal = ({
   setComments,
@@ -38,7 +43,8 @@ const CommentModal = ({
         </span>
 
         <span className="comment-window-movie-title">{movieTitle}</span>
-        <label for="comment">comment</label>
+        <Translate content="comment" component="label" />
+        {/* <label for="comment">comment</label> */}
         <input
           type="text"
           name="comment"
@@ -60,7 +66,7 @@ const CommentModal = ({
         <button
           type="submit"
           onClick={() => {
-            setCommentMessage("Thank you, comment posted!");
+            setCommentMessage(<Translate content="commentPosted" />);
             setCommentMessageDisplay(!commentMessageDisplay);
             setTimeout(() => {
               setCommentWindow(!commentWindow);
@@ -68,7 +74,8 @@ const CommentModal = ({
             }, 2000);
           }}
         >
-          submit
+          <Translate content="submit" />
+          {/* submit */}
         </button>
       </form>
     </div>

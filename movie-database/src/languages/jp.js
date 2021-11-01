@@ -3,6 +3,7 @@ export default {
   upcoming: "新着",
   library: "ライブラリー",
   comments: "コメント",
+  comment: "コメント",
   watchlist: "ウォッチリスト",
   movie: "映画",
   watched: "履歴",
@@ -18,4 +19,8 @@ export default {
   eraseMovies: "視聴リストからすべての映画が消去されます",
   yes: "はい",
   no: "いいえ",
+  submit: "提出する",
+  clearAll: "すべてクリア",
+  noMoviesinWatchedList: "ウォッチリストに映画はありません",
+  commentPosted: "ありがとう、コメントを受け付けました",
 };
