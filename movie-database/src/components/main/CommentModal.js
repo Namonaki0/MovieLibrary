@@ -17,6 +17,10 @@ const CommentModal = ({
   commentMessageDisplay,
   setCommentMessageDisplay,
 }) => {
+  //? TOOLTIP TRANSLATION VARIABLES ------------------
+  const namePlaceholder = counterpart.translate("name");
+  const commentPlaceholder = counterpart.translate("enterComment");
+  //? TOOLTIP TRANSLATION VARIABLES ------------------
   return (
     <div
       className="comment-window-wrapper"
@@ -49,7 +53,7 @@ const CommentModal = ({
           type="text"
           name="comment"
           className="nameInput"
-          placeholder="name..."
+          placeholder={namePlaceholder}
           autoComplete="off"
           onChange={(e) => setUsername(e.target.value)}
           onFocus={() => setCommentMessage(null)}
@@ -58,7 +62,7 @@ const CommentModal = ({
           type="text"
           name="comment"
           className="commentInput"
-          placeholder="comment..."
+          placeholder={commentPlaceholder}
           autoComplete="off"
           onChange={(e) => setComments(e.target.value)}
           onFocus={() => setCommentMessage(null)}
