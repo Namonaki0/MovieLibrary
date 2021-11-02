@@ -1,6 +1,11 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from "../../languages/en";
+import es from "../../languages/es";
+import jp from "../../languages/jp";
 
 const WatchlistMovieTemplate = ({ listedMovie }) => {
   const { removeMovieFromWatchlist, addMovieToWatched } =
@@ -12,7 +17,8 @@ const WatchlistMovieTemplate = ({ listedMovie }) => {
         <div className="watchlist-main-info-slider">
           <h2 className="watchlist-movie">{listedMovie.title}</h2>
           <p className="watchlist-movie-rating">
-            RATING: {listedMovie.vote_average}
+            <Translate content="rating" />
+            {listedMovie.vote_average}
           </p>
         </div>
         <div className="btn-wrapper">
@@ -20,13 +26,15 @@ const WatchlistMovieTemplate = ({ listedMovie }) => {
             className="add-to-watched-btn"
             onClick={() => addMovieToWatched(listedMovie)}
           >
-            watched
+            <Translate content="watched" />
+            {/* watched */}
           </button>
           <button
             className="remove-from-watchlist-btn"
             onClick={() => removeMovieFromWatchlist(listedMovie.id)}
           >
-            remove from watchlist
+            <Translate content="removeFromWatchlist" />
+            {/* remove from watchlist */}
           </button>
         </div>
       </div>

@@ -7,10 +7,10 @@ import en from "../../languages/en";
 import es from "../../languages/es";
 import jp from "../../languages/jp";
 
-//? LANGUAGE HANDLER ------------------
-counterpart.registerTranslations("en", en);
-counterpart.setLocale("en", en);
-//? LANGUAGE HANDLER ------------------
+// //? LANGUAGE HANDLER ------------------
+// counterpart.registerTranslations("en", en);
+// counterpart.setLocale("en", en);
+// //? LANGUAGE HANDLER ------------------
 
 export default function Watchlist() {
   const { watchlist } = useContext(GlobalContext);
@@ -26,9 +26,11 @@ export default function Watchlist() {
           ))}
         </div>
       ) : (
-        <h2 className="no-movies-in-watchlist">
-          There are currently no movies in your watchlist
-        </h2>
+        <Translate
+          content="noMoviesinWatchList"
+          component="h2"
+          className="no-movies-in-watchlist"
+        />
       )}
     </div>
   );

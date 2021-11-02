@@ -69,22 +69,22 @@ export default function Library() {
     setModalTitle(e.target.offsetParent.childNodes[2].innerHTML);
     setModalOverview(e.target.offsetParent.childNodes[3].innerHTML);
     setModalReleaseDate(e.target.offsetParent.childNodes[4].innerHTML);
-    console.dir(e.target.offsetParent);
   };
 
   //? //////////////////////////////////////////////
+
+  const placeholder = counterpart.translate("movie");
 
   //? MOVIE TITLE SEARCH RENDER //
   return (
     <>
       <div className="library-outter-wrapper">
         <form onSubmit={submitSearch} className="form">
-          <Translate content="movie" component="placeholder" />
           <input
             type="text"
             value={query}
             name="query"
-            placeholder="movie..."
+            placeholder={`${placeholder}...`}
             onChange={(e) => setQuery(e.target.value)}
           />
           <button type="submit" className="submit">

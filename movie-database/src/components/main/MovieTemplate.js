@@ -3,6 +3,11 @@ import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
 import ReactTooltip from "react-tooltip";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
+import en from "../../languages/en";
+import es from "../../languages/es";
+import jp from "../../languages/jp";
 
 const MovieTemplate = ({
   movie,
@@ -27,6 +32,11 @@ const MovieTemplate = ({
 
   const watchlistMovieBtnDisabled = movieInWatchlist ? iconDisabled : "";
 
+  //? TOOLTIP TRANSLATION VARIABLES ------------------
+  const toolTipComment = counterpart.translate("comment");
+  const toolTipWatchlist = counterpart.translate("watchlist");
+  //? TOOLTIP TRANSLATION VARIABLES ------------------
+
   return (
     <div className="movie-container" key={movie.id}>
       <span className="sidebar-icons-wrapper">
@@ -37,7 +47,7 @@ const MovieTemplate = ({
             onClick={() => {
               addMovieToWatchlist(movie);
             }}
-            data-tip="add to watchlist"
+            data-tip={toolTipWatchlist}
           />
           <ReactTooltip offset={{ bottom: 30, left: 70 }} />
         </a>
@@ -48,7 +58,7 @@ const MovieTemplate = ({
               setCommentWindow("grid");
               movieTitleTarget(e);
             }}
-            data-tip="comment"
+            data-tip={toolTipComment}
           />
           <ReactTooltip offset={{ bottom: 30, left: 70 }} />
         </a>
