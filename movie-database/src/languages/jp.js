@@ -25,7 +25,7 @@ export default {
   clearAll: "すべてクリア",
   noMoviesinWatchedList: "ウォッチリストに映画はありません",
   noMoviesinWatchList: "ウォッチリストに映画はありません",
-  addToWatchlist: "ウォッチリストに追加する",
+  addToWatchlist: "ウォッチリスト",
   removeFromWatchlist: "ウォッチリストから削除する",
   watched: "見た",
   rating: "評価: ",

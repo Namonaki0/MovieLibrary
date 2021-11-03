@@ -27,7 +27,7 @@ export const UpcomingMoviesTemplate = ({
 
   //? TOOLTIP TRANSLATION VARIABLES ------------------
   const toolTipComment = counterpart.translate("comment");
-  const toolTipWatchlist = counterpart.translate("watchlist");
+  const toolTipWatchlist = counterpart.translate("addToWatchlist");
   //? TOOLTIP TRANSLATION VARIABLES ------------------
 
   return (

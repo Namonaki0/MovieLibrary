@@ -22,7 +22,10 @@ export default function Settings() {
 
   return (
     <div className="settings-wrapper">
+      {/* <div className="title-wrapper"> */}
       <Translate content="settings" component="h1" />
+      {/* </div> */}
+
       {/* <h1>Settings</h1> */}
       <div className="settings-options">
         <div className="color-scheme-wrapper section">
