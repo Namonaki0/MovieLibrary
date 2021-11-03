@@ -24,7 +24,7 @@ export default {
   submit: "enviar",
   clearAll: "limpiar todo",
   noMoviesinWatchedList: "Actualmente no hay películas en su lista de vistas",
-  addToWatchlist: "agregar a la lista de películas",
+  addToWatchlist: "lista de películas",
   removeFromWatchlist: "eliminar de la lista de películas",
   watched: "vista",
   noMoviesinWatchList: "Actualmente no hay películas en su lista",
