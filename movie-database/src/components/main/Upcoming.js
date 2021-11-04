@@ -3,11 +3,7 @@ import { api_key } from "../apiKey";
 import UpcomingMoviesTemplate from "./UpcomingMoviesTemplate";
 import CommentModal from "./CommentModal";
 import commentsHandler from "../utils/commentsBodyHandler";
-import counterpart from "counterpart";
 import Translate from "react-translate-component";
-import en from "../../languages/en";
-import es from "../../languages/es";
-import jp from "../../languages/jp";
 
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -18,16 +14,19 @@ export default function Upcoming() {
   const [commentMessage, setCommentMessage] = useState("");
   const [commentMessageDisplay, setCommentMessageDisplay] = useState(null);
 
-  useEffect(async () => {
-    const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1&include_adult=false`;
+  useEffect(() => {
+    async function fetchMovieData() {
+      const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1&include_adult=false`;
 
-    try {
-      const upcomingApiFetch = await fetch(url);
-      const upcomingMovies = await upcomingApiFetch.json();
-      setUpcomingMovies(upcomingMovies.results);
-    } catch (err) {
-      console.error(err);
+      try {
+        const upcomingApiFetch = await fetch(url);
+        const upcomingMovies = await upcomingApiFetch.json();
+        setUpcomingMovies(upcomingMovies.results);
+      } catch (err) {
+        console.error(err);
+      }
     }
+    fetchMovieData();
   }, []);
 
   //? COMMENTS INPUT ------------
@@ -49,7 +48,6 @@ export default function Upcoming() {
   return (
     <div className="upcoming-movies-body">
       <Translate content="upcoming" component="h1" />
-      {/* <h1>Upcoming</h1> */}
       <div className="upcoming-movie-wrapper">
         {upcomingMovies.map(
           (upcomingMovie) =>

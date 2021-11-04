@@ -1,26 +1,25 @@
 import { useState, useEffect, React } from "react";
 import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
 import firebase from "../utils/firebase";
-import counterpart from "counterpart";
 import Translate from "react-translate-component";
-import en from "../../languages/en";
-import es from "../../languages/es";
-import jp from "../../languages/jp";
 
 export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
 
-  useEffect(async () => {
-    const commentRef = firebase.database().ref("Comments");
+  useEffect(() => {
+    async function fetchComments() {
+      const commentRef = firebase.database().ref("Comments");
 
-    commentRef.on("value", (comment) => {
-      const allComments = comment.val();
-      const userInfo = [];
-      for (let comment in allComments) {
-        userInfo.push({ comment, ...allComments[comment] });
-      }
-      setUserInfo(userInfo);
-    });
+      commentRef.on("value", (comment) => {
+        const allComments = comment.val();
+        const userInfo = [];
+        for (let comment in allComments) {
+          userInfo.push({ comment, ...allComments[comment] });
+        }
+        setUserInfo(userInfo);
+      });
+    }
+    fetchComments();
   }, []);
 
   return (
@@ -30,7 +29,7 @@ export const Comments = () => {
         component="h1"
         onClick={(e) => console.log(e.target)}
       />
-      {/* <h1>Comments</h1> */}
+
       <div className="comments-inner-wrapper">
         {userInfo &&
           userInfo.map((comment, index) => (

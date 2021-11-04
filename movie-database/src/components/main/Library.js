@@ -7,8 +7,6 @@ import commentsHandler from "../utils/commentsBodyHandler";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
 import en from "../../languages/en";
-import es from "../../languages/es";
-import jp from "../../languages/jp";
 
 //? LANGUAGE HANDLER ------------------
 counterpart.registerTranslations("en", en);
@@ -89,7 +87,6 @@ export default function Library() {
           />
           <button type="submit" className="submit">
             <Translate content="search" />
-            {/* Search */}
           </button>
         </form>
 
@@ -140,7 +137,6 @@ export default function Library() {
           ) : (
             <div class="no-movies-message">
               <Translate content="searchMovie" component="p" />
-              {/* <p>search for movie...</p> */}
             </div>
           )}
         </div>

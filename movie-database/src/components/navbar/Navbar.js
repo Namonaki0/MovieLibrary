@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./menu";
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineHome, AiOutlineEye } from "react-icons/ai";
-import { MdNewReleases, MdFavoriteBorder } from "react-icons/md";
+import { MdNewReleases } from "react-icons/md";
 import { HiOutlineLibrary, HiOutlineCog } from "react-icons/hi";
 import { RiTv2Line } from "react-icons/ri";
 import { GoCommentDiscussion } from "react-icons/go";
@@ -11,20 +11,23 @@ import firebase from "firebase";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
 import en from "../../languages/en";
-import es from "../../languages/es";
-import jp from "../../languages/jp";
+
+counterpart.setLocale("en", en);
 
 export default function Navbar() {
   let [commentNumber, setCommentNumber] = useState();
 
-  useEffect(async () => {
-    const commentRef = firebase.database().ref("Comments");
+  useEffect(() => {
+    async function commentCount() {
+      const commentRef = firebase.database().ref("Comments");
 
-    commentRef.on("value", (comment) => {
-      const allComments = comment.val();
-      let commentsLength = Object.keys(allComments).length;
-      setCommentNumber(commentsLength);
-    });
+      commentRef.on("value", (comment) => {
+        const allComments = comment.val();
+        let commentsLength = Object.keys(allComments).length;
+        setCommentNumber(commentsLength);
+      });
+    }
+    commentCount();
   });
 
   return (
@@ -32,23 +35,21 @@ export default function Navbar() {
       <ul>
         <li className="burger-menu">
           <CgMenu className="burger-icon icons" />
-          <a href="#" class="link-text"></a>
+          <a href="#" class="link-text" aria-label="burger-menu"></a>
         </li>
         <Link to="/" className="menu-link-path">
           <li className="menu-link">
             <AiOutlineHome className="icons" />
-            <a href="#" className="link-text">
+            <a href="#" className="link-text" aria-label="homepage">
               <Translate content="home" />
-              {/* Home */}
             </a>
           </li>
         </Link>
         <Link to="/Upcoming" className="menu-link-path">
           <li className="menu-link">
             <MdNewReleases className="icons" />
-            <a href="#" className="link-text">
+            <a href="#" className="link-text" aria-label="upcoming page">
               <Translate content="upcoming" />
-              {/* Upcoming */}
             </a>
           </li>
         </Link>
@@ -56,9 +57,8 @@ export default function Navbar() {
         <Link to="/library" className="menu-link-path">
           <li className="menu-link">
             <HiOutlineLibrary className="icons" />
-            <a href="#" className="link-text">
+            <a href="#" className="link-text" aria-label="movie library">
               <Translate content="library" />
-              {/* Library */}
             </a>
           </li>
         </Link>
@@ -68,9 +68,8 @@ export default function Navbar() {
             <span className="comment-number-span">{commentNumber}</span>
 
             <GoCommentDiscussion className="icons" />
-            <a href="#" className="link-text">
+            <a href="#" className="link-text" aria-label="comments page">
               <Translate content="comments" />
-              {/* Comments */}
             </a>
             <span className="open-menu-comment-number-span">
               {commentNumber}
@@ -81,9 +80,8 @@ export default function Navbar() {
         <Link to="/Watchlist" className="menu-link-path">
           <li className="menu-link">
             <RiTv2Line className="icons" />
-            <a href="#" className="link-text">
+            <a href="#" className="link-text" aria-label="movie watchlist page">
               <Translate content="watchlist" />
-              {/* Watchlist */}
             </a>
           </li>
         </Link>
@@ -91,9 +89,8 @@ export default function Navbar() {
         <Link to="/Watched" className="menu-link-path">
           <li className="menu-link">
             <AiOutlineEye className="icons" />
-            <a href="#" className="link-text">
+            <a href="#" className="link-text" aria-label="watched movies page">
               <Translate content="watched" />
-              {/* Watched */}
             </a>
           </li>
         </Link>
@@ -101,9 +98,8 @@ export default function Navbar() {
         <Link to="/Settings" className="menu-link-path">
           <li className="menu-link">
             <HiOutlineCog className="icons" />
-            <a href="#" className="link-text">
+            <a href="#" className="link-text" aria-label="settings page">
               <Translate content="settings" />
-              {/* Settings */}
             </a>
           </li>
         </Link>

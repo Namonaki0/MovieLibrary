@@ -7,7 +7,6 @@ export default function commentsHandler() {
   let day = date.getDate();
   let month = date.getMonth();
   let year = date.getFullYear();
-  let time = date.getTime();
   //? TIME
   let hours = date.getHours();
   let mins = date.getMinutes();

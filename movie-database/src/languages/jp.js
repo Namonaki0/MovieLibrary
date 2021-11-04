@@ -27,7 +27,6 @@ export default {
   noMoviesinWatchList: "ウォッチリストに映画はありません",
   addToWatchlist: "ウォッチリスト",
   removeFromWatchlist: "ウォッチリストから削除する",
-  watched: "見た",
   rating: "評価: ",
   commentPosted: "ありがとう、コメントを受け付けました",
 };

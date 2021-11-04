@@ -1,13 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { VscComment } from "react-icons/vsc";
 import ReactTooltip from "react-tooltip";
 import counterpart from "counterpart";
-import Translate from "react-translate-component";
-import en from "../../languages/en";
-import es from "../../languages/es";
-import jp from "../../languages/jp";
 
 const MovieTemplate = ({
   movie,
