@@ -7,7 +7,6 @@ export default {
   enterComment: "comentario...",
   watchlist: "lista de películas",
   movie: "película",
-  watched: "película vista",
   settings: "ajustes",
   color: "color",
   language: "idioma",

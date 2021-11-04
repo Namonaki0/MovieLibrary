@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.querySelector(".burger-menu");
   const linkTexts = document.querySelectorAll(".link-text");
   const menuLinks = document.querySelectorAll(".menu-link");
-  const lightModeIcon = document.querySelector(".color-settings-icon");
   const commentNumSpan = document.querySelector(".comment-number-span");
   const openMenuCommentNumSpan = document.querySelector(
     ".open-menu-comment-number-span"
   );
   const storedComments = JSON.parse(localStorage.comments);
 
-  if (storedComments.length < 1) {
+  if (storedComments.length === 0) {
     commentNumSpan.style.display = "none";
     openMenuCommentNumSpan.style.display = "none";
   }

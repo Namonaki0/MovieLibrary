@@ -1,11 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context/GlobalState";
-import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
-import counterpart from "counterpart";
 import Translate from "react-translate-component";
-import en from "../../languages/en";
-import es from "../../languages/es";
-import jp from "../../languages/jp";
 
 const WatchlistMovieTemplate = ({ listedMovie }) => {
   const { removeMovieFromWatchlist, addMovieToWatched } =
@@ -27,14 +22,12 @@ const WatchlistMovieTemplate = ({ listedMovie }) => {
             onClick={() => addMovieToWatched(listedMovie)}
           >
             <Translate content="watched" />
-            {/* watched */}
           </button>
           <button
             className="remove-from-watchlist-btn"
             onClick={() => removeMovieFromWatchlist(listedMovie.id)}
           >
             <Translate content="removeFromWatchlist" />
-            {/* remove from watchlist */}
           </button>
         </div>
       </div>

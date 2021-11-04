@@ -27,7 +27,6 @@ export default {
   noMoviesinWatchList: "There are currently no movies in your watchlist",
   addToWatchlist: "add to watchlist",
   removeFromWatchlist: "remove from watchlist",
-  watched: "watched",
   rating: "RATING: ",
   commentPosted: "comment posted",
 };
