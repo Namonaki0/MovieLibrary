@@ -10,9 +10,7 @@ import { GoCommentDiscussion } from "react-icons/go";
 import firebase from "firebase";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
-import en from "../../languages/en";
-
-counterpart.setLocale("en", en);
+import languageHandler from "../utils/languageHandler";
 
 export default function Navbar() {
   let [commentNumber, setCommentNumber] = useState();
@@ -28,6 +26,8 @@ export default function Navbar() {
       });
     }
     commentCount();
+
+    languageHandler();
   });
 
   return (

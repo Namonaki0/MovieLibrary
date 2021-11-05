@@ -20,15 +20,11 @@ export const Comments = () => {
       });
     }
     fetchComments();
-  }, []);
+  });
 
   return (
     <div className="comments-outter-wrapper">
-      <Translate
-        content="comments"
-        component="h1"
-        onClick={(e) => console.log(e.target)}
-      />
+      <Translate content="comments" component="h1" />
 
       <div className="comments-inner-wrapper">
         {userInfo &&

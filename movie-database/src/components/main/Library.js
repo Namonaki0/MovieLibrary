@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { api_key } from "../apiKey";
 import MovieTemplate from "./MovieTemplate";
 import CommentModal from "./CommentModal";
@@ -6,12 +6,16 @@ import MovieModal from "./MovieModal";
 import commentsHandler from "../utils/commentsBodyHandler";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
-import en from "../../languages/en";
+// import en from "../../languages/en";
+// import es from "../../languages/es";
+// import jp from "../../languages/jp";
+// import languageHandler from "../utils/languageHandler";
+// import en from "../../languages/en";
 
-//? LANGUAGE HANDLER ------------------
-counterpart.registerTranslations("en", en);
-counterpart.setLocale("en", en);
-//? LANGUAGE HANDLER ------------------
+// //? LANGUAGE HANDLER ------------------
+// counterpart.registerTranslations("en", en);
+// counterpart.setLocale("en", en);
+// //? LANGUAGE HANDLER ------------------
 
 export default function Library() {
   const [query, setQuery] = useState("");
@@ -28,6 +32,7 @@ export default function Library() {
   const [modalImage, setModalImage] = useState("");
   const [modalOverview, setModalOverview] = useState("");
   const [modalReleaseDate, setModalReleaseDate] = useState("");
+  let [placeHolder, setPlaceHolder] = useState("movie");
 
   //? MOVIE TITLE SEARCH - API FETCH //
   const submitSearch = async (e) => {
@@ -71,7 +76,10 @@ export default function Library() {
 
   //? //////////////////////////////////////////////
 
-  const placeholder = counterpart.translate("movie");
+  useEffect(() => {
+    const placeholder = counterpart.translate("movie");
+    setPlaceHolder(placeholder);
+  }, []);
 
   //? MOVIE TITLE SEARCH RENDER //
   return (
@@ -82,7 +90,7 @@ export default function Library() {
             type="text"
             value={query}
             name="query"
-            placeholder={`${placeholder}...`}
+            placeholder={`${placeHolder}...`}
             onChange={(e) => setQuery(e.target.value)}
           />
           <button type="submit" className="submit">
