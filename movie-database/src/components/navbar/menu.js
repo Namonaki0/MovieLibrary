@@ -3,22 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const burgerMenu = document.querySelector(".burger-menu");
   const linkTexts = document.querySelectorAll(".link-text");
   const menuLinks = document.querySelectorAll(".menu-link");
-  const commentNumSpan = document.querySelector(".comment-number-span");
-  const openMenuCommentNumSpan = document.querySelector(
-    ".open-menu-comment-number-span"
-  );
-  const storedComments = JSON.parse(localStorage.comments);
-
-  if (storedComments.length === 0) {
-    commentNumSpan.style.display = "none";
-    openMenuCommentNumSpan.style.display = "none";
-  }
 
   if (burgerMenu) {
     burgerMenu.addEventListener("click", () => {
       nav.classList.toggle("menu-active");
 
       nav.addEventListener("transitionend", (e) => {
+        const commentNumSpan = document.querySelector(".comment-number-span");
+        const openMenuCommentNumSpan = document.querySelector(
+          ".open-menu-comment-number-span"
+        );
+
         //? NEEDS ATTENTION
         const parentNode = e.target.parentNode.offsetParent;
         ////////////////?
@@ -39,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     });
+
+    commentNumSpanCounter();
   }
 
   menuLinks.forEach((menuLink) => {
@@ -51,3 +48,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const commentNumSpanCounter = () => {
+  const commentNumSpan = document.querySelector(".comment-number-span");
+  const openMenuCommentNumSpan = document.querySelector(
+    ".open-menu-comment-number-span"
+  );
+  const storedComments = JSON.parse(localStorage.comments);
+  if (storedComments.length === 0) {
+    commentNumSpan.style.display = "none";
+    openMenuCommentNumSpan.style.display = "none";
+  }
+};
