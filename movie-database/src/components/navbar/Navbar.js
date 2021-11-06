@@ -14,6 +14,9 @@ import languageHandler from "../utils/languageHandler";
 
 export default function Navbar() {
   let [commentNumber, setCommentNumber] = useState();
+  //? MENU TOGGLE ------------
+  let [isActive, setIsActive] = useState(null);
+  //? MENU TOGGLE ------------
 
   useEffect(() => {
     async function commentCount() {
@@ -30,6 +33,19 @@ export default function Navbar() {
     languageHandler();
   });
 
+  // const menuHandler = (e) => {
+  //   e.target.classList.add("menu-active");
+  // };
+  // setIsActive(menuHandler);
+
+  // const menuOpen = (e) => {
+  //   if (e.target.classList === ".menu-active") {
+  //     e.target.classList.remove(".menu-active");
+  //   } else {
+  //     e.target.classList.add(".menu-active");
+  //   }
+  // };
+
   return (
     <nav>
       <ul>
@@ -38,7 +54,7 @@ export default function Navbar() {
           <a href="#" class="link-text" aria-label="burger-menu"></a>
         </li>
         <Link to="/" className="menu-link-path">
-          <li className="menu-link">
+          <li className="menu-link" onClick={() => setIsActive(null)}>
             <AiOutlineHome className="icons" />
             <a href="#" className="link-text" aria-label="homepage">
               <Translate content="home" />
@@ -46,7 +62,7 @@ export default function Navbar() {
           </li>
         </Link>
         <Link to="/Upcoming" className="menu-link-path">
-          <li className="menu-link">
+          <li className="menu-link" onClick={() => setIsActive(null)}>
             <MdNewReleases className="icons" />
             <a href="#" className="link-text" aria-label="upcoming page">
               <Translate content="upcoming" />
@@ -55,7 +71,7 @@ export default function Navbar() {
         </Link>
 
         <Link to="/library" className="menu-link-path">
-          <li className="menu-link">
+          <li className="menu-link" onClick={() => setIsActive(null)}>
             <HiOutlineLibrary className="icons" />
             <a href="#" className="link-text" aria-label="movie library">
               <Translate content="library" />
@@ -64,7 +80,10 @@ export default function Navbar() {
         </Link>
 
         <Link to="/Comments" className="menu-link-path">
-          <li className="menu-link comment-link">
+          <li
+            className="menu-link comment-link"
+            onClick={() => setIsActive(null)}
+          >
             <span className="comment-number-span">{commentNumber}</span>
 
             <GoCommentDiscussion className="icons" />
@@ -78,7 +97,7 @@ export default function Navbar() {
         </Link>
 
         <Link to="/Watchlist" className="menu-link-path">
-          <li className="menu-link">
+          <li className="menu-link" onClick={() => setIsActive(null)}>
             <RiTv2Line className="icons" />
             <a href="#" className="link-text" aria-label="movie watchlist page">
               <Translate content="watchlist" />
@@ -87,7 +106,7 @@ export default function Navbar() {
         </Link>
 
         <Link to="/Watched" className="menu-link-path">
-          <li className="menu-link">
+          <li className="menu-link" onClick={() => setIsActive(null)}>
             <AiOutlineEye className="icons" />
             <a href="#" className="link-text" aria-label="watched movies page">
               <Translate content="watched" />
@@ -96,7 +115,7 @@ export default function Navbar() {
         </Link>
 
         <Link to="/Settings" className="menu-link-path">
-          <li className="menu-link">
+          <li className="menu-link" onClick={() => setIsActive(null)}>
             <HiOutlineCog className="icons" />
             <a href="#" className="link-text" aria-label="settings page">
               <Translate content="settings" />

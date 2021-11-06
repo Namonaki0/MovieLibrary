@@ -6,16 +6,6 @@ import MovieModal from "./MovieModal";
 import commentsHandler from "../utils/commentsBodyHandler";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
-// import en from "../../languages/en";
-// import es from "../../languages/es";
-// import jp from "../../languages/jp";
-// import languageHandler from "../utils/languageHandler";
-// import en from "../../languages/en";
-
-// //? LANGUAGE HANDLER ------------------
-// counterpart.registerTranslations("en", en);
-// counterpart.setLocale("en", en);
-// //? LANGUAGE HANDLER ------------------
 
 export default function Library() {
   const [query, setQuery] = useState("");

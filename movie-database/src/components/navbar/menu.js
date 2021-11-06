@@ -34,11 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
     });
-
-    commentNumSpanCounter();
   }
 
   menuLinks.forEach((menuLink) => {
+    const nav = document.querySelector("nav");
     menuLink.addEventListener("click", () => {
       nav.classList.remove("menu-active");
 
@@ -47,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  commentNumSpanCounter();
 });
 
 const commentNumSpanCounter = () => {
