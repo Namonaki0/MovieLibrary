@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import {
   LogInWithFirebase,
   LogOutWithFirebase,
 } from "../utils/FirebaseLoginHandler";
 import firebase from "firebase";
+import counterpart from "counterpart";
+import Translate from "react-translate-component";
 
 export default function Home() {
   const [userIsSignedIn, setUserIsSignedIn] = useState(true);
   const [userName, setUserName] = useState("");
+  let [welcomeMessage, setWelcomeMessage] = useState();
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -19,15 +22,21 @@ export default function Home() {
     }
   });
 
+  useEffect(() => {
+    let welcome = counterpart.translate("welcome");
+    setWelcomeMessage(welcome);
+  }, []);
+
   if (userIsSignedIn === true) {
     return (
       <main>
         <div className="login-settings-wrapper">
           <div className="login-settings" onClick={LogOutWithFirebase}>
-            <span>logout</span>
+            <Translate content="logout" component="span" />
+
             <AiOutlineUser className="user-auth" />
           </div>
-          <span className="logged-message">welcome {userName}</span>
+          <span>{`${welcomeMessage} ${userName}`}</span>
         </div>
         <h1>
           <i class="fas fa-photo-video"></i>
@@ -40,7 +49,7 @@ export default function Home() {
       <main>
         <div className="login-settings-wrapper">
           <div className="login-settings" onClick={LogInWithFirebase}>
-            <span>login</span>
+            <Translate content="login" component="span" />
             <AiOutlineUser className="user-auth" />
           </div>
           <span className="logged-message"></span>

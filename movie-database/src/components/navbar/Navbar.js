@@ -15,7 +15,7 @@ import languageHandler from "../utils/languageHandler";
 export default function Navbar() {
   let [commentNumber, setCommentNumber] = useState();
   //? MENU TOGGLE ------------
-  let [isActive, setIsActive] = useState(null);
+  let [isActive, setIsActive] = useState(false);
   //? MENU TOGGLE ------------
 
   useEffect(() => {
@@ -33,30 +33,25 @@ export default function Navbar() {
     languageHandler();
   });
 
-  // const menuHandler = (e) => {
-  //   e.target.classList.add("menu-active");
-  // };
-  // setIsActive(menuHandler);
-
-  // const menuOpen = (e) => {
-  //   if (e.target.classList === ".menu-active") {
-  //     e.target.classList.remove(".menu-active");
-  //   } else {
-  //     e.target.classList.add(".menu-active");
-  //   }
-  // };
-
   return (
-    <nav>
-      <ul>
-        <li className="burger-menu">
+    <nav className="nav" style={{ width: isActive === true ? "16rem" : null }}>
+      <ul style={{ width: isActive === true ? "16rem" : null }}>
+        <li className="burger-menu" onClick={() => setIsActive(!isActive)}>
           <CgMenu className="burger-icon icons" />
           <a href="#" class="link-text" aria-label="burger-menu"></a>
         </li>
         <Link to="/" className="menu-link-path">
           <li className="menu-link" onClick={() => setIsActive(null)}>
             <AiOutlineHome className="icons" />
-            <a href="#" className="link-text" aria-label="homepage">
+            <a
+              href="#"
+              className="link-text"
+              aria-label="homepage"
+              style={{
+                display: isActive === true ? "flex" : null,
+                opacity: "1",
+              }}
+            >
               <Translate content="home" />
             </a>
           </li>
@@ -64,7 +59,15 @@ export default function Navbar() {
         <Link to="/Upcoming" className="menu-link-path">
           <li className="menu-link" onClick={() => setIsActive(null)}>
             <MdNewReleases className="icons" />
-            <a href="#" className="link-text" aria-label="upcoming page">
+            <a
+              href="#"
+              className="link-text"
+              aria-label="upcoming page"
+              style={{
+                display: isActive === true ? "flex" : null,
+                opacity: "1",
+              }}
+            >
               <Translate content="upcoming" />
             </a>
           </li>
@@ -73,7 +76,15 @@ export default function Navbar() {
         <Link to="/library" className="menu-link-path">
           <li className="menu-link" onClick={() => setIsActive(null)}>
             <HiOutlineLibrary className="icons" />
-            <a href="#" className="link-text" aria-label="movie library">
+            <a
+              href="#"
+              className="link-text"
+              aria-label="movie library"
+              style={{
+                display: isActive === true ? "flex" : null,
+                opacity: "1",
+              }}
+            >
               <Translate content="library" />
             </a>
           </li>
@@ -87,7 +98,15 @@ export default function Navbar() {
             <span className="comment-number-span">{commentNumber}</span>
 
             <GoCommentDiscussion className="icons" />
-            <a href="#" className="link-text" aria-label="comments page">
+            <a
+              href="#"
+              className="link-text"
+              aria-label="comments page"
+              style={{
+                display: isActive === true ? "flex" : null,
+                opacity: "1",
+              }}
+            >
               <Translate content="comments" />
             </a>
             <span className="open-menu-comment-number-span">
@@ -99,7 +118,15 @@ export default function Navbar() {
         <Link to="/Watchlist" className="menu-link-path">
           <li className="menu-link" onClick={() => setIsActive(null)}>
             <RiTv2Line className="icons" />
-            <a href="#" className="link-text" aria-label="movie watchlist page">
+            <a
+              href="#"
+              className="link-text"
+              aria-label="movie watchlist page"
+              style={{
+                display: isActive === true ? "flex" : null,
+                opacity: "1",
+              }}
+            >
               <Translate content="watchlist" />
             </a>
           </li>
@@ -108,7 +135,15 @@ export default function Navbar() {
         <Link to="/Watched" className="menu-link-path">
           <li className="menu-link" onClick={() => setIsActive(null)}>
             <AiOutlineEye className="icons" />
-            <a href="#" className="link-text" aria-label="watched movies page">
+            <a
+              href="#"
+              className="link-text"
+              aria-label="watched movies page"
+              style={{
+                display: isActive === true ? "flex" : null,
+                opacity: "1",
+              }}
+            >
               <Translate content="watched" />
             </a>
           </li>
@@ -117,7 +152,15 @@ export default function Navbar() {
         <Link to="/Settings" className="menu-link-path">
           <li className="menu-link" onClick={() => setIsActive(null)}>
             <HiOutlineCog className="icons" />
-            <a href="#" className="link-text" aria-label="settings page">
+            <a
+              href="#"
+              className="link-text"
+              aria-label="settings page"
+              style={{
+                display: isActive === true ? "flex" : null,
+                opacity: "1",
+              }}
+            >
               <Translate content="settings" />
             </a>
           </li>

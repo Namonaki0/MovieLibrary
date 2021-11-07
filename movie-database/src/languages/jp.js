@@ -1,4 +1,7 @@
 export default {
+  welcome: "ようこそ",
+  login: "ログイン",
+  logout: "ログアウト",
   home: "ホーム",
   upcoming: "新着",
   library: "ライブラリー",

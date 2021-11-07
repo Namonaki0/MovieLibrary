@@ -1,4 +1,7 @@
 export default {
+  welcome: "bienvenido",
+  login: "acceso",
+  logout: "cerrar sesión",
   home: "inicio",
   upcoming: "en breve",
   library: "biblioteca",
