@@ -1,4 +1,7 @@
 export default {
+  welcome: "welcome",
+  login: "login",
+  logout: "logout",
   home: "home",
   upcoming: "upcoming",
   library: "library",

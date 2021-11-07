@@ -30,7 +30,7 @@ body {
   background: #3b3b3bf3;
 }
 
-nav {
+.nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,16 +47,16 @@ nav {
   z-index: 100;
 }
 
-nav.menu-active {
+.nav.menu-active {
   --open-menu: 16rem;
   width: var(--open-menu);
 }
 
-nav.menu-active .menu-link-path {
+.nav.menu-active .menu-link-path {
   width: var(--open-menu);
 }
 
-nav ul {
+.nav ul {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,16 +71,16 @@ nav ul {
   height: 91vh;
 }
 
-nav ul .menu-link-path {
+.nav ul .menu-link-path {
   text-decoration: none;
 }
 
-nav ul .menu-link-path:last-child {
+.nav ul .menu-link-path:last-child {
   margin-top: auto;
 }
 
-nav ul .burger-menu,
-nav ul .menu-link {
+.nav ul .burger-menu,
+.nav ul .menu-link {
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,14 +99,14 @@ nav ul .menu-link {
   color: #000000de;
 }
 
-nav ul .burger-menu:hover,
-nav ul .menu-link:hover {
+.nav ul .burger-menu:hover,
+.nav ul .menu-link:hover {
   border: none;
   background: rgba(192, 192, 192, 0.192);
 }
 
-nav ul .burger-menu .link-text,
-nav ul .menu-link .link-text {
+.nav ul .burger-menu .link-text,
+.nav ul .menu-link .link-text {
   text-decoration: none;
   color: #fff;
   display: none;
@@ -117,20 +117,20 @@ nav ul .menu-link .link-text {
   opacity: 0;
 }
 
-nav ul .burger-menu .link-text.light-mode,
-nav ul .menu-link .link-text.light-mode {
+.nav ul .burger-menu .link-text.light-mode,
+.nav ul .menu-link .link-text.light-mode {
   color: #1c1c1c;
 }
 
-nav ul .burger-menu .link-text.text-showing,
-nav ul .menu-link .link-text.text-showing {
+.nav ul .burger-menu .link-text.text-showing,
+.nav ul .menu-link .link-text.text-showing {
   display: block;
   text-align: left;
   opacity: 1;
 }
 
-nav ul .burger-menu .icons,
-nav ul .menu-link .icons {
+.nav ul .burger-menu .icons,
+.nav ul .menu-link .icons {
   font-size: 20px;
   color: #fff;
   padding: 1rem;
@@ -139,10 +139,10 @@ nav ul .menu-link .icons {
   pointer-events: none;
 }
 
-nav ul .burger-menu .link-text,
-nav ul .burger-menu .burger-icon,
-nav ul .menu-link .link-text,
-nav ul .menu-link .burger-icon {
+.nav ul .burger-menu .link-text,
+.nav ul .burger-menu .burger-icon,
+.nav ul .menu-link .link-text,
+.nav ul .menu-link .burger-icon {
   pointer-events: none;
 }
 
