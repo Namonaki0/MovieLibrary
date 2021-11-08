@@ -24,4 +24,7 @@ yarn-error.log*
 
 
 /src/components/apiKey.js
-/src/components/main/modal.js
+/src/components/navbar/menu.js
+db.json
+/.vscode
+.gitignore
