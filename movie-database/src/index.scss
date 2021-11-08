@@ -2,7 +2,9 @@
 
 //? VARIABLES
 $nav-bg: #1c1c1c;
+$navLightModeBg: whitesmoke;
 $text-color: #fff;
+$navLightModeIcons: #1c1c1c;
 $accent-color: #5295f9;
 $ff-main: "Roboto Condensed", sans-serif;
 $view-height: 90vh;
@@ -17,7 +19,6 @@ body {
   padding: 1rem;
   padding-top: 1.5rem;
   background: rgb(141, 141, 141);
-  
 }
 
 * {
@@ -56,9 +57,15 @@ body {
     --open-menu: 16rem;
     width: var(--open-menu);
 
+
     .menu-link-path {
       width: var(--open-menu);
     }
+  }
+
+  .color-scheme-light-mode {
+    background-color: $navLightModeBg;
+    transition: $main-transition-effect;
   }
 
   ul {
@@ -69,6 +76,7 @@ body {
     padding: 0;
     list-style: none;
     height: 91vh;
+    transition: $main-transition-effect;
 
     .menu-link-path {
       text-decoration: none;
@@ -95,6 +103,9 @@ body {
         background: rgba(192, 192, 192, 0.192);
       }
 
+   
+   
+
       .link-text {
         text-decoration: none;
         color: $text-color;
@@ -104,17 +115,15 @@ body {
         padding-left: 0.5rem;
         opacity: 0;
 
-        &.light-mode {
-          color: $nav-bg;
-        }
-
         &.text-showing {
           display: block;
           text-align: left;
           opacity: 1;
         }
+        
       }
-
+    
+      
       .icons {
         font-size: 20px;
         color: $text-color;
@@ -124,10 +133,22 @@ body {
         pointer-events: none;
       }
 
+      .color-scheme-light-mode-icons {
+        color: $navLightModeIcons;
+        // transition: $main-transition-effect;
+      }
+
       .link-text,
       .burger-icon {
         pointer-events: none;
+
+  
       }
+
+        .color-scheme-light-mode-text {
+          color: $navLightModeIcons;
+          // transition: $main-transition-effect;
+        }
     }
   }
 }
@@ -375,14 +396,14 @@ main {
     justify-content: space-evenly;
     padding: 2px 0.3rem 1rem 3.5rem;
     // padding-bottom: 5rem;
-  
+
     height: 81vh;
     // overflow-y: auto;
     overflow-x: hidden;
     background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-color: #222222;
     background-size: calc(100% + 2vh);
-    
+
     background-position: center;
     background-blend-mode: multiply;
   }
@@ -951,31 +972,28 @@ form {
 
 .settings-wrapper {
   overflow-y: hidden;
- 
 
   // .title-wrapper {
   //   position: relative;
   //    height: 3.5rem;
 
-
-    h1 {
-            background-color: #3a3738;
-            border-top-right-radius: 5px;
-      // position: relative;
-      margin: 0;
-      object-fit: contain;
-      color: $text-color;
-      font-weight: 300;
-      padding: 0.5rem 1rem 0.5rem 3.8rem;
-      // padding-right: 0.5rem;
-      // padding-top: 0.5rem;
-      top: 8px;
-      right: 15px;
-      text-align: right;
-      letter-spacing: 1px;
-    }
+  h1 {
+    background-color: #3a3738;
+    border-top-right-radius: 5px;
+    // position: relative;
+    margin: 0;
+    object-fit: contain;
+    color: $text-color;
+    font-weight: 300;
+    padding: 0.5rem 1rem 0.5rem 3.8rem;
+    // padding-right: 0.5rem;
+    // padding-top: 0.5rem;
+    top: 8px;
+    right: 15px;
+    text-align: right;
+    letter-spacing: 1px;
+  }
   // }
-
 
   h2 {
     text-transform: uppercase;
@@ -1090,8 +1108,6 @@ form {
 }
 
 .comments-outter-wrapper {
-  
-
   h1 {
     color: $text-color;
     background: #3a3738;
@@ -1104,7 +1120,7 @@ form {
 
   .comments-inner-wrapper {
     display: flex;
-    flex-direction: column  ;
+    flex-direction: column;
     height: 82.5vh;
     overflow-y: auto;
 

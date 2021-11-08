@@ -56,6 +56,12 @@ body {
   width: var(--open-menu);
 }
 
+.nav .color-scheme-light-mode {
+  background-color: whitesmoke;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
+}
+
 .nav ul {
   position: absolute;
   display: -webkit-box;
@@ -69,6 +75,8 @@ body {
   padding: 0;
   list-style: none;
   height: 91vh;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
 }
 
 .nav ul .menu-link-path {
@@ -117,11 +125,6 @@ body {
   opacity: 0;
 }
 
-.nav ul .burger-menu .link-text.light-mode,
-.nav ul .menu-link .link-text.light-mode {
-  color: #1c1c1c;
-}
-
 .nav ul .burger-menu .link-text.text-showing,
 .nav ul .menu-link .link-text.text-showing {
   display: block;
@@ -139,11 +142,21 @@ body {
   pointer-events: none;
 }
 
+.nav ul .burger-menu .color-scheme-light-mode-icons,
+.nav ul .menu-link .color-scheme-light-mode-icons {
+  color: #1c1c1c;
+}
+
 .nav ul .burger-menu .link-text,
 .nav ul .burger-menu .burger-icon,
 .nav ul .menu-link .link-text,
 .nav ul .menu-link .burger-icon {
   pointer-events: none;
+}
+
+.nav ul .burger-menu .color-scheme-light-mode-text,
+.nav ul .menu-link .color-scheme-light-mode-text {
+  color: #1c1c1c;
 }
 
 main {
