@@ -49,6 +49,8 @@ body {
 
 .nav.menu-active {
   --open-menu: 16rem;
+  -webkit-transition: all 120ms linear;
+  transition: all 120ms linear;
   width: var(--open-menu);
 }
 
@@ -57,6 +59,7 @@ body {
 }
 
 .nav .color-scheme-light-mode {
+  width: 3.3rem;
   background-color: whitesmoke;
   -webkit-transition: all 120ms linear;
   transition: all 120ms linear;
@@ -123,6 +126,7 @@ body {
   transition: all --var(120ms) linear;
   padding-left: 0.5rem;
   opacity: 0;
+  width: 0;
 }
 
 .nav ul .burger-menu .link-text.text-showing,
