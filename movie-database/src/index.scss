@@ -6,7 +6,8 @@ $navLightModeBg: whitesmoke;
 $text-color: #fff;
 $navLightModeIcons: #1c1c1c;
 $accent-color: #5295f9;
-$ff-main: "Roboto Condensed", sans-serif;
+$ff-main: "Roboto Condensed",
+sans-serif;
 $view-height: 90vh;
 $transition-timing: 120ms;
 $main-transition-effect: all $transition-timing linear;
@@ -55,8 +56,8 @@ body {
 
   &.menu-active {
     --open-menu: 16rem;
+    transition: $main-transition-effect;
     width: var(--open-menu);
-
 
     .menu-link-path {
       width: var(--open-menu);
@@ -64,6 +65,7 @@ body {
   }
 
   .color-scheme-light-mode {
+     width: 3.3rem;
     background-color: $navLightModeBg;
     transition: $main-transition-effect;
   }
@@ -103,9 +105,6 @@ body {
         background: rgba(192, 192, 192, 0.192);
       }
 
-   
-   
-
       .link-text {
         text-decoration: none;
         color: $text-color;
@@ -114,16 +113,15 @@ body {
         transition: all --var($transition-timing) linear;
         padding-left: 0.5rem;
         opacity: 0;
+        width: 0;
 
         &.text-showing {
           display: block;
           text-align: left;
           opacity: 1;
         }
-        
       }
-    
-      
+
       .icons {
         font-size: 20px;
         color: $text-color;
@@ -135,20 +133,16 @@ body {
 
       .color-scheme-light-mode-icons {
         color: $navLightModeIcons;
-        // transition: $main-transition-effect;
       }
 
       .link-text,
       .burger-icon {
         pointer-events: none;
-
-  
       }
 
-        .color-scheme-light-mode-text {
-          color: $navLightModeIcons;
-          // transition: $main-transition-effect;
-        }
+      .color-scheme-light-mode-text {
+        color: $navLightModeIcons;
+      }
     }
   }
 }
@@ -467,11 +461,9 @@ main {
   .sidebar-icons-wrapper {
     opacity: 0;
     transform: translateX(10px);
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.034),
-      rgba(0, 0, 0, 0.651)
-    );
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 0.034),
+        rgba(0, 0, 0, 0.651));
     width: 12%;
     position: absolute;
     text-align: right;
@@ -993,6 +985,7 @@ form {
     text-align: right;
     letter-spacing: 1px;
   }
+
   // }
 
   h2 {
@@ -1377,7 +1370,7 @@ form {
         cursor: pointer;
         transition: $main-transition-effect;
 
-        & > svg {
+        &>svg {
           margin-right: 2px;
         }
 
@@ -1454,11 +1447,9 @@ form {
   .watched-clear-span {
     display: block;
     background-color: black;
-    background: linear-gradient(
-      to right,
-      rgb(24, 24, 24),
-      rgba(24, 24, 24, 0.863)
-    );
+    background: linear-gradient(to right,
+        rgb(24, 24, 24),
+        rgba(24, 24, 24, 0.863));
     bottom: 0;
     left: 0;
     text-align: right;
@@ -1605,20 +1596,24 @@ form {
     .movie-modal-info {
       display: flex;
       align-items: center;
+
       img {
         margin-right: 15px;
       }
 
       .movie-modal-secondary-info {
         padding: 1rem 0.5rem;
+
         h2 {
           margin-bottom: 10px;
         }
+
         p {
           font-size: 1.2rem;
           padding-bottom: 1rem;
           border-bottom: 1px solid rgba(192, 192, 192, 0.171);
         }
+
         span {
           display: block;
           margin-top: 1rem;

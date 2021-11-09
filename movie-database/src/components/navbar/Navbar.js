@@ -34,7 +34,12 @@ export default function Navbar() {
   });
 
   return (
-    <nav className="nav" style={{ width: isActive === true ? "16rem" : null }}>
+    <nav
+      className="nav"
+      style={{
+        width: isActive === true ? "16rem" : null,
+      }}
+    >
       <ul style={{ width: isActive === true ? "16rem" : null }}>
         <li className="burger-menu" onClick={() => setIsActive(!isActive)}>
           <CgMenu className="burger-icon icons" />
@@ -48,7 +53,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="homepage"
               style={{
-                display: isActive === true ? "flex" : null,
+                display: isActive === true ? "block" : null,
                 opacity: "1",
               }}
             >
@@ -64,7 +69,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="upcoming page"
               style={{
-                display: isActive === true ? "flex" : null,
+                display: isActive === true ? "block" : null,
                 opacity: "1",
               }}
             >
@@ -81,7 +86,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="movie library"
               style={{
-                display: isActive === true ? "flex" : null,
+                display: isActive === true ? "block" : null,
                 opacity: "1",
               }}
             >
@@ -103,7 +108,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="comments page"
               style={{
-                display: isActive === true ? "flex" : null,
+                display: isActive === true ? "block" : null,
                 opacity: "1",
               }}
             >
@@ -123,7 +128,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="movie watchlist page"
               style={{
-                display: isActive === true ? "flex" : null,
+                display: isActive === true ? "block" : null,
                 opacity: "1",
               }}
             >
@@ -140,7 +145,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="watched movies page"
               style={{
-                display: isActive === true ? "flex" : null,
+                display: isActive === true ? "block" : null,
                 opacity: "1",
               }}
             >
@@ -157,7 +162,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="settings page"
               style={{
-                display: isActive === true ? "flex" : null,
+                display: isActive === true ? "block" : null,
                 opacity: "1",
               }}
             >

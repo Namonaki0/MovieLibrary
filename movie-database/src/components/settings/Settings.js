@@ -4,7 +4,7 @@ import counterpart from "counterpart";
 import Translate from "react-translate-component";
 
 export default function Settings() {
-  let [navBarBg, setNavBarBg] = useState();
+  let [lightMode, setLightMode] = useState(null);
 
   //? LANGUAGE HANDLER ------------------
   const handleChange = (e) => {
@@ -13,7 +13,7 @@ export default function Settings() {
   };
   //? LANGUAGE HANDLER ------------------
 
-  const navBarToggle = () => {
+  const navBarLightModeToggle = () => {
     //? PATHS ------------------------
     const burgerMenuIcon = document.querySelector(
       "#root > div > nav > ul > li > svg"
@@ -36,8 +36,18 @@ export default function Settings() {
       icon.classList.toggle("color-scheme-light-mode-icons");
     });
     navBarPath.classList.toggle("color-scheme-light-mode");
+
+    if (navBarPath.classList.contains("color-scheme-light-mode")) {
+      setLightMode(true);
+      localStorage.setItem("lightMode", !lightMode);
+    } else {
+      setLightMode(null);
+      localStorage.setItem("lightMode", !lightMode);
+    }
     //? TOGGLES ----------------------
   };
+
+  console.log(lightMode);
 
   return (
     <div className="settings-wrapper">
@@ -48,7 +58,7 @@ export default function Settings() {
           <Translate content="color" component="h2" />
           <ImContrast
             className="color-settings-icon"
-            onClick={() => navBarToggle()}
+            onClick={() => navBarLightModeToggle()}
           />
         </div>
         <div className="language-wrapper section">
