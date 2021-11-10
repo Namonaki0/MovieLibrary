@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ImContrast } from "react-icons/im";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
@@ -12,6 +12,53 @@ export default function Settings() {
     localStorage.setItem("language", e.target.attributes.value.nodeValue);
   };
   //? LANGUAGE HANDLER ------------------
+
+  useEffect(() => {
+    //? PATHS ------------------------
+    const burgerMenuIcon = document.querySelector(
+      "#root > div > nav > ul > li > svg"
+    );
+    const navBarPath = document.querySelector("#root > div > nav > ul");
+    const navBarIcons = document.querySelectorAll(
+      "#root > div > nav > ul > a > li > svg"
+    );
+    const navBarText = document.querySelectorAll(
+      "#root > div > nav > ul > a > li > a > span"
+    );
+    //? PATHS ------------------------
+
+    if (localStorage.getItem("lightMode") === true) {
+      console.log("yes");
+      //? TOGGLES ----------------------
+      burgerMenuIcon.classList.add("color-scheme-light-mode-icons");
+
+      navBarText.forEach((text) => {
+        text.classList.add("color-scheme-light-mode-text");
+      });
+
+      navBarIcons.forEach((icon) => {
+        icon.classList.add("color-scheme-light-mode-icons");
+      });
+      navBarPath.classList.add("color-scheme-light-mode");
+
+      // setLightMode(true);
+      // localStorage.setItem("lightMode", lightMode);
+    } else {
+      //? TOGGLES ----------------------
+      burgerMenuIcon.classList.remove("color-scheme-light-mode-icons");
+
+      navBarText.forEach((text) => {
+        text.classList.remove("color-scheme-light-mode-text");
+      });
+
+      navBarIcons.forEach((icon) => {
+        icon.classList.remove("color-scheme-light-mode-icons");
+      });
+      navBarPath.classList.remove("color-scheme-light-mode");
+      // setLightMode(null);
+      // localStorage.setItem("lightMode", lightMode);
+    }
+  });
 
   const navBarLightModeToggle = () => {
     //? PATHS ------------------------
@@ -32,6 +79,7 @@ export default function Settings() {
     navBarText.forEach((text) => {
       text.classList.toggle("color-scheme-light-mode-text");
     });
+
     navBarIcons.forEach((icon) => {
       icon.classList.toggle("color-scheme-light-mode-icons");
     });

@@ -125,15 +125,13 @@ body {
   -webkit-transition: all --var(120ms) linear;
   transition: all --var(120ms) linear;
   padding-left: 0.5rem;
-  opacity: 0;
-  width: 0;
 }
 
-.nav ul .burger-menu .link-text.text-showing,
-.nav ul .menu-link .link-text.text-showing {
-  display: block;
-  text-align: left;
+.nav ul .burger-menu .color-scheme-light-mode-text,
+.nav ul .menu-link .color-scheme-light-mode-text {
   opacity: 1;
+  -webkit-transition: all --var(120ms) linear;
+  transition: all --var(120ms) linear;
 }
 
 .nav ul .burger-menu .icons,
