@@ -53,11 +53,10 @@ export default function Navbar() {
               className="link-text"
               aria-label="homepage"
               style={{
-                display: isActive === true ? "block" : null,
-                opacity: "1",
+                display: isActive === true ? "flex" : null,
               }}
             >
-              <Translate content="home" />
+              <Translate content="home" component="span" />
             </a>
           </li>
         </Link>
@@ -69,8 +68,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="upcoming page"
               style={{
-                display: isActive === true ? "block" : null,
-                opacity: "1",
+                display: isActive === true ? "flex" : null,
               }}
             >
               <Translate content="upcoming" />
@@ -86,8 +84,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="movie library"
               style={{
-                display: isActive === true ? "block" : null,
-                opacity: "1",
+                display: isActive === true ? "flex" : null,
               }}
             >
               <Translate content="library" />
@@ -108,8 +105,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="comments page"
               style={{
-                display: isActive === true ? "block" : null,
-                opacity: "1",
+                display: isActive === true ? "flex" : null,
               }}
             >
               <Translate content="comments" />
@@ -128,8 +124,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="movie watchlist page"
               style={{
-                display: isActive === true ? "block" : null,
-                opacity: "1",
+                display: isActive === true ? "flex" : null,
               }}
             >
               <Translate content="watchlist" />
@@ -145,8 +140,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="watched movies page"
               style={{
-                display: isActive === true ? "block" : null,
-                opacity: "1",
+                display: isActive === true ? "flex" : null,
               }}
             >
               <Translate content="watched" />
@@ -162,8 +156,7 @@ export default function Navbar() {
               className="link-text"
               aria-label="settings page"
               style={{
-                display: isActive === true ? "block" : null,
-                opacity: "1",
+                display: isActive === true ? "flex" : null,
               }}
             >
               <Translate content="settings" />

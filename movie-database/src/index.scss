@@ -65,7 +65,7 @@ body {
   }
 
   .color-scheme-light-mode {
-     width: 3.3rem;
+    width: 3.3rem;
     background-color: $navLightModeBg;
     transition: $main-transition-effect;
   }
@@ -112,14 +112,11 @@ body {
         --transition-timing: 150ms;
         transition: all --var($transition-timing) linear;
         padding-left: 0.5rem;
-        opacity: 0;
-        width: 0;
+      }
 
-        &.text-showing {
-          display: block;
-          text-align: left;
-          opacity: 1;
-        }
+      .color-scheme-light-mode-text {
+        opacity: 1;
+        transition: all --var($transition-timing) linear;
       }
 
       .icons {
