@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { ImContrast } from "react-icons/im";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
+import { lightModeEnabled, lightModeDisabled } from "./colorSchemeHandler";
 
 export default function Settings() {
-  let [lightMode, setLightMode] = useState(null);
-
   //? LANGUAGE HANDLER ------------------
   const handleChange = (e) => {
     counterpart.setLocale(e.target.attributes.value.nodeValue);
@@ -14,54 +13,16 @@ export default function Settings() {
   //? LANGUAGE HANDLER ------------------
 
   useEffect(() => {
-    //? PATHS ------------------------
-    const burgerMenuIcon = document.querySelector(
-      "#root > div > nav > ul > li > svg"
-    );
-    const navBarPath = document.querySelector("#root > div > nav > ul");
-    const navBarIcons = document.querySelectorAll(
-      "#root > div > nav > ul > a > li > svg"
-    );
-    const navBarText = document.querySelectorAll(
-      "#root > div > nav > ul > a > li > a > span"
-    );
-    //? PATHS ------------------------
-
-    if (localStorage.getItem("lightMode") === true) {
-      console.log("yes");
-      //? TOGGLES ----------------------
-      burgerMenuIcon.classList.add("color-scheme-light-mode-icons");
-
-      navBarText.forEach((text) => {
-        text.classList.add("color-scheme-light-mode-text");
-      });
-
-      navBarIcons.forEach((icon) => {
-        icon.classList.add("color-scheme-light-mode-icons");
-      });
-      navBarPath.classList.add("color-scheme-light-mode");
-
-      // setLightMode(true);
-      // localStorage.setItem("lightMode", lightMode);
+    if (localStorage.getItem("lightMode") === "enabled") {
+      lightModeEnabled();
     } else {
-      //? TOGGLES ----------------------
-      burgerMenuIcon.classList.remove("color-scheme-light-mode-icons");
-
-      navBarText.forEach((text) => {
-        text.classList.remove("color-scheme-light-mode-text");
-      });
-
-      navBarIcons.forEach((icon) => {
-        icon.classList.remove("color-scheme-light-mode-icons");
-      });
-      navBarPath.classList.remove("color-scheme-light-mode");
-      // setLightMode(null);
-      // localStorage.setItem("lightMode", lightMode);
+      lightModeDisabled();
     }
-  });
+  }, []);
 
   const navBarLightModeToggle = () => {
     //? PATHS ------------------------
+
     const burgerMenuIcon = document.querySelector(
       "#root > div > nav > ul > li > svg"
     );
@@ -72,6 +33,7 @@ export default function Settings() {
     const navBarText = document.querySelectorAll(
       "#root > div > nav > ul > a > li > a > span"
     );
+
     //? PATHS ------------------------
     //? TOGGLES ----------------------
     burgerMenuIcon.classList.toggle("color-scheme-light-mode-icons");
@@ -86,16 +48,13 @@ export default function Settings() {
     navBarPath.classList.toggle("color-scheme-light-mode");
 
     if (navBarPath.classList.contains("color-scheme-light-mode")) {
-      setLightMode(true);
-      localStorage.setItem("lightMode", !lightMode);
+      localStorage.setItem("lightMode", "enabled");
     } else {
-      setLightMode(null);
-      localStorage.setItem("lightMode", !lightMode);
+      localStorage.setItem("lightMode", "disabled");
     }
+
     //? TOGGLES ----------------------
   };
-
-  console.log(lightMode);
 
   return (
     <div className="settings-wrapper">
