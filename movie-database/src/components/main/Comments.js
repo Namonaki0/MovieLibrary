@@ -2,6 +2,10 @@ import { useState, useEffect, React } from "react";
 import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
 import firebase from "../utils/firebase";
 import Translate from "react-translate-component";
+import {
+  lightModeEnabled,
+  lightModeDisabled,
+} from "../settings/colorSchemeHandler";
 
 export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
@@ -20,6 +24,14 @@ export const Comments = () => {
       });
     }
     fetchComments();
+
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    if (localStorage.getItem("lightMode") === "enabled") {
+      lightModeEnabled();
+    } else {
+      lightModeDisabled();
+    }
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
   });
 
   return (

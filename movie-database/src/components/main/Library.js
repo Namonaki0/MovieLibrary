@@ -6,6 +6,10 @@ import MovieModal from "./MovieModal";
 import commentsHandler from "../utils/commentsBodyHandler";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
+import {
+  lightModeEnabled,
+  lightModeDisabled,
+} from "../settings/colorSchemeHandler";
 
 export default function Library() {
   const [query, setQuery] = useState("");
@@ -69,6 +73,14 @@ export default function Library() {
   useEffect(() => {
     const placeholder = counterpart.translate("movie");
     setPlaceHolder(placeholder);
+
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    if (localStorage.getItem("lightMode") === "enabled") {
+      lightModeEnabled();
+    } else {
+      lightModeDisabled();
+    }
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
   }, []);
 
   //? MOVIE TITLE SEARCH RENDER //

@@ -12,7 +12,7 @@ export default {
   movie: "movie",
   watched: "watched",
   settings: "settings",
-  color: "color",
+  color: "color-scheme",
   language: "language",
   english: "english",
   spanish: "spanish",
