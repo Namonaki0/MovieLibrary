@@ -68,6 +68,7 @@ body {
     width: 3.3rem;
     background-color: $navLightModeBg;
     transition: $main-transition-effect;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);
   }
 
   ul {
@@ -220,6 +221,7 @@ main {
     margin-right: -100px;
     animation: title-effect 180ms ease;
 
+
     @keyframes title-effect {
       0% {
         opacity: 0;
@@ -231,6 +233,8 @@ main {
         transform: translateX(0);
       }
     }
+
+    
 
     span {
       display: block;
@@ -438,6 +442,12 @@ main {
     color: rgb(240, 240, 240);
     font-weight: 300;
     border-top-right-radius: 5px;
+
+  }
+
+  .color-scheme-light-mode-title {
+    background-color: $navLightModeBg;
+    color: $navLightModeIcons
   }
 
   h2 {
@@ -515,6 +525,8 @@ form {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
+
+
   input {
     padding: 8px 10px;
     width: 20%;
@@ -536,6 +548,11 @@ form {
     }
   }
 }
+
+   .color-scheme-light-mode-title {
+     background-color: $navLightModeBg;
+     color: $navLightModeIcons
+   }
 
 .outter-wrapper {
   padding: 2px 0 10px;
@@ -802,6 +819,11 @@ form {
       background: #00000085;
       pointer-events: none;
     }
+    
+    .color-scheme-light-mode-title {
+      background-color: $navLightModeBg;
+      color: $navLightModeIcons
+    }
 
     .movie-overview,
     .movie-release-date,
@@ -955,6 +977,10 @@ form {
     text-align: right;
     letter-spacing: 1px;
   }
+  .color-scheme-light-mode-title {
+    background-color: $navLightModeBg;
+    color: $navLightModeIcons
+  }
 }
 
 //? SETTINGS
@@ -962,28 +988,24 @@ form {
 .settings-wrapper {
   overflow-y: hidden;
 
-  // .title-wrapper {
-  //   position: relative;
-  //    height: 3.5rem;
-
   h1 {
     background-color: #3a3738;
     border-top-right-radius: 5px;
-    // position: relative;
     margin: 0;
     object-fit: contain;
     color: $text-color;
     font-weight: 300;
     padding: 0.5rem 1rem 0.5rem 3.8rem;
-    // padding-right: 0.5rem;
-    // padding-top: 0.5rem;
     top: 8px;
     right: 15px;
     text-align: right;
     letter-spacing: 1px;
   }
 
-  // }
+ .color-scheme-light-mode-title {
+   background-color: $navLightModeBg;
+   color: $navLightModeIcons
+ }
 
   h2 {
     text-transform: uppercase;
@@ -1106,6 +1128,11 @@ form {
     border-top-right-radius: 5px;
     text-align: right;
     letter-spacing: 1px;
+  }
+
+  .color-scheme-light-mode-title {
+    background-color: $navLightModeBg;
+    color: $navLightModeIcons
   }
 
   .comments-inner-wrapper {
@@ -1254,6 +1281,11 @@ form {
     letter-spacing: 1px;
   }
 
+  .color-scheme-light-mode-title {
+    background-color: $navLightModeBg;
+    color: $navLightModeIcons
+  }
+
   .no-movies-in-watchlist {
     display: grid;
     place-content: center;
@@ -1399,6 +1431,11 @@ form {
     color: #f0f0f0;
     font-weight: 300;
     border-top-right-radius: 5px;
+  }
+
+  .color-scheme-light-mode-title {
+    background-color: $navLightModeBg;
+    color: $navLightModeIcons
   }
 
   .watched-inner-wrapper {

@@ -4,6 +4,10 @@ import UpcomingMoviesTemplate from "./UpcomingMoviesTemplate";
 import CommentModal from "./CommentModal";
 import commentsHandler from "../utils/commentsBodyHandler";
 import Translate from "react-translate-component";
+import {
+  lightModeEnabled,
+  lightModeDisabled,
+} from "../settings/colorSchemeHandler";
 
 export default function Upcoming() {
   const [upcomingMovies, setUpcomingMovies] = useState([]);
@@ -27,6 +31,14 @@ export default function Upcoming() {
       }
     }
     fetchMovieData();
+
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    if (localStorage.getItem("lightMode") === "enabled") {
+      lightModeEnabled();
+    } else {
+      lightModeDisabled();
+    }
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
   }, []);
 
   //? COMMENTS INPUT ------------

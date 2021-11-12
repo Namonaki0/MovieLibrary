@@ -3,6 +3,8 @@ const lightModeEnabled = () => {
   const burgerMenuIcon = document.querySelector(
     "#root > div > nav > ul > li > svg"
   );
+  const h1s = document.querySelector("#root > div > div > h1");
+  const formBg = document.querySelector("#root > div > div > form");
   const navBarPath = document.querySelector("#root > div > nav > ul");
   const navBarIcons = document.querySelectorAll(
     "#root > div > nav > ul > a > li > svg"
@@ -13,6 +15,13 @@ const lightModeEnabled = () => {
   //? PATHS ------------------------
 
   burgerMenuIcon.classList.add("color-scheme-light-mode-icons");
+
+  if (h1s) {
+    h1s.classList.add("color-scheme-light-mode-title");
+  }
+  if (formBg) {
+    formBg.classList.add("color-scheme-light-mode-title");
+  }
 
   navBarText.forEach((text) => {
     text.classList.add("color-scheme-light-mode-text");
@@ -29,6 +38,7 @@ const lightModeDisabled = () => {
   const burgerMenuIcon = document.querySelector(
     "#root > div > nav > ul > li > svg"
   );
+  const h1s = document.querySelector("#root > div > div > h1");
   const navBarPath = document.querySelector("#root > div > nav > ul");
   const navBarIcons = document.querySelectorAll(
     "#root > div > nav > ul > a > li > svg"
@@ -39,6 +49,10 @@ const lightModeDisabled = () => {
   //? PATHS ------------------------
 
   burgerMenuIcon.classList.remove("color-scheme-light-mode-icons");
+
+  if (h1s) {
+    h1s.classList.remove("color-scheme-light-mode-title");
+  }
 
   navBarText.forEach((text) => {
     text.classList.remove("color-scheme-light-mode-text");

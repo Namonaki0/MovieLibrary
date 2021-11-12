@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { ImContrast } from "react-icons/im";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
@@ -13,19 +13,21 @@ export default function Settings() {
   //? LANGUAGE HANDLER ------------------
 
   useEffect(() => {
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
     if (localStorage.getItem("lightMode") === "enabled") {
       lightModeEnabled();
     } else {
       lightModeDisabled();
     }
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
   }, []);
 
-  const navBarLightModeToggle = () => {
+  const LightModeToggle = () => {
     //? PATHS ------------------------
-
     const burgerMenuIcon = document.querySelector(
       "#root > div > nav > ul > li > svg"
     );
+    const h1s = document.querySelector("#root > div > div > h1");
     const navBarPath = document.querySelector("#root > div > nav > ul");
     const navBarIcons = document.querySelectorAll(
       "#root > div > nav > ul > a > li > svg"
@@ -33,10 +35,14 @@ export default function Settings() {
     const navBarText = document.querySelectorAll(
       "#root > div > nav > ul > a > li > a > span"
     );
-
     //? PATHS ------------------------
+
     //? TOGGLES ----------------------
     burgerMenuIcon.classList.toggle("color-scheme-light-mode-icons");
+
+    if (h1s) {
+      h1s.classList.toggle("color-scheme-light-mode-title");
+    }
 
     navBarText.forEach((text) => {
       text.classList.toggle("color-scheme-light-mode-text");
@@ -65,7 +71,7 @@ export default function Settings() {
           <Translate content="color" component="h2" />
           <ImContrast
             className="color-settings-icon"
-            onClick={() => navBarLightModeToggle()}
+            onClick={() => LightModeToggle()}
           />
         </div>
         <div className="language-wrapper section">

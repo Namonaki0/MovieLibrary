@@ -1,10 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import WatchlistMovieTemplate from "./WatchlistMovieTemplate";
 import Translate from "react-translate-component";
+import {
+  lightModeEnabled,
+  lightModeDisabled,
+} from "../settings/colorSchemeHandler";
 
 export default function Watchlist() {
   const { watchlist } = useContext(GlobalContext);
+
+  useEffect(() => {
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    if (localStorage.getItem("lightMode") === "enabled") {
+      lightModeEnabled();
+    } else {
+      lightModeDisabled();
+    }
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
+  });
 
   return (
     <div className="watchlist-outter-wrapper">

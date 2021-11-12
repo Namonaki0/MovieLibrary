@@ -7,6 +7,10 @@ import {
 import firebase from "firebase";
 import counterpart from "counterpart";
 import Translate from "react-translate-component";
+import {
+  lightModeEnabled,
+  lightModeDisabled,
+} from "../settings/colorSchemeHandler";
 
 export default function Home() {
   const [userIsSignedIn, setUserIsSignedIn] = useState(true);
@@ -25,6 +29,14 @@ export default function Home() {
   useEffect(() => {
     let welcome = counterpart.translate("welcome");
     setWelcomeMessage(welcome);
+
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    if (localStorage.getItem("lightMode") === "enabled") {
+      lightModeEnabled();
+    } else {
+      lightModeDisabled();
+    }
+    //? LIGHTMODE LOCAL-STORAGE CHECKER
   }, []);
 
   if (userIsSignedIn === true) {
