@@ -32,7 +32,7 @@ export const Comments = () => {
       lightModeDisabled();
     }
     //? LIGHTMODE LOCAL-STORAGE CHECKER
-  });
+  }, []);
 
   return (
     <div className="comments-outter-wrapper">
