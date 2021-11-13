@@ -846,19 +846,6 @@ form {
     background: #1c1c1cf1;
     padding: 1rem;
     border-radius: 5px;
-    animation: modal-effect 120ms linear;
-
-    @keyframes modal-effect {
-      0% {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0px);
-      }
-    }
 
     .modal-movie-inner-wrapper {
       display: flex;
@@ -944,7 +931,6 @@ form {
   box-shadow: 0 0 5px #00000023;
   background: #fff;
   margin: auto;
-  // background-color: black;
 }
 
 //? FAVORITES
@@ -1014,9 +1000,7 @@ form {
 
   .settings-options {
     display: flex;
-    // align-items: center;
     height: 81.5vh;
-    // height: 100%;
     flex-direction: column;
     justify-content: center;
     padding-left: 5rem;

@@ -1,3 +1,5 @@
+import firebase from "../utils/firebase";
+
 document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("nav");
   const burgerMenu = document.querySelector(".burger-menu");
@@ -49,18 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  commentNumSpanCounter();
-});
-
-//* DONE
-const commentNumSpanCounter = () => {
   const commentNumSpan = document.querySelector(".comment-number-span");
   const openMenuCommentNumSpan = document.querySelector(
     ".open-menu-comment-number-span"
   );
-  const storedComments = JSON.parse(localStorage.comments);
-  if (storedComments.length === 0) {
-    commentNumSpan.style.display = "none";
-    openMenuCommentNumSpan.style.display = "none";
-  }
-};
+
+  const commentRef = firebase.database().ref("Comments");
+
+  commentRef.on("value", (comment) => {
+    const allComments = comment.val();
+    let commentsLength = Object.keys(allComments).length;
+
+    if (commentsLength === 0) {
+      commentNumSpan.style.display = "none";
+      openMenuCommentNumSpan.style.display = "none";
+    }
+  });
+});

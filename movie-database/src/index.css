@@ -1001,34 +1001,6 @@ form .submit:hover {
   background: #1c1c1cf1;
   padding: 1rem;
   border-radius: 5px;
-  -webkit-animation: modal-effect 120ms linear;
-          animation: modal-effect 120ms linear;
-}
-
-@-webkit-keyframes modal-effect {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-
-@keyframes modal-effect {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
 }
 
 .movie-template .modal-movie-wrapper .modal-movie-inner-wrapper {

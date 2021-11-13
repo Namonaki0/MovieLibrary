@@ -66,7 +66,6 @@ const MovieTemplate = ({
         onClick={(e) => {
           setMovieModalInfo(!movieModalInfo);
           modalImageTarget(e);
-          console.log(movie);
         }}
       />
       <h1>{movie.title}</h1>
