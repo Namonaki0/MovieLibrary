@@ -116,6 +116,7 @@ export default function Library() {
                           movieModalInfo={movieModalInfo}
                           setMovieModalInfo={setMovieModalInfo}
                           modalImageTarget={modalImageTarget}
+                          key={movie.id}
                         />
                         <MovieModal
                           movie={movie}

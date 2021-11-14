@@ -51,20 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const commentNumSpan = document.querySelector(".comment-number-span");
-  const openMenuCommentNumSpan = document.querySelector(
-    ".open-menu-comment-number-span"
-  );
-
+  //? FIREBASE COMMENT COUNT PILL HANDLER
   const commentRef = firebase.database().ref("Comments");
 
   commentRef.on("value", (comment) => {
     const allComments = comment.val();
-    let commentsLength = Object.keys(allComments).length;
 
-    if (commentsLength === 0) {
-      commentNumSpan.style.display = "none";
-      openMenuCommentNumSpan.style.display = "none";
-    }
+    if (allComments === null) return;
   });
 });

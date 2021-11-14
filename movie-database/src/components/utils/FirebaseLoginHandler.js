@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
-export const LogInWithFirebase = () => {
+const LogInWithFirebase = () => {
   let google_provider = new firebase.auth.GoogleAuthProvider();
   firebase
     .auth()
@@ -9,10 +9,12 @@ export const LogInWithFirebase = () => {
       console.log(res);
     })
     .catch((err) => {
-      console.err(err);
+      console.log(err);
     });
 };
 
-export const LogOutWithFirebase = () => {
+const LogOutWithFirebase = () => {
   firebase.auth().signOut();
 };
+
+export { LogInWithFirebase, LogOutWithFirebase };

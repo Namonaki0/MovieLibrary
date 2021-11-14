@@ -22,11 +22,16 @@ export default function Watchlist() {
 
   return (
     <div className="watchlist-outter-wrapper">
-      <Translate content="watchlist" component="h1" />
+      <div className="title-wrapper">
+        <Translate content="watchlist" component="h1" />
+      </div>
       {watchlist.length > 0 ? (
         <div className="watchlist-inner-wrapper">
           {watchlist.map((listedMovie) => (
-            <WatchlistMovieTemplate listedMovie={listedMovie} />
+            <WatchlistMovieTemplate
+              listedMovie={listedMovie}
+              key={listedMovie.id}
+            />
           ))}
         </div>
       ) : (

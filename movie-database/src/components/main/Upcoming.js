@@ -59,7 +59,9 @@ export default function Upcoming() {
 
   return (
     <div className="upcoming-movies-body">
-      <Translate content="upcoming" component="h1" />
+      <div className="title-wrapper">
+        <Translate content="upcoming" component="h1" />
+      </div>
       <div className="upcoming-movie-wrapper">
         {upcomingMovies.map(
           (upcomingMovie) =>
@@ -68,6 +70,7 @@ export default function Upcoming() {
                 upcomingMovie={upcomingMovie}
                 movieTitleTarget={(e) => movieTitleTarget(e)}
                 setCommentWindow={setCommentWindow}
+                key={upcomingMovie.id}
               />
             )
         )}

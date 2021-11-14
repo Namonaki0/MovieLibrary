@@ -27,7 +27,7 @@ export default function Settings() {
     const burgerMenuIcon = document.querySelector(
       "#root > div > nav > ul > li > svg"
     );
-    const h1s = document.querySelector("#root > div > div > h1");
+    const h1s = document.querySelector("#root > div > div > .title-wrapper");
     const navBarPath = document.querySelector("#root > div > nav > ul");
     const navBarIcons = document.querySelectorAll(
       "#root > div > nav > ul > a > li > svg"
@@ -64,7 +64,9 @@ export default function Settings() {
 
   return (
     <div className="settings-wrapper">
-      <Translate content="settings" component="h1" />
+      <div className="title-wrapper">
+        <Translate content="settings" component="h1" />
+      </div>
 
       <div className="settings-options">
         <div className="color-scheme-wrapper section">

@@ -24,6 +24,9 @@ export default function Navbar() {
 
       commentRef.on("value", (comment) => {
         const allComments = comment.val();
+
+        if (allComments === null) return;
+
         let commentsLength = Object.keys(allComments).length;
         setCommentNumber(commentsLength);
       });

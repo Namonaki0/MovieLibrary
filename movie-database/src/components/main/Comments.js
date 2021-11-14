@@ -36,7 +36,9 @@ export const Comments = () => {
 
   return (
     <div className="comments-outter-wrapper">
-      <Translate content="comments" component="h1" />
+      <div className="title-wrapper">
+        <Translate content="comments" component="h1" />
+      </div>
 
       <div className="comments-inner-wrapper">
         {userInfo &&
