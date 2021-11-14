@@ -5,9 +5,9 @@ $nav-bg: #1c1c1c;
 $navLightModeBg: whitesmoke;
 $text-color: #fff;
 $navLightModeIcons: #1c1c1c;
+$lightModeTitle: #e9e9e9;
 $accent-color: #5295f9;
-$ff-main: "Roboto Condensed",
-sans-serif;
+$ff-main: "Roboto Condensed", sans-serif;
 $view-height: 90vh;
 $transition-timing: 120ms;
 $main-transition-effect: all $transition-timing linear;
@@ -68,7 +68,7 @@ body {
     width: 3.3rem;
     background-color: $navLightModeBg;
     transition: $main-transition-effect;
-    box-shadow: 0 0 2px rgba(0,0,0,.5);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   }
 
   ul {
@@ -221,7 +221,6 @@ main {
     margin-right: -100px;
     animation: title-effect 180ms ease;
 
-
     @keyframes title-effect {
       0% {
         opacity: 0;
@@ -233,8 +232,6 @@ main {
         transform: translateX(0);
       }
     }
-
-    
 
     span {
       display: block;
@@ -390,10 +387,7 @@ main {
     align-items: center;
     justify-content: space-evenly;
     padding: 2px 0.3rem 1rem 3.5rem;
-    // padding-bottom: 5rem;
-
     height: 81vh;
-    // overflow-y: auto;
     overflow-x: hidden;
     background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-color: #222222;
@@ -433,21 +427,32 @@ main {
     }
   }
 
-  h1 {
-    text-align: right;
-    padding: 0.5rem 1rem 0.5rem 0;
-    overflow: hidden;
-    background: #000000d7;
-    border-radius: none;
-    color: rgb(240, 240, 240);
-    font-weight: 300;
+  .title-wrapper {
+    position: relative;
+    background-color: #3a3738;
     border-top-right-radius: 5px;
+    padding: 1.5rem;
+    color: $text-color;
+    transition: $main-transition-effect;
 
+
+    h1 {
+      background-color: transparent;
+      font-weight: 300;
+      letter-spacing: 1px;
+      position: absolute;
+      left: 0;
+      right: 10px;
+      top: 2px;
+      bottom: 0;
+      width: max-content;
+      margin-left: auto;
+    }
   }
 
   .color-scheme-light-mode-title {
     background-color: $navLightModeBg;
-    color: $navLightModeIcons
+    color: $navLightModeIcons;
   }
 
   h2 {
@@ -468,9 +473,11 @@ main {
   .sidebar-icons-wrapper {
     opacity: 0;
     transform: translateX(10px);
-    background: linear-gradient(to top,
-        rgba(0, 0, 0, 0.034),
-        rgba(0, 0, 0, 0.651));
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.034),
+      rgba(0, 0, 0, 0.651)
+    );
     width: 12%;
     position: absolute;
     text-align: right;
@@ -525,8 +532,6 @@ form {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
-
-
   input {
     padding: 8px 10px;
     width: 20%;
@@ -549,10 +554,10 @@ form {
   }
 }
 
-   .color-scheme-light-mode-title {
-     background-color: $navLightModeBg;
-     color: $navLightModeIcons
-   }
+.color-scheme-light-mode-title {
+  background-color: $navLightModeBg;
+  color: $navLightModeIcons;
+}
 
 .outter-wrapper {
   padding: 2px 0 10px;
@@ -819,10 +824,10 @@ form {
       background: #00000085;
       pointer-events: none;
     }
-    
+
     .color-scheme-light-mode-title {
       background-color: $navLightModeBg;
-      color: $navLightModeIcons
+      color: $navLightModeIcons;
     }
 
     .movie-overview,
@@ -965,7 +970,7 @@ form {
   }
   .color-scheme-light-mode-title {
     background-color: $navLightModeBg;
-    color: $navLightModeIcons
+    color: $navLightModeIcons;
   }
 }
 
@@ -974,24 +979,31 @@ form {
 .settings-wrapper {
   overflow-y: hidden;
 
-  h1 {
+  .title-wrapper {
+    position: relative;
     background-color: #3a3738;
     border-top-right-radius: 5px;
-    margin: 0;
-    object-fit: contain;
+    padding: 1.5rem;
     color: $text-color;
-    font-weight: 300;
-    padding: 0.5rem 1rem 0.5rem 3.8rem;
-    top: 8px;
-    right: 15px;
-    text-align: right;
-    letter-spacing: 1px;
-  }
+    transition: $main-transition-effect;
 
- .color-scheme-light-mode-title {
-   background-color: $navLightModeBg;
-   color: $navLightModeIcons
- }
+    h1 {
+      background-color: transparent;
+      font-weight: 300;
+      letter-spacing: 1px;
+      position: absolute;
+      left: 0;
+      right: 10px;
+      top: 2px;
+      bottom: 0;
+      width: max-content;
+      margin-left: auto;
+    }
+  }
+  .color-scheme-light-mode-title {
+    background-color: $lightModeTitle;
+    color: $navLightModeIcons;
+  }
 
   h2 {
     text-transform: uppercase;
@@ -1017,7 +1029,7 @@ form {
         animation: settings-effect 350ms linear;
 
         &:hover {
-          color: gold;
+          color: $accent-color;
           cursor: pointer;
         }
       }
@@ -1104,19 +1116,31 @@ form {
 }
 
 .comments-outter-wrapper {
-  h1 {
-    color: $text-color;
-    background: #3a3738;
-    font-weight: 300;
-    padding: 0.5rem 1rem 0.5rem 3.8rem;
-    border-top-right-radius: 5px;
-    text-align: right;
-    letter-spacing: 1px;
-  }
 
+  .title-wrapper {
+    position: relative;
+    background-color: #3a3738;
+    border-top-right-radius: 5px;
+    padding: 1.5rem;
+    color: $text-color;
+    margin-top: 0;
+  
+    h1 {
+      position: absolute;
+      background-color: transparent;
+      font-weight: 300;
+      letter-spacing: 1px;
+      left: 0;
+      right: -5px;
+      top: -5px;
+      bottom: 0;
+      width: max-content;
+      margin-left: auto;
+    }
+  }
   .color-scheme-light-mode-title {
-    background-color: $navLightModeBg;
-    color: $navLightModeIcons
+    background-color: $lightModeTitle;
+    color: black;
   }
 
   .comments-inner-wrapper {
@@ -1255,19 +1279,32 @@ form {
 .watchlist-outter-wrapper {
   border-top-right-radius: 5px;
 
-  h1 {
-    color: $text-color;
-    background: #3a3738;
-    font-weight: 300;
-    padding: 0.5rem 1rem 0.5rem 3.8rem;
+  .title-wrapper {
+    position: relative;
+    background-color: #3a3738;
     border-top-right-radius: 5px;
-    text-align: right;
-    letter-spacing: 1px;
+    padding: 1.5rem;
+    color: $text-color;
+    transition: $main-transition-effect;
+
+    h1 {
+      background-color: transparent;
+      font-weight: 300;
+      letter-spacing: 1px;
+      position: absolute;
+      left: 0;
+      right: 10px;
+      top: 3px;
+      bottom: 0;
+      width: max-content;
+      margin-left: auto;
+    }
   }
+
 
   .color-scheme-light-mode-title {
     background-color: $navLightModeBg;
-    color: $navLightModeIcons
+    color: $navLightModeIcons;
   }
 
   .no-movies-in-watchlist {
@@ -1383,7 +1420,7 @@ form {
         cursor: pointer;
         transition: $main-transition-effect;
 
-        &>svg {
+        & > svg {
           margin-right: 2px;
         }
 
@@ -1406,20 +1443,31 @@ form {
     height: 75.4vh;
   }
 
-  h1 {
-    text-align: right;
-    padding: 0.5rem 1rem 0.5rem 0;
-    overflow: hidden;
-    background: #000000d7;
-    border-radius: none;
-    color: #f0f0f0;
-    font-weight: 300;
+  .title-wrapper {
+    background-color: #3a3738;
     border-top-right-radius: 5px;
+    position: relative;
+    padding: 1.5rem;
+    color: $text-color;
+    transition: $main-transition-effect;
+
+    h1 {
+      background-color: transparent;
+      font-weight: 300;
+      letter-spacing: 1px;
+      position: absolute;
+      left: 0;
+      right: 10px;
+      top: 3px;
+      bottom: 0;
+      width: max-content;
+      margin-left: auto;
+    }
   }
 
   .color-scheme-light-mode-title {
     background-color: $navLightModeBg;
-    color: $navLightModeIcons
+    color: $navLightModeIcons;
   }
 
   .watched-inner-wrapper {
@@ -1465,9 +1513,11 @@ form {
   .watched-clear-span {
     display: block;
     background-color: black;
-    background: linear-gradient(to right,
-        rgb(24, 24, 24),
-        rgba(24, 24, 24, 0.863));
+    background: linear-gradient(
+      to right,
+      rgb(24, 24, 24),
+      rgba(24, 24, 24, 0.863)
+    );
     bottom: 0;
     left: 0;
     text-align: right;

@@ -3,7 +3,7 @@ const lightModeEnabled = () => {
   const burgerMenuIcon = document.querySelector(
     "#root > div > nav > ul > li > svg"
   );
-  const h1s = document.querySelector("#root > div > div > h1");
+  const h1s = document.querySelector("#root > div > div > .title-wrapper");
   const formBg = document.querySelector("#root > div > div > form");
   const navBarPath = document.querySelector("#root > div > nav > ul");
   const navBarIcons = document.querySelectorAll(
@@ -38,7 +38,7 @@ const lightModeDisabled = () => {
   const burgerMenuIcon = document.querySelector(
     "#root > div > nav > ul > li > svg"
   );
-  const h1s = document.querySelector("#root > div > div > h1");
+  const h1s = document.querySelector("#root > div > div > .title-wrapper");
   const navBarPath = document.querySelector("#root > div > nav > ul");
   const navBarIcons = document.querySelectorAll(
     "#root > div > nav > ul > a > li > svg"

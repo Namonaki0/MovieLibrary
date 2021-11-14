@@ -28,11 +28,13 @@ export default function Watched() {
 
   return (
     <div className="watched-outter-wrapper">
-      <Translate content="watched" component="h1" />
+      <div className="title-wrapper">
+        <Translate content="watched" component="h1" />
+      </div>
       {watched.length > 0 ? (
         <div className="watched-inner-wrapper">
           {watched.map((movie) => (
-            <div className="watched-movie-wrapper">
+            <div className="watched-movie-wrapper" key={movie.id}>
               <h2 className="watched-movie">{movie.title}</h2>
               <img
                 className="watched-movie-image"
