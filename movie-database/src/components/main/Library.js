@@ -88,16 +88,19 @@ export default function Library() {
     <>
       <div className="library-outter-wrapper">
         <form onSubmit={submitSearch} className="form">
-          <input
-            type="text"
-            value={query}
-            name="query"
-            placeholder={`${placeHolder}...`}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <button type="submit" className="submit">
-            <Translate content="search" />
-          </button>
+          <div className="inner-form-wrapper">
+            <input
+              type="text"
+              value={query}
+              name="query"
+              className="movie-search-input"
+              placeholder={`${placeHolder}...`}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <button type="submit" className="submit">
+              <Translate content="search" />
+            </button>
+          </div>
         </form>
 
         <div className="outter-wrapper">
