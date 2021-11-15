@@ -435,7 +435,6 @@ main {
     color: $text-color;
     transition: $main-transition-effect;
 
-
     h1 {
       background-color: transparent;
       font-weight: 300;
@@ -532,24 +531,39 @@ form {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
-  input {
-    padding: 8px 10px;
-    width: 20%;
-    border: none;
-    border-bottom: 1px solid $nav-bg;
-  }
+  .inner-form-wrapper {
+    display: flex;
+    width: 40%;
+    margin: 0 auto;
 
-  .submit {
-    background: #4e4e4e;
-    @extend input;
-    width: 10%;
-    color: whitesmoke;
-    transition: all 150ms linear;
-    letter-spacing: 1px;
+    input {
+      padding: 8px 10px;
+      border: none;
+    }
 
-    &:hover {
-      background: rgb(63, 63, 63);
-      cursor: pointer;
+    .movie-search-input {
+      flex: 2;
+      border-left: 3px solid white;
+      transition: $main-transition-effect;
+
+      &:focus {
+        outline: none;
+        border-left: 3px solid $accent-color;
+      }
+    }
+
+    .submit {
+      flex: 1;
+      background: #4e4e4e;
+      @extend input;
+      color: whitesmoke;
+      transition: all 150ms linear;
+      letter-spacing: 1px;
+
+      &:hover {
+        background: rgb(63, 63, 63);
+        cursor: pointer;
+      }
     }
   }
 }
@@ -705,6 +719,7 @@ form {
         background-color: #ffffff10;
         transition: $main-transition-effect;
         color: $text-color;
+        border: none;
 
         &:focus {
           border-bottom: 1px solid silver;
@@ -959,15 +974,28 @@ form {
     }
   }
 
-  h1 {
-    color: $text-color;
-    background: #3a3738;
-    font-weight: 300;
-    padding: 0.5rem 1rem 0.5rem 3.8rem;
+  .title-wrapper {
+    position: relative;
+    background-color: #3a3738;
     border-top-right-radius: 5px;
-    text-align: right;
-    letter-spacing: 1px;
+    padding: 1.5rem;
+    color: $text-color;
+    margin-top: 0;
+
+    h1 {
+      position: absolute;
+      background-color: transparent;
+      font-weight: 300;
+      letter-spacing: 1px;
+      left: 0;
+      right: -5px;
+      top: -5px;
+      bottom: 0;
+      width: max-content;
+      margin-left: auto;
+    }
   }
+
   .color-scheme-light-mode-title {
     background-color: $navLightModeBg;
     color: $navLightModeIcons;
@@ -1116,7 +1144,6 @@ form {
 }
 
 .comments-outter-wrapper {
-
   .title-wrapper {
     position: relative;
     background-color: #3a3738;
@@ -1124,23 +1151,23 @@ form {
     padding: 1.5rem;
     color: $text-color;
     margin-top: 0;
-  
+
     h1 {
       position: absolute;
       background-color: transparent;
       font-weight: 300;
       letter-spacing: 1px;
       left: 0;
-      right: -5px;
-      top: -5px;
+      right: 10px;
+      top: 2px;
       bottom: 0;
       width: max-content;
       margin-left: auto;
     }
   }
   .color-scheme-light-mode-title {
-    background-color: $lightModeTitle;
-    color: black;
+    background-color: $navLightModeBg;
+    color: $navLightModeIcons;
   }
 
   .comments-inner-wrapper {
@@ -1300,7 +1327,6 @@ form {
       margin-left: auto;
     }
   }
-
 
   .color-scheme-light-mode-title {
     background-color: $navLightModeBg;
