@@ -42,6 +42,8 @@ export default function Library() {
       setErrorMessage(err);
       console.log(setErrorMessage);
     }
+
+    localStorage.setItem("searchQuery", query);
   };
 
   //? COMMENTS INPUT ------------
@@ -50,7 +52,6 @@ export default function Library() {
 
     //? COMMENTS DATE AND TIME ON SUBMIT ---------------
     //? FIREBASE REALTIME DB ------------
-    commentsHandler();
   };
 
   //? GRABS MOVIE TITLE ON CLICK FROM OFFSET-PARENT
@@ -81,6 +82,13 @@ export default function Library() {
       lightModeDisabled();
     }
     //? LIGHTMODE LOCAL-STORAGE CHECKER
+
+    const localStorageSearchQuery = localStorage.getItem("searchQuery") || null;
+    console.log(localStorageSearchQuery);
+
+    let formSubmit = () => {
+      console.log("yes");
+    };
   }, []);
 
   //? MOVIE TITLE SEARCH RENDER //

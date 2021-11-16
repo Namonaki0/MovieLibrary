@@ -91,6 +91,9 @@ export default function Settings() {
           </div>
         </div>
       </div>
+      <span className="developed-by">
+        Designed and developed by Andre Ferreira
+      </span>
     </div>
   );
 }

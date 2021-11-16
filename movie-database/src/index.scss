@@ -1093,17 +1093,24 @@ form {
     }
   }
 
-  @keyframes settings-effect {
-    0% {
-      opacity: 0.2;
-      transform: translateX(-5%);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
+  .developed-by {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    animation: settings-effect 150ms linear;
   }
+
+    @keyframes settings-effect {
+      0% {
+        opacity: 0.2;
+        transform: translateX(-5%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+    }
 }
 
 //? COMMENTS

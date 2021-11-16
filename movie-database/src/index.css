@@ -1305,6 +1305,14 @@ form .inner-form-wrapper .submit:hover {
   color: #5295f9;
 }
 
+.settings-wrapper .developed-by {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  -webkit-animation: settings-effect 150ms linear;
+          animation: settings-effect 150ms linear;
+}
+
 @-webkit-keyframes settings-effect {
   0% {
     opacity: 0.2;
