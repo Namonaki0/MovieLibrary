@@ -428,6 +428,7 @@ main h1 span::before {
   padding: 1rem 0.5rem;
   margin-left: auto;
   margin-right: auto;
+  border: none;
 }
 
 .upcoming-movies-body .comment-window-wrapper form .comment-window-close-icon {
