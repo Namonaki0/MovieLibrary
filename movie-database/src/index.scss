@@ -45,10 +45,10 @@ body {
 
 //? MENU
 .nav {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
   position: absolute;
+  min-height: 100%;
+  top: 0;
+  bottom: 0;
   width: 3.3rem;
   background: $nav-bg;
   transition: $main-transition-effect;
@@ -73,6 +73,7 @@ body {
 
   ul {
     position: absolute;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -255,7 +256,8 @@ main {
 .upcoming-movies-body {
   position: relative;
   overflow-y: hidden;
-  height: 91vh;
+  // padding-bottom: 5rem;
+  height: 93.5vh;
 
   .comment-window-wrapper {
     display: grid;
@@ -351,9 +353,11 @@ main {
         font-family: inherit;
         font-size: 1.2rem;
         margin-bottom: 1rem;
-        background-color: rgba(255, 255, 255, 0.062);
+        background-color: #ffffff10;
+        border: none;
+        border-bottom: 1px solid #282828;
         transition: $main-transition-effect;
-        color: white;
+        color:$text-color;
 
         &:focus {
           border-bottom: 1px solid silver;
@@ -387,13 +391,12 @@ main {
     position: relative;
     align-items: center;
     justify-content: space-evenly;
-    padding: 2px 0.3rem 1rem 3.5rem;
-    height: 81vh;
+    padding: 2px 0.3rem .5rem 3.5rem;
     overflow-x: hidden;
     background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-color: #222222;
     background-size: calc(100% + 2vh);
-
+    height: 81vh;
     background-position: center;
     background-blend-mode: multiply;
   }
@@ -451,7 +454,7 @@ main {
   }
 
   .color-scheme-light-mode-title {
-    background-color: $navLightModeBg;
+    background-color: $lightModeTitle;
     color: $navLightModeIcons;
   }
 
@@ -569,13 +572,12 @@ form {
   }
 }
 
-.color-scheme-light-mode-title {
-  background-color: $navLightModeBg;
-  color: $navLightModeIcons;
-}
+ .color-scheme-light-mode-title {
+   background-color: $lightModeTitle;
+   color: $navLightModeIcons;
+ }
 
 .outter-wrapper {
-  padding: 2px 0 10px;
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-color: rgb(34, 34, 34);
   background-size: 100%;
@@ -617,9 +619,10 @@ form {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  height: calc(80vh + 12px);
+  height: 80vh;
   padding-left: 3.5rem;
   padding-right: 0.3rem;
+  padding-bottom: 2rem;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -718,9 +721,10 @@ form {
         font-size: 1.2rem;
         margin-bottom: 1rem;
         background-color: #ffffff10;
+        border: none;
+        border-bottom: 1px solid #282828;
         transition: $main-transition-effect;
         color: $text-color;
-        border: none;
 
         &:focus {
           border-bottom: 1px solid silver;
@@ -841,10 +845,10 @@ form {
       pointer-events: none;
     }
 
-    .color-scheme-light-mode-title {
-      background-color: $navLightModeBg;
-      color: $navLightModeIcons;
-    }
+   .color-scheme-light-mode-title {
+     background-color: $lightModeTitle;
+     color: $navLightModeIcons;
+   }
 
     .movie-overview,
     .movie-release-date,
@@ -956,52 +960,52 @@ form {
 
 //? FAVORITES
 
-.comments-outter-wrapper {
-  border-top-right-radius: 5px;
+// .comments-outter-wrapper {
+//   border-top-right-radius: 5px;
 
-  .comment {
-    animation: comments-effect 120ms linear;
+//   .comment {
+//     animation: comments-effect 120ms linear;
 
-    @keyframes comments-effect {
-      0% {
-        opacity: 0;
-        transform: translateX(-10px);
-      }
+//     @keyframes comments-effect {
+//       0% {
+//         opacity: 0;
+//         transform: translateX(-10px);
+//       }
 
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  }
+//       100% {
+//         opacity: 1;
+//         transform: translateX(0);
+//       }
+//     }
+//   }
 
-  .title-wrapper {
-    position: relative;
-    background-color: #3a3738;
-    border-top-right-radius: 5px;
-    padding: 1.5rem;
-    color: $text-color;
-    margin-top: 0;
+//   .title-wrapper {
+//     position: relative;
+//     background-color: #3a3738;
+//     border-top-right-radius: 5px;
+//     padding: 1.5rem;
+//     color: $text-color;
+//     margin-top: 0;
 
-    h1 {
-      position: absolute;
-      background-color: transparent;
-      font-weight: 300;
-      letter-spacing: 1px;
-      left: 0;
-      right: -5px;
-      top: -5px;
-      bottom: 0;
-      width: max-content;
-      margin-left: auto;
-    }
-  }
+//     h1 {
+//       position: absolute;
+//       background-color: transparent;
+//       font-weight: 300;
+//       letter-spacing: 1px;
+//       left: 0;
+//       right: -5px;
+//       top: -5px;
+//       bottom: 0;
+//       width: max-content;
+//       margin-left: auto;
+//     }
+//   }
 
-  .color-scheme-light-mode-title {
-    background-color: $navLightModeBg;
-    color: $navLightModeIcons;
-  }
-}
+//    .color-scheme-light-mode-title {
+//      background-color: $lightModeTitle;
+//      color: $navLightModeIcons;
+//    }
+// }
 
 //? SETTINGS
 
@@ -1173,10 +1177,11 @@ form {
       margin-left: auto;
     }
   }
-  .color-scheme-light-mode-title {
-    background-color: $navLightModeBg;
-    color: $navLightModeIcons;
-  }
+
+   .color-scheme-light-mode-title {
+     background-color: $lightModeTitle;
+     color: $navLightModeIcons;
+   }
 
   .comments-inner-wrapper {
     display: flex;
@@ -1336,10 +1341,10 @@ form {
     }
   }
 
-  .color-scheme-light-mode-title {
-    background-color: $navLightModeBg;
-    color: $navLightModeIcons;
-  }
+   .color-scheme-light-mode-title {
+     background-color: $lightModeTitle;
+     color: $navLightModeIcons;
+   }
 
   .no-movies-in-watchlist {
     display: grid;
@@ -1500,7 +1505,7 @@ form {
   }
 
   .color-scheme-light-mode-title {
-    background-color: $navLightModeBg;
+    background-color: $lightModeTitle;
     color: $navLightModeIcons;
   }
 
@@ -1515,7 +1520,7 @@ form {
     background-blend-mode: multiply;
     padding-left: 3.5rem;
     padding-top: 0.15rem;
-    height: 76.8vh;
+    height: 76.3vh;
     overflow-y: auto;
     color: $text-color;
 

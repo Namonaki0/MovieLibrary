@@ -101,8 +101,6 @@ export default function Library() {
     };
 
     handlePageLoad();
-
-    console.log(localStorageSearchQuery);
   }, []);
 
   //? MOVIE TITLE SEARCH RENDER //
@@ -113,7 +111,7 @@ export default function Library() {
           <div className="inner-form-wrapper">
             <input
               type="text"
-              value={query || localStorage.getItem("searchQuery")}
+              value={query}
               name="query"
               className="movie-search-input"
               placeholder={`${placeHolder}...`}
