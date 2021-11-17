@@ -40,7 +40,7 @@ export default function Library() {
       setMovies(movies.results);
     } catch (err) {
       setErrorMessage(err);
-      console.log(setErrorMessage);
+      console.log(errorMessage);
     }
 
     localStorage.setItem("searchQuery", query);
@@ -52,6 +52,7 @@ export default function Library() {
 
     //? COMMENTS DATE AND TIME ON SUBMIT ---------------
     //? FIREBASE REALTIME DB ------------
+    commentsHandler();
   };
 
   //? GRABS MOVIE TITLE ON CLICK FROM OFFSET-PARENT
@@ -82,13 +83,26 @@ export default function Library() {
       lightModeDisabled();
     }
     //? LIGHTMODE LOCAL-STORAGE CHECKER
+  }, []);
 
-    const localStorageSearchQuery = localStorage.getItem("searchQuery") || null;
-    console.log(localStorageSearchQuery);
+  useEffect(() => {
+    const localStorageSearchQuery = localStorage.getItem("searchQuery");
+    const handlePageLoad = async () => {
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${localStorageSearchQuery}&page=1&include_adult=false`;
 
-    let formSubmit = () => {
-      console.log("yes");
+      try {
+        const apiCall = await fetch(url);
+        const movies = await apiCall.json();
+        setMovies(movies.results);
+      } catch (err) {
+        setErrorMessage(err);
+        console.log(errorMessage);
+      }
     };
+
+    handlePageLoad();
+
+    console.log(localStorageSearchQuery);
   }, []);
 
   //? MOVIE TITLE SEARCH RENDER //
@@ -99,7 +113,7 @@ export default function Library() {
           <div className="inner-form-wrapper">
             <input
               type="text"
-              value={query}
+              value={query || localStorage.getItem("searchQuery")}
               name="query"
               className="movie-search-input"
               placeholder={`${placeHolder}...`}
