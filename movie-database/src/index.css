@@ -1345,9 +1345,9 @@ form .inner-form-wrapper .submit:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   height: 82.5vh;
   overflow-y: auto;
 }

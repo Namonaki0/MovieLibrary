@@ -1,4 +1,4 @@
-import { useState, useEffect, React } from "react";
+import { useState, useEffect, useLayoutEffect, React } from "react";
 import { AiOutlineClockCircle, AiOutlineCalendar } from "react-icons/ai";
 import firebase from "../utils/firebase";
 import Translate from "react-translate-component";
@@ -33,6 +33,21 @@ export const Comments = () => {
     }
     //? LIGHTMODE LOCAL-STORAGE CHECKER
   }, []);
+
+  useLayoutEffect(() => {
+    function commentsArray() {
+      const comments = document.querySelectorAll(".comment");
+      const commentsPage = document.querySelector(
+        "#root > div > div > div.comments-inner-wrapper"
+      );
+      const lastComment = comments[comments.length - 1];
+      if (!lastComment) return;
+
+      commentsPage.scrollTo(0, -2000);
+    }
+
+    commentsArray();
+  });
 
   return (
     <div className="comments-outter-wrapper">
