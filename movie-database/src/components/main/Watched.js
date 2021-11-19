@@ -52,7 +52,7 @@ export default function Watched() {
 
       <span className="watched-clear-span">
         <button onClick={() => setClearModal(!clearModal)}>
-          <Translate content="clearAll" />
+          <Translate content="clearAll" component="p" />
         </button>
       </span>
       <ClearWatchedModal
