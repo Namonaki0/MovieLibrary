@@ -43,7 +43,7 @@ export const Comments = () => {
       const lastComment = comments[comments.length - 1];
       if (!lastComment) return;
 
-      commentsPage.scrollTo(0, -2000);
+      commentsPage.scrollTo(0, -5000);
     }
 
     commentsArray();
