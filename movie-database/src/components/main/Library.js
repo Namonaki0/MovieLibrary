@@ -114,6 +114,7 @@ export default function Library() {
               value={query}
               name="query"
               className="movie-search-input"
+              autoComplete="off"
               placeholder={`${placeHolder}...`}
               onChange={(e) => setQuery(e.target.value)}
             />

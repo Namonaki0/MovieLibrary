@@ -271,6 +271,18 @@ main {
 
     .comment-window-movie-title {
       font-size: 2rem;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+
+       &::after {
+         content: "";
+         display: block;
+         height: 3px;
+         width: 80%;
+         margin: 0 auto;
+         background-color: #297fffb0;
+         border-radius: 1px;
+       }
     }
 
     @keyframes comment-window-effect {
@@ -328,7 +340,7 @@ main {
         padding: 1rem 0.5rem;
         margin-left: auto;
         margin-right: auto;
-          border: none;
+        border: none;
       }
 
       .comment-window-close-icon {
@@ -356,7 +368,7 @@ main {
         border: none;
         border-bottom: 1px solid #282828;
         transition: $main-transition-effect;
-        color:$text-color;
+        color: $text-color;
 
         &:focus {
           border-bottom: 1px solid silver;
@@ -390,7 +402,7 @@ main {
     position: relative;
     align-items: center;
     justify-content: space-evenly;
-    padding: 2px 0.3rem .5rem 3.5rem;
+    padding: 2px 0.3rem 0.5rem 3.5rem;
     overflow-x: hidden;
     background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-color: #222222;
@@ -451,11 +463,11 @@ main {
     }
   }
 
-   .color-scheme-light-mode-title {
-     background-color: white;
-     color: $accent-color;
-     box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-   }
+  .color-scheme-light-mode-title {
+    background-color: white;
+    color: $accent-color;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
 
   h2 {
     position: absolute;
@@ -542,6 +554,7 @@ form {
     input {
       padding: 8px 10px;
       border: none;
+      border-bottom: 1px solid #4e4e4e4d;
     }
 
     .movie-search-input {
@@ -571,11 +584,11 @@ form {
   }
 }
 
-   .color-scheme-light-mode-title {
-     background-color: white;
-     color: $accent-color;
-     box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-   }
+.color-scheme-light-mode-title {
+  background-color: white;
+  color: $accent-color;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
 
 .outter-wrapper {
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
@@ -639,6 +652,18 @@ form {
 
     .comment-window-movie-title {
       font-size: 2rem;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #297fffb0;
+        border-radius: 1px;
+      }
     }
 
     @keyframes comment-window-effect {
@@ -845,11 +870,11 @@ form {
       pointer-events: none;
     }
 
-  .color-scheme-light-mode-title {
-    background-color: white;
-    color: $accent-color;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-  }
+    .color-scheme-light-mode-title {
+      background-color: white;
+      color: $accent-color;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
 
     .movie-overview,
     .movie-release-date,
@@ -989,7 +1014,7 @@ form {
   .color-scheme-light-mode-title {
     background-color: white;
     color: $accent-color;
-    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   }
 
   h2 {
@@ -1059,17 +1084,17 @@ form {
     animation: settings-effect 150ms linear;
   }
 
-    @keyframes settings-effect {
-      0% {
-        opacity: 0.2;
-        transform: translateX(-5%);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateX(0%);
-      }
+  @keyframes settings-effect {
+    0% {
+      opacity: 0.2;
+      transform: translateX(-5%);
     }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
 }
 
 //? COMMENTS
@@ -1136,19 +1161,18 @@ form {
     }
   }
 
-
-     .color-scheme-light-mode-title {
-       background-color: white;
-       color: $accent-color;
-       box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-     }
+  .color-scheme-light-mode-title {
+    background-color: white;
+    color: $accent-color;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
 
   .comments-inner-wrapper {
     display: flex;
     flex-direction: column-reverse;
     height: 91%;
     // height: 100%;
-    
+
     overflow-y: auto;
 
     .comment {
@@ -1303,11 +1327,11 @@ form {
     }
   }
 
-    .color-scheme-light-mode-title {
-      background-color: white;
-      color: $accent-color;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-    }
+  .color-scheme-light-mode-title {
+    background-color: white;
+    color: $accent-color;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
 
   .no-movies-in-watchlist {
     display: grid;
@@ -1467,11 +1491,11 @@ form {
     }
   }
 
-   .color-scheme-light-mode-title {
-     background-color: white;
-     color: $accent-color;
-     box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-   }
+  .color-scheme-light-mode-title {
+    background-color: white;
+    color: $accent-color;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
 
   .watched-inner-wrapper {
     position: relative;
@@ -1514,7 +1538,7 @@ form {
   }
 
   .watched-clear-span {
-      position: absolute;
+    position: absolute;
     display: flex;
     justify-content: flex-end;
     flex: 2;
@@ -1543,10 +1567,9 @@ form {
       width: 20%;
       top: 0;
 
-       &:hover {
-         background: #af1313;
-         
-       }
+      &:hover {
+        background: #af1313;
+      }
 
       p {
         position: absolute;
@@ -1556,8 +1579,6 @@ form {
         left: 25%;
         pointer-events: none;
       }
-
-     
     }
   }
 
