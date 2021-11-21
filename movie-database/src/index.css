@@ -254,7 +254,8 @@ main .fa-photo-video {
 main h1 {
   display: -ms-grid;
   display: grid;
-  height: 90vh;
+  background: white;
+  height: 91vh;
   place-content: center;
   text-transform: uppercase;
   font-size: 7rem;
@@ -1162,6 +1163,7 @@ form .inner-form-wrapper .submit:hover {
   -webkit-box-shadow: 0 0 5px #00000023;
           box-shadow: 0 0 5px #00000023;
   background: #fff;
+  background: black;
   margin: auto;
 }
 
@@ -1211,7 +1213,8 @@ form .inner-form-wrapper .submit:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 81.5vh;
+  background: white;
+  height: 82.7vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1404,6 +1407,7 @@ form .inner-form-wrapper .submit:hover {
   border-top: 2px solid #c0c0c02d;
   border-bottom: 0.5px solid #c0c0c081;
   padding: 1rem 2rem 1.5rem 5rem;
+  background: white;
 }
 
 .comments-outter-wrapper .comments-inner-wrapper .comment:last-child {
@@ -1761,7 +1765,8 @@ form .inner-form-wrapper .submit:hover {
   display: -ms-grid;
   display: grid;
   place-content: center;
-  height: 75.4vh;
+  height: 82.7vh;
+  background: white;
 }
 
 .watched-outter-wrapper .title-wrapper {

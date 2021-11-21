@@ -212,7 +212,8 @@ main {
 
   h1 {
     display: grid;
-    height: 90vh;
+    background: white;
+    height: 91vh;
     place-content: center;
     text-transform: uppercase;
     font-size: 7rem;
@@ -271,18 +272,18 @@ main {
 
     .comment-window-movie-title {
       font-size: 2rem;
-            margin: 0 auto;
-            margin-bottom: 1rem;
+      margin: 0 auto;
+      margin-bottom: 1rem;
 
-       &::after {
-         content: "";
-         display: block;
-         height: 3px;
-         width: 80%;
-         margin: 0 auto;
-         background-color: #297fffb0;
-         border-radius: 1px;
-       }
+      &::after {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 80%;
+        margin: 0 auto;
+        background-color: #297fffb0;
+        border-radius: 1px;
+      }
     }
 
     @keyframes comment-window-effect {
@@ -981,6 +982,7 @@ form {
   border-bottom-right-radius: 0;
   box-shadow: 0 0 5px #00000023;
   background: #fff;
+  background: black;
   margin: auto;
 }
 
@@ -1024,7 +1026,8 @@ form {
 
   .settings-options {
     display: flex;
-    height: 81.5vh;
+    background: white;
+    height: 82.7vh;
     flex-direction: column;
     justify-content: center;
     padding-left: 5rem;
@@ -1171,8 +1174,6 @@ form {
     display: flex;
     flex-direction: column-reverse;
     height: 91%;
-    // height: 100%;
-
     overflow-y: auto;
 
     .comment {
@@ -1182,6 +1183,7 @@ form {
       border-top: 2px solid #c0c0c02d;
       border-bottom: 0.5px solid #c0c0c081;
       padding: 1rem 2rem 1.5rem 5rem;
+      background: white;
 
       &:last-child {
         border-bottom: none;
@@ -1466,7 +1468,8 @@ form {
   .no-movies-in-watched {
     display: grid;
     place-content: center;
-    height: 75.4vh;
+    height: 82.7vh;
+    background: white;
   }
 
   .title-wrapper {
