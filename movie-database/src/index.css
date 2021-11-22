@@ -5,8 +5,11 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 1rem;
-  padding-top: 1.5rem;
   background: #8d8d8d;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
 }
 
 * {
@@ -28,6 +31,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #3b3b3bf3;
+}
+
+main {
+  min-height: 600px;
+  max-height: 700px;
 }
 
 .nav {
@@ -75,7 +83,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 91vh;
+  min-height: 700px;
   -webkit-transition: all 120ms linear;
   transition: all 120ms linear;
 }
@@ -162,6 +170,8 @@ body {
 main {
   position: relative;
   overflow: hidden;
+  min-height: 600px;
+  max-height: 700px;
 }
 
 main .login-settings-wrapper {
@@ -255,7 +265,8 @@ main h1 {
   display: -ms-grid;
   display: grid;
   background: white;
-  height: 91vh;
+  min-height: 700px;
+  max-height: 700px;
   place-content: center;
   text-transform: uppercase;
   font-size: 7rem;
@@ -311,7 +322,8 @@ main h1 span::before {
 .upcoming-movies-body {
   position: relative;
   overflow-y: hidden;
-  height: 93.5vh;
+  min-height: 700px;
+  max-height: 700px;
 }
 
 .upcoming-movies-body .comment-window-wrapper {
@@ -329,7 +341,7 @@ main h1 span::before {
 }
 
 .upcoming-movies-body .comment-window-wrapper .comment-window-movie-title {
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 0 auto;
   margin-bottom: 1rem;
 }
@@ -513,7 +525,7 @@ main h1 span::before {
   background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-color: #222222;
   background-size: calc(100% + 2vh);
-  height: 81vh;
+  max-height: 645px;
   background-position: center;
   background-blend-mode: multiply;
 }
@@ -653,7 +665,8 @@ main h1 span::before {
 
 .library-outter-wrapper {
   overflow-y: hidden;
-  height: 91vh;
+  min-height: 700px;
+  max-height: 700px;
 }
 
 form {
@@ -735,7 +748,7 @@ form .inner-form-wrapper .submit:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 81.5vh;
+  height: 700px;
 }
 
 .outter-wrapper .no-movies-message p {
@@ -785,7 +798,7 @@ form .inner-form-wrapper .submit:hover {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 80vh;
+  max-height: 640px;
   padding-left: 3.5rem;
   padding-right: 0.3rem;
   padding-bottom: 2rem;
@@ -807,7 +820,7 @@ form .inner-form-wrapper .submit:hover {
 }
 
 .movie-template .comment-window-wrapper .comment-window-movie-title {
-  font-size: 2rem;
+  font-size: 3rem;
   margin: 0 auto;
   margin-bottom: 1rem;
 }
@@ -1156,8 +1169,8 @@ form .inner-form-wrapper .submit:hover {
 .document-body {
   position: relative;
   width: 1000px;
-  min-height: 91vh;
-  height: 500px;
+  min-height: 600px;
+  max-height: 700px;
   border-radius: 5px;
   border-bottom-right-radius: 0;
   -webkit-box-shadow: 0 0 5px #00000023;
@@ -1165,6 +1178,7 @@ form .inner-form-wrapper .submit:hover {
   background: #fff;
   background: black;
   margin: auto;
+  overflow-y: hidden;
 }
 
 .settings-wrapper {
@@ -1214,7 +1228,7 @@ form .inner-form-wrapper .submit:hover {
   display: -ms-flexbox;
   display: flex;
   background: white;
-  height: 82.7vh;
+  height: 700px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1236,8 +1250,8 @@ form .inner-form-wrapper .submit:hover {
   transition: all 180ms ease;
   float: right;
   margin-right: 0.5rem;
-  -webkit-animation: settings-effect 350ms linear;
-          animation: settings-effect 350ms linear;
+  -webkit-animation: settings-effect 100ms linear;
+          animation: settings-effect 100ms linear;
 }
 
 .settings-wrapper .settings-options .color-scheme-wrapper .color-settings-icon:hover {
@@ -1258,8 +1272,8 @@ form .inner-form-wrapper .submit:hover {
 
 .settings-wrapper .settings-options .languages {
   text-align: right;
-  -webkit-animation: settings-effect 350ms linear;
-          animation: settings-effect 350ms linear;
+  -webkit-transition: all 100ms linear;
+  transition: all 100ms linear;
 }
 
 .settings-wrapper .settings-options .languages a {
@@ -1268,27 +1282,19 @@ form .inner-form-wrapper .submit:hover {
   margin-right: 0.8rem;
   font-weight: bold;
   color: #1c1c1c;
-  -webkit-transition: all 120ms linear;
-  transition: all 120ms linear;
+  -webkit-animation: settings-effect 100ms linear;
+          animation: settings-effect 100ms linear;
 }
 
 .settings-wrapper .settings-options .languages a:hover {
   color: #5295f9;
 }
 
-.settings-wrapper .developed-by {
-  position: absolute;
-  right: 10px;
-  bottom: 8px;
-  -webkit-animation: settings-effect 150ms linear;
-          animation: settings-effect 150ms linear;
-}
-
 @-webkit-keyframes settings-effect {
   0% {
     opacity: 0.2;
-    -webkit-transform: translateX(-5%);
-            transform: translateX(-5%);
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
   }
   100% {
     opacity: 1;
@@ -1300,14 +1306,22 @@ form .inner-form-wrapper .submit:hover {
 @keyframes settings-effect {
   0% {
     opacity: 0.2;
-    -webkit-transform: translateX(-5%);
-            transform: translateX(-5%);
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
   }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
   }
+}
+
+.settings-wrapper .developed-by {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  -webkit-animation: settings-effect 150ms linear;
+          animation: settings-effect 150ms linear;
 }
 
 .comment-link {
@@ -1347,8 +1361,6 @@ form .inner-form-wrapper .submit:hover {
 }
 
 .comments-outter-wrapper {
-  height: 100%;
-  overflow-y: hidden;
   margin-bottom: 2rem;
 }
 
@@ -1391,7 +1403,8 @@ form .inner-form-wrapper .submit:hover {
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
-  height: 91%;
+  min-height: 650px;
+  max-height: 650px;
   overflow-y: auto;
 }
 
@@ -1621,7 +1634,8 @@ form .inner-form-wrapper .submit:hover {
   background-blend-mode: multiply;
   padding-left: 3.5rem;
   padding-top: 0.15rem;
-  height: 82.3vh;
+  min-height: 700px;
+  max-height: 700px;
   overflow-y: auto;
   color: #fff;
 }
@@ -1765,7 +1779,7 @@ form .inner-form-wrapper .submit:hover {
   display: -ms-grid;
   display: grid;
   place-content: center;
-  height: 82.7vh;
+  height: 652px;
   background: white;
 }
 
@@ -1815,7 +1829,7 @@ form .inner-form-wrapper .submit:hover {
   background-blend-mode: multiply;
   padding-left: 3.5rem;
   padding-top: 0.15rem;
-  height: 82.3vh;
+  height: 650px;
   overflow-y: auto;
   color: #fff;
 }

@@ -6,10 +6,10 @@ const LogInWithFirebase = () => {
     .auth()
     .signInWithPopup(google_provider)
     .then((res) => {
-      console.log(res);
+      console.log(`logged in as ${res.additionalUserInfo.profile.name}`);
     })
     .catch((err) => {
-      console.log(err);
+      console.log(`ACCESS DENIED - ${err}`);
     });
 };
 

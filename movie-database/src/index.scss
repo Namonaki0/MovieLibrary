@@ -18,9 +18,12 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 1rem;
-  padding-top: 1.5rem;
   background: rgb(141, 141, 141);
+  height: 100vh;
+  display: grid;
+  place-content: center;
 }
+
 
 * {
   margin: 0;
@@ -41,6 +44,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #3b3b3bf3;
+}
+
+main {
+    min-height: 600px;
+    max-height: 700px;
 }
 
 //? MENU
@@ -79,7 +87,7 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    height: 91vh;
+    min-height: 700px;
     transition: $main-transition-effect;
 
     .menu-link-path {
@@ -150,6 +158,8 @@ body {
 main {
   position: relative;
   overflow: hidden;
+    min-height: 600px;
+    max-height: 700px;
 
   .login-settings-wrapper {
     position: absolute;
@@ -213,7 +223,8 @@ main {
   h1 {
     display: grid;
     background: white;
-    height: 91vh;
+      min-height: 700px;
+      max-height: 700px;
     place-content: center;
     text-transform: uppercase;
     font-size: 7rem;
@@ -257,7 +268,8 @@ main {
 .upcoming-movies-body {
   position: relative;
   overflow-y: hidden;
-  height: 93.5vh;
+    min-height: 700px;
+    max-height: 700px;
 
   .comment-window-wrapper {
     display: grid;
@@ -271,7 +283,7 @@ main {
     animation: comment-window-effect 120ms linear;
 
     .comment-window-movie-title {
-      font-size: 2rem;
+      font-size: 3rem;
       margin: 0 auto;
       margin-bottom: 1rem;
 
@@ -408,7 +420,8 @@ main {
     background: url("https://images.pexels.com/photos/3921045/pexels-photo-3921045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-color: #222222;
     background-size: calc(100% + 2vh);
-    height: 81vh;
+      // min-height: 600px;
+      max-height: 645px;
     background-position: center;
     background-blend-mode: multiply;
   }
@@ -535,7 +548,8 @@ main {
 
 .library-outter-wrapper {
   overflow-y: hidden;
-  height: 91vh;
+    min-height: 700px;
+    max-height: 700px;
 }
 
 //? MOVIE SEARCH FORM
@@ -603,7 +617,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 81.5vh;
+    height: 700px;
 
     p {
       color: $text-color;
@@ -633,7 +647,7 @@ form {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  height: 80vh;
+    max-height: 640px;
   padding-left: 3.5rem;
   padding-right: 0.3rem;
   padding-bottom: 2rem;
@@ -652,7 +666,7 @@ form {
     animation: comment-window-effect 120ms linear;
 
     .comment-window-movie-title {
-      font-size: 2rem;
+      font-size: 3rem;
       margin: 0 auto;
       margin-bottom: 1rem;
 
@@ -976,14 +990,15 @@ form {
 .document-body {
   position: relative;
   width: 1000px;
-  min-height: 91vh;
-  height: 500px;
+  min-height: 600px;
+  max-height: 700px;
   border-radius: 5px;
   border-bottom-right-radius: 0;
   box-shadow: 0 0 5px #00000023;
   background: #fff;
   background: black;
   margin: auto;
+  overflow-y: hidden;
 }
 
 //? SETTINGS
@@ -1027,7 +1042,7 @@ form {
   .settings-options {
     display: flex;
     background: white;
-    height: 82.7vh;
+    height: 700px;
     flex-direction: column;
     justify-content: center;
     padding-left: 5rem;
@@ -1041,7 +1056,7 @@ form {
         transition: all 180ms ease;
         float: right;
         margin-right: 0.5rem;
-        animation: settings-effect 350ms linear;
+        animation: settings-effect 100ms linear;
 
         &:hover {
           color: $accent-color;
@@ -1063,7 +1078,7 @@ form {
 
     .languages {
       text-align: right;
-      animation: settings-effect 350ms linear;
+      transition: all 100ms linear;
 
       a {
         text-decoration: none;
@@ -1071,13 +1086,24 @@ form {
         margin-right: 0.8rem;
         font-weight: bold;
         color: #1c1c1c;
-        transition: $main-transition-effect;
+        animation: settings-effect 100ms linear;
 
         &:hover {
           color: $accent-color;
         }
       }
-    }
+      @keyframes settings-effect {
+        0% {
+          opacity: 0.2;
+          transform: translateX(-10%);
+        }
+  
+        100% {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+      }
   }
 
   .developed-by {
@@ -1087,17 +1113,7 @@ form {
     animation: settings-effect 150ms linear;
   }
 
-  @keyframes settings-effect {
-    0% {
-      opacity: 0.2;
-      transform: translateX(-5%);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-  }
+  
 }
 
 //? COMMENTS
@@ -1138,8 +1154,6 @@ form {
 }
 
 .comments-outter-wrapper {
-  height: 100%;
-  overflow-y: hidden;
   margin-bottom: 2rem;
 
   .title-wrapper {
@@ -1173,7 +1187,8 @@ form {
   .comments-inner-wrapper {
     display: flex;
     flex-direction: column-reverse;
-    height: 91%;
+      min-height: 650px;
+      max-height: 650px;
     overflow-y: auto;
 
     .comment {
@@ -1351,7 +1366,8 @@ form {
     background-blend-mode: multiply;
     padding-left: 3.5rem;
     padding-top: 0.15rem;
-    height: 82.3vh;
+    min-height: 700px;
+    max-height: 700px;
     overflow-y: auto;
     color: $text-color;
   }
@@ -1468,7 +1484,7 @@ form {
   .no-movies-in-watched {
     display: grid;
     place-content: center;
-    height: 82.7vh;
+    height: 652px;
     background: white;
   }
 
@@ -1511,7 +1527,7 @@ form {
     background-blend-mode: multiply;
     padding-left: 3.5rem;
     padding-top: 0.15rem;
-    height: 82.3vh;
+    height: 650px;
     overflow-y: auto;
     color: $text-color;
 
