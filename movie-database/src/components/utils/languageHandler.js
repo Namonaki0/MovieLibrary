@@ -3,6 +3,7 @@ import en from "../../languages/en";
 import es from "../../languages/es";
 import jp from "../../languages/jp";
 
+//? LOOKS INTO LOCAL STORAGE AND CHANGES LANGUAGE TO USER PREFERENCE ON LOAD
 export default function languageHandler() {
   let language = localStorage.getItem("language");
 

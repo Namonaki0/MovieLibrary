@@ -1,14 +1,21 @@
 import firebase from "firebase";
-import { firebase_key, app_id } from "../apiKey";
+import {
+  firebase_key,
+  app_id,
+  auth_domain,
+  db_url,
+  project_id,
+  storage_bucket,
+  sender_id,
+} from "../apiKeys";
 
 const firebaseConfig = {
   apiKey: `${firebase_key}`,
-  authDomain: "moviedatabase-74d8e.firebaseapp.com",
-  databaseURL:
-    "https://moviedatabase-74d8e-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "moviedatabase-74d8e",
-  storageBucket: "moviedatabase-74d8e.appspot.com",
-  messagingSenderId: "207653651942",
+  authDomain: `${auth_domain}`,
+  databaseURL: `${db_url}`,
+  projectId: `${project_id}`,
+  storageBucket: `${storage_bucket}`,
+  messagingSenderId: `${sender_id}`,
   appId: `${app_id}`,
 };
 

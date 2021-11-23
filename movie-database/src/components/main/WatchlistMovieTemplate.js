@@ -3,6 +3,7 @@ import { GlobalContext } from "../../context/GlobalState";
 import Translate from "react-translate-component";
 
 const WatchlistMovieTemplate = ({ listedMovie }) => {
+  //? GLOBAL CONTEXT
   const { removeMovieFromWatchlist, addMovieToWatched } =
     useContext(GlobalContext);
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { api_key } from "../apiKey";
+import { api_key } from "../apiKeys";
 import MovieTemplate from "./MovieTemplate";
 import CommentModal from "./CommentModal";
 import MovieModal from "./MovieModal";
@@ -82,9 +82,10 @@ export default function Library() {
     } else {
       lightModeDisabled();
     }
-    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    //? LIGHTMODE LOCAL-STORAGE CHECKER --- END
   }, []);
 
+  //? FETCHES LAST QUERY IN LOCAL STORAGE --------------
   useEffect(() => {
     const localStorageSearchQuery = localStorage.getItem("searchQuery");
     const handlePageLoad = async () => {
@@ -102,6 +103,7 @@ export default function Library() {
 
     handlePageLoad();
   }, []);
+  //? FETCHES LAST QUERY IN LOCAL STORAGE -------------- END
 
   //? MOVIE TITLE SEARCH RENDER //
   return (

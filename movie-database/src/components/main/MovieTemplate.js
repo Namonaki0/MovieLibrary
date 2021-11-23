@@ -13,12 +13,15 @@ const MovieTemplate = ({
   setMovieModalInfo,
   modalImageTarget,
 }) => {
+  //? GLOBAL CONTEXT -------------
   const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
+  //? CHECKS IF MOVIE IS ALREADY IN WATCHLIST
   let movieInWatchlist = watchlist.find(
     (libraryMovie) => libraryMovie.id === movie.id
   );
 
+  //? -ADD TO WATCHLIST BUTTON- DISABLED EFFECT
   const iconDisabled = {
     pointerEvents: "none",
     cursor: "none",
@@ -26,6 +29,7 @@ const MovieTemplate = ({
     transition: "all 300ms ease",
   };
 
+  //? IF MOVIE IS IN WATCHLIST -ADD TO WATCHLIST BUTTON- CHANGES STATE TO DISABLED
   const watchlistMovieBtnDisabled = movieInWatchlist ? iconDisabled : "";
 
   //? TOOLTIP TRANSLATION VARIABLES ------------------

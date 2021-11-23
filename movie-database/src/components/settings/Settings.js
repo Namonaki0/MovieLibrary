@@ -6,6 +6,8 @@ import { lightModeEnabled, lightModeDisabled } from "./colorSchemeHandler";
 
 export default function Settings() {
   //? LANGUAGE HANDLER ------------------
+  //? ----- CHANGES LOCALE ACCORDING TO USER OPTION
+  //? ----- SETS USER PREFERENCE IN LOCAL STORAGE
   const handleChange = (e) => {
     counterpart.setLocale(e.target.attributes.value.nodeValue);
     localStorage.setItem("language", e.target.attributes.value.nodeValue);
@@ -22,6 +24,7 @@ export default function Settings() {
     //? LIGHTMODE LOCAL-STORAGE CHECKER
   }, []);
 
+  //? LIGHT MODE CLASS TOGGLE
   const LightModeToggle = () => {
     //? PATHS ------------------------
     const burgerMenuIcon = document.querySelector(
@@ -35,9 +38,8 @@ export default function Settings() {
     const navBarText = document.querySelectorAll(
       "#root > div > nav > ul > a > li > a > span"
     );
-    //? PATHS ------------------------
+    //? PATHS --------------------- END
 
-    //? TOGGLES ----------------------
     burgerMenuIcon.classList.toggle("color-scheme-light-mode-icons");
 
     if (h1s) {
@@ -53,13 +55,13 @@ export default function Settings() {
     });
     navBarPath.classList.toggle("color-scheme-light-mode");
 
+    //? TOGGLES CLASSES AND SETS IT INTO LOCAL STORAGE -------
     if (navBarPath.classList.contains("color-scheme-light-mode")) {
       localStorage.setItem("lightMode", "enabled");
     } else {
       localStorage.setItem("lightMode", "disabled");
     }
-
-    //? TOGGLES ----------------------
+    //? TOGGLES CLASSES AND SETS IT INTO LOCAL STORAGE ---- END
   };
 
   return (

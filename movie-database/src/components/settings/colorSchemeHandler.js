@@ -1,3 +1,4 @@
+//? LOCAL STORAGE - IF LIGHT MODE ENABLED ADD CLASSES -----
 const lightModeEnabled = () => {
   //? PATHS ------------------------
   const burgerMenuIcon = document.querySelector(
@@ -12,7 +13,7 @@ const lightModeEnabled = () => {
   const navBarText = document.querySelectorAll(
     "#root > div > nav > ul > a > li > a > span"
   );
-  //? PATHS ------------------------
+  //? PATHS --------------------- END
 
   burgerMenuIcon.classList.add("color-scheme-light-mode-icons");
 
@@ -32,7 +33,9 @@ const lightModeEnabled = () => {
   });
   navBarPath.classList.add("color-scheme-light-mode");
 };
+//? LOCAL STORAGE - IF LIGHT MODE ENABLED ADD CLASSES --- END
 
+//? LOCAL STORAGE - IF LIGHT MODE DISABLED REMOVE CLASSES -----
 const lightModeDisabled = () => {
   //? PATHS ------------------------
   const burgerMenuIcon = document.querySelector(
@@ -46,7 +49,7 @@ const lightModeDisabled = () => {
   const navBarText = document.querySelectorAll(
     "#root > div > nav > ul > a > li > a > span"
   );
-  //? PATHS ------------------------
+  //? PATHS --------------------- END
 
   burgerMenuIcon.classList.remove("color-scheme-light-mode-icons");
 
@@ -63,5 +66,6 @@ const lightModeDisabled = () => {
   });
   navBarPath.classList.remove("color-scheme-light-mode");
 };
+//? LOCAL STORAGE - IF LIGHT MODE DISABLED REMOVE CLASSES --- END
 
 export { lightModeEnabled, lightModeDisabled };
