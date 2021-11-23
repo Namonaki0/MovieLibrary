@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 
-/src/components/apiKey.js
+/src/components/apiKeys.js
 db.json
 /.vscode
 .gitignore

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { api_key } from "../apiKey";
+import { api_key } from "../apiKeys";
 import UpcomingMoviesTemplate from "./UpcomingMoviesTemplate";
 import CommentModal from "./CommentModal";
 import commentsHandler from "../utils/commentsBodyHandler";
@@ -19,6 +19,7 @@ export default function Upcoming() {
   const [commentMessageDisplay, setCommentMessageDisplay] = useState(null);
 
   useEffect(() => {
+    //? UPCOMING MOVIES FETCH ON LOAD -----------
     async function fetchMovieData() {
       const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1&include_adult=false`;
 
@@ -31,6 +32,7 @@ export default function Upcoming() {
       }
     }
     fetchMovieData();
+    //? UPCOMING MOVIES FETCH ON LOAD -------- END
 
     //? LIGHTMODE LOCAL-STORAGE CHECKER
     if (localStorage.getItem("lightMode") === "enabled") {

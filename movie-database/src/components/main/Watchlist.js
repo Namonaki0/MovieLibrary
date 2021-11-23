@@ -8,16 +8,17 @@ import {
 } from "../settings/colorSchemeHandler";
 
 export default function Watchlist() {
+  //? GLOBAL CONTEXT
   const { watchlist } = useContext(GlobalContext);
 
   useEffect(() => {
-    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    //? LIGHTMODE LOCAL-STORAGE CHECKER ---
     if (localStorage.getItem("lightMode") === "enabled") {
       lightModeEnabled();
     } else {
       lightModeDisabled();
     }
-    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    //? LIGHTMODE LOCAL-STORAGE CHECKER -- END
   });
 
   return (

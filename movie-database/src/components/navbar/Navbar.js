@@ -19,6 +19,7 @@ export default function Navbar() {
   //? MENU TOGGLE ------------
 
   useEffect(() => {
+    //? LOOKS INTO FIREBASE DB FOR COMMENT NUMBER AND FEEDS IT INTO -commentNumber- SPAN
     async function commentCount() {
       const commentRef = firebase.database().ref("Comments");
 
@@ -33,6 +34,7 @@ export default function Navbar() {
     }
     commentCount();
 
+    //? LANGUAGE TRANSALTOR -----
     languageHandler();
   });
 

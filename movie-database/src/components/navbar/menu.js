@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuLinks = document.querySelectorAll(".menu-link");
 
   if (burgerMenu) {
+    //? MENU TOGGLE, EFFECTS AND COMMENT NUMBER PILL IN NAVBAR
     burgerMenu.addEventListener("click", () => {
       nav.classList.toggle("menu-active");
 
@@ -16,9 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
           ".open-menu-comment-number-span"
         );
 
-        //? NEEDS ATTENTION
         const parentNode = e.target.parentNode.offsetParent;
-        ////////////////?
+
         linkTexts.forEach((linkText) => {
           if (nav.style.width === "16rem") {
             linkText.classList.add("text-showing");

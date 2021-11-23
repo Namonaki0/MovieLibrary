@@ -17,6 +17,7 @@ export default function Home() {
   const [userName, setUserName] = useState("");
   let [welcomeMessage, setWelcomeMessage] = useState();
 
+  //? FIREBASE AUTHENTICATION TOGGLE ----------
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       setUserIsSignedIn(true);
@@ -25,10 +26,13 @@ export default function Home() {
       setUserIsSignedIn(false);
     }
   });
+  //? FIREBASE AUTHENTICATION TOGGLE ------ END
 
   useEffect(() => {
+    //? TRANSLATED WELCOME MESSAGE -------
     let welcome = counterpart.translate("welcome");
     setWelcomeMessage(welcome);
+    //? TRANSLATED WELCOME MESSAGE -- END
 
     //? LIGHTMODE LOCAL-STORAGE CHECKER
     if (localStorage.getItem("lightMode") === "enabled") {
@@ -40,6 +44,7 @@ export default function Home() {
   }, []);
 
   if (userIsSignedIn === true) {
+    //? IF USER IS SIGNED IN -------
     return (
       <main>
         <div className="login-settings-wrapper">
@@ -56,7 +61,9 @@ export default function Home() {
         </h1>
       </main>
     );
+    //? IF USER IS SIGNED IN --- END
   } else {
+    //? IF USER IS SIGNED OUT ------
     return (
       <main>
         <div className="login-settings-wrapper">
@@ -72,5 +79,6 @@ export default function Home() {
         </h1>
       </main>
     );
+    //? IF USER IS SIGNED OUT --- END
   }
 }

@@ -11,6 +11,7 @@ export const Comments = () => {
   const [userInfo, setUserInfo] = useState([]);
 
   useEffect(() => {
+    //? FIREBASE DB COMMENTS FETCH - PUSHED INTO -userInfo- ----------
     async function fetchComments() {
       const commentRef = firebase.database().ref("Comments");
 
@@ -24,6 +25,7 @@ export const Comments = () => {
       });
     }
     fetchComments();
+    //? FIREBASE DB COMMENTS FETCH - PUSHED INTO -userInfo- ------- END
 
     //? LIGHTMODE LOCAL-STORAGE CHECKER
     if (localStorage.getItem("lightMode") === "enabled") {
@@ -34,6 +36,7 @@ export const Comments = () => {
     //? LIGHTMODE LOCAL-STORAGE CHECKER
   }, []);
 
+  //? COMMENTS PAGE SCROLL-TO-TOP OFFSET - FLEX COLUMN-REVERSE LAYOUT
   useLayoutEffect(() => {
     function commentsArray() {
       const comments = document.querySelectorAll(".comment");
@@ -48,6 +51,7 @@ export const Comments = () => {
 
     commentsArray();
   });
+  //? COMMENTS PAGE SCROLL-TO-TOP OFFSET - FLEX COLUMN-REVERSE LAYOUT -- END
 
   return (
     <div className="comments-outter-wrapper">

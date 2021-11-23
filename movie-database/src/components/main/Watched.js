@@ -9,21 +9,25 @@ import {
 
 export default function Watched() {
   const [clearModal, setClearModal] = useState(null);
+
+  //? GLOBAL CONTEXT
   const { watched } = useContext(GlobalContext);
 
+  //? CLEARS LOCAL STORAGE FOR -WATCHED- AND RELOADS PAGE -----
   const clearWatchedLocalStorage = () => {
     localStorage.removeItem("watched");
     window.location.reload();
   };
+  //? CLEARS LOCAL STORAGE FOR -WATCHED- AND RELOADS PAGE -- END
 
   useEffect(() => {
-    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    //? LIGHTMODE LOCAL-STORAGE CHECKER ---
     if (localStorage.getItem("lightMode") === "enabled") {
       lightModeEnabled();
     } else {
       lightModeDisabled();
     }
-    //? LIGHTMODE LOCAL-STORAGE CHECKER
+    //? LIGHTMODE LOCAL-STORAGE CHECKER --END
   }, []);
 
   return (
